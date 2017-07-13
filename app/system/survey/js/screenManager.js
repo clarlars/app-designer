@@ -341,6 +341,7 @@ return Backbone.View.extend({
         evt.preventDefault();
     },
     gotoNextScreenAction: function(ctxt) {
+        odkCommon.log('E', "CLARICE Survey Speed Test controller gotoNextScreenAction before time: " + new Date().getTime());
         this.currentPageEl.css('opacity', '.5').fadeTo("fast", 1.0);
         var that = this;
         if(that.pageChangeActionLockout) {
@@ -350,6 +351,7 @@ return Backbone.View.extend({
         }
         that.pageChangeActionLockout = true;
         that.controller.gotoNextScreen($.extend({},ctxt,{success:function(){
+                    odkCommon.log('E', "CLARICE Survey Speed Test controller gotoNextScreenAction after time: " + new Date().getTime());
                     that.pageChangeActionLockout = false;
                     ctxt.success();
                 },failure:function(m){

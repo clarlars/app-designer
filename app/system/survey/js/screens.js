@@ -47,6 +47,28 @@ screenTypes.base = Backbone.View.extend({
     getScreenPath: function() {
         return this._section_name + '/' + this._op.operationIdx;
     },
+    havePromptsOnScreenChanged: function() {
+        if (this._operation && this._operation._screen_block) {
+            var toBeRenderedActivePromptsIdxs = [];
+            toBeRenderedActivePromptsIdxs = this._operation._screen_block();
+            
+            if (this.activePrompts.length !== toBeRenderedActivePromptsIdxs.length) {
+                return true;
+            } else {
+                var toBeRenderedActivePrompts = []
+                var i = 0;
+                for (i = 0; i < toBeRenderedActivePromptsIdxs.length; i++) {
+                    if (this.activePrompts[i].promptIdx !== toBeRenderedActivePromptsIdxs[i]) {
+                        return true;
+                    }
+                }
+                return false;        
+            }
+        } else {
+            return true;
+        }
+        
+    },
     whenTemplateIsReady: function(ctxt){
         var that = this;
         if(this.template) {
@@ -388,6 +410,7 @@ screenTypes.screen = screenTypes.base.extend({
     type: "screen",
     templatePath: "templates/navbar.handlebars",
     render: function(ctxt) {
+        odkCommon.log('E',"CLARICE Survey Speed Test screen.js before render time: " + new Date().getTime());
         var that = this;
         // TODO: understand what Nathan was trying to do here with a virtual element.
         try {
@@ -424,6 +447,7 @@ screenTypes.screen = screenTypes.base.extend({
         }
 
         ctxt.success();
+        odkCommon.log('E',"CLARICE Survey Speed Test screen.js after render time: " + new Date().getTime());
     }
 });
 

@@ -97,6 +97,11 @@ promptTypes.base = Backbone.View.extend({
     getPromptId: function() {
         return 'i' + this.getPromptPath().replace(/[^a-zA-Z0-9]/,'');
     },
+    // Add function for all prompts to use for selective reRender
+	getContainerId: function() {
+        var contId = "#container" + this.getPromptId();
+        return contId;
+    },
     /**
      * buildRenderContext
      * Called before a prompt is rendered.
@@ -1178,6 +1183,22 @@ promptTypes.select = promptTypes._linked_type.extend({
             }
         });
     },
+    reRender: function(ctxt) {
+        var that = this;
+        var conIdx = that.getContainerId();
+        
+        that._render();
+        if(!that.$el){
+            console.error("render px: " + that.promptIdx +
+            " Prompts must have synchronous render functions. " +
+            "Don't debounce them or launch async calls before el is set.");
+            console.error(that);
+            alert("Sub-prompt has not been rendered. See console for details.");
+        }
+        
+        var $container = that._screen.$(that.getContainerId());
+        $container.html(that.$el);
+    },
     choice_filter: function(){ return true; },
     updateRenderValue: function(formValue) {
         var that = this;
@@ -1321,15 +1342,19 @@ promptTypes.select = promptTypes._linked_type.extend({
         that.setValueDeferredChange(that.generateSaveValue(formValue));
         that.updateRenderValue(formValue);
 
-        var ctxt = that.controller.newContext(evt, that.type + ".modification");
-        that.controller.enqueueTriggeringContext($.extend({},ctxt,{success:function() {
-            ctxt.log('D',"prompts." + that.type + ".modification: reRender", "px: " + that.promptIdx);
-            that.reRender(ctxt);
-        },
-        failure:function(m) {
-            ctxt.log('D',"prompts." + that.type + ".modification -- prior event terminated with an error -- aborting!", "px: " + that.promptIdx);
-            ctxt.failure(m);
-        }}));
+//         var ctxt = that.controller.newContext(evt, that.type + ".modification");
+//         that.controller.enqueueTriggeringContext($.extend({},ctxt,{success:function() {
+//             ctxt.log('D',"prompts." + that.type + ".modification: reRender", "px: " + that.promptIdx);
+//             that.reRender(ctxt);
+//         },
+//         failure:function(m) {
+//             ctxt.log('D',"prompts." + that.type + ".modification -- prior event terminated with an error -- aborting!", "px: " + that.promptIdx);
+//             ctxt.failure(m);
+//         }}));
+    
+        // Here we don't want to enqueueTriggeringContext - just reRender for now
+        odkCommon.log('D',"prompts." + that.type + ".modification: reRender", "px: " + that.promptIdx);
+        that.reRender();
     },
     configureRenderContext: function(ctxt) {
         var that = this;
@@ -1506,15 +1531,19 @@ promptTypes.select_one_integer = promptTypes.select_one.extend({
         that.setValueDeferredChange(that.generateSaveValue(formValue));
         that.updateRenderValue(formValue);
 
-        var ctxt = that.controller.newContext(evt, that.type + ".modification");
-        that.controller.enqueueTriggeringContext($.extend({},ctxt,{success:function() {
-            ctxt.log('D',"prompts." + that.type + ".modification: reRender", "px: " + that.promptIdx);
-            that.reRender(ctxt);
-        },
-        failure:function(m) {
-            ctxt.log('D',"prompts." + that.type + ".modification -- prior event terminated with an error -- aborting!", "px: " + that.promptIdx);
-            ctxt.failure(m);
-        }}));
+//         var ctxt = that.controller.newContext(evt, that.type + ".modification");
+//         that.controller.enqueueTriggeringContext($.extend({},ctxt,{success:function() {
+//             ctxt.log('D',"prompts." + that.type + ".modification: reRender", "px: " + that.promptIdx);
+//             that.reRender(ctxt);
+//         },
+//         failure:function(m) {
+//             ctxt.log('D',"prompts." + that.type + ".modification -- prior event terminated with an error -- aborting!", "px: " + that.promptIdx);
+//             ctxt.failure(m);
+//         }}));
+        
+        // CAL: We don't want to enqueue triggering context as we are just going to dynamically reRender
+        ctxt.log('D',"prompts." + that.type + ".modification: reRender", "px: " + that.promptIdx);
+        that.reRender(ctxt);    
     },
     /**
      * Parse a saved string value into the format
@@ -1693,20 +1722,49 @@ promptTypes.input_type = promptTypes.base.extend({
         "focusout .input-container": "loseFocus",
         "focusin .input-container": "gainFocus"
     },
+    reRender: function(ctxt) {
+        var that = this;
+        var conIdx = that.getContainerId();
+        var screenRedraw = that._screen.havePromptsOnScreenChanged();
+        if (screenRedraw) {
+            // CAL: Need to create a context here or extend off of the initial context
+            // screen reRender requires a valid context
+            this._screen.reRender(ctxt);
+        } else {
+            that._render();
+            if(!that.$el){
+                console.error("render px: " + that.promptIdx +
+                " Prompts must have synchronous render functions. " +
+                "Don't debounce them or launch async calls before el is set.");
+                console.error(that);
+                alert("Sub-prompt has not been rendered. See console for details.");
+            }
+    
+            var $container = that._screen.$(that.getContainerId());
+            $container.html(that.$el);
+        }
+    },
     loseFocus: function(evt) {
         var that = this;
         odkCommon.log('D',"prompts." + that.type + ".focusout px: " + that.promptIdx);
 
         if (that.modified === true) {
-            var ctxt = that.controller.newContext(evt, that.type + ".loseFocus");
-            that.controller.enqueueTriggeringContext($.extend({},ctxt,{success:function() {
-                ctxt.log('D',"prompts." + that.type + ".loseFocus: reRender", "px: " + that.promptIdx);
-                that.reRender(ctxt);
-            },
-            failure:function(m) {
-                ctxt.log('D',"prompts." + that.type + ".loseFocus -- prior event terminated with an error -- aborting!", "px: " + that.promptIdx);
-                ctxt.failure(m);
-            }}));
+//             var ctxt = that.controller.newContext(evt, that.type + ".loseFocus");
+//             that.controller.enqueueTriggeringContext($.extend({},ctxt,{success:function() {
+//                 ctxt.log('D',"prompts." + that.type + ".loseFocus: reRender", "px: " + that.promptIdx);
+//                 // Here is where we actually reRender - let's try to do it!
+//                 that.reRender(ctxt);
+//             },
+//             failure:function(m) {
+//                 ctxt.log('D',"prompts." + that.type + ".loseFocus -- prior event terminated with an error -- aborting!", "px: " + that.promptIdx);
+//                 ctxt.failure(m);
+//             }}));
+
+            // Here again we are just going to dynamically reRender and not enqueue a triggering context
+            odkCommon.log('D',"prompts." + that.type + ".loseFocus: reRender", "px: " + that.promptIdx);
+            // Here is where we actually reRender - let's try to do it
+            // Clarice style - awww yeah!
+            that.reRender();
         }
     },
     gainFocus: function(evt) {
@@ -1941,9 +1999,11 @@ promptTypes.datetime = promptTypes.input_type.extend({
             // attempt to apply the state changes of this pop-up. Tolerate the loss
             // of whatever the user tried to pick. They shouldn't move so fast.
 
-            var ctxt = that.controller.newContext(evt, that.type + ".modification");
-            that.controller.enqueueTriggeringContext($.extend({},ctxt,{success:function() {
-                ctxt.log('D',"prompts." + that.type + ".modification: determine if reRendering ", "px: " + that.promptIdx);
+//             var ctxt = that.controller.newContext(evt, that.type + ".modification");
+//             that.controller.enqueueTriggeringContext($.extend({},ctxt,{success:function() {
+        
+            // CAL: Here again we are not going to enqueue a triggering context
+                odkCommon.log('D',"prompts." + that.type + ".modification: determine if reRendering ", "px: " + that.promptIdx);
                 var ref = that.getValue();
 
                 var rerender = false;
@@ -1981,11 +2041,11 @@ promptTypes.datetime = promptTypes.input_type.extend({
                 } else {
                     ctxt.success();
                 }
-            },
-            failure:function(m) {
-                ctxt.log('D',"prompts." + that.type + ".modification -- prior event terminated with an error -- aborting!", "px: " + that.promptIdx);
-                ctxt.failure(m);
-            }}));
+//             },
+//             failure:function(m) {
+//                 ctxt.log('D',"prompts." + that.type + ".modification -- prior event terminated with an error -- aborting!", "px: " + that.promptIdx);
+//                 ctxt.failure(m);
+//             }}));
         }
     },
     afterRender: function() {
@@ -2065,6 +2125,23 @@ promptTypes.media = promptTypes.base.extend({
         that.$('.captureAction').prop('disabled', false);
         that.$('.chooseAction').prop('disabled', false);
     },
+    // CAL: Try to re-render this dynamically
+//     reRender: function(ctxt) {
+//         var that = this;
+//         var conIdx = that.getContainerId();
+//         
+//         that._render();
+//         if(!that.$el){
+//             console.error("render px: " + that.promptIdx +
+//             " Prompts must have synchronous render functions. " +
+//             "Don't debounce them or launch async calls before el is set.");
+//             console.error(that);
+//             alert("Sub-prompt has not been rendered. See console for details.");
+//         }
+//         
+//         var $container = that._screen.$(that.getContainerId());
+//         $container.html(that.$el);
+//     },
     capture: function(evt) {
         var that = this;
         that.disableButtons();
@@ -2273,6 +2350,23 @@ promptTypes.launch_intent = promptTypes.base.extend({
         that.renderContext.value = value;
         ctxt.success();
     },
+    // CAL: Try to dynamically reRender this prompt
+//     reRender: function(ctxt) {
+//         var that = this;
+//         var conIdx = that.getContainerId();
+//         
+//         that._render();
+//         if(!that.$el){
+//             console.error("render px: " + that.promptIdx +
+//             " Prompts must have synchronous render functions. " +
+//             "Don't debounce them or launch async calls before el is set.");
+//             console.error(that);
+//             alert("Sub-prompt has not been rendered. See console for details.");
+//         }
+//         
+//         var $container = that._screen.$(that.getContainerId());
+//         $container.html(that.$el);
+//     },
     launch: function(evt) {
         var that = this;
         var platInfo = opendatakit.getPlatformInfo();
