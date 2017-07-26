@@ -3398,26 +3398,21 @@ promptTypes.acknowledge = promptTypes.select.extend({
         //
         that.setValueDeferredChange(acknowledged);
 
-        var ctxt = that.controller.newContext(evt, that.type + ".modification");
-        that.controller.enqueueTriggeringContext($.extend({},ctxt,{success:function() {
-            ctxt.log('D',"prompts." + that.type + ".modification: reRender", "px: " + that.promptIdx);
+        // Now we will just try to reRender
+        ctxt.log('D',"prompts." + that.type + ".modification: reRender", "px: " + that.promptIdx);
 
-            that.renderContext.choices = [{
-                name: "acknowledge",
-                display: that.acknLabel.display,
-                checked: acknowledged
-            }];
+        that.renderContext.choices = [{
+            name: "acknowledge",
+            display: that.acknLabel.display,
+            checked: acknowledged
+        }];
 
-            if (acknowledged && that.autoAdvance) {
-                that.controller.gotoNextScreen(ctxt);
-            } else {
-                that.reRender(ctxt);
-            }
-        },
-        failure:function(m) {
-            ctxt.log('D',"prompts." + that.type + ".modification -- prior event terminated with an error -- aborting!", "px: " + that.promptIdx);
-            ctxt.failure(m);
-        }}));
+        if (acknowledged && that.autoAdvance) {
+            var ctxt = that.controller.newContext(evt, that.type + ".modification");
+            that.controller.gotoNextScreen(ctxt);
+        } else {
+            that.reRender(evt);
+        }
     },
     configureRenderContext: function(ctxt) {
         var that = this;

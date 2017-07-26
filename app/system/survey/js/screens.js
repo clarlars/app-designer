@@ -50,8 +50,15 @@ screenTypes.base = Backbone.View.extend({
     havePromptsOnScreenChanged: function(pIdx) {
         if (this._operation && this._operation._screen_block) {
             var toBeRenderedActivePromptsIdxs = [];
+            // If assign is used, then the screen has to be rerendered
+            // this is because the renderContext of the prompt within the assign
+            // will not reflect the new value - so we need to rerender 
+            var screenBlockString = String(this._operation._screen_block_orig);
+            if (screenBlockString.indexOf('assign') !== -1) {
+                return true;
+            }
             toBeRenderedActivePromptsIdxs = this._operation._screen_block();
-            
+
             if (this.activePrompts.length !== toBeRenderedActivePromptsIdxs.length) {
                 return true;
             } else {
@@ -59,19 +66,29 @@ screenTypes.base = Backbone.View.extend({
                 var i = 0;
                 for (i = 0; i < toBeRenderedActivePromptsIdxs.length; i++) {
                     if (this.activePrompts[i].promptIdx !== toBeRenderedActivePromptsIdxs[i]) {
-                        // Need to also check if prompt itself has changed
+                        // If prompt indices are out of order, redraw
                         return true;
                     } else {
-                        // Now we need to check if the prompts on the screen have changed
-                        // given the current prompt that is asking - we need to 
-                        // know if the other prompts on the screen have changed
+                        // Now we need to check if other prompts on the screen
+                        // need to rerender - if so then do a screen redraw
                         if (this.activePrompts[i].promptIdx !== pIdx) {
+
                             // current el of active prompt  
                             var currEl = this.activePrompts[i].$el
+                            // Get the innerHTML if we can 
+                            var currElString = null;
+                            if (currEl.length > 0) {
+                                currElString = currEl[0].innerHTML;
+                            }
+
+                            // what the el of the prompt will be 
                             var toBeDrawnEl = this.activePrompts[i].template(this.activePrompts[i].renderContext);
-                            var currElString = currEl[0].innerHTML;
-                            var currElStringNoSpaces = currElString.replace(/\s/g, '');
-                            var tbdString = toBeDrawnEl.replace(/\s/g, '');
+
+                            // Remove all spaces from both what is and what will be to get a valid comparison
+                            var currElStringNoSpaces = (currElString !== null && currElString !== undefined) ? currElString.replace(/\s/g, '') : null;
+                            var tbdString = (toBeDrawnEl !== null && toBeDrawnEl !== undefined) ? toBeDrawnEl.replace(/\s/g, '') : null;
+                            
+                            // If they are not equal redraw
                             if (currElStringNoSpaces !== tbdString) {
                                 return true;
                             }
