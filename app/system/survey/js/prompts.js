@@ -1955,7 +1955,6 @@ promptTypes.datetime = promptTypes.input_type.extend({
             var ctxt = that.controller.newContext(evt, that.type + ".loseFocus");
             that.controller.enqueueTriggeringContext($.extend({},ctxt,{success:function() {
                 ctxt.log('D',"prompts." + that.type + ".loseFocus: reRender", "px: " + that.promptIdx);
-                // Here is where we actually reRender - let's try to do it!
                 that.reRender(ctxt);
             },
             failure:function(m) {
@@ -2018,7 +2017,7 @@ promptTypes.datetime = promptTypes.input_type.extend({
         var that = this;
         odkCommon.log('D',"prompts." + that.type + ".modification px: " + that.promptIdx);
         if ( !that.insideAfterRender ) {
-            var formattedDateValue = that.$('input').combodate('getValue');
+            var formattedDateValue = that.$('input').combodate('getValue', null);
             var value = new Date(formattedDateValue);
             
             //
@@ -2038,7 +2037,7 @@ promptTypes.datetime = promptTypes.input_type.extend({
                 } else if ( value === null || value === undefined ) {
                     rerender = ( ref !== null && ref !== undefined );
                 } else {
-                    rerender = that.sameValue(ref, value);
+                    rerender = !(that.sameValue(ref, value));
                 }
 
                 var renderContext = that.renderContext;
@@ -2064,7 +2063,10 @@ promptTypes.datetime = promptTypes.input_type.extend({
                 if ( rerender ) {
                     odkCommon.log('D',"prompts." + that.type + ".modification: reRender", "px: " + that.promptIdx);
                     that.reRender(ctxt);
-                } 
+                }  else {
+                    // We are now done with this
+                    ctxt.success();
+                }
             },
             failure:function(m) {
                 ctxt.log('D',"prompts." + that.type + ".modification -- prior event terminated with an error -- aborting!", "px: " + that.promptIdx);
