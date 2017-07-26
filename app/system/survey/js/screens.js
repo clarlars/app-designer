@@ -47,7 +47,7 @@ screenTypes.base = Backbone.View.extend({
     getScreenPath: function() {
         return this._section_name + '/' + this._op.operationIdx;
     },
-    havePromptsOnScreenChanged: function() {
+    havePromptsOnScreenChanged: function(pIdx) {
         if (this._operation && this._operation._screen_block) {
             var toBeRenderedActivePromptsIdxs = [];
             toBeRenderedActivePromptsIdxs = this._operation._screen_block();
@@ -59,7 +59,23 @@ screenTypes.base = Backbone.View.extend({
                 var i = 0;
                 for (i = 0; i < toBeRenderedActivePromptsIdxs.length; i++) {
                     if (this.activePrompts[i].promptIdx !== toBeRenderedActivePromptsIdxs[i]) {
+                        // Need to also check if prompt itself has changed
                         return true;
+                    } else {
+                        // Now we need to check if the prompts on the screen have changed
+                        // given the current prompt that is asking - we need to 
+                        // know if the other prompts on the screen have changed
+                        if (this.activePrompts[i].promptIdx !== pIdx) {
+                            // current el of active prompt  
+                            var currEl = this.activePrompts[i].$el
+                            var toBeDrawnEl = this.activePrompts[i].template(this.activePrompts[i].renderContext);
+                            var currElString = currEl[0].innerHTML;
+                            var currElStringNoSpaces = currElString.replace(/\s/g, '');
+                            var tbdString = toBeDrawnEl.replace(/\s/g, '');
+                            if (currElStringNoSpaces !== tbdString) {
+                                return true;
+                            }
+                        }
                     }
                 }
                 return false;        
@@ -258,34 +274,6 @@ screenTypes.base = Backbone.View.extend({
         $.each(that.activePrompts, function(idx, prompt){
             prompt.afterRender();
         });
-
-        if (that.$focusPromptTest !== null && that.$focusPromptTest !== undefined)
-        {
-            var focusElementAttr = {'id' : that.$focusPromptTest.attr('id'),
-                                    'value' : that.$focusPromptTest.attr('value'),
-                                    'name' : that.$focusPromptTest.attr('name')};
-
-            var focusElementString = (that.$focusPromptTest.get(0).tagName).toLowerCase();
-            for (var key in focusElementAttr) {
-                if (focusElementAttr[key]) {
-                    focusElementString = focusElementString + "[" + key + "='" + focusElementAttr[key] + "']";
-                    setFocus = true;
-                }
-            }
-
-            if (setFocus === true) {
-                odkCommon.log("D","screens.afterRender: focusElementString = " + focusElementString);
-                $(focusElementString).focus();
-            }
-        }
-
-        if (that.focusScrollPos !== null && that.focusScrollPos !== undefined) {
-            $(window).scrollTop(that.focusScrollPos);
-        }
-
-        if (that.screenOverflowClass && that.horizontalFocusScrollPos !== null && that.horizontalFocusScrollPos !== undefined) {
-            that.$(that.screenOverflowClass).scrollLeft(that.horizontalFocusScrollPos);
-        }
     },
     recursiveUndelegateEvents: function() {
         var that = this;
@@ -410,7 +398,6 @@ screenTypes.screen = screenTypes.base.extend({
     type: "screen",
     templatePath: "templates/navbar.handlebars",
     render: function(ctxt) {
-        odkCommon.log('E',"CLARICE Survey Speed Test screen.js before render time: " + new Date().getTime());
         var that = this;
         // TODO: understand what Nathan was trying to do here with a virtual element.
         try {
@@ -447,7 +434,6 @@ screenTypes.screen = screenTypes.base.extend({
         }
 
         ctxt.success();
-        odkCommon.log('E',"CLARICE Survey Speed Test screen.js after render time: " + new Date().getTime());
     }
 });
 
