@@ -9,6 +9,8 @@ function display() {
 
     var coordinatorButton = $('#coordinator-button');
     coordinatorButton.on('click', function() {
-        odkTables.launchHTML(null, 'config/assets/coordinatorView.html');
+        var queryParamsToAppend = '?' + util.ACTION + '=' + util.ACTION_LIST;
+        queryParamsToAppend += '&' + util.VIEW_TYPE + '=' + util.VIEW_TYPE_COORDINATOR;
+        odkTables.launchHTML(null, 'config/assets/listOfVillages.html' + queryParamsToAppend);
     })
 }

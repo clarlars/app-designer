@@ -41,19 +41,25 @@ function display() {
 }
 
 function determineButtonAction(village) {
-    var businessListURL = 'config/tables/business/html/business_list.html';
+
+    var listURL = 'config/assets/listVerAuthComAll.html';
     var businessAuthorizeURL = 'config/tables/business/html/business_authorize.html';
     var businessVerifyURL = 'config/tables/business/html/business_verify.html';
 
     var queryParamToAppend = '';
     var urlToUse = '';
 
+    // A region should always be associated with a button
     if (village !== null && village !== undefined) {
         queryParamToAppend = '?' + util.VILLAGE + '=' + village;
     }
 
+    if (viewType !== null && viewType !== undefined) {
+        queryParamToAppend += '&' + util.VIEW_TYPE + '=' + viewType;
+    }
+
     if (actionToPerform === util.ACTION_LIST) {
-        urlToUse = businessListURL + queryParamToAppend;
+        urlToUse = listURL + queryParamToAppend;
 
     } else if (actionToPerform === util.ACTION_AUTHORIZE) {
         urlToUse = businessAuthorizeURL + queryParamToAppend;

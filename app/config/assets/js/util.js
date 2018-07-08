@@ -37,10 +37,17 @@ util.VIEW_TYPE_COORDINATOR = 'coordinator';
 
 util.ACTION_LIST = 'list';
 util.ACTION_VERIFY = 'verify';
-util.ACTION_AUTHORIZE = 'authorize'
+util.ACTION_AUTHORIZE = 'authorize';
+
+util.COL_AGENT_VERIFIED = 'has_been_verified_by_agent';
+util.COL_VEO_AUTHORIZED = 'has_been_authorized_by_veo';
 
 util.TRUE = 'true';
 util.FALSE = 'false';
+
+util.ONE = 1;
+util.ZERO = 0;
+util.NEG_ONE = -1;
 
 util.VILLAGE = 'village';
 
