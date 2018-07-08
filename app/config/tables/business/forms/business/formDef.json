@@ -115,7 +115,7 @@
       },
       {
         "type": "select_one",
-        "values_list": "villages",
+        "values_list": "villages_csv",
         "name": "village",
         "display": {
           "prompt": {
@@ -126,13 +126,14 @@
       },
       {
         "type": "select_one",
-        "values_list": "subvillages",
+        "values_list": "subvillages_csv",
         "name": "subvillage",
         "display": {
           "prompt": {
             "text": "Choose the subvillage."
           }
         },
+        "choice_filter": "choice_item.village === data('village')",
         "_row_num": 14
       },
       {
@@ -188,13 +189,14 @@
       },
       {
         "type": "select_one",
-        "values_list": "village_veos",
+        "values_list": "veos_csv",
         "name": "authorization_veo",
         "display": {
           "prompt": {
             "text": "Enter the name of the authorizing VEO."
           }
         },
+        "choice_filter": "choice_item.village === data('village')",
         "_row_num": 20
       },
       {
@@ -289,136 +291,6 @@
           }
         },
         "_row_num": 10
-      },
-      {
-        "choice_list_name": "subvillages",
-        "data_value": "subvillage1",
-        "display": {
-          "title": {
-            "text": "Subvillage 1"
-          }
-        },
-        "_row_num": 12
-      },
-      {
-        "choice_list_name": "subvillages",
-        "data_value": "subvillage2",
-        "display": {
-          "title": {
-            "text": "Subvillage 2"
-          }
-        },
-        "_row_num": 13
-      },
-      {
-        "choice_list_name": "subvillages",
-        "data_value": "subvillage3",
-        "display": {
-          "title": {
-            "text": "Subvillage 3"
-          }
-        },
-        "_row_num": 14
-      },
-      {
-        "choice_list_name": "subvillages",
-        "data_value": "subvillage4",
-        "display": {
-          "title": {
-            "text": "Subvillage 4"
-          }
-        },
-        "_row_num": 15
-      },
-      {
-        "choice_list_name": "village_veos",
-        "data_value": "veo1",
-        "display": {
-          "title": {
-            "text": "VEO1"
-          }
-        },
-        "_row_num": 17
-      },
-      {
-        "choice_list_name": "village_veos",
-        "data_value": "veo2",
-        "display": {
-          "title": {
-            "text": "VEO2"
-          }
-        },
-        "_row_num": 18
-      },
-      {
-        "choice_list_name": "village_veos",
-        "data_value": "veo3",
-        "display": {
-          "title": {
-            "text": "VEO3"
-          }
-        },
-        "_row_num": 19
-      },
-      {
-        "choice_list_name": "village_veos",
-        "data_value": "veo4",
-        "display": {
-          "title": {
-            "text": "VEO4"
-          }
-        },
-        "_row_num": 20
-      },
-      {
-        "choice_list_name": "village_veos",
-        "data_value": "veo5",
-        "display": {
-          "title": {
-            "text": "VEO5"
-          }
-        },
-        "_row_num": 21
-      },
-      {
-        "choice_list_name": "villages",
-        "data_value": "village1",
-        "display": {
-          "title": {
-            "text": "Village 1"
-          }
-        },
-        "_row_num": 23
-      },
-      {
-        "choice_list_name": "villages",
-        "data_value": "village2",
-        "display": {
-          "title": {
-            "text": "Village 2"
-          }
-        },
-        "_row_num": 24
-      },
-      {
-        "choice_list_name": "villages",
-        "data_value": "village3",
-        "display": {
-          "title": {
-            "text": "Village 3"
-          }
-        },
-        "_row_num": 25
-      },
-      {
-        "choice_list_name": "villages",
-        "data_value": "village4",
-        "display": {
-          "title": {
-            "text": "Village 4"
-          }
-        },
-        "_row_num": 26
       }
     ],
     "properties": [
@@ -429,6 +301,29 @@
         "type": "string",
         "value": "config/tables/business/html/business_detail.html",
         "_row_num": 2
+      }
+    ],
+    "queries": [
+      {
+        "query_name": "villages_csv",
+        "query_type": "csv",
+        "uri": "\"village.csv\"",
+        "callback": "_.chain(context).pluck('village_name').uniq().map(function(village){\nreturn {data_value: village, display: {title: {text: village} } };\n}).value()",
+        "_row_num": 2
+      },
+      {
+        "query_name": "subvillages_csv",
+        "query_type": "csv",
+        "uri": "\"village.csv\"",
+        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
+        "_row_num": 3
+      },
+      {
+        "query_name": "veos_csv",
+        "query_type": "csv",
+        "uri": "\"village.csv\"",
+        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.veo, display: {title: {text: place.veo} } };\n})",
+        "_row_num": 4
       }
     ],
     "settings": [
@@ -721,148 +616,34 @@
           },
           "_row_num": 10
         }
-      ],
-      "subvillages": [
-        {
-          "choice_list_name": "subvillages",
-          "data_value": "subvillage1",
-          "display": {
-            "title": {
-              "text": "Subvillage 1"
-            }
-          },
-          "_row_num": 12
-        },
-        {
-          "choice_list_name": "subvillages",
-          "data_value": "subvillage2",
-          "display": {
-            "title": {
-              "text": "Subvillage 2"
-            }
-          },
-          "_row_num": 13
-        },
-        {
-          "choice_list_name": "subvillages",
-          "data_value": "subvillage3",
-          "display": {
-            "title": {
-              "text": "Subvillage 3"
-            }
-          },
-          "_row_num": 14
-        },
-        {
-          "choice_list_name": "subvillages",
-          "data_value": "subvillage4",
-          "display": {
-            "title": {
-              "text": "Subvillage 4"
-            }
-          },
-          "_row_num": 15
-        }
-      ],
-      "village_veos": [
-        {
-          "choice_list_name": "village_veos",
-          "data_value": "veo1",
-          "display": {
-            "title": {
-              "text": "VEO1"
-            }
-          },
-          "_row_num": 17
-        },
-        {
-          "choice_list_name": "village_veos",
-          "data_value": "veo2",
-          "display": {
-            "title": {
-              "text": "VEO2"
-            }
-          },
-          "_row_num": 18
-        },
-        {
-          "choice_list_name": "village_veos",
-          "data_value": "veo3",
-          "display": {
-            "title": {
-              "text": "VEO3"
-            }
-          },
-          "_row_num": 19
-        },
-        {
-          "choice_list_name": "village_veos",
-          "data_value": "veo4",
-          "display": {
-            "title": {
-              "text": "VEO4"
-            }
-          },
-          "_row_num": 20
-        },
-        {
-          "choice_list_name": "village_veos",
-          "data_value": "veo5",
-          "display": {
-            "title": {
-              "text": "VEO5"
-            }
-          },
-          "_row_num": 21
-        }
-      ],
-      "villages": [
-        {
-          "choice_list_name": "villages",
-          "data_value": "village1",
-          "display": {
-            "title": {
-              "text": "Village 1"
-            }
-          },
-          "_row_num": 23
-        },
-        {
-          "choice_list_name": "villages",
-          "data_value": "village2",
-          "display": {
-            "title": {
-              "text": "Village 2"
-            }
-          },
-          "_row_num": 24
-        },
-        {
-          "choice_list_name": "villages",
-          "data_value": "village3",
-          "display": {
-            "title": {
-              "text": "Village 3"
-            }
-          },
-          "_row_num": 25
-        },
-        {
-          "choice_list_name": "villages",
-          "data_value": "village4",
-          "display": {
-            "title": {
-              "text": "Village 4"
-            }
-          },
-          "_row_num": 26
-        }
       ]
     },
     "table_specific_definitions": {
       "_tokens": {}
     },
-    "queries": {},
+    "queries": {
+      "villages_csv": {
+        "query_name": "villages_csv",
+        "query_type": "csv",
+        "uri": "\"village.csv\"",
+        "callback": "_.chain(context).pluck('village_name').uniq().map(function(village){\nreturn {data_value: village, display: {title: {text: village} } };\n}).value()",
+        "_row_num": 2
+      },
+      "subvillages_csv": {
+        "query_name": "subvillages_csv",
+        "query_type": "csv",
+        "uri": "\"village.csv\"",
+        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
+        "_row_num": 3
+      },
+      "veos_csv": {
+        "query_name": "veos_csv",
+        "query_type": "csv",
+        "uri": "\"village.csv\"",
+        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.veo, display: {title: {text: place.veo} } };\n})",
+        "_row_num": 4
+      }
+    },
     "calculates": {},
     "model": {
       "firm_name": {
@@ -1057,7 +838,7 @@
       },
       "village": {
         "type": "string",
-        "valuesList": "villages",
+        "valuesList": "villages_csv",
         "_defn": [
           {
             "_row_num": 13,
@@ -1072,7 +853,7 @@
       },
       "subvillage": {
         "type": "string",
-        "valuesList": "subvillages",
+        "valuesList": "subvillages_csv",
         "_defn": [
           {
             "_row_num": 14,
@@ -1160,7 +941,7 @@
       },
       "authorization_veo": {
         "type": "string",
-        "valuesList": "village_veos",
+        "valuesList": "veos_csv",
         "_defn": [
           {
             "_row_num": 20,
@@ -1382,7 +1163,7 @@
           },
           {
             "type": "select_one",
-            "values_list": "villages",
+            "values_list": "villages_csv",
             "name": "village",
             "display": {
               "prompt": {
@@ -1398,13 +1179,14 @@
           },
           {
             "type": "select_one",
-            "values_list": "subvillages",
+            "values_list": "subvillages_csv",
             "name": "subvillage",
             "display": {
               "prompt": {
                 "text": "Choose the subvillage."
               }
             },
+            "choice_filter": "choice_item.village === data('village')",
             "_row_num": 14,
             "__rowNum__": 13,
             "_token_type": "prompt",
@@ -1490,13 +1272,14 @@
           },
           {
             "type": "select_one",
-            "values_list": "village_veos",
+            "values_list": "veos_csv",
             "name": "authorization_veo",
             "display": {
               "prompt": {
                 "text": "Enter the name of the authorizing VEO."
               }
             },
+            "choice_filter": "choice_item.village === data('village')",
             "_row_num": 20,
             "__rowNum__": 19,
             "_token_type": "prompt",
@@ -2156,7 +1939,7 @@
       },
       "village": {
         "type": "string",
-        "valuesList": "villages",
+        "valuesList": "villages_csv",
         "_defn": [
           {
             "_row_num": 13,
@@ -2174,7 +1957,7 @@
       },
       "subvillage": {
         "type": "string",
-        "valuesList": "subvillages",
+        "valuesList": "subvillages_csv",
         "_defn": [
           {
             "_row_num": 14,
@@ -2280,7 +2063,7 @@
       },
       "authorization_veo": {
         "type": "string",
-        "valuesList": "village_veos",
+        "valuesList": "veos_csv",
         "_defn": [
           {
             "_row_num": 20,
@@ -2492,13 +2275,6 @@
     "properties": [
       {
         "_partition": "Column",
-        "_aspect": "authorization_veo",
-        "_key": "displayChoicesList",
-        "_type": "object",
-        "_value": "[{\"choice_list_name\":\"village_veos\",\"data_value\":\"veo1\",\"display\":{\"title\":{\"text\":\"VEO1\"}},\"_row_num\":17},{\"choice_list_name\":\"village_veos\",\"data_value\":\"veo2\",\"display\":{\"title\":{\"text\":\"VEO2\"}},\"_row_num\":18},{\"choice_list_name\":\"village_veos\",\"data_value\":\"veo3\",\"display\":{\"title\":{\"text\":\"VEO3\"}},\"_row_num\":19},{\"choice_list_name\":\"village_veos\",\"data_value\":\"veo4\",\"display\":{\"title\":{\"text\":\"VEO4\"}},\"_row_num\":20},{\"choice_list_name\":\"village_veos\",\"data_value\":\"veo5\",\"display\":{\"title\":{\"text\":\"VEO5\"}},\"_row_num\":21}]"
-      },
-      {
-        "_partition": "Column",
         "_aspect": "gender",
         "_key": "displayChoicesList",
         "_type": "object",
@@ -2524,20 +2300,6 @@
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"service\",\"display\":{\"title\":{\"text\":\"Service\"}},\"_row_num\":2},{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"merchandise\",\"display\":{\"title\":{\"text\":\"Merchandise\"}},\"_row_num\":3},{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"manufacturing\",\"display\":{\"title\":{\"text\":\"Manufacturing\"}},\"_row_num\":4}]"
-      },
-      {
-        "_partition": "Column",
-        "_aspect": "subvillage",
-        "_key": "displayChoicesList",
-        "_type": "object",
-        "_value": "[{\"choice_list_name\":\"subvillages\",\"data_value\":\"subvillage1\",\"display\":{\"title\":{\"text\":\"Subvillage 1\"}},\"_row_num\":12},{\"choice_list_name\":\"subvillages\",\"data_value\":\"subvillage2\",\"display\":{\"title\":{\"text\":\"Subvillage 2\"}},\"_row_num\":13},{\"choice_list_name\":\"subvillages\",\"data_value\":\"subvillage3\",\"display\":{\"title\":{\"text\":\"Subvillage 3\"}},\"_row_num\":14},{\"choice_list_name\":\"subvillages\",\"data_value\":\"subvillage4\",\"display\":{\"title\":{\"text\":\"Subvillage 4\"}},\"_row_num\":15}]"
-      },
-      {
-        "_partition": "Column",
-        "_aspect": "village",
-        "_key": "displayChoicesList",
-        "_type": "object",
-        "_value": "[{\"choice_list_name\":\"villages\",\"data_value\":\"village1\",\"display\":{\"title\":{\"text\":\"Village 1\"}},\"_row_num\":23},{\"choice_list_name\":\"villages\",\"data_value\":\"village2\",\"display\":{\"title\":{\"text\":\"Village 2\"}},\"_row_num\":24},{\"choice_list_name\":\"villages\",\"data_value\":\"village3\",\"display\":{\"title\":{\"text\":\"Village 3\"}},\"_row_num\":25},{\"choice_list_name\":\"villages\",\"data_value\":\"village4\",\"display\":{\"title\":{\"text\":\"Village 4\"}},\"_row_num\":26}]"
       },
       {
         "_partition": "FormType",

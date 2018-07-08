@@ -99,6 +99,24 @@
       {
         "clause": "exit section",
         "_row_num": 16
+      },
+      {
+        "branch_label": "business",
+        "_row_num": 17
+      },
+      {
+        "url": "'?' +  odkSurvey.getHashString('business','business')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 19
       }
     ],
     "settings": [
@@ -161,6 +179,16 @@
           }
         },
         "_row_num": 4
+      },
+      {
+        "choice_list_name": "test_forms",
+        "data_value": "business",
+        "display": {
+          "title": {
+            "text": "Business"
+          }
+        },
+        "_row_num": 5
       }
     ],
     "framework_translations": [
@@ -723,6 +751,16 @@
             }
           },
           "_row_num": 4
+        },
+        {
+          "choice_list_name": "test_forms",
+          "data_value": "business",
+          "display": {
+            "title": {
+              "text": "Business"
+            }
+          },
+          "_row_num": 5
         }
       ]
     },
@@ -1391,12 +1429,27 @@
             "promptIdx": 4
           },
           {
+            "url": "'?' +  odkSurvey.getHashString('business','business')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 18,
+            "__rowNum__": 17,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen18",
+            "promptIdx": 5
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 17,
-            "_branch_label_enclosing_screen": "survey/_screen17",
-            "promptIdx": 5
+            "_row_num": 20,
+            "_branch_label_enclosing_screen": "survey/_screen20",
+            "promptIdx": 6
           }
         ],
         "validation_tag_map": {
@@ -1485,25 +1538,38 @@
             "operationIdx": 11
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 17,
+            "_row_num": 18,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 12
           },
           {
-            "_row_num": 17,
+            "clause": "exit section",
+            "_row_num": 19,
+            "__rowNum__": 18,
+            "_token_type": "exit_section",
+            "operationIdx": 13
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 20,
+            "operationIdx": 14
+          },
+          {
+            "_row_num": 20,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 13
+            "operationIdx": 15
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 17,
-            "operationIdx": 14
+            "_row_num": 20,
+            "operationIdx": 16
           }
         ],
         "branch_label_map": {
@@ -1518,8 +1584,10 @@
           "_screen12": 8,
           "business_authorization": 10,
           "_screen15": 10,
-          "_contents": 13,
-          "_screen17": 13
+          "business": 12,
+          "_screen18": 12,
+          "_contents": 15,
+          "_screen20": 15
         }
       }
     },
