@@ -38,32 +38,28 @@ window.odkFrameworkDefinitions = {
     "acknLabel": {
       "string_token": "acknLabel",
       "text": {
-        "default": "Acknowledge",
-        "hindi": "स्वीकार करना"
+        "default": "Acknowledge"
       },
       "_row_num": 7
     },
     "back_button_label": {
       "string_token": "back_button_label",
       "text": {
-        "default": "Back",
-        "hindi": "लौटना"
+        "default": "Back"
       },
       "_row_num": 8
     },
     "next_button_label": {
       "string_token": "next_button_label",
       "text": {
-        "default": "Next",
-        "hindi": "आगामी"
+        "default": "Next"
       },
       "_row_num": 9
     },
     "continue_button_label": {
       "string_token": "continue_button_label",
       "text": {
-        "default": "Continue",
-        "hindi": "जारी रहना"
+        "default": "Continue"
       },
       "_row_num": 10
     },
@@ -301,8 +297,7 @@ window.odkFrameworkDefinitions = {
     "select_deselect_label": {
       "string_token": "select_deselect_label",
       "text": {
-        "default": "Deselect",
-        "hindi": "अचयनित"
+        "default": "Deselect"
       },
       "_row_num": 45
     },
@@ -410,6 +405,27 @@ window.odkFrameworkDefinitions = {
         "default": "Are you sure you want to exit and lose all changes?"
       },
       "_row_num": 60
+    },
+    "are_you_sure_you_want_to_delete_row": {
+      "string_token": "are_you_sure_you_want_to_delete_row",
+      "text": {
+        "default": "Are you sure you want to delete row"
+      },
+      "_row_num": 61
+    },
+    "edit": {
+      "string_token": "edit",
+      "text": {
+        "default": "Edit"
+      },
+      "_row_num": 62
+    },
+    "delete": {
+      "string_token": "delete",
+      "text": {
+        "default": "Delete"
+      },
+      "_row_num": 63
     }
   }
 }

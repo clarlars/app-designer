@@ -254,7 +254,7 @@ module.exports = function (grunt) {
                         // Mac (and maybe others--add as discovered), expects
                         // Google Chrome
                         grunt.log.writeln('detected non-Windows environment');
-                        return 'Google Chrome';
+                        return 'chromium-browser';
                     }
                 })()
             }
@@ -1323,7 +1323,7 @@ var zipAllFiles = function( destZipFile, filesList, completionFn ) {
 
 			// plot example
 			// config/assets/ratchet/**
-			'config/assets/css/homeScreen.css',
+			'config/assets/css/home-screen.css',
 			'config/assets/css/plot-homescreen.css',
 			'config/assets/css/plot-list.css',
 			'config/assets/css/plot-detail.css',
@@ -1344,7 +1344,7 @@ var zipAllFiles = function( destZipFile, filesList, completionFn ) {
 
 			// teatime example
 			// config/assets/ratchet/**
-			'config/assets/css/homeScreen.css',
+			'config/assets/css/home-screen.css',
 			'config/assets/css/detail.css',
 			'config/assets/css/list.css',
 			'config/assets/teatime.html',
