@@ -13,6 +13,7 @@ function successCB(result) {
 
     var verTable = $('<table>');
     verTable.attr('id','bizTable');
+    verTable.attr('class', 'table');
     var verHdr = $('<thead>');
     var verHdrRow = $('<tr>');
     var verHdrBLabel = $('<td>');
@@ -77,23 +78,29 @@ function successCB(result) {
             var checkedValue = $('input[name=' + namedRowItem + ']:checked').val();
             var rowId = $('input[name=' + namedRowItem + ']:checked').attr('rowId');
 
-            var colMap = {};
-            promisesArray.push(new Promise(function (resolve, reject) {
-                colMap['has_been_authorized_by_veo'] = checkedValue;
+            if (checkedValue !== null && checkedValue !== undefined) {
+                promisesArray.push(new Promise(function (resolve, reject) {
+                    var colMap = {};
+                    colMap['has_been_authorized_by_veo'] = checkedValue;
 
-                // TODO: Add these two in
-                // authorization_date
-                // authorization_veo
-                odkData.updateRow('business', colMap, rowId, resolve, reject);
-            }));
+                    // TODO: Add these two in
+                    // authorization_date
+                    // authorization_veo
+                    odkData.updateRow('business', colMap, rowId, resolve, reject);
+                }));
+            }
         }
 
         if (promisesArray.length > 0) {
             Promise.all(promisesArray).then(function (resultArray) {
-                console.log('All ' + resultArray.length + ' businesses have been updated');
+                alert('All ' + resultArray.length + ' businesses have been updated');
+                submitBtn.prop('disabled', true);
             }).catch(function (reason) {
-                console.log('Some businesses not updated successfully: ' + reason);
+                alert('Some businesses not updated successfully: ' + reason);
+                submitBtn.prop('disabled', true);
             });
+        } else {
+            alert('No businesses to update');
         }
     });
 }

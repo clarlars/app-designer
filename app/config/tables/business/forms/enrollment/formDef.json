@@ -203,7 +203,7 @@
       },
       {
         "choice_list_name": "true_false_01",
-        "data_value": "0",
+        "data_value": 0,
         "display": {
           "title": {
             "text": "False"
@@ -213,7 +213,7 @@
       },
       {
         "choice_list_name": "true_false_01",
-        "data_value": "1",
+        "data_value": 1,
         "display": {
           "title": {
             "text": "True"
@@ -492,7 +492,7 @@
       "true_false_01": [
         {
           "choice_list_name": "true_false_01",
-          "data_value": "0",
+          "data_value": 0,
           "display": {
             "title": {
               "text": "False"
@@ -502,7 +502,7 @@
         },
         {
           "choice_list_name": "true_false_01",
-          "data_value": "1",
+          "data_value": 1,
           "display": {
             "title": {
               "text": "True"

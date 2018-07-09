@@ -13,6 +13,7 @@ function successCB(result) {
 
     var verTable = $('<table>');
     verTable.attr('id','bizTable');
+    verTable.attr('class', 'table');
     var verHdr = $('<thead>');
     var verHdrRow = $('<tr>');
     var verHdrBLabel = $('<td>');
@@ -67,7 +68,7 @@ function successCB(result) {
     } else {
         submitBtn.prop('disabled', false);
     }
-    
+
     submitBtn.on('click', function () {
         var rows = $('tr').not('thead tr');
         var promisesArray = [];
@@ -77,22 +78,30 @@ function successCB(result) {
             var checkedValue = $('input[name=' + namedRowItem + ']:checked').val();
             var rowId = $('input[name=' + namedRowItem + ']:checked').attr('rowId');
 
-            var colMap = {};
-            promisesArray.push(new Promise(function (resolve, reject) {
-                colMap['has_been_verified_by_agent'] = checkedValue;
+            if (checkedValue !== null && checkedValue !== undefined) {
+                promisesArray.push(new Promise(function (resolve, reject) {
+                    var colMap = {};
+                    colMap['has_been_verified_by_agent'] = checkedValue;
 
-                // TODO: Add these two in
-                // verification_date
-                // verification_agent
-                odkData.updateRow('business', colMap, rowId, resolve, reject);
-            }));
+                    // TODO: Add these two in
+                    // verification_date
+                    // verification_agent
+                    odkData.updateRow('business', colMap, rowId, resolve, reject);
+                }));
+            }
         }
 
-        Promise.all(promisesArray).then(function (resultArray) {
-            console.log('All ' + resultArray.length + ' businesses have been updated');
-        }).catch(function (reason) {
-            console.log('Some businesses not updated successfully: ' + reason);
-        });
+        if (promisesArray.length > 0) {
+            Promise.all(promisesArray).then(function (resultArray) {
+                alert('All ' + resultArray.length + ' businesses have been updated');
+                submitBtn.prop('disabled', true);
+            }).catch(function (reason) {
+                alert('Some businesses not updated successfully: ' + reason);
+                submitBtn.prop('disabled', true);
+            });
+        } else {
+            alert('No businesses to update');
+        }
 
     });
 }

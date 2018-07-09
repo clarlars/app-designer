@@ -254,7 +254,7 @@
       },
       {
         "choice_list_name": "true_false_01",
-        "data_value": "0",
+        "data_value": 0,
         "display": {
           "title": {
             "text": "False"
@@ -264,7 +264,7 @@
       },
       {
         "choice_list_name": "true_false_01",
-        "data_value": "1",
+        "data_value": 1,
         "display": {
           "title": {
             "text": "True"
@@ -576,7 +576,7 @@
       "true_false_01": [
         {
           "choice_list_name": "true_false_01",
-          "data_value": "0",
+          "data_value": 0,
           "display": {
             "title": {
               "text": "False"
@@ -586,7 +586,7 @@
         },
         {
           "choice_list_name": "true_false_01",
-          "data_value": "1",
+          "data_value": 1,
           "display": {
             "title": {
               "text": "True"
@@ -2285,14 +2285,14 @@
         "_aspect": "has_been_authorized_by_veo",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"true_false_01\",\"data_value\":\"0\",\"display\":{\"title\":{\"text\":\"False\"}},\"_row_num\":6},{\"choice_list_name\":\"true_false_01\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"True\"}},\"_row_num\":7}]"
+        "_value": "[{\"choice_list_name\":\"true_false_01\",\"data_value\":0,\"display\":{\"title\":{\"text\":\"False\"}},\"_row_num\":6},{\"choice_list_name\":\"true_false_01\",\"data_value\":1,\"display\":{\"title\":{\"text\":\"True\"}},\"_row_num\":7}]"
       },
       {
         "_partition": "Column",
         "_aspect": "has_been_verified_by_agent",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"true_false_01\",\"data_value\":\"0\",\"display\":{\"title\":{\"text\":\"False\"}},\"_row_num\":6},{\"choice_list_name\":\"true_false_01\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":\"True\"}},\"_row_num\":7}]"
+        "_value": "[{\"choice_list_name\":\"true_false_01\",\"data_value\":0,\"display\":{\"title\":{\"text\":\"False\"}},\"_row_num\":6},{\"choice_list_name\":\"true_false_01\",\"data_value\":1,\"display\":{\"title\":{\"text\":\"True\"}},\"_row_num\":7}]"
       },
       {
         "_partition": "Column",
