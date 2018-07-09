@@ -18,6 +18,8 @@ function cbSuccess(result) {
     util.showIdForDetail('#firm-size', 'firm_size', result, true);
     util.showIdForDetail('#phone-number', 'phone_number', result, true);
     util.showIdForDetail('#seondary-phone-number', 'secondary_phone_number', result, true);
+    util.showIdForDetail('#has-been-verified-by-agent', 'has_been_verified_by_agent', result, true);
+    util.showIdForDetail('#has-been-authorized-by-veo', 'has_been_authorized_by_veo', result, true);
 }
 
 function cbFailure(error) {
