@@ -6,25 +6,9 @@
 
 var util = {};
 
-util.facilityType = 'facility_type';
 util.regionLevel2 = 'regionLevel2';
-util.powerSource = 'power_source';
 util.region = 'region';
-util.leafRegion = 'admin_region';
 util.rowId = '_id';
-util.modelRowId = 'model_row_id';
-util.refrigeratorId = 'refrigerator_id';
-util.facilityRowId = 'facility_row_id';
-util.maintenancePriority = 'maintenance_priority';
-util.adminRegions = [
-    {'token':'central', 'label': 'Central', 'region':'Central',
-        'subRegions': [{'token':'central_east', 'label':'Central East', 'region':'Central East'},
-            {'token':'central_west', 'label':'Central West', 'region':'Central West'}]},
-    {'token':'north', 'label':'North', 'region':'North'},
-    {'token':'south', 'label':'South', 'region':'South',
-        'subRegions':[{'token':'south_east', 'label':'South East', 'region':'South East'},
-            {'token':'south_west', 'label':'South West', 'region':'South West'}]}
-];
 
 util.VIEW_TYPE = 'viewType';
 util.PENDING_AUTHORIZATION = 'pendingAuthorization';
@@ -51,6 +35,8 @@ util.NEG_ONE = -1;
 
 util.VILLAGE = 'village';
 
+util.BUSINESS_BTN_ACTION = 'button-action';
+
 /**
  * Return the menu options for the key.  If no value
  * is passed in return all of the options.
@@ -70,16 +56,6 @@ util.getFacilityTypesByDistrict = function(district, successCB, failureCB) {
     odkData.arbitraryQuery('health_facility',
         queryStr,
         queryParam,
-        null,
-        null,
-        successCB,
-        failureCB);
-};
-
-util.getDistrictsByAdminLevel2 = function(adminLevel2, successCB, failureCB) {
-    odkData.arbitraryQuery('health_facility',
-        'SELECT admin_region FROM health_facility WHERE regionLevel2 = ? GROUP BY admin_region',
-        [adminLevel2],
         null,
         null,
         successCB,
@@ -146,84 +122,6 @@ util.getQueryParameter = function(key) {
     return null;
 };
 
-/**
- * Get a string to append to a url that will contain information the date and
- * time. The values can then be retrieved using getQueryParameter.
- */
-util.getKeyToAppendToColdChainURL = function(key, value, shouldBeFirst) {
-
-    var first = true;
-    if (shouldBeFirst !== null && shouldBeFirst !== undefined) {
-        if (shouldBeFirst === false) {
-            first = false;
-        }
-    }
-
-    var result;
-    var adaptProps = {};
-
-    // Initialize the properties object
-    adaptProps[key] = value;
-
-    for (var prop in adaptProps) {
-        if (adaptProps[prop] !== null && adaptProps[prop] !== undefined) {
-            if (first)
-            {
-                result = '?' + prop + '=' + encodeURIComponent(adaptProps[prop]);
-                first = false;
-            } else {
-                result += '&' + prop + '=' + encodeURIComponent(adaptProps[prop]);
-            }
-        }
-    }
-    return result;
-};
-
-/**
- * Get a string to append to a url that will contain information the date and
- * time. The values can then be retrieved using getQueryParameter.
- */
-util.getKeysToAppendToColdChainURL = function(
-    facilityType,
-    regionLevel2,
-    adminRegion,
-    powerSource) {
-
-    var that = this;
-    var first = true;
-    var result;
-    var adaptProps = {};
-
-    // Initialize the properties object
-    if (facilityType !== null && facilityType !== undefined && facilityType.length !== 0) {
-        adaptProps[that.facilityType] = facilityType;
-    }
-
-    if (regionLevel2 !== null && regionLevel2 !== undefined && regionLevel2.length !== 0) {
-        adaptProps[that.regionLevel2] = regionLevel2;
-    }
-
-    if (adminRegion !== null && adminRegion !== undefined && adminRegion.length !== 0) {
-        adaptProps[that.leafRegion] = adminRegion;
-    }
-
-    if (powerSource !== null && powerSource !== undefined && powerSource.length !== 0) {
-        adaptProps[that.powerSource] = powerSource;
-    }
-
-    for (var prop in adaptProps) {
-        if (adaptProps[prop] !== null && adaptProps[prop] !== undefined) {
-            if (first)
-            {
-                result = '?' + prop + '=' + encodeURIComponent(adaptProps[prop]);
-                first = false;
-            } else {
-                result += '&' + prop + '=' + encodeURIComponent(adaptProps[prop]);
-            }
-        }
-    }
-    return result;
-};
 
 util.genUUID = function() {
     // construct a UUID (from http://stackoverflow.com/questions/105034/how-to-create-a-guid-uuid-in-javascript )

@@ -24,8 +24,6 @@ function loadVillages(data) {
 
     var csvVillages = $.csv.toObjects(data);
 
-
-
     var villages = _.chain(csvVillages).pluck('village_name').uniq().value();
 
     var btnDiv = $('#buttonsDiv');

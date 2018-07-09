@@ -202,7 +202,7 @@
         "_row_num": 4
       },
       {
-        "choice_list_name": "true_false_01",
+        "choice_list_name": "true_false_unsure",
         "data_value": 0,
         "display": {
           "title": {
@@ -212,7 +212,7 @@
         "_row_num": 6
       },
       {
-        "choice_list_name": "true_false_01",
+        "choice_list_name": "true_false_unsure",
         "data_value": 1,
         "display": {
           "title": {
@@ -222,6 +222,16 @@
         "_row_num": 7
       },
       {
+        "choice_list_name": "true_false_unsure",
+        "data_value": -1,
+        "display": {
+          "title": {
+            "text": "Unsure"
+          }
+        },
+        "_row_num": 8
+      },
+      {
         "choice_list_name": "male_female",
         "data_value": "f",
         "display": {
@@ -229,7 +239,7 @@
             "text": "Female"
           }
         },
-        "_row_num": 9
+        "_row_num": 10
       },
       {
         "choice_list_name": "male_female",
@@ -239,7 +249,7 @@
             "text": "Male"
           }
         },
-        "_row_num": 10
+        "_row_num": 11
       }
     ],
     "settings": [
@@ -489,9 +499,9 @@
           "_row_num": 4
         }
       ],
-      "true_false_01": [
+      "true_false_unsure": [
         {
-          "choice_list_name": "true_false_01",
+          "choice_list_name": "true_false_unsure",
           "data_value": 0,
           "display": {
             "title": {
@@ -501,7 +511,7 @@
           "_row_num": 6
         },
         {
-          "choice_list_name": "true_false_01",
+          "choice_list_name": "true_false_unsure",
           "data_value": 1,
           "display": {
             "title": {
@@ -509,6 +519,16 @@
             }
           },
           "_row_num": 7
+        },
+        {
+          "choice_list_name": "true_false_unsure",
+          "data_value": -1,
+          "display": {
+            "title": {
+              "text": "Unsure"
+            }
+          },
+          "_row_num": 8
         }
       ],
       "male_female": [
@@ -520,7 +540,7 @@
               "text": "Female"
             }
           },
-          "_row_num": 9
+          "_row_num": 10
         },
         {
           "choice_list_name": "male_female",
@@ -530,7 +550,7 @@
               "text": "Male"
             }
           },
-          "_row_num": 10
+          "_row_num": 11
         }
       ]
     },

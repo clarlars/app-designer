@@ -4,7 +4,7 @@
 /* global $, odkCommon, odkData, odkTables, util, listViewLogic */
 'use strict';
 
-var listQuery = 'SELECT * FROM business WHERE (' + util.COL_VEO_AUTHORIZED +' ISNULL OR ' + util.COL_VEO_AUTHORIZED + '=' + util.ZERO + ')';
+var listQuery = 'SELECT * FROM business WHERE (' + util.COL_VEO_AUTHORIZED +' ISNULL OR ' + util.COL_VEO_AUTHORIZED + '=' + util.NEG_ONE + ')';
 
 var searchParams = '(firm_name LIKE ? OR sector_type LIKE ? OR owner LIKE ?)';
 

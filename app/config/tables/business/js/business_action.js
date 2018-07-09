@@ -1,11 +1,18 @@
-var AGENT_VERIFY_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
+var VEO_AUTHORIZE_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
     '(has_been_authorized_by_veo ISNULL OR has_been_authorized_by_veo = ?)';
 
-function display() {
+var AGENT_VERIFY_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
+    '(has_been_verified_by_agent ISNULL OR has_been_verified_by_agent = ?)';
+
+function display(action) {
     var village = util.getQueryParameter(util.VILLAGE);
 
+    var url = AGENT_VERIFY_QUERY;
+    if (action === util.ACTION_AUTHORIZE) {
+        url = VEO_AUTHORIZE_QUERY;
+    }
     odkData.arbitraryQuery('business',
-        AGENT_VERIFY_QUERY, [village, 0], null, null, successCB, failureCB);
+        url, [village, util.NEG_ONE], null, null, successCB, failureCB);
 }
 
 function successCB(result) {
@@ -27,6 +34,11 @@ function successCB(result) {
     var verHdrInvalidLabel = $('<td>');
     verHdrInvalidLabel.text('Invalid');
     verHdrRow.append(verHdrInvalidLabel);
+
+    var verHdrUnsureLabel = $('<td>');
+    verHdrUnsureLabel.text('Unsure');
+    verHdrRow.append(verHdrUnsureLabel);
+
     verHdr.append(verHdrRow);
     verTable.append(verHdr);
 
@@ -58,6 +70,15 @@ function successCB(result) {
         invInput.attr('value', 0);
         invCol.append(invInput);
         busRow.append(invCol);
+
+        var unsureCol = $('<td>');
+        var unsureInput = $('<input>');
+        unsureInput.attr('type', 'radio');
+        unsureInput.attr('name', inputBizName);
+        unsureInput.attr('rowId', rowId);
+        unsureInput.attr('value', -1);
+        unsureCol.append(unsureInput);
+        busRow.append(unsureCol);
         verTable.append(busRow);
     }
     tableWrapper.append(verTable);
@@ -69,7 +90,11 @@ function successCB(result) {
         submitBtn.prop('disabled', false);
     }
 
-    submitBtn.on('click', function () {
+    submitBtn.on('click', function (evt) {
+        var clickedButton = $(evt.target);
+        var closestButton = clickedButton.closest('.button');
+        var btnAction = closestButton.attr(util.BUSINESS_BTN_ACTION);
+
         var rows = $('tr').not('thead tr');
         var promisesArray = [];
 
@@ -81,12 +106,16 @@ function successCB(result) {
             if (checkedValue !== null && checkedValue !== undefined) {
                 promisesArray.push(new Promise(function (resolve, reject) {
                     var colMap = {};
-                    colMap['has_been_authorized_by_veo'] = checkedValue;
-
-                    // TODO: Add these two in
-                    // authorization_date
-                    // authorization_veo
+                    if (btnAction === util.ACTION_AUTHORIZE) {
+                        // TODO: Add these two in authorization_date, authorization_veo
+                        colMap['has_been_authorized_by_veo'] = checkedValue;
+                    } else {
+                        var colMap = {};
+                        // TODO: Add these two in verification_date, verification_agent
+                        colMap['has_been_verified_by_agent'] = checkedValue;
+                    }
                     odkData.updateRow('business', colMap, rowId, resolve, reject);
+
                 }));
             }
         }
