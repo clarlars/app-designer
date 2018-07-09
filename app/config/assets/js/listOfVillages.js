@@ -4,12 +4,10 @@ var pendingAuth;
 var pendingVer;
 var actionToPerform;
 var completed;
-function display() {
-    var body = $('#main');
-    body.css('background-image', 'url(img/bw-business-bubble.jpg)');
+var REGION_ATTR = 'region';
 
+function display() {
     // TODO: Need to figure out how to show the badge for pending auth/ver
-    // Will do that once I have tables for villages, subvillages, and test data
 
     viewType = util.getQueryParameter(util.VIEW_TYPE);
     pendingAuth = util.getQueryParameter(util.PENDING_AUTHORIZATION);
@@ -17,30 +15,38 @@ function display() {
     actionToPerform = util.getQueryParameter(util.ACTION);
     completed = util.getQueryParameter(util.COMPLETED);
 
-    var REGION_ATTR = 'region';
-
-    var village1Button = $('#village1-button');
-    village1Button.on('click', function () {
-        determineButtonAction(village1Button.attr(REGION_ATTR));
-    });
-
-    var village2Button = $('#village2-button');
-    village2Button.on('click', function () {
-        determineButtonAction(village2Button.attr(REGION_ATTR));
-    });
-
-    var village3Button = $('#village3-button');
-    village3Button.on('click', function () {
-        determineButtonAction(village3Button.attr(REGION_ATTR));
-    });
-
-    var village4Button = $('#village4-button');
-    village4Button.on('click', function () {
-        determineButtonAction(village4Button.attr(REGION_ATTR));
+    $.get( "village.csv", function( data ) {
+        loadVillages(data);
     });
 }
 
-function determineButtonAction(village) {
+function loadVillages(data) {
+
+    var csvVillages = $.csv.toObjects(data);
+
+
+
+    var villages = _.chain(csvVillages).pluck('village_name').uniq().value();
+
+    var btnDiv = $('#buttonsDiv');
+
+    for (i = 0; i < villages.length; i++) {
+        var vBtn = $('<button>');
+        var vName = villages[i];
+        vBtn.text(vName);
+        vBtn.attr("class", "button");
+        vBtn.attr("region", vName);
+        vBtn.on('click', function (evt) {
+            determineButtonAction(evt);
+        });
+        btnDiv.append(vBtn);
+    }
+
+    var body = $('#main');
+    body.css('background-image', 'url(img/bw-business-bubble.jpg)');
+}
+
+function determineButtonAction(evt) {
 
     var listURL = 'config/assets/listVerAuthComAll.html';
     var businessAuthorizeURL = 'config/tables/business/html/business_authorize.html';
@@ -48,6 +54,10 @@ function determineButtonAction(village) {
 
     var queryParamToAppend = '';
     var urlToUse = '';
+
+    var clickedButton = $(evt.target);
+    var closestButton = clickedButton.closest('.button');
+    var village = closestButton.attr(REGION_ATTR);
 
     // A region should always be associated with a button
     if (village !== null && village !== undefined) {

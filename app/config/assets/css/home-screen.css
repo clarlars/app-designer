@@ -4,7 +4,7 @@ html, body {
     height: 100%;
 }
 
-#wrapper { 
+#wrapper {
     margin: 10px 0 0 0;
     padding: 0;
 }
@@ -21,10 +21,11 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
+    background-color: cadetblue;
 }
 
-div { 
-    position: relative; 
+div {
+    position: relative;
 }
 
 .btn-launch {

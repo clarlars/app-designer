@@ -254,7 +254,7 @@ module.exports = function (grunt) {
                         // Mac (and maybe others--add as discovered), expects
                         // Google Chrome
                         grunt.log.writeln('detected non-Windows environment');
-                        return 'chromium-browser';
+                        return 'Google Chrome';
                     }
                 })()
             }
