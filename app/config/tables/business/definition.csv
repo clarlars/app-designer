@@ -1,5 +1,6 @@
 _element_key,_element_name,_element_type,_list_child_element_keys
 authorization_veo,authorization_veo,string,[]
+authorizer_id,authorizer_id,string,[]
 business_age,business_age,integer,[]
 business_owner_age,business_owner_age,string,[]
 district,district,string,[]

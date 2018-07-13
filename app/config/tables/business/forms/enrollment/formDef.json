@@ -147,7 +147,7 @@
         "query_name": "veos_csv",
         "query_type": "csv",
         "uri": "\"village.csv\"",
-        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.veo, display: {title: {text: place.veo} } };\n})",
+        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
         "_row_num": 4
       },
       {
@@ -472,6 +472,11 @@
         "type": "select_one_integer",
         "name": "has_been_authorized_by_veo",
         "_row_num": 20
+      },
+      {
+        "type": "text",
+        "name": "authorizer_id",
+        "_row_num": 21
       }
     ],
     "prompt_types": [
@@ -746,7 +751,7 @@
         "query_name": "veos_csv",
         "query_type": "csv",
         "uri": "\"village.csv\"",
-        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.veo, display: {title: {text: place.veo} } };\n})",
+        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
         "_row_num": 4
       },
       "district_csv": {
@@ -1030,6 +1035,16 @@
           }
         ],
         "elementKey": "has_been_authorized_by_veo"
+      },
+      "authorizer_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "authorizer_id"
       }
     },
     "section_names": [
@@ -1833,6 +1848,19 @@
         "elementName": "has_been_authorized_by_veo",
         "elementSet": "data",
         "elementPath": "has_been_authorized_by_veo"
+      },
+      "authorizer_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "authorizer_id",
+        "elementName": "authorizer_id",
+        "elementSet": "data",
+        "elementPath": "authorizer_id"
       },
       "_id": {
         "type": "string",

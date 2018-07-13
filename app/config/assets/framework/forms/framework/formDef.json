@@ -65,11 +65,11 @@
         "_row_num": 10
       },
       {
-        "branch_label": "business_verification",
+        "branch_label": "business",
         "_row_num": 11
       },
       {
-        "url": "'?' +  odkSurvey.getHashString('business','verification')",
+        "url": "'?' +  odkSurvey.getHashString('business','business')",
         "type": "external_link",
         "display": {
           "prompt": {
@@ -83,11 +83,11 @@
         "_row_num": 13
       },
       {
-        "branch_label": "business_authorization",
+        "branch_label": "geo_unit",
         "_row_num": 14
       },
       {
-        "url": "'?' +  odkSurvey.getHashString('business','authorization')",
+        "url": "'?' +  odkSurvey.getHashString('geo_unit','geo_unit')",
         "type": "external_link",
         "display": {
           "prompt": {
@@ -99,42 +99,6 @@
       {
         "clause": "exit section",
         "_row_num": 16
-      },
-      {
-        "branch_label": "business",
-        "_row_num": 17
-      },
-      {
-        "url": "'?' +  odkSurvey.getHashString('business','business')",
-        "type": "external_link",
-        "display": {
-          "prompt": {
-            "text": "Open form"
-          }
-        },
-        "_row_num": 18
-      },
-      {
-        "clause": "exit section",
-        "_row_num": 19
-      },
-      {
-        "branch_label": "geo_unit",
-        "_row_num": 20
-      },
-      {
-        "url": "'?' +  odkSurvey.getHashString('geo_unit','geo_unit')",
-        "type": "external_link",
-        "display": {
-          "prompt": {
-            "text": "Open form"
-          }
-        },
-        "_row_num": 21
-      },
-      {
-        "clause": "exit section",
-        "_row_num": 22
       }
     ],
     "settings": [
@@ -180,33 +144,13 @@
       },
       {
         "choice_list_name": "test_forms",
-        "data_value": "business_verification",
-        "display": {
-          "title": {
-            "text": "Verification"
-          }
-        },
-        "_row_num": 3
-      },
-      {
-        "choice_list_name": "test_forms",
-        "data_value": "business_authorization",
-        "display": {
-          "title": {
-            "text": "Authorization"
-          }
-        },
-        "_row_num": 4
-      },
-      {
-        "choice_list_name": "test_forms",
         "data_value": "business",
         "display": {
           "title": {
             "text": "Business"
           }
         },
-        "_row_num": 5
+        "_row_num": 3
       },
       {
         "choice_list_name": "test_forms",
@@ -216,7 +160,7 @@
             "text": "Geographical Unit"
           }
         },
-        "_row_num": 6
+        "_row_num": 4
       }
     ],
     "framework_translations": [
@@ -762,33 +706,13 @@
         },
         {
           "choice_list_name": "test_forms",
-          "data_value": "business_verification",
-          "display": {
-            "title": {
-              "text": "Verification"
-            }
-          },
-          "_row_num": 3
-        },
-        {
-          "choice_list_name": "test_forms",
-          "data_value": "business_authorization",
-          "display": {
-            "title": {
-              "text": "Authorization"
-            }
-          },
-          "_row_num": 4
-        },
-        {
-          "choice_list_name": "test_forms",
           "data_value": "business",
           "display": {
             "title": {
               "text": "Business"
             }
           },
-          "_row_num": 5
+          "_row_num": 3
         },
         {
           "choice_list_name": "test_forms",
@@ -798,7 +722,7 @@
               "text": "Geographical Unit"
             }
           },
-          "_row_num": 6
+          "_row_num": 4
         }
       ]
     },
@@ -1437,7 +1361,7 @@
             "promptIdx": 2
           },
           {
-            "url": "'?' +  odkSurvey.getHashString('business','verification')",
+            "url": "'?' +  odkSurvey.getHashString('business','business')",
             "type": "external_link",
             "display": {
               "prompt": {
@@ -1452,7 +1376,7 @@
             "promptIdx": 3
           },
           {
-            "url": "'?' +  odkSurvey.getHashString('business','authorization')",
+            "url": "'?' +  odkSurvey.getHashString('geo_unit','geo_unit')",
             "type": "external_link",
             "display": {
               "prompt": {
@@ -1467,42 +1391,12 @@
             "promptIdx": 4
           },
           {
-            "url": "'?' +  odkSurvey.getHashString('business','business')",
-            "type": "external_link",
-            "display": {
-              "prompt": {
-                "text": "Open form"
-              }
-            },
-            "_row_num": 18,
-            "__rowNum__": 17,
-            "_token_type": "prompt",
-            "_type": "external_link",
-            "_branch_label_enclosing_screen": "survey/_screen18",
-            "promptIdx": 5
-          },
-          {
-            "url": "'?' +  odkSurvey.getHashString('geo_unit','geo_unit')",
-            "type": "external_link",
-            "display": {
-              "prompt": {
-                "text": "Open form"
-              }
-            },
-            "_row_num": 21,
-            "__rowNum__": 20,
-            "_token_type": "prompt",
-            "_type": "external_link",
-            "_branch_label_enclosing_screen": "survey/_screen21",
-            "promptIdx": 6
-          },
-          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 23,
-            "_branch_label_enclosing_screen": "survey/_screen23",
-            "promptIdx": 7
+            "_row_num": 17,
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 5
           }
         ],
         "validation_tag_map": {
@@ -1591,51 +1485,25 @@
             "operationIdx": 11
           },
           {
-            "_row_num": 18,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 17,
             "operationIdx": 12
           },
           {
-            "clause": "exit section",
-            "_row_num": 19,
-            "__rowNum__": 18,
-            "_token_type": "exit_section",
-            "operationIdx": 13
-          },
-          {
-            "_row_num": 21,
+            "_row_num": 17,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 14
-          },
-          {
-            "clause": "exit section",
-            "_row_num": 22,
-            "__rowNum__": 21,
-            "_token_type": "exit_section",
-            "operationIdx": 15
-          },
-          {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 23,
-            "operationIdx": 16
-          },
-          {
-            "_row_num": 23,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 17
+            "operationIdx": 13
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 23,
-            "operationIdx": 18
+            "_row_num": 17,
+            "operationIdx": 14
           }
         ],
         "branch_label_map": {
@@ -1646,16 +1514,12 @@
           "_endif6": 5,
           "business_enrollment": 6,
           "_screen9": 6,
-          "business_verification": 8,
+          "business": 8,
           "_screen12": 8,
-          "business_authorization": 10,
+          "geo_unit": 10,
           "_screen15": 10,
-          "business": 12,
-          "_screen18": 12,
-          "geo_unit": 14,
-          "_screen21": 14,
-          "_contents": 17,
-          "_screen23": 17
+          "_contents": 13,
+          "_screen17": 13
         }
       }
     },

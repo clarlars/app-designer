@@ -25,6 +25,9 @@ util.ACTION_AUTHORIZE = 'authorize';
 
 util.COL_AGENT_VERIFIED = 'has_been_verified_by_agent';
 util.COL_VEO_AUTHORIZED = 'has_been_authorized_by_veo';
+util.COL_ENROLLER_ID = 'enroller_id';
+util.COL_VERIFIER_ID = 'verifier_id';
+util.COL_AUTHORIZER_ID = 'authorizer_id'
 
 util.TRUE = 'true';
 util.FALSE = 'false';

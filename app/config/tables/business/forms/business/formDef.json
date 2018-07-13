@@ -2,8 +2,8 @@
   "xlsx": {
     "survey": [
       {
-        "type": "select_one",
-        "values_list": "district_csv",
+        "type": "select_one_group_by",
+        "values_list": "district_group_by",
         "name": "district",
         "display": {
           "prompt": {
@@ -13,8 +13,8 @@
         "_row_num": 2
       },
       {
-        "type": "select_one",
-        "values_list": "ward_csv",
+        "type": "select_one_group_by",
+        "values_list": "ward_group_by",
         "name": "ward",
         "display": {
           "prompt": {
@@ -24,8 +24,8 @@
         "_row_num": 3
       },
       {
-        "type": "select_one",
-        "values_list": "villages_csv",
+        "type": "select_one_group_by",
+        "values_list": "villages_group_by",
         "name": "village",
         "display": {
           "prompt": {
@@ -35,15 +35,14 @@
         "_row_num": 4
       },
       {
-        "type": "select_one",
-        "values_list": "subvillages_csv",
+        "type": "select_one_group_by",
+        "values_list": "subvillages_list",
         "name": "subvillage",
         "display": {
           "prompt": {
             "text": "Choose the subvillage."
           }
         },
-        "choice_filter": "choice_item.village === data('village')",
         "_row_num": 5
       },
       {
@@ -182,15 +181,14 @@
         "_row_num": 18
       },
       {
-        "type": "select_one",
-        "values_list": "veos_csv",
+        "type": "select_one_group_by",
+        "values_list": "veos_list",
         "name": "authorization_veo",
         "display": {
           "prompt": {
             "text": "Enter the name of the authorizing VEO."
           }
         },
-        "choice_filter": "choice_item.village === data('village')",
         "_row_num": 19
       },
       {
@@ -203,6 +201,16 @@
           }
         },
         "_row_num": 20
+      },
+      {
+        "type": "text",
+        "name": "authorizer_id",
+        "display": {
+          "prompt": {
+            "text": "Enter the id of authorizer."
+          }
+        },
+        "_row_num": 21
       }
     ],
     "choices": [
@@ -390,28 +398,86 @@
         "query_type": "csv",
         "uri": "\"village.csv\"",
         "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
-        "_row_num": 3
+        "_row_num": 5
       },
       {
         "query_name": "veos_csv",
         "query_type": "csv",
         "uri": "\"village.csv\"",
-        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.veo, display: {title: {text: place.veo} } };\n})",
-        "_row_num": 4
+        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
+        "_row_num": 8
       },
       {
         "query_name": "district_csv",
         "query_type": "csv",
         "uri": "\"village.csv\"",
         "callback": "_.chain(context).pluck('village_name').uniq().map(function(village){\nreturn {data_value: village, display: {title: {text: village} } };\n}).value()",
-        "_row_num": 5
+        "_row_num": 11
       },
       {
-        "query_name": "ward_csv",
-        "query_type": "csv",
-        "uri": "\"village.csv\"",
-        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
-        "_row_num": 6
+        "query_name": "district_group_by",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "1=1",
+        "selectionArgs": "[]",
+        "fieldName": "DISTINCT(district)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "district",
+        "_row_num": 14
+      },
+      {
+        "query_name": "ward_group_by",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "district=?",
+        "selectionArgs": "[data('district')]",
+        "fieldName": "DISTINCT(ward)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "ward",
+        "_row_num": 15
+      },
+      {
+        "query_name": "villages_group_by",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "district=?",
+        "selectionArgs": "[data('district')]",
+        "fieldName": "DISTINCT(village)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "village",
+        "_row_num": 16
+      },
+      {
+        "query_name": "subvillages_list",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "district=?",
+        "selectionArgs": "[data('district')]",
+        "fieldName": "DISTINCT(subvillage)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "subvillage",
+        "_row_num": 17
+      },
+      {
+        "query_name": "veos_list",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "district=?",
+        "selectionArgs": "[data('district')]",
+        "fieldName": "DISTINCT(veo)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "veo",
+        "_row_num": 18
       }
     ],
     "settings": [
@@ -540,6 +606,18 @@
         "type": "select_one_integer",
         "name": "has_been_authorized_by_veo",
         "_row_num": 20
+      },
+      {
+        "type": "text",
+        "name": "authorizer_id",
+        "_row_num": 21
+      }
+    ],
+    "prompt_types": [
+      {
+        "prompt_type_name": "select_one_group_by",
+        "type": "string",
+        "_row_num": 7
       }
     ]
   },
@@ -804,35 +882,94 @@
         "query_type": "csv",
         "uri": "\"village.csv\"",
         "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
-        "_row_num": 3
+        "_row_num": 5
       },
       "veos_csv": {
         "query_name": "veos_csv",
         "query_type": "csv",
         "uri": "\"village.csv\"",
-        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.veo, display: {title: {text: place.veo} } };\n})",
-        "_row_num": 4
+        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
+        "_row_num": 8
       },
       "district_csv": {
         "query_name": "district_csv",
         "query_type": "csv",
         "uri": "\"village.csv\"",
         "callback": "_.chain(context).pluck('village_name').uniq().map(function(village){\nreturn {data_value: village, display: {title: {text: village} } };\n}).value()",
-        "_row_num": 5
+        "_row_num": 11
       },
-      "ward_csv": {
-        "query_name": "ward_csv",
-        "query_type": "csv",
-        "uri": "\"village.csv\"",
-        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
-        "_row_num": 6
+      "district_group_by": {
+        "query_name": "district_group_by",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "1=1",
+        "selectionArgs": "[]",
+        "fieldName": "DISTINCT(district)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "district",
+        "_row_num": 14
+      },
+      "ward_group_by": {
+        "query_name": "ward_group_by",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "district=?",
+        "selectionArgs": "[data('district')]",
+        "fieldName": "DISTINCT(ward)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "ward",
+        "_row_num": 15
+      },
+      "villages_group_by": {
+        "query_name": "villages_group_by",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "district=?",
+        "selectionArgs": "[data('district')]",
+        "fieldName": "DISTINCT(village)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "village",
+        "_row_num": 16
+      },
+      "subvillages_list": {
+        "query_name": "subvillages_list",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "district=?",
+        "selectionArgs": "[data('district')]",
+        "fieldName": "DISTINCT(subvillage)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "subvillage",
+        "_row_num": 17
+      },
+      "veos_list": {
+        "query_name": "veos_list",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "district=?",
+        "selectionArgs": "[data('district')]",
+        "fieldName": "DISTINCT(veo)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "veo",
+        "_row_num": 18
       }
     },
     "calculates": {},
     "model": {
       "district": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
-        "valuesList": "district_csv",
+        "valuesList": "district_group_by",
         "_defn": [
           {
             "_row_num": 2,
@@ -846,8 +983,9 @@
         "elementKey": "district"
       },
       "ward": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
-        "valuesList": "ward_csv",
+        "valuesList": "ward_group_by",
         "_defn": [
           {
             "_row_num": 3,
@@ -861,8 +999,9 @@
         "elementKey": "ward"
       },
       "village": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
-        "valuesList": "villages_csv",
+        "valuesList": "villages_group_by",
         "_defn": [
           {
             "_row_num": 4,
@@ -876,8 +1015,9 @@
         "elementKey": "village"
       },
       "subvillage": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
-        "valuesList": "subvillages_csv",
+        "valuesList": "subvillages_list",
         "_defn": [
           {
             "_row_num": 5,
@@ -1078,8 +1218,9 @@
         "elementKey": "has_been_verified_by_agent"
       },
       "authorization_veo": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
-        "valuesList": "veos_csv",
+        "valuesList": "veos_list",
         "_defn": [
           {
             "_row_num": 19,
@@ -1106,6 +1247,20 @@
           }
         ],
         "elementKey": "has_been_authorized_by_veo"
+      },
+      "authorizer_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "authorizer_id"
       }
     },
     "section_names": [
@@ -1119,8 +1274,8 @@
         "reachable_sections": {},
         "prompts": [
           {
-            "type": "select_one",
-            "values_list": "district_csv",
+            "type": "select_one_group_by",
+            "values_list": "district_group_by",
             "name": "district",
             "display": {
               "prompt": {
@@ -1130,13 +1285,13 @@
             "_row_num": 2,
             "__rowNum__": 1,
             "_token_type": "prompt",
-            "_type": "select_one",
+            "_type": "select_one_group_by",
             "_branch_label_enclosing_screen": "survey/_screen2",
             "promptIdx": 0
           },
           {
-            "type": "select_one",
-            "values_list": "ward_csv",
+            "type": "select_one_group_by",
+            "values_list": "ward_group_by",
             "name": "ward",
             "display": {
               "prompt": {
@@ -1146,13 +1301,13 @@
             "_row_num": 3,
             "__rowNum__": 2,
             "_token_type": "prompt",
-            "_type": "select_one",
+            "_type": "select_one_group_by",
             "_branch_label_enclosing_screen": "survey/_screen3",
             "promptIdx": 1
           },
           {
-            "type": "select_one",
-            "values_list": "villages_csv",
+            "type": "select_one_group_by",
+            "values_list": "villages_group_by",
             "name": "village",
             "display": {
               "prompt": {
@@ -1162,24 +1317,23 @@
             "_row_num": 4,
             "__rowNum__": 3,
             "_token_type": "prompt",
-            "_type": "select_one",
+            "_type": "select_one_group_by",
             "_branch_label_enclosing_screen": "survey/_screen4",
             "promptIdx": 2
           },
           {
-            "type": "select_one",
-            "values_list": "subvillages_csv",
+            "type": "select_one_group_by",
+            "values_list": "subvillages_list",
             "name": "subvillage",
             "display": {
               "prompt": {
                 "text": "Choose the subvillage."
               }
             },
-            "choice_filter": "choice_item.village === data('village')",
             "_row_num": 5,
             "__rowNum__": 4,
             "_token_type": "prompt",
-            "_type": "select_one",
+            "_type": "select_one_group_by",
             "_branch_label_enclosing_screen": "survey/_screen5",
             "promptIdx": 3
           },
@@ -1384,19 +1538,18 @@
             "promptIdx": 16
           },
           {
-            "type": "select_one",
-            "values_list": "veos_csv",
+            "type": "select_one_group_by",
+            "values_list": "veos_list",
             "name": "authorization_veo",
             "display": {
               "prompt": {
                 "text": "Enter the name of the authorizing VEO."
               }
             },
-            "choice_filter": "choice_item.village === data('village')",
             "_row_num": 19,
             "__rowNum__": 18,
             "_token_type": "prompt",
-            "_type": "select_one",
+            "_type": "select_one_group_by",
             "_branch_label_enclosing_screen": "survey/_screen19",
             "promptIdx": 17
           },
@@ -1417,12 +1570,27 @@
             "promptIdx": 18
           },
           {
+            "type": "text",
+            "name": "authorizer_id",
+            "display": {
+              "prompt": {
+                "text": "Enter the id of authorizer."
+              }
+            },
+            "_row_num": 21,
+            "__rowNum__": 20,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen21",
+            "promptIdx": 19
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 21,
-            "_branch_label_enclosing_screen": "survey/_screen21",
-            "promptIdx": 19
+            "_row_num": 22,
+            "_branch_label_enclosing_screen": "survey/_screen22",
+            "promptIdx": 20
           }
         ],
         "validation_tag_map": {
@@ -1544,25 +1712,31 @@
             "operationIdx": 18
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 21,
-            "operationIdx": 19
-          },
-          {
             "_row_num": 21,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(19);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 19
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 22,
+            "operationIdx": 20
+          },
+          {
+            "_row_num": 22,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 20
+            "operationIdx": 21
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 21,
-            "operationIdx": 21
+            "_row_num": 22,
+            "operationIdx": 22
           }
         ],
         "branch_label_map": {
@@ -1585,8 +1759,9 @@
           "_screen18": 16,
           "_screen19": 17,
           "_screen20": 18,
-          "_contents": 20,
-          "_screen21": 20
+          "_screen21": 19,
+          "_contents": 21,
+          "_screen22": 21
         }
       },
       "initial": {
@@ -1769,8 +1944,9 @@
     },
     "dataTableModel": {
       "district": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
-        "valuesList": "district_csv",
+        "valuesList": "district_group_by",
         "_defn": [
           {
             "_row_num": 2,
@@ -1787,8 +1963,9 @@
         "elementPath": "district"
       },
       "ward": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
-        "valuesList": "ward_csv",
+        "valuesList": "ward_group_by",
         "_defn": [
           {
             "_row_num": 3,
@@ -1805,8 +1982,9 @@
         "elementPath": "ward"
       },
       "village": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
-        "valuesList": "villages_csv",
+        "valuesList": "villages_group_by",
         "_defn": [
           {
             "_row_num": 4,
@@ -1823,8 +2001,9 @@
         "elementPath": "village"
       },
       "subvillage": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
-        "valuesList": "subvillages_csv",
+        "valuesList": "subvillages_list",
         "_defn": [
           {
             "_row_num": 5,
@@ -2067,8 +2246,9 @@
         "elementPath": "has_been_verified_by_agent"
       },
       "authorization_veo": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
-        "valuesList": "veos_csv",
+        "valuesList": "veos_list",
         "_defn": [
           {
             "_row_num": 19,
@@ -2101,6 +2281,23 @@
         "elementName": "has_been_authorized_by_veo",
         "elementSet": "data",
         "elementPath": "has_been_authorized_by_veo"
+      },
+      "authorizer_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "authorizer_id",
+        "elementName": "authorizer_id",
+        "elementSet": "data",
+        "elementPath": "authorizer_id"
       },
       "_id": {
         "type": "string",
