@@ -53,3 +53,8 @@ body {
 .buttonsDivStyle {
     overflow:auto;
 }
+
+.button-badge {
+    margin: 2%;
+    color:white;
+}

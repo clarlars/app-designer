@@ -7,36 +7,37 @@ var completed;
 var REGION_ATTR = 'region';
 
 function display() {
-    // TODO: Need to figure out how to show the badge for pending auth/ver
-
     viewType = util.getQueryParameter(util.VIEW_TYPE);
     pendingAuth = util.getQueryParameter(util.PENDING_AUTHORIZATION);
     pendingVer = util.getQueryParameter(util.PENDING_VERIFICATION);
     actionToPerform = util.getQueryParameter(util.ACTION);
     completed = util.getQueryParameter(util.COMPLETED);
 
-    $.get( "village.csv", function( data ) {
-        loadVillages(data);
-    });
+    util.getVillagesByPendingAuth(loadVillages, failCB);
+}
+
+function failCB(error) {
+    console.log('failCB: error occurred while trying to get villages: ' + error);
 }
 
 function loadVillages(data) {
-
-    var csvVillages = $.csv.toObjects(data);
-
-    var villages = _.chain(csvVillages).pluck('village_name').uniq().value();
-
     var btnDiv = $('#buttonsDiv');
 
-    for (i = 0; i < villages.length; i++) {
+    for (var i = 0;  i < data.getCount(); i++) {
+        var vName = data.getData(i, util.VILLAGE);
+        var vCount = data.getData(i, 'count(*)');
+
         var vBtn = $('<button>');
-        var vName = villages[i];
+        var vBadge = $('<span>');
+        vBadge.attr("class", "button-badge badge");
+        vBadge.text(vCount);
         vBtn.text(vName);
         vBtn.attr("class", "button");
         vBtn.attr("region", vName);
         vBtn.on('click', function (evt) {
             determineButtonAction(evt);
         });
+        vBtn.append(vBadge);
         btnDiv.append(vBtn);
     }
 

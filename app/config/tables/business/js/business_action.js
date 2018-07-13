@@ -1,8 +1,8 @@
 var VEO_AUTHORIZE_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
-    '(has_been_authorized_by_veo ISNULL OR has_been_authorized_by_veo = ?)';
+    '(' + util.COL_VEO_AUTHORIZED + ' ISNULL OR ' + util.COL_VEO_AUTHORIZED + ' = ?)';
 
 var AGENT_VERIFY_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
-    '(has_been_verified_by_agent ISNULL OR has_been_verified_by_agent = ?)';
+    '(' + util.COL_AGENT_VERIFIED + ' ISNULL OR ' + util.COL_AGENT_VERIFIED+ ' = ?)';
 
 function display(action) {
     var village = util.getQueryParameter(util.VILLAGE);
@@ -108,11 +108,11 @@ function successCB(result) {
                     var colMap = {};
                     if (btnAction === util.ACTION_AUTHORIZE) {
                         // TODO: Add these two in authorization_date, authorization_veo
-                        colMap['has_been_authorized_by_veo'] = checkedValue;
+                        colMap[util.COL_VEO_AUTHORIZED] = checkedValue;
                     } else {
                         var colMap = {};
                         // TODO: Add these two in verification_date, verification_agent
-                        colMap['has_been_verified_by_agent'] = checkedValue;
+                        colMap[util.COL_AGENT_VERIFIED] = checkedValue;
                     }
                     odkData.updateRow('business', colMap, rowId, resolve, reject);
 

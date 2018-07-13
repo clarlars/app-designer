@@ -6,7 +6,7 @@
 
 var listQuery = 'SELECT * FROM business ';
 
-var searchParams = '(firm_name LIKE ? OR sector_type LIKE ? OR owner LIKE ?)';
+var searchParams = '(firm_name LIKE ? OR sector_type LIKE ?)';
 
 function resumeFunc(state) {
     if (state === 'init') {
@@ -32,10 +32,9 @@ function resumeFunc(state) {
 
         var busTxt = 'Business';
         var sectorTypeTxt = 'Sector Type';
-        var ownerTxt = 'Owner';
 
         listViewLogic.setColIdsToDisplayInList(busTxt, 'firm_name',
-            sectorTypeTxt, 'sector_type', ownerTxt, 'owner');
+            sectorTypeTxt, 'sector_type');
     }
 
     listViewLogic.resumeFn(state);

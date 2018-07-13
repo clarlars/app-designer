@@ -37,29 +37,14 @@ util.VILLAGE = 'village';
 
 util.BUSINESS_BTN_ACTION = 'button-action';
 
-/**
- * Return the menu options for the key.  If no value
- * is passed in return all of the options.
- */
-util.getFacilityTypesByDistrict = function(district, successCB, failureCB) {
-    var queryStr = 'SELECT facility_type, count(*) FROM health_facility';
-    var whereStr = ' WHERE admin_region = ?';
-    var groupByStr = ' GROUP BY facility_type';
-    var queryParam = [];
+util.getVillagesByPendingAuth = function(successCB, failureCB) {
 
-    if (district !== null && district !== undefined && district.length > 0) {
-        queryParam = [district];
-        queryStr = queryStr + whereStr;
-    }
+    var queryStr = 'SELECT ' + util.VILLAGE + ', count(*) FROM business WHERE ' +
+        util.COL_VEO_AUTHORIZED +' ISNULL OR ' +
+        util.COL_VEO_AUTHORIZED + '= ? GROUP BY ' + util.VILLAGE;
 
-    queryStr = queryStr + groupByStr;
-    odkData.arbitraryQuery('health_facility',
-        queryStr,
-        queryParam,
-        null,
-        null,
-        successCB,
-        failureCB);
+    var queryParam = [util.NEG_ONE];
+    odkData.arbitraryQuery('business', queryStr, queryParam, null, null, successCB, failureCB);
 };
 
 /**
