@@ -117,6 +117,24 @@
       {
         "clause": "exit section",
         "_row_num": 19
+      },
+      {
+        "branch_label": "geo_unit",
+        "_row_num": 20
+      },
+      {
+        "url": "'?' +  odkSurvey.getHashString('geo_unit','geo_unit')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 22
       }
     ],
     "settings": [
@@ -189,6 +207,16 @@
           }
         },
         "_row_num": 5
+      },
+      {
+        "choice_list_name": "test_forms",
+        "data_value": "geo_unit",
+        "display": {
+          "title": {
+            "text": "Geographical Unit"
+          }
+        },
+        "_row_num": 6
       }
     ],
     "framework_translations": [
@@ -761,6 +789,16 @@
             }
           },
           "_row_num": 5
+        },
+        {
+          "choice_list_name": "test_forms",
+          "data_value": "geo_unit",
+          "display": {
+            "title": {
+              "text": "Geographical Unit"
+            }
+          },
+          "_row_num": 6
         }
       ]
     },
@@ -1444,12 +1482,27 @@
             "promptIdx": 5
           },
           {
+            "url": "'?' +  odkSurvey.getHashString('geo_unit','geo_unit')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 21,
+            "__rowNum__": 20,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen21",
+            "promptIdx": 6
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 20,
-            "_branch_label_enclosing_screen": "survey/_screen20",
-            "promptIdx": 6
+            "_row_num": 23,
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 7
           }
         ],
         "validation_tag_map": {
@@ -1551,25 +1604,38 @@
             "operationIdx": 13
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 20,
+            "_row_num": 21,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 14
           },
           {
-            "_row_num": 20,
+            "clause": "exit section",
+            "_row_num": 22,
+            "__rowNum__": 21,
+            "_token_type": "exit_section",
+            "operationIdx": 15
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 23,
+            "operationIdx": 16
+          },
+          {
+            "_row_num": 23,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 15
+            "operationIdx": 17
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 20,
-            "operationIdx": 16
+            "_row_num": 23,
+            "operationIdx": 18
           }
         ],
         "branch_label_map": {
@@ -1586,8 +1652,10 @@
           "_screen15": 10,
           "business": 12,
           "_screen18": 12,
-          "_contents": 15,
-          "_screen20": 15
+          "geo_unit": 14,
+          "_screen21": 14,
+          "_contents": 17,
+          "_screen23": 17
         }
       }
     },

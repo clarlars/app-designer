@@ -2,6 +2,28 @@
   "xlsx": {
     "survey": [
       {
+        "type": "select_one_group_by",
+        "values_list": "district_group_by",
+        "name": "district",
+        "display": {
+          "prompt": {
+            "text": "Choose the district."
+          }
+        },
+        "_row_num": 2
+      },
+      {
+        "type": "select_one_group_by",
+        "values_list": "villages_group_by",
+        "name": "village",
+        "display": {
+          "prompt": {
+            "text": "Choose the village."
+          }
+        },
+        "_row_num": 3
+      },
+      {
         "type": "text",
         "name": "firm_name",
         "display": {
@@ -9,7 +31,7 @@
             "text": "Enter the name of the business."
           }
         },
-        "_row_num": 2
+        "_row_num": 4
       },
       {
         "type": "select_one",
@@ -20,44 +42,24 @@
             "text": "Choose the sector of the business."
           }
         },
-        "_row_num": 3
-      },
-      {
-        "type": "date",
-        "name": "enrollment_date",
-        "display": {
-          "prompt": {
-            "text": "Enter the date of the enrollment."
-          }
-        },
-        "_row_num": 4
-      },
-      {
-        "type": "geopoint",
-        "name": "location",
-        "display": {
-          "prompt": {
-            "text": "Record the location of the business."
-          }
-        },
         "_row_num": 5
       },
       {
-        "type": "image",
-        "name": "photo",
+        "type": "integer",
+        "name": "business_age",
         "display": {
           "prompt": {
-            "text": "Take a photo of the business."
+            "text": "How old is this business?"
           }
         },
         "_row_num": 6
       },
       {
         "type": "text",
-        "name": "owner",
+        "name": "business_owner_age",
         "display": {
           "prompt": {
-            "text": "Enter the business owner's name."
+            "text": "What is the age of the business owner?"
           }
         },
         "_row_num": 7
@@ -75,23 +77,13 @@
       },
       {
         "type": "integer",
-        "name": "business_age",
-        "display": {
-          "prompt": {
-            "text": "How old is this business?"
-          }
-        },
-        "_row_num": 9
-      },
-      {
-        "type": "integer",
         "name": "firm_size",
         "display": {
           "prompt": {
             "text": "What is the size of this firm?"
           }
         },
-        "_row_num": 10
+        "_row_num": 9
       },
       {
         "type": "text",
@@ -99,6 +91,17 @@
         "display": {
           "prompt": {
             "text": "Enter the phone number for the business."
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "type": "select_one",
+        "values_list": "network_list",
+        "name": "phone_number_network",
+        "display": {
+          "prompt": {
+            "text": "Enter the network for the phone number."
           }
         },
         "_row_num": 11
@@ -114,37 +117,15 @@
         "_row_num": 12
       },
       {
-        "type": "text",
-        "name": "address",
+        "type": "select_one",
+        "values_list": "network_list",
+        "name": "secondary_phone_number_network",
         "display": {
           "prompt": {
-            "text": "Enter the address."
+            "text": "Enter the network for the secondary phone number."
           }
         },
         "_row_num": 13
-      },
-      {
-        "type": "select_one",
-        "values_list": "villages_csv",
-        "name": "village",
-        "display": {
-          "prompt": {
-            "text": "Choose the village."
-          }
-        },
-        "_row_num": 14
-      },
-      {
-        "type": "select_one",
-        "values_list": "subvillages_csv",
-        "name": "subvillage",
-        "display": {
-          "prompt": {
-            "text": "Choose the subvillage."
-          }
-        },
-        "choice_filter": "choice_item.village === data('village')",
-        "_row_num": 15
       }
     ],
     "queries": [
@@ -168,38 +149,121 @@
         "uri": "\"village.csv\"",
         "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.veo, display: {title: {text: place.veo} } };\n})",
         "_row_num": 4
+      },
+      {
+        "query_name": "district_csv",
+        "query_type": "csv",
+        "uri": "\"village.csv\"",
+        "callback": "_.chain(context).pluck('village_name').uniq().map(function(village){\nreturn {data_value: village, display: {title: {text: village} } };\n}).value()",
+        "_row_num": 5
+      },
+      {
+        "query_name": "district_group_by",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "1=1",
+        "selectionArgs": "[]",
+        "fieldName": "DISTINCT(district)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "district",
+        "_row_num": 6
+      },
+      {
+        "query_name": "villages_group_by",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "district=?",
+        "selectionArgs": "[data('district')]",
+        "fieldName": "DISTINCT(village)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "village",
+        "_row_num": 7
       }
     ],
     "choices": [
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "service",
+        "data_value": "trading",
         "display": {
           "title": {
-            "text": "Service"
+            "text": "Trading and Wholesale"
           }
         },
         "_row_num": 2
       },
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "merchandise",
+        "data_value": "merchant",
         "display": {
           "title": {
-            "text": "Merchandise"
+            "text": "Merchant/Retail"
           }
         },
         "_row_num": 3
       },
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "manufacturing",
+        "data_value": "transport",
         "display": {
           "title": {
-            "text": "Manufacturing"
+            "text": "Transport"
           }
         },
         "_row_num": 4
+      },
+      {
+        "choice_list_name": "sector_type_list",
+        "data_value": "hiring",
+        "display": {
+          "title": {
+            "text": "Hiring and Labor"
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "choice_list_name": "sector_type_list",
+        "data_value": "agri",
+        "display": {
+          "title": {
+            "text": "Agri Processing"
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "choice_list_name": "sector_type_list",
+        "data_value": "repairs",
+        "display": {
+          "title": {
+            "text": "Repairs"
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "choice_list_name": "sector_type_list",
+        "data_value": "Non-agri",
+        "display": {
+          "title": {
+            "text": "Non-Agri Services"
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "choice_list_name": "sector_type_list",
+        "data_value": "financial",
+        "display": {
+          "title": {
+            "text": "Financial Services"
+          }
+        },
+        "_row_num": 9
       },
       {
         "choice_list_name": "true_false_unsure",
@@ -209,7 +273,7 @@
             "text": "False"
           }
         },
-        "_row_num": 6
+        "_row_num": 12
       },
       {
         "choice_list_name": "true_false_unsure",
@@ -219,7 +283,7 @@
             "text": "True"
           }
         },
-        "_row_num": 7
+        "_row_num": 13
       },
       {
         "choice_list_name": "true_false_unsure",
@@ -229,27 +293,57 @@
             "text": "Unsure"
           }
         },
-        "_row_num": 8
+        "_row_num": 14
       },
       {
         "choice_list_name": "male_female",
-        "data_value": "f",
+        "data_value": "female",
         "display": {
           "title": {
             "text": "Female"
           }
         },
-        "_row_num": 10
+        "_row_num": 16
       },
       {
         "choice_list_name": "male_female",
-        "data_value": "m",
+        "data_value": "male",
         "display": {
           "title": {
             "text": "Male"
           }
         },
-        "_row_num": 11
+        "_row_num": 17
+      },
+      {
+        "choice_list_name": "network_list",
+        "data_value": "airtel",
+        "display": {
+          "title": {
+            "text": "Airtel"
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "choice_list_name": "network_list",
+        "data_value": "vodacom",
+        "display": {
+          "title": {
+            "text": "Vodacom"
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "network_list",
+        "data_value": "tigo",
+        "display": {
+          "title": {
+            "text": "Tigo"
+          }
+        },
+        "_row_num": 22
       }
     ],
     "settings": [
@@ -285,109 +379,106 @@
     ],
     "model": [
       {
-        "type": "text",
-        "name": "firm_name",
+        "type": "select_one",
+        "name": "district",
         "_row_num": 2
       },
       {
         "type": "select_one",
-        "name": "sector_type",
+        "name": "ward",
         "_row_num": 3
-      },
-      {
-        "type": "date",
-        "name": "enrollment_date",
-        "_row_num": 4
-      },
-      {
-        "type": "geopoint",
-        "name": "location",
-        "_row_num": 5
-      },
-      {
-        "type": "image",
-        "name": "photo",
-        "_row_num": 6
-      },
-      {
-        "type": "text",
-        "name": "owner",
-        "_row_num": 7
-      },
-      {
-        "type": "select_one",
-        "name": "gender",
-        "_row_num": 8
-      },
-      {
-        "type": "integer",
-        "name": "business_age",
-        "_row_num": 9
-      },
-      {
-        "type": "integer",
-        "name": "firm_size",
-        "_row_num": 10
-      },
-      {
-        "type": "text",
-        "name": "phone_number",
-        "_row_num": 11
-      },
-      {
-        "type": "text",
-        "name": "address",
-        "_row_num": 12
       },
       {
         "type": "select_one",
         "name": "village",
-        "_row_num": 13
+        "_row_num": 4
       },
       {
         "type": "select_one",
         "name": "subvillage",
-        "_row_num": 14
-      },
-      {
-        "type": "date",
-        "name": "verification_date",
-        "_row_num": 15
+        "_row_num": 5
       },
       {
         "type": "text",
-        "name": "verification_agent",
-        "_row_num": 16
-      },
-      {
-        "type": "select_one_integer",
-        "name": "has_been_verified_by_agent",
-        "_row_num": 17
-      },
-      {
-        "type": "date",
-        "name": "authorization_date",
-        "_row_num": 18
-      },
-      {
-        "type": "text",
-        "name": "authorization_otc",
-        "_row_num": 19
+        "name": "firm_name",
+        "_row_num": 6
       },
       {
         "type": "select_one",
-        "name": "authorization_veo",
-        "_row_num": 20
+        "name": "sector_type",
+        "_row_num": 7
       },
       {
-        "type": "select_one_integer",
-        "name": "has_been_authorized_by_veo",
-        "_row_num": 21
+        "type": "integer",
+        "name": "business_age",
+        "_row_num": 8
+      },
+      {
+        "type": "text",
+        "name": "business_owner_age",
+        "_row_num": 9
+      },
+      {
+        "type": "select_one",
+        "name": "gender",
+        "_row_num": 10
+      },
+      {
+        "type": "integer",
+        "name": "firm_size",
+        "_row_num": 11
+      },
+      {
+        "type": "text",
+        "name": "phone_number",
+        "_row_num": 12
+      },
+      {
+        "type": "select_one",
+        "name": "phone_number_network",
+        "_row_num": 13
       },
       {
         "type": "text",
         "name": "secondary_phone_number",
-        "_row_num": 22
+        "_row_num": 14
+      },
+      {
+        "type": "select_one",
+        "name": "secondary_phone_number_network",
+        "_row_num": 15
+      },
+      {
+        "type": "text",
+        "name": "enroller_id",
+        "_row_num": 16
+      },
+      {
+        "type": "text",
+        "name": "verifier_id",
+        "_row_num": 17
+      },
+      {
+        "type": "select_one_integer",
+        "name": "has_been_verified_by_agent",
+        "_row_num": 18
+      },
+      {
+        "type": "select_one",
+        "name": "authorization_veo",
+        "_row_num": 19
+      },
+      {
+        "type": "select_one_integer",
+        "name": "has_been_authorized_by_veo",
+        "_row_num": 20
+      }
+    ],
+    "prompt_types": [
+      {
+        "prompt_type_name": "select_one_group_by",
+        "type": "string",
+        "_row_num": 2
       }
     ]
   },
@@ -470,33 +561,83 @@
       "sector_type_list": [
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "service",
+          "data_value": "trading",
           "display": {
             "title": {
-              "text": "Service"
+              "text": "Trading and Wholesale"
             }
           },
           "_row_num": 2
         },
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "merchandise",
+          "data_value": "merchant",
           "display": {
             "title": {
-              "text": "Merchandise"
+              "text": "Merchant/Retail"
             }
           },
           "_row_num": 3
         },
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "manufacturing",
+          "data_value": "transport",
           "display": {
             "title": {
-              "text": "Manufacturing"
+              "text": "Transport"
             }
           },
           "_row_num": 4
+        },
+        {
+          "choice_list_name": "sector_type_list",
+          "data_value": "hiring",
+          "display": {
+            "title": {
+              "text": "Hiring and Labor"
+            }
+          },
+          "_row_num": 5
+        },
+        {
+          "choice_list_name": "sector_type_list",
+          "data_value": "agri",
+          "display": {
+            "title": {
+              "text": "Agri Processing"
+            }
+          },
+          "_row_num": 6
+        },
+        {
+          "choice_list_name": "sector_type_list",
+          "data_value": "repairs",
+          "display": {
+            "title": {
+              "text": "Repairs"
+            }
+          },
+          "_row_num": 7
+        },
+        {
+          "choice_list_name": "sector_type_list",
+          "data_value": "Non-agri",
+          "display": {
+            "title": {
+              "text": "Non-Agri Services"
+            }
+          },
+          "_row_num": 8
+        },
+        {
+          "choice_list_name": "sector_type_list",
+          "data_value": "financial",
+          "display": {
+            "title": {
+              "text": "Financial Services"
+            }
+          },
+          "_row_num": 9
         }
       ],
       "true_false_unsure": [
@@ -508,7 +649,7 @@
               "text": "False"
             }
           },
-          "_row_num": 6
+          "_row_num": 12
         },
         {
           "choice_list_name": "true_false_unsure",
@@ -518,7 +659,7 @@
               "text": "True"
             }
           },
-          "_row_num": 7
+          "_row_num": 13
         },
         {
           "choice_list_name": "true_false_unsure",
@@ -528,29 +669,61 @@
               "text": "Unsure"
             }
           },
-          "_row_num": 8
+          "_row_num": 14
         }
       ],
       "male_female": [
         {
           "choice_list_name": "male_female",
-          "data_value": "f",
+          "data_value": "female",
           "display": {
             "title": {
               "text": "Female"
             }
           },
-          "_row_num": 10
+          "_row_num": 16
         },
         {
           "choice_list_name": "male_female",
-          "data_value": "m",
+          "data_value": "male",
           "display": {
             "title": {
               "text": "Male"
             }
           },
-          "_row_num": 11
+          "_row_num": 17
+        }
+      ],
+      "network_list": [
+        {
+          "choice_list_name": "network_list",
+          "data_value": "airtel",
+          "display": {
+            "title": {
+              "text": "Airtel"
+            }
+          },
+          "_row_num": 20
+        },
+        {
+          "choice_list_name": "network_list",
+          "data_value": "vodacom",
+          "display": {
+            "title": {
+              "text": "Vodacom"
+            }
+          },
+          "_row_num": 21
+        },
+        {
+          "choice_list_name": "network_list",
+          "data_value": "tigo",
+          "display": {
+            "title": {
+              "text": "Tigo"
+            }
+          },
+          "_row_num": 22
         }
       ]
     },
@@ -575,12 +748,47 @@
         "uri": "\"village.csv\"",
         "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.veo, display: {title: {text: place.veo} } };\n})",
         "_row_num": 4
+      },
+      "district_csv": {
+        "query_name": "district_csv",
+        "query_type": "csv",
+        "uri": "\"village.csv\"",
+        "callback": "_.chain(context).pluck('village_name').uniq().map(function(village){\nreturn {data_value: village, display: {title: {text: village} } };\n}).value()",
+        "_row_num": 5
+      },
+      "district_group_by": {
+        "query_name": "district_group_by",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "1=1",
+        "selectionArgs": "[]",
+        "fieldName": "DISTINCT(district)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "district",
+        "_row_num": 6
+      },
+      "villages_group_by": {
+        "query_name": "villages_group_by",
+        "query_type": "linked_table",
+        "linked_table_id": "geo_unit",
+        "linked_form_id": "geo_unit",
+        "selection": "district=?",
+        "selectionArgs": "[data('district')]",
+        "fieldName": "DISTINCT(village)",
+        "newRowInitialElementKeyToValueMap": "{}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "columnValue": "village",
+        "_row_num": 7
       }
     },
     "calculates": {},
     "model": {
-      "firm_name": {
+      "district": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
+        "valuesList": "district_group_by",
         "_defn": [
           {
             "_row_num": 2,
@@ -588,6 +796,56 @@
           },
           {
             "_row_num": 2,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "district"
+      },
+      "ward": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "ward"
+      },
+      "village": {
+        "prompt_type_name": "select_one_group_by",
+        "type": "string",
+        "valuesList": "villages_group_by",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "village"
+      },
+      "subvillage": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "subvillage"
+      },
+      "firm_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 6,
             "section_name": "model"
           }
         ],
@@ -598,93 +856,31 @@
         "valuesList": "sector_type_list",
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 5,
             "section_name": "survey"
           },
           {
-            "_row_num": 3,
+            "_row_num": 7,
             "section_name": "model"
           }
         ],
         "elementKey": "sector_type"
       },
-      "enrollment_date": {
-        "type": "string",
-        "elementType": "date",
-        "_defn": [
-          {
-            "_row_num": 4,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 4,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "enrollment_date"
-      },
-      "location": {
-        "type": "object",
-        "elementType": "geopoint",
-        "properties": {
-          "latitude": {
-            "type": "number",
-            "elementKey": "location_latitude"
-          },
-          "longitude": {
-            "type": "number",
-            "elementKey": "location_longitude"
-          },
-          "altitude": {
-            "type": "number",
-            "elementKey": "location_altitude"
-          },
-          "accuracy": {
-            "type": "number",
-            "elementKey": "location_accuracy"
-          }
-        },
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 5,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "location"
-      },
-      "photo": {
-        "type": "object",
-        "elementType": "mimeUri",
-        "properties": {
-          "uriFragment": {
-            "type": "string",
-            "elementType": "rowpath",
-            "elementKey": "photo_uriFragment"
-          },
-          "contentType": {
-            "type": "string",
-            "elementType": "mimeType",
-            "default": "image/*",
-            "elementKey": "photo_contentType"
-          }
-        },
+      "business_age": {
+        "type": "integer",
         "_defn": [
           {
             "_row_num": 6,
             "section_name": "survey"
           },
           {
-            "_row_num": 6,
+            "_row_num": 8,
             "section_name": "model"
           }
         ],
-        "elementKey": "photo"
+        "elementKey": "business_age"
       },
-      "owner": {
+      "business_owner_age": {
         "type": "string",
         "_defn": [
           {
@@ -692,11 +888,11 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 7,
+            "_row_num": 9,
             "section_name": "model"
           }
         ],
-        "elementKey": "owner"
+        "elementKey": "business_owner_age"
       },
       "gender": {
         "type": "string",
@@ -707,35 +903,21 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 8,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
         "elementKey": "gender"
       },
-      "business_age": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 9,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 9,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "business_age"
-      },
       "firm_size": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 9,
             "section_name": "survey"
           },
           {
-            "_row_num": 10,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -745,21 +927,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 11,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 11,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "phone_number"
-      },
-      "address": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 13,
+            "_row_num": 10,
             "section_name": "survey"
           },
           {
@@ -767,14 +935,14 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "address"
+        "elementKey": "phone_number"
       },
-      "village": {
+      "phone_number_network": {
         "type": "string",
-        "valuesList": "villages_csv",
+        "valuesList": "network_list",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 11,
             "section_name": "survey"
           },
           {
@@ -782,94 +950,7 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "village"
-      },
-      "subvillage": {
-        "type": "string",
-        "valuesList": "subvillages_csv",
-        "_defn": [
-          {
-            "_row_num": 15,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 14,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "subvillage"
-      },
-      "verification_date": {
-        "type": "string",
-        "elementType": "date",
-        "_defn": [
-          {
-            "_row_num": 15,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "verification_date"
-      },
-      "verification_agent": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 16,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "verification_agent"
-      },
-      "has_been_verified_by_agent": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 17,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "has_been_verified_by_agent"
-      },
-      "authorization_date": {
-        "type": "string",
-        "elementType": "date",
-        "_defn": [
-          {
-            "_row_num": 18,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_date"
-      },
-      "authorization_otc": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 19,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_otc"
-      },
-      "authorization_veo": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 20,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_veo"
-      },
-      "has_been_authorized_by_veo": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 21,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "has_been_authorized_by_veo"
+        "elementKey": "phone_number_network"
       },
       "secondary_phone_number": {
         "type": "string",
@@ -879,11 +960,76 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
         "elementKey": "secondary_phone_number"
+      },
+      "secondary_phone_number_network": {
+        "type": "string",
+        "valuesList": "network_list",
+        "_defn": [
+          {
+            "_row_num": 13,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "secondary_phone_number_network"
+      },
+      "enroller_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "enroller_id"
+      },
+      "verifier_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "verifier_id"
+      },
+      "has_been_verified_by_agent": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "has_been_verified_by_agent"
+      },
+      "authorization_veo": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "authorization_veo"
+      },
+      "has_been_authorized_by_veo": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "has_been_authorized_by_veo"
       }
     },
     "section_names": [
@@ -897,6 +1043,38 @@
         "reachable_sections": {},
         "prompts": [
           {
+            "type": "select_one_group_by",
+            "values_list": "district_group_by",
+            "name": "district",
+            "display": {
+              "prompt": {
+                "text": "Choose the district."
+              }
+            },
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "prompt",
+            "_type": "select_one_group_by",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 0
+          },
+          {
+            "type": "select_one_group_by",
+            "values_list": "villages_group_by",
+            "name": "village",
+            "display": {
+              "prompt": {
+                "text": "Choose the village."
+              }
+            },
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "prompt",
+            "_type": "select_one_group_by",
+            "_branch_label_enclosing_screen": "survey/_screen3",
+            "promptIdx": 1
+          },
+          {
             "type": "text",
             "name": "firm_name",
             "display": {
@@ -904,12 +1082,12 @@
                 "text": "Enter the name of the business."
               }
             },
-            "_row_num": 2,
-            "__rowNum__": 1,
+            "_row_num": 4,
+            "__rowNum__": 3,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen2",
-            "promptIdx": 0
+            "_branch_label_enclosing_screen": "survey/_screen4",
+            "promptIdx": 2
           },
           {
             "type": "select_one",
@@ -920,64 +1098,34 @@
                 "text": "Choose the sector of the business."
               }
             },
-            "_row_num": 3,
-            "__rowNum__": 2,
-            "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen3",
-            "promptIdx": 1
-          },
-          {
-            "type": "date",
-            "name": "enrollment_date",
-            "display": {
-              "prompt": {
-                "text": "Enter the date of the enrollment."
-              }
-            },
-            "_row_num": 4,
-            "__rowNum__": 3,
-            "_token_type": "prompt",
-            "_type": "date",
-            "_branch_label_enclosing_screen": "survey/_screen4",
-            "promptIdx": 2
-          },
-          {
-            "type": "geopoint",
-            "name": "location",
-            "display": {
-              "prompt": {
-                "text": "Record the location of the business."
-              }
-            },
             "_row_num": 5,
             "__rowNum__": 4,
             "_token_type": "prompt",
-            "_type": "geopoint",
+            "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen5",
             "promptIdx": 3
           },
           {
-            "type": "image",
-            "name": "photo",
+            "type": "integer",
+            "name": "business_age",
             "display": {
               "prompt": {
-                "text": "Take a photo of the business."
+                "text": "How old is this business?"
               }
             },
             "_row_num": 6,
             "__rowNum__": 5,
             "_token_type": "prompt",
-            "_type": "image",
+            "_type": "integer",
             "_branch_label_enclosing_screen": "survey/_screen6",
             "promptIdx": 4
           },
           {
             "type": "text",
-            "name": "owner",
+            "name": "business_owner_age",
             "display": {
               "prompt": {
-                "text": "Enter the business owner's name."
+                "text": "What is the age of the business owner?"
               }
             },
             "_row_num": 7,
@@ -1005,10 +1153,10 @@
           },
           {
             "type": "integer",
-            "name": "business_age",
+            "name": "firm_size",
             "display": {
               "prompt": {
-                "text": "How old is this business?"
+                "text": "What is the size of this firm?"
               }
             },
             "_row_num": 9,
@@ -1019,21 +1167,6 @@
             "promptIdx": 7
           },
           {
-            "type": "integer",
-            "name": "firm_size",
-            "display": {
-              "prompt": {
-                "text": "What is the size of this firm?"
-              }
-            },
-            "_row_num": 10,
-            "__rowNum__": 9,
-            "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen10",
-            "promptIdx": 8
-          },
-          {
             "type": "text",
             "name": "phone_number",
             "display": {
@@ -1041,10 +1174,26 @@
                 "text": "Enter the phone number for the business."
               }
             },
+            "_row_num": 10,
+            "__rowNum__": 9,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen10",
+            "promptIdx": 8
+          },
+          {
+            "type": "select_one",
+            "values_list": "network_list",
+            "name": "phone_number_network",
+            "display": {
+              "prompt": {
+                "text": "Enter the network for the phone number."
+              }
+            },
             "_row_num": 11,
             "__rowNum__": 10,
             "_token_type": "prompt",
-            "_type": "text",
+            "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen11",
             "promptIdx": 9
           },
@@ -1064,60 +1213,28 @@
             "promptIdx": 10
           },
           {
-            "type": "text",
-            "name": "address",
+            "type": "select_one",
+            "values_list": "network_list",
+            "name": "secondary_phone_number_network",
             "display": {
               "prompt": {
-                "text": "Enter the address."
+                "text": "Enter the network for the secondary phone number."
               }
             },
             "_row_num": 13,
             "__rowNum__": 12,
             "_token_type": "prompt",
-            "_type": "text",
+            "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen13",
             "promptIdx": 11
-          },
-          {
-            "type": "select_one",
-            "values_list": "villages_csv",
-            "name": "village",
-            "display": {
-              "prompt": {
-                "text": "Choose the village."
-              }
-            },
-            "_row_num": 14,
-            "__rowNum__": 13,
-            "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen14",
-            "promptIdx": 12
-          },
-          {
-            "type": "select_one",
-            "values_list": "subvillages_csv",
-            "name": "subvillage",
-            "display": {
-              "prompt": {
-                "text": "Choose the subvillage."
-              }
-            },
-            "choice_filter": "choice_item.village === data('village')",
-            "_row_num": 15,
-            "__rowNum__": 14,
-            "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen15",
-            "promptIdx": 13
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 16,
-            "_branch_label_enclosing_screen": "survey/_screen16",
-            "promptIdx": 14
+            "_row_num": 14,
+            "_branch_label_enclosing_screen": "survey/_screen14",
+            "promptIdx": 12
           }
         ],
         "validation_tag_map": {
@@ -1197,37 +1314,25 @@
             "operationIdx": 11
           },
           {
+            "_token_type": "exit_section",
+            "clause": "exit section",
             "_row_num": 14,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 12
           },
           {
-            "_row_num": 15,
+            "_row_num": 14,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 13
-          },
-          {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 16,
-            "operationIdx": 14
-          },
-          {
-            "_row_num": 16,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 15
+            "operationIdx": 13
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 16,
-            "operationIdx": 16
+            "_row_num": 14,
+            "operationIdx": 14
           }
         ],
         "branch_label_map": {
@@ -1243,10 +1348,8 @@
           "_screen11": 9,
           "_screen12": 10,
           "_screen13": 11,
-          "_screen14": 12,
-          "_screen15": 13,
-          "_contents": 15,
-          "_screen16": 15
+          "_contents": 13,
+          "_screen14": 13
         }
       },
       "initial": {
@@ -1428,8 +1531,10 @@
       }
     },
     "dataTableModel": {
-      "firm_name": {
+      "district": {
+        "prompt_type_name": "select_one_group_by",
         "type": "string",
+        "valuesList": "district_group_by",
         "_defn": [
           {
             "_row_num": 2,
@@ -1437,6 +1542,68 @@
           },
           {
             "_row_num": 2,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "district",
+        "elementName": "district",
+        "elementSet": "data",
+        "elementPath": "district"
+      },
+      "ward": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "ward",
+        "elementName": "ward",
+        "elementSet": "data",
+        "elementPath": "ward"
+      },
+      "village": {
+        "prompt_type_name": "select_one_group_by",
+        "type": "string",
+        "valuesList": "villages_group_by",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "village",
+        "elementName": "village",
+        "elementSet": "data",
+        "elementPath": "village"
+      },
+      "subvillage": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "subvillage",
+        "elementName": "subvillage",
+        "elementSet": "data",
+        "elementPath": "subvillage"
+      },
+      "firm_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 6,
             "section_name": "model"
           }
         ],
@@ -1450,11 +1617,11 @@
         "valuesList": "sector_type_list",
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 5,
             "section_name": "survey"
           },
           {
-            "_row_num": 3,
+            "_row_num": 7,
             "section_name": "model"
           }
         ],
@@ -1463,122 +1630,24 @@
         "elementSet": "data",
         "elementPath": "sector_type"
       },
-      "enrollment_date": {
-        "type": "string",
-        "elementType": "date",
-        "_defn": [
-          {
-            "_row_num": 4,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 4,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "enrollment_date",
-        "elementName": "enrollment_date",
-        "elementSet": "data",
-        "elementPath": "enrollment_date"
-      },
-      "location": {
-        "type": "object",
-        "elementType": "geopoint",
-        "properties": {
-          "latitude": {
-            "type": "number",
-            "elementKey": "location_latitude",
-            "elementName": "latitude",
-            "elementSet": "data",
-            "elementPath": "location.latitude"
-          },
-          "longitude": {
-            "type": "number",
-            "elementKey": "location_longitude",
-            "elementName": "longitude",
-            "elementSet": "data",
-            "elementPath": "location.longitude"
-          },
-          "altitude": {
-            "type": "number",
-            "elementKey": "location_altitude",
-            "elementName": "altitude",
-            "elementSet": "data",
-            "elementPath": "location.altitude"
-          },
-          "accuracy": {
-            "type": "number",
-            "elementKey": "location_accuracy",
-            "elementName": "accuracy",
-            "elementSet": "data",
-            "elementPath": "location.accuracy"
-          }
-        },
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 5,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "location",
-        "elementName": "location",
-        "elementSet": "data",
-        "elementPath": "location",
-        "listChildElementKeys": [
-          "location_accuracy",
-          "location_altitude",
-          "location_latitude",
-          "location_longitude"
-        ],
-        "notUnitOfRetention": true
-      },
-      "photo": {
-        "type": "object",
-        "elementType": "mimeUri",
-        "properties": {
-          "uriFragment": {
-            "type": "string",
-            "elementType": "rowpath",
-            "elementKey": "photo_uriFragment",
-            "elementName": "uriFragment",
-            "elementSet": "data",
-            "elementPath": "photo.uriFragment"
-          },
-          "contentType": {
-            "type": "string",
-            "elementType": "mimeType",
-            "default": "image/*",
-            "elementKey": "photo_contentType",
-            "elementName": "contentType",
-            "elementSet": "data",
-            "elementPath": "photo.contentType"
-          }
-        },
+      "business_age": {
+        "type": "integer",
         "_defn": [
           {
             "_row_num": 6,
             "section_name": "survey"
           },
           {
-            "_row_num": 6,
+            "_row_num": 8,
             "section_name": "model"
           }
         ],
-        "elementKey": "photo",
-        "elementName": "photo",
+        "elementKey": "business_age",
+        "elementName": "business_age",
         "elementSet": "data",
-        "elementPath": "photo",
-        "listChildElementKeys": [
-          "photo_contentType",
-          "photo_uriFragment"
-        ],
-        "notUnitOfRetention": true
+        "elementPath": "business_age"
       },
-      "owner": {
+      "business_owner_age": {
         "type": "string",
         "_defn": [
           {
@@ -1586,14 +1655,14 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 7,
+            "_row_num": 9,
             "section_name": "model"
           }
         ],
-        "elementKey": "owner",
-        "elementName": "owner",
+        "elementKey": "business_owner_age",
+        "elementName": "business_owner_age",
         "elementSet": "data",
-        "elementPath": "owner"
+        "elementPath": "business_owner_age"
       },
       "gender": {
         "type": "string",
@@ -1604,7 +1673,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 8,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -1613,32 +1682,15 @@
         "elementSet": "data",
         "elementPath": "gender"
       },
-      "business_age": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 9,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 9,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "business_age",
-        "elementName": "business_age",
-        "elementSet": "data",
-        "elementPath": "business_age"
-      },
       "firm_size": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 9,
             "section_name": "survey"
           },
           {
-            "_row_num": 10,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -1651,11 +1703,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 11,
+            "_row_num": 10,
             "section_name": "survey"
           },
           {
-            "_row_num": 11,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -1664,74 +1716,60 @@
         "elementSet": "data",
         "elementPath": "phone_number"
       },
-      "address": {
+      "phone_number_network": {
         "type": "string",
+        "valuesList": "network_list",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 11,
             "section_name": "survey"
           },
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "phone_number_network",
+        "elementName": "phone_number_network",
+        "elementSet": "data",
+        "elementPath": "phone_number_network"
+      },
+      "secondary_phone_number": {
+        "type": "string",
+        "_defn": [
           {
             "_row_num": 12,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
-        "elementKey": "address",
-        "elementName": "address",
+        "elementKey": "secondary_phone_number",
+        "elementName": "secondary_phone_number",
         "elementSet": "data",
-        "elementPath": "address"
+        "elementPath": "secondary_phone_number"
       },
-      "village": {
+      "secondary_phone_number_network": {
         "type": "string",
-        "valuesList": "villages_csv",
+        "valuesList": "network_list",
         "_defn": [
-          {
-            "_row_num": 14,
-            "section_name": "survey"
-          },
           {
             "_row_num": 13,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "village",
-        "elementName": "village",
-        "elementSet": "data",
-        "elementPath": "village"
-      },
-      "subvillage": {
-        "type": "string",
-        "valuesList": "subvillages_csv",
-        "_defn": [
-          {
-            "_row_num": 15,
             "section_name": "survey"
           },
           {
-            "_row_num": 14,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "subvillage",
-        "elementName": "subvillage",
-        "elementSet": "data",
-        "elementPath": "subvillage"
-      },
-      "verification_date": {
-        "type": "string",
-        "elementType": "date",
-        "_defn": [
-          {
             "_row_num": 15,
             "section_name": "model"
           }
         ],
-        "elementKey": "verification_date",
-        "elementName": "verification_date",
+        "elementKey": "secondary_phone_number_network",
+        "elementName": "secondary_phone_number_network",
         "elementSet": "data",
-        "elementPath": "verification_date"
+        "elementPath": "secondary_phone_number_network"
       },
-      "verification_agent": {
+      "enroller_id": {
         "type": "string",
         "_defn": [
           {
@@ -1739,16 +1777,29 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "verification_agent",
-        "elementName": "verification_agent",
+        "elementKey": "enroller_id",
+        "elementName": "enroller_id",
         "elementSet": "data",
-        "elementPath": "verification_agent"
+        "elementPath": "enroller_id"
+      },
+      "verifier_id": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "verifier_id",
+        "elementName": "verifier_id",
+        "elementSet": "data",
+        "elementPath": "verifier_id"
       },
       "has_been_verified_by_agent": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 17,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -1757,38 +1808,11 @@
         "elementSet": "data",
         "elementPath": "has_been_verified_by_agent"
       },
-      "authorization_date": {
-        "type": "string",
-        "elementType": "date",
-        "_defn": [
-          {
-            "_row_num": 18,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_date",
-        "elementName": "authorization_date",
-        "elementSet": "data",
-        "elementPath": "authorization_date"
-      },
-      "authorization_otc": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 19,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_otc",
-        "elementName": "authorization_otc",
-        "elementSet": "data",
-        "elementPath": "authorization_otc"
-      },
       "authorization_veo": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -1801,7 +1825,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -1809,68 +1833,6 @@
         "elementName": "has_been_authorized_by_veo",
         "elementSet": "data",
         "elementPath": "has_been_authorized_by_veo"
-      },
-      "secondary_phone_number": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 12,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 22,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "secondary_phone_number",
-        "elementName": "secondary_phone_number",
-        "elementSet": "data",
-        "elementPath": "secondary_phone_number"
-      },
-      "location_latitude": {
-        "type": "number",
-        "elementKey": "location_latitude",
-        "elementName": "latitude",
-        "elementSet": "data",
-        "elementPath": "location.latitude"
-      },
-      "location_longitude": {
-        "type": "number",
-        "elementKey": "location_longitude",
-        "elementName": "longitude",
-        "elementSet": "data",
-        "elementPath": "location.longitude"
-      },
-      "location_altitude": {
-        "type": "number",
-        "elementKey": "location_altitude",
-        "elementName": "altitude",
-        "elementSet": "data",
-        "elementPath": "location.altitude"
-      },
-      "location_accuracy": {
-        "type": "number",
-        "elementKey": "location_accuracy",
-        "elementName": "accuracy",
-        "elementSet": "data",
-        "elementPath": "location.accuracy"
-      },
-      "photo_uriFragment": {
-        "type": "string",
-        "elementType": "rowpath",
-        "elementKey": "photo_uriFragment",
-        "elementName": "uriFragment",
-        "elementSet": "data",
-        "elementPath": "photo.uriFragment"
-      },
-      "photo_contentType": {
-        "type": "string",
-        "elementType": "mimeType",
-        "default": "image/*",
-        "elementKey": "photo_contentType",
-        "elementName": "contentType",
-        "elementSet": "data",
-        "elementPath": "photo.contentType"
       },
       "_id": {
         "type": "string",

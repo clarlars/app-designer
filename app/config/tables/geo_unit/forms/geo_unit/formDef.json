@@ -2,35 +2,54 @@
   "xlsx": {
     "survey": [
       {
-        "type": "date",
-        "name": "verification_date",
+        "type": "text",
+        "name": "district",
         "display": {
           "prompt": {
-            "text": "Enter the verification date."
+            "text": "Enter the name of the district"
           }
         },
         "_row_num": 2
       },
       {
         "type": "text",
-        "name": "verification_agent",
+        "name": "ward",
         "display": {
           "prompt": {
-            "text": "Enter the name of the agent who verified the business."
+            "text": "Enter the name of the ward"
           }
         },
         "_row_num": 3
       },
       {
-        "type": "select_one_integer",
-        "values_list": "true_false_unsure",
-        "name": "has_been_verified_by_agent",
+        "type": "text",
+        "name": "village",
         "display": {
           "prompt": {
-            "text": "Has the agent verified this business?"
+            "text": "Enter the name of the village"
           }
         },
         "_row_num": 4
+      },
+      {
+        "type": "text",
+        "name": "subvillage",
+        "display": {
+          "prompt": {
+            "text": "Enter the name of the subvillage"
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "type": "text",
+        "name": "veo",
+        "display": {
+          "prompt": {
+            "text": "Enter the name of the veo"
+          }
+        },
+        "_row_num": 6
       }
     ],
     "choices": [
@@ -118,12 +137,12 @@
     "settings": [
       {
         "setting_name": "form_id",
-        "value": "verification",
+        "value": "geo_unit",
         "_row_num": 2
       },
       {
         "setting_name": "table_id",
-        "value": "business",
+        "value": "geo_unit",
         "_row_num": 3
       },
       {
@@ -135,117 +154,15 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Verification"
+            "text": "Geo Unit"
           }
         },
         "_row_num": 5
-      }
-    ],
-    "model": [
-      {
-        "type": "text",
-        "name": "firm_name",
-        "_row_num": 2
       },
       {
-        "type": "select_one",
-        "name": "sector_type",
-        "_row_num": 3
-      },
-      {
-        "type": "date",
-        "name": "enrollment_date",
-        "_row_num": 4
-      },
-      {
-        "type": "geopoint",
-        "name": "location",
-        "_row_num": 5
-      },
-      {
-        "type": "image",
-        "name": "photo",
+        "setting_name": "instance_name",
+        "value": "subvillage",
         "_row_num": 6
-      },
-      {
-        "type": "text",
-        "name": "owner",
-        "_row_num": 7
-      },
-      {
-        "type": "select_one",
-        "name": "gender",
-        "_row_num": 8
-      },
-      {
-        "type": "integer",
-        "name": "business_age",
-        "_row_num": 9
-      },
-      {
-        "type": "integer",
-        "name": "firm_size",
-        "_row_num": 10
-      },
-      {
-        "type": "text",
-        "name": "phone_number",
-        "_row_num": 11
-      },
-      {
-        "type": "text",
-        "name": "address",
-        "_row_num": 12
-      },
-      {
-        "type": "select_one",
-        "name": "village",
-        "_row_num": 13
-      },
-      {
-        "type": "select_one",
-        "name": "subvillage",
-        "_row_num": 14
-      },
-      {
-        "type": "date",
-        "name": "verification_date",
-        "_row_num": 15
-      },
-      {
-        "type": "text",
-        "name": "verification_agent",
-        "_row_num": 16
-      },
-      {
-        "type": "select_one_integer",
-        "name": "has_been_verified_by_agent",
-        "_row_num": 17
-      },
-      {
-        "type": "date",
-        "name": "authorization_date",
-        "_row_num": 18
-      },
-      {
-        "type": "text",
-        "name": "authorization_otc",
-        "_row_num": 19
-      },
-      {
-        "type": "select_one",
-        "name": "authorization_veo",
-        "_row_num": 20
-      },
-      {
-        "type": "select_one_integer",
-        "name": "has_been_authorized_by_veo",
-        "_row_num": 21
-      },
-      {
-        "type": "text",
-        "name": "secondary_phone_number",
-        "_row_num": 22
       }
     ]
   },
@@ -268,12 +185,12 @@
     "settings": {
       "form_id": {
         "setting_name": "form_id",
-        "value": "verification",
+        "value": "geo_unit",
         "_row_num": 2
       },
       "table_id": {
         "setting_name": "table_id",
-        "value": "business",
+        "value": "geo_unit",
         "_row_num": 3
       },
       "form_version": {
@@ -285,10 +202,15 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Verification"
+            "text": "Geo Unit"
           }
         },
         "_row_num": 5
+      },
+      "instance_name": {
+        "setting_name": "instance_name",
+        "value": "subvillage",
+        "_row_num": 6
       },
       "_locales": {
         "setting_name": "_locales",
@@ -313,7 +235,7 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Verification"
+            "text": "Geo Unit"
           }
         },
         "_row_num": 5
@@ -407,267 +329,61 @@
         }
       ]
     },
+    "table_specific_definitions": {
+      "_tokens": {}
+    },
     "queries": {},
     "calculates": {},
     "model": {
-      "firm_name": {
-        "type": "string",
+      "district": {
         "_defn": [
           {
             "_row_num": 2,
-            "section_name": "model"
+            "section_name": "survey"
           }
         ],
-        "elementKey": "firm_name"
-      },
-      "sector_type": {
         "type": "string",
+        "elementKey": "district"
+      },
+      "ward": {
         "_defn": [
           {
             "_row_num": 3,
-            "section_name": "model"
+            "section_name": "survey"
           }
         ],
-        "elementKey": "sector_type"
-      },
-      "enrollment_date": {
         "type": "string",
-        "elementType": "date",
+        "elementKey": "ward"
+      },
+      "village": {
         "_defn": [
           {
             "_row_num": 4,
-            "section_name": "model"
+            "section_name": "survey"
           }
         ],
-        "elementKey": "enrollment_date"
-      },
-      "location": {
-        "type": "object",
-        "elementType": "geopoint",
-        "properties": {
-          "latitude": {
-            "type": "number",
-            "elementKey": "location_latitude"
-          },
-          "longitude": {
-            "type": "number",
-            "elementKey": "location_longitude"
-          },
-          "altitude": {
-            "type": "number",
-            "elementKey": "location_altitude"
-          },
-          "accuracy": {
-            "type": "number",
-            "elementKey": "location_accuracy"
-          }
-        },
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "location"
-      },
-      "photo": {
-        "type": "object",
-        "elementType": "mimeUri",
-        "properties": {
-          "uriFragment": {
-            "type": "string",
-            "elementType": "rowpath",
-            "elementKey": "photo_uriFragment"
-          },
-          "contentType": {
-            "type": "string",
-            "elementType": "mimeType",
-            "default": "image/*",
-            "elementKey": "photo_contentType"
-          }
-        },
-        "_defn": [
-          {
-            "_row_num": 6,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "photo"
-      },
-      "owner": {
         "type": "string",
-        "_defn": [
-          {
-            "_row_num": 7,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "owner"
-      },
-      "gender": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 8,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "gender"
-      },
-      "business_age": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 9,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "business_age"
-      },
-      "firm_size": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 10,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "firm_size"
-      },
-      "phone_number": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 11,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "phone_number"
-      },
-      "address": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 12,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "address"
-      },
-      "village": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 13,
-            "section_name": "model"
-          }
-        ],
         "elementKey": "village"
       },
       "subvillage": {
-        "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
-            "section_name": "model"
+            "_row_num": 5,
+            "section_name": "survey"
           }
         ],
+        "type": "string",
         "elementKey": "subvillage"
       },
-      "verification_date": {
-        "type": "string",
-        "elementType": "date",
+      "veo": {
         "_defn": [
           {
-            "_row_num": 2,
+            "_row_num": 6,
             "section_name": "survey"
-          },
-          {
-            "_row_num": 15,
-            "section_name": "model"
           }
         ],
-        "elementKey": "verification_date"
-      },
-      "verification_agent": {
         "type": "string",
-        "_defn": [
-          {
-            "_row_num": 3,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 16,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "verification_agent"
-      },
-      "has_been_verified_by_agent": {
-        "type": "integer",
-        "valuesList": "true_false_unsure",
-        "_defn": [
-          {
-            "_row_num": 4,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 17,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "has_been_verified_by_agent"
-      },
-      "authorization_date": {
-        "type": "string",
-        "elementType": "date",
-        "_defn": [
-          {
-            "_row_num": 18,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_date"
-      },
-      "authorization_otc": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 19,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_otc"
-      },
-      "authorization_veo": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 20,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_veo"
-      },
-      "has_been_authorized_by_veo": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 21,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "has_been_authorized_by_veo"
-      },
-      "secondary_phone_number": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 22,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "secondary_phone_number"
+        "elementKey": "veo"
       }
     },
     "section_names": [
@@ -681,26 +397,26 @@
         "reachable_sections": {},
         "prompts": [
           {
-            "type": "date",
-            "name": "verification_date",
+            "type": "text",
+            "name": "district",
             "display": {
               "prompt": {
-                "text": "Enter the verification date."
+                "text": "Enter the name of the district"
               }
             },
             "_row_num": 2,
             "__rowNum__": 1,
             "_token_type": "prompt",
-            "_type": "date",
+            "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen2",
             "promptIdx": 0
           },
           {
             "type": "text",
-            "name": "verification_agent",
+            "name": "ward",
             "display": {
               "prompt": {
-                "text": "Enter the name of the agent who verified the business."
+                "text": "Enter the name of the ward"
               }
             },
             "_row_num": 3,
@@ -711,28 +427,57 @@
             "promptIdx": 1
           },
           {
-            "type": "select_one_integer",
-            "values_list": "true_false_unsure",
-            "name": "has_been_verified_by_agent",
+            "type": "text",
+            "name": "village",
             "display": {
               "prompt": {
-                "text": "Has the agent verified this business?"
+                "text": "Enter the name of the village"
               }
             },
             "_row_num": 4,
             "__rowNum__": 3,
             "_token_type": "prompt",
-            "_type": "select_one_integer",
+            "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen4",
             "promptIdx": 2
+          },
+          {
+            "type": "text",
+            "name": "subvillage",
+            "display": {
+              "prompt": {
+                "text": "Enter the name of the subvillage"
+              }
+            },
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen5",
+            "promptIdx": 3
+          },
+          {
+            "type": "text",
+            "name": "veo",
+            "display": {
+              "prompt": {
+                "text": "Enter the name of the veo"
+              }
+            },
+            "_row_num": 6,
+            "__rowNum__": 5,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen6",
+            "promptIdx": 4
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 5,
-            "_branch_label_enclosing_screen": "survey/_screen5",
-            "promptIdx": 3
+            "_row_num": 7,
+            "_branch_label_enclosing_screen": "survey/_screen7",
+            "promptIdx": 5
           }
         ],
         "validation_tag_map": {
@@ -758,33 +503,47 @@
             "operationIdx": 2
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 5,
-            "operationIdx": 3
-          },
-          {
             "_row_num": 5,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 3
+          },
+          {
+            "_row_num": 6,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 4
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 7,
+            "operationIdx": 5
+          },
+          {
+            "_row_num": 7,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 4
+            "operationIdx": 6
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 5,
-            "operationIdx": 5
+            "_row_num": 7,
+            "operationIdx": 7
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
           "_screen3": 1,
           "_screen4": 2,
-          "_contents": 4,
-          "_screen5": 4
+          "_screen5": 3,
+          "_screen6": 4,
+          "_contents": 6,
+          "_screen7": 6
         }
       },
       "initial": {
@@ -816,7 +575,7 @@
             "promptIdx": 1,
             "display": {
               "title": {
-                "text": "Verification"
+                "text": "Geo Unit"
               }
             },
             "_branch_label_enclosing_screen": "survey/0"
@@ -966,402 +725,70 @@
       }
     },
     "dataTableModel": {
-      "firm_name": {
-        "type": "string",
+      "district": {
         "_defn": [
           {
             "_row_num": 2,
-            "section_name": "model"
+            "section_name": "survey"
           }
         ],
-        "elementKey": "firm_name",
-        "elementName": "firm_name",
-        "elementSet": "data",
-        "elementPath": "firm_name"
-      },
-      "sector_type": {
         "type": "string",
+        "elementKey": "district",
+        "elementName": "district",
+        "elementSet": "data",
+        "elementPath": "district"
+      },
+      "ward": {
         "_defn": [
           {
             "_row_num": 3,
-            "section_name": "model"
+            "section_name": "survey"
           }
         ],
-        "elementKey": "sector_type",
-        "elementName": "sector_type",
-        "elementSet": "data",
-        "elementPath": "sector_type"
-      },
-      "enrollment_date": {
         "type": "string",
-        "elementType": "date",
+        "elementKey": "ward",
+        "elementName": "ward",
+        "elementSet": "data",
+        "elementPath": "ward"
+      },
+      "village": {
         "_defn": [
           {
             "_row_num": 4,
-            "section_name": "model"
+            "section_name": "survey"
           }
         ],
-        "elementKey": "enrollment_date",
-        "elementName": "enrollment_date",
-        "elementSet": "data",
-        "elementPath": "enrollment_date"
-      },
-      "location": {
-        "type": "object",
-        "elementType": "geopoint",
-        "properties": {
-          "latitude": {
-            "type": "number",
-            "elementKey": "location_latitude",
-            "elementName": "latitude",
-            "elementSet": "data",
-            "elementPath": "location.latitude"
-          },
-          "longitude": {
-            "type": "number",
-            "elementKey": "location_longitude",
-            "elementName": "longitude",
-            "elementSet": "data",
-            "elementPath": "location.longitude"
-          },
-          "altitude": {
-            "type": "number",
-            "elementKey": "location_altitude",
-            "elementName": "altitude",
-            "elementSet": "data",
-            "elementPath": "location.altitude"
-          },
-          "accuracy": {
-            "type": "number",
-            "elementKey": "location_accuracy",
-            "elementName": "accuracy",
-            "elementSet": "data",
-            "elementPath": "location.accuracy"
-          }
-        },
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "location",
-        "elementName": "location",
-        "elementSet": "data",
-        "elementPath": "location",
-        "listChildElementKeys": [
-          "location_accuracy",
-          "location_altitude",
-          "location_latitude",
-          "location_longitude"
-        ],
-        "notUnitOfRetention": true
-      },
-      "photo": {
-        "type": "object",
-        "elementType": "mimeUri",
-        "properties": {
-          "uriFragment": {
-            "type": "string",
-            "elementType": "rowpath",
-            "elementKey": "photo_uriFragment",
-            "elementName": "uriFragment",
-            "elementSet": "data",
-            "elementPath": "photo.uriFragment"
-          },
-          "contentType": {
-            "type": "string",
-            "elementType": "mimeType",
-            "default": "image/*",
-            "elementKey": "photo_contentType",
-            "elementName": "contentType",
-            "elementSet": "data",
-            "elementPath": "photo.contentType"
-          }
-        },
-        "_defn": [
-          {
-            "_row_num": 6,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "photo",
-        "elementName": "photo",
-        "elementSet": "data",
-        "elementPath": "photo",
-        "listChildElementKeys": [
-          "photo_contentType",
-          "photo_uriFragment"
-        ],
-        "notUnitOfRetention": true
-      },
-      "owner": {
         "type": "string",
-        "_defn": [
-          {
-            "_row_num": 7,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "owner",
-        "elementName": "owner",
-        "elementSet": "data",
-        "elementPath": "owner"
-      },
-      "gender": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 8,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "gender",
-        "elementName": "gender",
-        "elementSet": "data",
-        "elementPath": "gender"
-      },
-      "business_age": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 9,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "business_age",
-        "elementName": "business_age",
-        "elementSet": "data",
-        "elementPath": "business_age"
-      },
-      "firm_size": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 10,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "firm_size",
-        "elementName": "firm_size",
-        "elementSet": "data",
-        "elementPath": "firm_size"
-      },
-      "phone_number": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 11,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "phone_number",
-        "elementName": "phone_number",
-        "elementSet": "data",
-        "elementPath": "phone_number"
-      },
-      "address": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 12,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "address",
-        "elementName": "address",
-        "elementSet": "data",
-        "elementPath": "address"
-      },
-      "village": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 13,
-            "section_name": "model"
-          }
-        ],
         "elementKey": "village",
         "elementName": "village",
         "elementSet": "data",
         "elementPath": "village"
       },
       "subvillage": {
-        "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
-            "section_name": "model"
+            "_row_num": 5,
+            "section_name": "survey"
           }
         ],
+        "type": "string",
         "elementKey": "subvillage",
         "elementName": "subvillage",
         "elementSet": "data",
         "elementPath": "subvillage"
       },
-      "verification_date": {
-        "type": "string",
-        "elementType": "date",
+      "veo": {
         "_defn": [
           {
-            "_row_num": 2,
+            "_row_num": 6,
             "section_name": "survey"
-          },
-          {
-            "_row_num": 15,
-            "section_name": "model"
           }
         ],
-        "elementKey": "verification_date",
-        "elementName": "verification_date",
-        "elementSet": "data",
-        "elementPath": "verification_date"
-      },
-      "verification_agent": {
         "type": "string",
-        "_defn": [
-          {
-            "_row_num": 3,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 16,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "verification_agent",
-        "elementName": "verification_agent",
+        "elementKey": "veo",
+        "elementName": "veo",
         "elementSet": "data",
-        "elementPath": "verification_agent"
-      },
-      "has_been_verified_by_agent": {
-        "type": "integer",
-        "valuesList": "true_false_unsure",
-        "_defn": [
-          {
-            "_row_num": 4,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 17,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "has_been_verified_by_agent",
-        "elementName": "has_been_verified_by_agent",
-        "elementSet": "data",
-        "elementPath": "has_been_verified_by_agent"
-      },
-      "authorization_date": {
-        "type": "string",
-        "elementType": "date",
-        "_defn": [
-          {
-            "_row_num": 18,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_date",
-        "elementName": "authorization_date",
-        "elementSet": "data",
-        "elementPath": "authorization_date"
-      },
-      "authorization_otc": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 19,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_otc",
-        "elementName": "authorization_otc",
-        "elementSet": "data",
-        "elementPath": "authorization_otc"
-      },
-      "authorization_veo": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 20,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "authorization_veo",
-        "elementName": "authorization_veo",
-        "elementSet": "data",
-        "elementPath": "authorization_veo"
-      },
-      "has_been_authorized_by_veo": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 21,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "has_been_authorized_by_veo",
-        "elementName": "has_been_authorized_by_veo",
-        "elementSet": "data",
-        "elementPath": "has_been_authorized_by_veo"
-      },
-      "secondary_phone_number": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 22,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "secondary_phone_number",
-        "elementName": "secondary_phone_number",
-        "elementSet": "data",
-        "elementPath": "secondary_phone_number"
-      },
-      "location_latitude": {
-        "type": "number",
-        "elementKey": "location_latitude",
-        "elementName": "latitude",
-        "elementSet": "data",
-        "elementPath": "location.latitude"
-      },
-      "location_longitude": {
-        "type": "number",
-        "elementKey": "location_longitude",
-        "elementName": "longitude",
-        "elementSet": "data",
-        "elementPath": "location.longitude"
-      },
-      "location_altitude": {
-        "type": "number",
-        "elementKey": "location_altitude",
-        "elementName": "altitude",
-        "elementSet": "data",
-        "elementPath": "location.altitude"
-      },
-      "location_accuracy": {
-        "type": "number",
-        "elementKey": "location_accuracy",
-        "elementName": "accuracy",
-        "elementSet": "data",
-        "elementPath": "location.accuracy"
-      },
-      "photo_uriFragment": {
-        "type": "string",
-        "elementType": "rowpath",
-        "elementKey": "photo_uriFragment",
-        "elementName": "uriFragment",
-        "elementSet": "data",
-        "elementPath": "photo.uriFragment"
-      },
-      "photo_contentType": {
-        "type": "string",
-        "elementType": "mimeType",
-        "default": "image/*",
-        "elementKey": "photo_contentType",
-        "elementName": "contentType",
-        "elementSet": "data",
-        "elementPath": "photo.contentType"
+        "elementPath": "veo"
       },
       "_id": {
         "type": "string",
@@ -1475,6 +902,36 @@
         "elementSet": "instanceMetadata",
         "elementPath": "_savepoint_creator"
       }
-    }
+    },
+    "properties": [
+      {
+        "_partition": "FormType",
+        "_aspect": "default",
+        "_key": "FormType.formType",
+        "_type": "string",
+        "_value": "SURVEY"
+      },
+      {
+        "_partition": "SurveyUtil",
+        "_aspect": "default",
+        "_key": "SurveyUtil.formId",
+        "_type": "string",
+        "_value": "geo_unit"
+      },
+      {
+        "_partition": "Table",
+        "_aspect": "default",
+        "_key": "defaultViewType",
+        "_type": "string",
+        "_value": "SPREADSHEET"
+      },
+      {
+        "_partition": "Table",
+        "_aspect": "default",
+        "_key": "displayName",
+        "_type": "object",
+        "_value": "{\"text\":\"Geo Unit\"}"
+      }
+    ]
   }
 }
