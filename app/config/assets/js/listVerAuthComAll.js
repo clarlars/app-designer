@@ -26,14 +26,6 @@ function display() {
         odkTables.launchHTML(null, authURLToLaunch);
     });
 
-    var comButton = $('#com-button');
-    comButton.on('click', function() {
-        appendToUrl += '&' + util.COL_AGENT_VERIFIED + '=' + util.ONE;
-        appendToUrl += '&' + util.COL_VEO_AUTHORIZED + '=' + util.ONE;
-        var comURLToLaunch = busListUrl + appendToUrl;
-        odkTables.launchHTML(null, comURLToLaunch);
-    });
-
     var allButton = $('#all-button');
     allButton.on('click', function() {
         var allURLToLaunch = busListUrl + appendToUrl;
