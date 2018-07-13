@@ -37,6 +37,10 @@ util.VILLAGE = 'village';
 
 util.BUSINESS_BTN_ACTION = 'button-action';
 
+util.USER_TABLE = 'users';
+util.USER_ID = 'user_id';
+util.PHONE_NUMBER = 'phone_number';
+
 util.getVillagesByPendingAuth = function(successCB, failureCB) {
 
     var queryStr = 'SELECT ' + util.VILLAGE + ', count(*) FROM business WHERE ' +
@@ -45,6 +49,14 @@ util.getVillagesByPendingAuth = function(successCB, failureCB) {
 
     var queryParam = [util.NEG_ONE];
     odkData.arbitraryQuery('business', queryStr, queryParam, null, null, successCB, failureCB);
+};
+
+util.getVillages = function(successCB, failureCB) {
+
+    var queryStr = 'SELECT ' + util.VILLAGE + ' FROM geo_unit GROUP BY ' + util.VILLAGE;
+
+    var queryParam = [];
+    odkData.arbitraryQuery('geo_unit', queryStr, queryParam, null, null, successCB, failureCB);
 };
 
 /**
