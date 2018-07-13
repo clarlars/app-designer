@@ -1,3 +1,4 @@
+var indexUserId = "";
 function display() {
     var signUpURL = 'config/assets/signUp.html';
     var body = $('#main');
@@ -21,6 +22,7 @@ function display() {
         } else {
             var userName = $('#user-name');
             userName.text(result.getData(0, util.NAME));
+            indexUserId = result.getData(0, util.USER_ID);
             initButtons();
         }
 
@@ -36,7 +38,7 @@ function initButtons() {
     var agentButton = $('#agent-button');
     agentButton.prop('disabled', false);
     agentButton.on('click', function() {
-        odkTables.launchHTML(null, 'config/assets/agentView.html');
+        odkTables.launchHTML(null, 'config/assets/agentView.html?' + util.USER_ID + '=' + indexUserId);
     });
 
     var coordinatorButton = $('#coordinator-button');

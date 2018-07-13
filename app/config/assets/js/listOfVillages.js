@@ -4,6 +4,7 @@ var pendingAuth;
 var pendingVer;
 var actionToPerform;
 var completed;
+var lovUserId;
 var REGION_ATTR = 'region';
 
 function display() {
@@ -12,6 +13,7 @@ function display() {
     pendingVer = util.getQueryParameter(util.PENDING_VERIFICATION);
     actionToPerform = util.getQueryParameter(util.ACTION);
     completed = util.getQueryParameter(util.COMPLETED);
+    lovUserId = util.getQueryParameter(util.USER_ID);
 
     util.getVillagesByPendingAuth(loadVillages, failCB);
 }
@@ -74,6 +76,10 @@ function determineButtonAction(evt) {
         urlToUse = businessAuthorizeURL + queryParamToAppend;
     } else if (actionToPerform === util.ACTION_VERIFY) {
         urlToUse = businessVerifyURL + queryParamToAppend;
+    }
+
+    if (lovUserId !== null && lovUserId !== undefined) {
+        queryParamToAppend += '&' + util.USER_ID + '=' + lovUserId;
     }
 
     if (urlToUse !== '' && urlToUse !== null && urlToUse !== undefined) {
