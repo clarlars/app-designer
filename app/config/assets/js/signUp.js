@@ -73,7 +73,7 @@ function createUser() {
             colMap[util.USER_ID] = util.genUUID();
             colMap[util.VILLAGE] = $('#village').val();
             colMap[util.PHONE_NUMBER] = $('#phone-number').val();
-            colMap[util.NAME] = $('#name').val();
+            colMap[util.NAME] = $('#user-name').val();
 
             odkData.insertLocalOnlyRow(util.USER_TABLE, colMap, resolve, reject);
         });
