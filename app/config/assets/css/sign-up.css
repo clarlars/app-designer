@@ -1,0 +1,12 @@
+.input-color {
+    color: black;
+}
+
+.label-display {
+    display: flex;
+}
+
+.select-width {
+    width: 67%;
+    display: unset;
+}

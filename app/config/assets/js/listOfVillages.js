@@ -29,11 +29,11 @@ function loadVillages(data) {
 
         var vBtn = $('<button>');
         var vBadge = $('<span>');
-        vBadge.attr("class", "button-badge badge");
+        vBadge.attr('class', 'button-badge badge');
         vBadge.text(vCount);
         vBtn.text(vName);
-        vBtn.attr("class", "button");
-        vBtn.attr("region", vName);
+        vBtn.attr('class', 'button');
+        vBtn.attr('region', vName);
         vBtn.on('click', function (evt) {
             determineButtonAction(evt);
         });

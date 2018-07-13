@@ -40,6 +40,12 @@ util.BUSINESS_BTN_ACTION = 'button-action';
 util.USER_TABLE = 'users';
 util.USER_ID = 'user_id';
 util.PHONE_NUMBER = 'phone_number';
+util.NAME = 'name';
+
+util.ELEMENT_KEY = 'elementKey';
+util.ELEMENT_NAME = 'elementName';
+util.ELEMENT_TYPE = 'elementType';
+util.LIST_CHILD_ELEMENT_KEYS = 'listChildElementKeys';
 
 util.getVillagesByPendingAuth = function(successCB, failureCB) {
 
