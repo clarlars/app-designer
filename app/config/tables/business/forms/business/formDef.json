@@ -7,7 +7,10 @@
         "name": "district",
         "display": {
           "prompt": {
-            "text": "Choose the district."
+            "text": {
+              "default": "Choose the district.",
+              "sw": "Choose the district."
+            }
           }
         },
         "_row_num": 2
@@ -18,7 +21,10 @@
         "name": "ward",
         "display": {
           "prompt": {
-            "text": "Choose the ward."
+            "text": {
+              "default": "Choose the ward.",
+              "sw": "Chagua Kata"
+            }
           }
         },
         "_row_num": 3
@@ -29,7 +35,10 @@
         "name": "village",
         "display": {
           "prompt": {
-            "text": "Choose the village."
+            "text": {
+              "default": "Choose the village.",
+              "sw": "Chagua Kijiji"
+            }
           }
         },
         "_row_num": 4
@@ -40,7 +49,10 @@
         "name": "subvillage",
         "display": {
           "prompt": {
-            "text": "Choose the subvillage."
+            "text": {
+              "default": "Choose the subvillage.",
+              "sw": "Chagua kitongoji/Mtaa"
+            }
           }
         },
         "_row_num": 5
@@ -50,7 +62,10 @@
         "name": "firm_name",
         "display": {
           "prompt": {
-            "text": "Enter the name of the business."
+            "text": {
+              "default": "Enter the name of the business.",
+              "sw": "Andika jina la biashara"
+            }
           }
         },
         "_row_num": 6
@@ -61,7 +76,10 @@
         "name": "sector_type",
         "display": {
           "prompt": {
-            "text": "Choose the sector of the business."
+            "text": {
+              "default": "Choose the sector of the business.",
+              "sw": "Chagua sekta ya Biashara"
+            }
           }
         },
         "_row_num": 7
@@ -72,7 +90,10 @@
         "name": "subsector_type",
         "display": {
           "prompt": {
-            "text": "Choose the subsector of the business"
+            "text": {
+              "default": "Choose the subsector of the business",
+              "sw": "Choose the subsector of the business"
+            }
           }
         },
         "choice_filter": "choice_item.sector_number == data('sector_type')",
@@ -89,7 +110,10 @@
         "name": "crop_type",
         "display": {
           "prompt": {
-            "text": "Do you specialize in a specifc crop?"
+            "text": {
+              "default": "Do you specialize in a specifc crop?",
+              "sw": "Do you specialize in a specifc crop?"
+            }
           }
         },
         "_row_num": 10
@@ -104,7 +128,10 @@
         "name": "secondary_phone_number_network",
         "display": {
           "prompt": {
-            "text": "Enter the network for the secondary phone number."
+            "text": {
+              "default": "Enter the network for the secondary phone number.",
+              "sw": "Andika mtandao wa simu wa namba ya pili ya biashara"
+            }
           }
         },
         "_row_num": 12
@@ -114,7 +141,10 @@
         "name": "enroller_id",
         "display": {
           "prompt": {
-            "text": "Enter the id of enroller."
+            "text": {
+              "default": "Enter the id of enroller.",
+              "sw": "Andika namba ya utambulisho ya mwandikishaji"
+            }
           }
         },
         "_row_num": 13
@@ -124,7 +154,10 @@
         "name": "verifier_id",
         "display": {
           "prompt": {
-            "text": "Enter the id of the coordinator who verified the business."
+            "text": {
+              "default": "Enter the id of the coordinator who verified the business.",
+              "sw": "Enter the id of the coordinator who verified the business."
+            }
           }
         },
         "_row_num": 14
@@ -135,7 +168,10 @@
         "name": "has_been_verified_by_agent",
         "display": {
           "prompt": {
-            "text": "Has the coordinator verified this business?"
+            "text": {
+              "default": "Has the coordinator verified this business?",
+              "sw": "Je mwandikishaji ndiye aliyehakiki biashara?"
+            }
           }
         },
         "_row_num": 15
@@ -146,7 +182,10 @@
         "name": "authorization_veo",
         "display": {
           "prompt": {
-            "text": "Enter the name of the authorizing VEO."
+            "text": {
+              "default": "Enter the name of the authorizing VEO.",
+              "sw": "Andika namba ya utambulisho ya mhakiki/msimamizi wa biashara"
+            }
           }
         },
         "_row_num": 16
@@ -157,7 +196,10 @@
         "name": "has_been_authorized_by_veo",
         "display": {
           "prompt": {
-            "text": "Has the VEO authorized this business?"
+            "text": {
+              "default": "Has the VEO authorized this business?",
+              "sw": "Je ni mtendaji ndiye aliyehakiki biashara?"
+            }
           }
         },
         "_row_num": 17
@@ -167,7 +209,10 @@
         "name": "authorizer_id",
         "display": {
           "prompt": {
-            "text": "Enter the id of authorizer."
+            "text": {
+              "default": "Enter the id of authorizer.",
+              "sw": "Andika namba ya utambulisho ya mhakiki/msimamizi wa biashara"
+            }
           }
         },
         "_row_num": 18
@@ -283,7 +328,10 @@
         "data_value": 0,
         "display": {
           "title": {
-            "text": "False"
+            "text": {
+              "default": "False",
+              "sw": "Sio kweli"
+            }
           }
         },
         "_row_num": 11
@@ -293,7 +341,10 @@
         "data_value": 1,
         "display": {
           "title": {
-            "text": "True"
+            "text": {
+              "default": "True",
+              "sw": "Kweli"
+            }
           }
         },
         "_row_num": 12
@@ -303,7 +354,10 @@
         "data_value": -1,
         "display": {
           "title": {
-            "text": "Unsure"
+            "text": {
+              "default": "Unsure",
+              "sw": "Sina uhakika"
+            }
           }
         },
         "_row_num": 13
@@ -313,7 +367,10 @@
         "data_value": "female",
         "display": {
           "title": {
-            "text": "Female"
+            "text": {
+              "default": "Female",
+              "sw": "Mwanamke"
+            }
           }
         },
         "_row_num": 15
@@ -323,7 +380,10 @@
         "data_value": "male",
         "display": {
           "title": {
-            "text": "Male"
+            "text": {
+              "default": "Male",
+              "sw": "Mwanaume"
+            }
           }
         },
         "_row_num": 16
@@ -357,6 +417,16 @@
           }
         },
         "_row_num": 21
+      },
+      {
+        "choice_list_name": "network_list",
+        "data_value": "halotel",
+        "display": {
+          "title": {
+            "text": "Halotel"
+          }
+        },
+        "_row_num": 22
       },
       {
         "choice_list_name": "crop_type_list",
@@ -811,6 +881,14 @@
       {
         "setting_name": "form_id",
         "value": "business",
+        "display": {
+          "title": {
+            "text": {
+              "default": "Business Survey",
+              "sw": "Dodoso la biashara"
+            }
+          }
+        },
         "_row_num": 2
       },
       {
@@ -978,6 +1056,14 @@
       "form_id": {
         "setting_name": "form_id",
         "value": "business",
+        "display": {
+          "title": {
+            "text": {
+              "default": "Business Survey",
+              "sw": "Dodoso la biashara"
+            }
+          }
+        },
         "_row_num": 2
       },
       "table_id": {
@@ -1146,7 +1232,10 @@
           "data_value": 0,
           "display": {
             "title": {
-              "text": "False"
+              "text": {
+                "default": "False",
+                "sw": "Sio kweli"
+              }
             }
           },
           "_row_num": 11
@@ -1156,7 +1245,10 @@
           "data_value": 1,
           "display": {
             "title": {
-              "text": "True"
+              "text": {
+                "default": "True",
+                "sw": "Kweli"
+              }
             }
           },
           "_row_num": 12
@@ -1166,7 +1258,10 @@
           "data_value": -1,
           "display": {
             "title": {
-              "text": "Unsure"
+              "text": {
+                "default": "Unsure",
+                "sw": "Sina uhakika"
+              }
             }
           },
           "_row_num": 13
@@ -1178,7 +1273,10 @@
           "data_value": "female",
           "display": {
             "title": {
-              "text": "Female"
+              "text": {
+                "default": "Female",
+                "sw": "Mwanamke"
+              }
             }
           },
           "_row_num": 15
@@ -1188,7 +1286,10 @@
           "data_value": "male",
           "display": {
             "title": {
-              "text": "Male"
+              "text": {
+                "default": "Male",
+                "sw": "Mwanaume"
+              }
             }
           },
           "_row_num": 16
@@ -1224,6 +1325,16 @@
             }
           },
           "_row_num": 21
+        },
+        {
+          "choice_list_name": "network_list",
+          "data_value": "halotel",
+          "display": {
+            "title": {
+              "text": "Halotel"
+            }
+          },
+          "_row_num": 22
         }
       ],
       "crop_type_list": [
@@ -1985,7 +2096,10 @@
             "name": "district",
             "display": {
               "prompt": {
-                "text": "Choose the district."
+                "text": {
+                  "default": "Choose the district.",
+                  "sw": "Choose the district."
+                }
               }
             },
             "_row_num": 2,
@@ -2001,7 +2115,10 @@
             "name": "ward",
             "display": {
               "prompt": {
-                "text": "Choose the ward."
+                "text": {
+                  "default": "Choose the ward.",
+                  "sw": "Chagua Kata"
+                }
               }
             },
             "_row_num": 3,
@@ -2017,7 +2134,10 @@
             "name": "village",
             "display": {
               "prompt": {
-                "text": "Choose the village."
+                "text": {
+                  "default": "Choose the village.",
+                  "sw": "Chagua Kijiji"
+                }
               }
             },
             "_row_num": 4,
@@ -2033,7 +2153,10 @@
             "name": "subvillage",
             "display": {
               "prompt": {
-                "text": "Choose the subvillage."
+                "text": {
+                  "default": "Choose the subvillage.",
+                  "sw": "Chagua kitongoji/Mtaa"
+                }
               }
             },
             "_row_num": 5,
@@ -2048,7 +2171,10 @@
             "name": "firm_name",
             "display": {
               "prompt": {
-                "text": "Enter the name of the business."
+                "text": {
+                  "default": "Enter the name of the business.",
+                  "sw": "Andika jina la biashara"
+                }
               }
             },
             "_row_num": 6,
@@ -2064,7 +2190,10 @@
             "name": "sector_type",
             "display": {
               "prompt": {
-                "text": "Choose the sector of the business."
+                "text": {
+                  "default": "Choose the sector of the business.",
+                  "sw": "Chagua sekta ya Biashara"
+                }
               }
             },
             "_row_num": 7,
@@ -2080,7 +2209,10 @@
             "name": "subsector_type",
             "display": {
               "prompt": {
-                "text": "Choose the subsector of the business"
+                "text": {
+                  "default": "Choose the subsector of the business",
+                  "sw": "Choose the subsector of the business"
+                }
               }
             },
             "choice_filter": "choice_item.sector_number == data('sector_type')",
@@ -2097,7 +2229,10 @@
             "name": "crop_type",
             "display": {
               "prompt": {
-                "text": "Do you specialize in a specifc crop?"
+                "text": {
+                  "default": "Do you specialize in a specifc crop?",
+                  "sw": "Do you specialize in a specifc crop?"
+                }
               }
             },
             "_row_num": 10,
@@ -2113,7 +2248,10 @@
             "name": "secondary_phone_number_network",
             "display": {
               "prompt": {
-                "text": "Enter the network for the secondary phone number."
+                "text": {
+                  "default": "Enter the network for the secondary phone number.",
+                  "sw": "Andika mtandao wa simu wa namba ya pili ya biashara"
+                }
               }
             },
             "_row_num": 12,
@@ -2128,7 +2266,10 @@
             "name": "enroller_id",
             "display": {
               "prompt": {
-                "text": "Enter the id of enroller."
+                "text": {
+                  "default": "Enter the id of enroller.",
+                  "sw": "Andika namba ya utambulisho ya mwandikishaji"
+                }
               }
             },
             "_row_num": 13,
@@ -2143,7 +2284,10 @@
             "name": "verifier_id",
             "display": {
               "prompt": {
-                "text": "Enter the id of the coordinator who verified the business."
+                "text": {
+                  "default": "Enter the id of the coordinator who verified the business.",
+                  "sw": "Enter the id of the coordinator who verified the business."
+                }
               }
             },
             "_row_num": 14,
@@ -2159,7 +2303,10 @@
             "name": "has_been_verified_by_agent",
             "display": {
               "prompt": {
-                "text": "Has the coordinator verified this business?"
+                "text": {
+                  "default": "Has the coordinator verified this business?",
+                  "sw": "Je mwandikishaji ndiye aliyehakiki biashara?"
+                }
               }
             },
             "_row_num": 15,
@@ -2175,7 +2322,10 @@
             "name": "authorization_veo",
             "display": {
               "prompt": {
-                "text": "Enter the name of the authorizing VEO."
+                "text": {
+                  "default": "Enter the name of the authorizing VEO.",
+                  "sw": "Andika namba ya utambulisho ya mhakiki/msimamizi wa biashara"
+                }
               }
             },
             "_row_num": 16,
@@ -2191,7 +2341,10 @@
             "name": "has_been_authorized_by_veo",
             "display": {
               "prompt": {
-                "text": "Has the VEO authorized this business?"
+                "text": {
+                  "default": "Has the VEO authorized this business?",
+                  "sw": "Je ni mtendaji ndiye aliyehakiki biashara?"
+                }
               }
             },
             "_row_num": 17,
@@ -2206,7 +2359,10 @@
             "name": "authorizer_id",
             "display": {
               "prompt": {
-                "text": "Enter the id of authorizer."
+                "text": {
+                  "default": "Enter the id of authorizer.",
+                  "sw": "Andika namba ya utambulisho ya mhakiki/msimamizi wa biashara"
+                }
               }
             },
             "_row_num": 18,
@@ -3054,21 +3210,21 @@
         "_aspect": "has_been_authorized_by_veo",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"true_false_unsure\",\"data_value\":0,\"display\":{\"title\":{\"text\":\"False\"}},\"_row_num\":11},{\"choice_list_name\":\"true_false_unsure\",\"data_value\":1,\"display\":{\"title\":{\"text\":\"True\"}},\"_row_num\":12},{\"choice_list_name\":\"true_false_unsure\",\"data_value\":-1,\"display\":{\"title\":{\"text\":\"Unsure\"}},\"_row_num\":13}]"
+        "_value": "[{\"choice_list_name\":\"true_false_unsure\",\"data_value\":0,\"display\":{\"title\":{\"text\":{\"default\":\"False\",\"sw\":\"Sio kweli\"}}},\"_row_num\":11},{\"choice_list_name\":\"true_false_unsure\",\"data_value\":1,\"display\":{\"title\":{\"text\":{\"default\":\"True\",\"sw\":\"Kweli\"}}},\"_row_num\":12},{\"choice_list_name\":\"true_false_unsure\",\"data_value\":-1,\"display\":{\"title\":{\"text\":{\"default\":\"Unsure\",\"sw\":\"Sina uhakika\"}}},\"_row_num\":13}]"
       },
       {
         "_partition": "Column",
         "_aspect": "has_been_verified_by_agent",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"true_false_unsure\",\"data_value\":0,\"display\":{\"title\":{\"text\":\"False\"}},\"_row_num\":11},{\"choice_list_name\":\"true_false_unsure\",\"data_value\":1,\"display\":{\"title\":{\"text\":\"True\"}},\"_row_num\":12},{\"choice_list_name\":\"true_false_unsure\",\"data_value\":-1,\"display\":{\"title\":{\"text\":\"Unsure\"}},\"_row_num\":13}]"
+        "_value": "[{\"choice_list_name\":\"true_false_unsure\",\"data_value\":0,\"display\":{\"title\":{\"text\":{\"default\":\"False\",\"sw\":\"Sio kweli\"}}},\"_row_num\":11},{\"choice_list_name\":\"true_false_unsure\",\"data_value\":1,\"display\":{\"title\":{\"text\":{\"default\":\"True\",\"sw\":\"Kweli\"}}},\"_row_num\":12},{\"choice_list_name\":\"true_false_unsure\",\"data_value\":-1,\"display\":{\"title\":{\"text\":{\"default\":\"Unsure\",\"sw\":\"Sina uhakika\"}}},\"_row_num\":13}]"
       },
       {
         "_partition": "Column",
         "_aspect": "secondary_phone_number_network",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"network_list\",\"data_value\":\"airtel\",\"display\":{\"title\":{\"text\":\"Airtel\"}},\"_row_num\":19},{\"choice_list_name\":\"network_list\",\"data_value\":\"vodacom\",\"display\":{\"title\":{\"text\":\"Vodacom\"}},\"_row_num\":20},{\"choice_list_name\":\"network_list\",\"data_value\":\"tigo\",\"display\":{\"title\":{\"text\":\"Tigo\"}},\"_row_num\":21}]"
+        "_value": "[{\"choice_list_name\":\"network_list\",\"data_value\":\"airtel\",\"display\":{\"title\":{\"text\":\"Airtel\"}},\"_row_num\":19},{\"choice_list_name\":\"network_list\",\"data_value\":\"vodacom\",\"display\":{\"title\":{\"text\":\"Vodacom\"}},\"_row_num\":20},{\"choice_list_name\":\"network_list\",\"data_value\":\"tigo\",\"display\":{\"title\":{\"text\":\"Tigo\"}},\"_row_num\":21},{\"choice_list_name\":\"network_list\",\"data_value\":\"halotel\",\"display\":{\"title\":{\"text\":\"Halotel\"}},\"_row_num\":22}]"
       },
       {
         "_partition": "Column",
