@@ -1,58 +1,79 @@
 sector_number,subsector_number,subsector_txt,subsector_txt_sw
-1,1,Purchase at a market center: crops,Kununua sokoni: mazao ya kilimo 
-1,2,Purchase at a market center: livestock,Kununua sokoni: mifugo 
-1,3,Purchase at the farmgate: crops,Kununua shambani: mazao ya kilimo
-1,4,Purchase at the farmgate: livestock,Kununua shambani: mifugo
-1,5,Wholesaler,Jumla
-1,6,Management of market,Biashara ya usimamizi wa masoko
-1,7,Fish/aquaculture,Ufugaji wa samaki
-1,8,Charcoal,Mkaa
-1,9,Forestry,Biashara ya mazao ya misitu
-2,10,Sale at market stall: crops,Kuuza sokoni: vyakula/mazao ya kilimo
-2,11,Sale at market stall: livestock,Kuuza sokoni: mifugo
-2,12,Sale at market stall: Non-food,Kuuza sokoni: bidhaa nyingine zisizotokana na vyakula 
-2,13,Sale of agricultural inputs,kuuza pembejeo za kilimo
-2,14,General store,Duka
-2,15,Non-market kiosk/stall,Kioski
-2,16,Small scale vendor,Biashara ndogodogo
-2,17,Household goods,Bidhaa za nyumbani
-2,18,Construction/hardware store,Bidhaa za construction
-2,19,Mobile phone shop,Duka la simu
-3,20,Car/truck,gari/malori
-3,21,Motorbike,pikipiki/bodaboda
-3,22,Bicycle,baiskeli/guta
-3,23,Hand/pushcart,mikono/tolori
-3,24,Porter,wabeba mizigo
-3,25,Bus driver or manager,Dereva wa basi/daladala au mkurugenzi wa basi
-3,26,Taxi driver: car,Dereva taksi/gari
-4,27,Agricultural labor crew ,vibarua wa kilimo 
-4,28,Labor crew manager,mwenyekiti ya kibarua/vibarua 
-4,29,Rental of draft animals for plowing,kukodi wanyamakazi wa kulima 
-4,30,Tractor rental,trekita ya kukodi
-5,31,Milling,Kusaga 
-5,32,Packaging,kifungashio/kufungasha
-5,33,Brewery,kusindika
-5,34,Wine,Kutengeneza mvinyo
-5,35,Threshing,Kuchambua/Kutenganisha 
-5,36,Honey,Asali
-5,37,Cooking oil,Mafuta ya kupikia
-6,38,Mechanic / car repair,makanika/fundi gari/magari
-6,39,Motorbike repair,fundi pikipiki
-6,40,Bicycle repair,fundi baiskeli
-6,41,Tractor repair,fundi trekita
-6,42,Sale or maintenance of water pumps,uuzaji na matengenezo ya mabomba ya maji
-6,43,Electrician/ maintenance of solar panels,fundi umeme
-6,44,Carpentry/Artisan,seremala
-7,45,Veterinary services,Huduma za  mifugo
-7,46,Petrol sale: formal gas station,kituo cha mafuta kinachotambulika kisheria/rasimi
-7,47,Petrol sale: informal / jerry can,kituo cha mafuta  ambacho sio rasimi/kwenye madumu
-7,48,Pharmacy,duka la madawa
-7,49,Health clinic,kituo cha afya/dispensari
-7,50,Photocopy and stationary,Kutoa kopi na kuuza vifaa vya elimu na ofisi
-7,51,Internet/computer cafŽ,Interneti
-7,52,hotel,hoteli
-7,53,guest house,nyumba ya kulala wageni
-8,54,Informal credit supply / moneylending,taasisi za kifedha  zisizolasimi 
-8,55,Formal lending institution,Taasisi za kukopesha pesa zilizo rasmi
-8,56,Management of group-based microfinance institution,Utawala wa kikundi/makundi wenye tasisi za kifedha 
-8,57,Farmer cooperative,ushirika wa wakulima
+1,1,Market center,Sokoni
+1,2,Store,Duka
+1,3,Crops,Mazao ya kilimo
+1,4,Livestock,Mifugo
+1,5,Agricultural inputs,Pembejeo za kilimo
+1,6,Household goods,Bidhaa za nyumbani
+1,7,Construction/hardware store,Bidhaa za construction
+1,8,Clothing/Fabric,Nguo
+1,9,Electronics,Bidhaa za electronics
+1,10,Furniture,Samani/Fanicha
+1,11,Office Supplies,Bidhaa ma afisini
+2,12,Market Stall,Sokoni
+2,13,General Store,Duka
+2,14,Kiosk,Kioski
+2,15,Small scale vendor,Biashara ndogodogo
+2,16,Crops,Mazao ya Kilimo
+2,17,Livestock,Mifugo
+2,18,Agricultural inputs,Pembejeo za kilimo
+2,19,Household goods,Bidhaa za nyumbani
+2,20,Construction/hardware store,Bidhaa za construction na zana
+2,21,Mobile phone shop,Duka la simu
+2,22,Clothing/Fabric,Nguo
+2,23,Electronics,Bidhaa za electronics
+2,24,Furniture,Samani/Fanicha
+2,25,Office Supplies,Bidhaa ma afisini
+3,26,Car,Gari
+3,27,Truck,Malori
+3,28,Motorbike,Pikipiki/bodaboda
+3,29,Tuk-tuk,Bajaj
+3,30,Bicycle,Baiskeli/guta
+3,31,Hand/pushcart,Mkokoteni
+3,32,Porter,Mbeba mizigo/Mchukuzi
+3,33,Bus driver or manager,Dereva wa basi/daladala au mkurugenzi wa basi
+3,34,Taxi driver,Dereva taksi
+3,35,Transportation Cooperative,Kikundi ya Usafirishaji
+4,36,Agricultural labor crew ,Vibarua wa kilimo 
+4,37,Labor crew manager,Mwenyekiti ya kibarua/vibarua 
+4,38,Rental of draft animals for plowing,Kukodi wanyamakazi wa kulima 
+4,39,Tractor rental,Trekita ya kukodi
+4,40,Storage rental,Store
+5,41,Milling,Kusaga 
+5,42,Packaging,Kifungashio/kufungasha
+5,43,Brewery,Kusindika
+5,44,Wine,Kutengeneza mvinyo
+5,45,Threshing,Kuchambua/Kutenganisha 
+5,46,Honey,Asali
+5,47,Cooking oil,Mafuta ya kupikia
+6,48,Mechanic / car repair,Makanika/fundi gari/magari
+6,49,Motorbike repair,Fundi pikipiki
+6,50,Bicycle repair,Fundi baiskeli
+6,51,Tractor repair,Fundi trekita
+6,52,Welder,Fundi mchando/mwashi
+6,53,Sale or maintenance of water pumps,Uuzaji na matengenezo ya mabomba ya maji
+6,54,Electrician,Fundi umeme
+6,55,Carpentry,Seremala
+6,56,Tailor/Clothes,Fundi Cherehani
+6,57,Plumber,Plumber/Fundi Bomba
+6,58,Construction work,Fundi Ujenzi
+6,59,Cell phones,Fundi Simu 
+6,60,Computer,Fundi Kompyuta
+7,61,Veterinary services,Huduma za  mifugo
+7,62,Petrol sale,Kituo cha mafuta 
+7,63,Pharmacy,Duka la madawa
+7,64,Health clinic,Kituo cha afya/dispensari
+7,65,Photocopy and stationary,Photocopy and Stationary
+7,66,Internet/computer café,Interneti
+7,67,Hotel/Guest House,Hoteli/Guest House
+8,68,Restaurant,Mgahawa/Restorenti
+9,69,Barber Shop,Kinyonzi au Saluni
+8,70,Microfinance,Taasisi ya Microfinance
+8,71,Bank,Benki
+8,72,SACCO,SACCO
+8,73,Vicoba,Vicoba
+8,74,Other lending institution,Taasisi za mkopo zilizo rasmi
+8,75,Farmer cooperative,Ushirika wa wakulima
+8,76,Mobile-Money Agent,Wakala
+8,77,Insurance,Huduma za bima 
+8,78,Informal credit supply / moneylending,Taasisi za kifedha zisizolasimi 

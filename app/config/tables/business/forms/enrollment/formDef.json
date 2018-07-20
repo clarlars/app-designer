@@ -2,6 +2,20 @@
   "xlsx": {
     "survey": [
       {
+        "type": "select_one",
+        "values_list": "yes_no",
+        "name": "consent",
+        "display": {
+          "prompt": {
+            "text": {
+              "default": "Do you consent to participate?",
+              "sw": "Do you consent to participate?"
+            }
+          }
+        },
+        "_row_num": 2
+      },
+      {
         "type": "select_one_group_by",
         "values_list": "district_group_by",
         "name": "district",
@@ -13,7 +27,7 @@
             }
           }
         },
-        "_row_num": 2
+        "_row_num": 3
       },
       {
         "type": "select_one_group_by",
@@ -27,7 +41,7 @@
             }
           }
         },
-        "_row_num": 3
+        "_row_num": 4
       },
       {
         "type": "text",
@@ -40,7 +54,7 @@
             }
           }
         },
-        "_row_num": 4
+        "_row_num": 5
       },
       {
         "type": "select_one_integer",
@@ -54,7 +68,7 @@
             }
           }
         },
-        "_row_num": 5
+        "_row_num": 6
       },
       {
         "type": "select_one_integer",
@@ -69,12 +83,12 @@
           }
         },
         "choice_filter": "choice_item.sector_number == data('sector_type')",
-        "_row_num": 6
+        "_row_num": 7
       },
       {
         "clause": "if",
-        "condition": "(data('sector_type') === 1 || data('sector_type') === 2)",
-        "_row_num": 7
+        "condition": "(data('sector_type') === 1 || data('sector_type') === 2 || data('sector_type') === 5)",
+        "_row_num": 8
       },
       {
         "type": "select_one_integer",
@@ -88,11 +102,24 @@
             }
           }
         },
-        "_row_num": 8
+        "_row_num": 9
       },
       {
         "clause": "end if",
-        "_row_num": 9
+        "_row_num": 10
+      },
+      {
+        "type": "text",
+        "name": "business_owner_name",
+        "display": {
+          "prompt": {
+            "text": {
+              "default": "What is the business owners name?",
+              "sw": "What is the business owners name?"
+            }
+          }
+        },
+        "_row_num": 11
       },
       {
         "type": "text",
@@ -105,7 +132,7 @@
             }
           }
         },
-        "_row_num": 10
+        "_row_num": 12
       },
       {
         "type": "select_one",
@@ -119,7 +146,7 @@
             }
           }
         },
-        "_row_num": 11
+        "_row_num": 13
       },
       {
         "type": "integer",
@@ -132,7 +159,7 @@
             }
           }
         },
-        "_row_num": 12
+        "_row_num": 14
       },
       {
         "type": "text",
@@ -145,7 +172,7 @@
             }
           }
         },
-        "_row_num": 13
+        "_row_num": 15
       },
       {
         "type": "select_one",
@@ -159,7 +186,7 @@
             }
           }
         },
-        "_row_num": 14
+        "_row_num": 16
       },
       {
         "type": "text",
@@ -172,7 +199,7 @@
             }
           }
         },
-        "_row_num": 15
+        "_row_num": 17
       },
       {
         "type": "select_one",
@@ -186,7 +213,7 @@
             }
           }
         },
-        "_row_num": 16
+        "_row_num": 18
       }
     ],
     "queries": [
@@ -395,6 +422,26 @@
         "_row_num": 16
       },
       {
+        "choice_list_name": "yes_no",
+        "data_value": "yes",
+        "display": {
+          "title": {
+            "text": "Yes"
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "choice_list_name": "yes_no",
+        "data_value": "no",
+        "display": {
+          "title": {
+            "text": "No"
+          }
+        },
+        "_row_num": 19
+      },
+      {
         "choice_list_name": "network_list",
         "data_value": "airtel",
         "display": {
@@ -402,7 +449,7 @@
             "text": "Airtel"
           }
         },
-        "_row_num": 19
+        "_row_num": 21
       },
       {
         "choice_list_name": "network_list",
@@ -412,7 +459,7 @@
             "text": "Vodacom"
           }
         },
-        "_row_num": 20
+        "_row_num": 22
       },
       {
         "choice_list_name": "network_list",
@@ -422,7 +469,7 @@
             "text": "Tigo"
           }
         },
-        "_row_num": 21
+        "_row_num": 23
       },
       {
         "choice_list_name": "network_list",
@@ -432,7 +479,7 @@
             "text": "Halotel"
           }
         },
-        "_row_num": 22
+        "_row_num": 24
       },
       {
         "choice_list_name": "crop_type_list",
@@ -445,7 +492,7 @@
             }
           }
         },
-        "_row_num": 25
+        "_row_num": 27
       },
       {
         "choice_list_name": "crop_type_list",
@@ -458,7 +505,7 @@
             }
           }
         },
-        "_row_num": 26
+        "_row_num": 28
       },
       {
         "choice_list_name": "crop_type_list",
@@ -471,7 +518,7 @@
             }
           }
         },
-        "_row_num": 27
+        "_row_num": 29
       },
       {
         "choice_list_name": "crop_type_list",
@@ -484,7 +531,7 @@
             }
           }
         },
-        "_row_num": 28
+        "_row_num": 30
       },
       {
         "choice_list_name": "crop_type_list",
@@ -497,7 +544,7 @@
             }
           }
         },
-        "_row_num": 29
+        "_row_num": 31
       },
       {
         "choice_list_name": "crop_type_list",
@@ -510,7 +557,7 @@
             }
           }
         },
-        "_row_num": 30
+        "_row_num": 32
       },
       {
         "choice_list_name": "crop_type_list",
@@ -523,7 +570,7 @@
             }
           }
         },
-        "_row_num": 31
+        "_row_num": 33
       },
       {
         "choice_list_name": "crop_type_list",
@@ -536,7 +583,7 @@
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 34
       },
       {
         "choice_list_name": "crop_type_list",
@@ -549,7 +596,7 @@
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 35
       },
       {
         "choice_list_name": "crop_type_list",
@@ -562,7 +609,7 @@
             }
           }
         },
-        "_row_num": 34
+        "_row_num": 36
       },
       {
         "choice_list_name": "crop_type_list",
@@ -575,7 +622,7 @@
             }
           }
         },
-        "_row_num": 35
+        "_row_num": 37
       },
       {
         "choice_list_name": "crop_type_list",
@@ -588,7 +635,7 @@
             }
           }
         },
-        "_row_num": 36
+        "_row_num": 38
       },
       {
         "choice_list_name": "crop_type_list",
@@ -601,7 +648,7 @@
             }
           }
         },
-        "_row_num": 37
+        "_row_num": 39
       },
       {
         "choice_list_name": "crop_type_list",
@@ -614,7 +661,7 @@
             }
           }
         },
-        "_row_num": 38
+        "_row_num": 40
       },
       {
         "choice_list_name": "crop_type_list",
@@ -627,7 +674,7 @@
             }
           }
         },
-        "_row_num": 39
+        "_row_num": 41
       },
       {
         "choice_list_name": "crop_type_list",
@@ -640,7 +687,7 @@
             }
           }
         },
-        "_row_num": 40
+        "_row_num": 42
       },
       {
         "choice_list_name": "crop_type_list",
@@ -653,7 +700,7 @@
             }
           }
         },
-        "_row_num": 41
+        "_row_num": 43
       },
       {
         "choice_list_name": "crop_type_list",
@@ -666,7 +713,7 @@
             }
           }
         },
-        "_row_num": 42
+        "_row_num": 44
       },
       {
         "choice_list_name": "crop_type_list",
@@ -679,7 +726,7 @@
             }
           }
         },
-        "_row_num": 43
+        "_row_num": 45
       },
       {
         "choice_list_name": "crop_type_list",
@@ -692,7 +739,7 @@
             }
           }
         },
-        "_row_num": 44
+        "_row_num": 46
       },
       {
         "choice_list_name": "crop_type_list",
@@ -705,7 +752,7 @@
             }
           }
         },
-        "_row_num": 45
+        "_row_num": 47
       },
       {
         "choice_list_name": "crop_type_list",
@@ -718,7 +765,7 @@
             }
           }
         },
-        "_row_num": 46
+        "_row_num": 48
       },
       {
         "choice_list_name": "crop_type_list",
@@ -731,7 +778,7 @@
             }
           }
         },
-        "_row_num": 47
+        "_row_num": 49
       },
       {
         "choice_list_name": "crop_type_list",
@@ -744,7 +791,7 @@
             }
           }
         },
-        "_row_num": 48
+        "_row_num": 50
       },
       {
         "choice_list_name": "crop_type_list",
@@ -757,7 +804,7 @@
             }
           }
         },
-        "_row_num": 49
+        "_row_num": 51
       },
       {
         "choice_list_name": "crop_type_list",
@@ -770,7 +817,7 @@
             }
           }
         },
-        "_row_num": 50
+        "_row_num": 52
       },
       {
         "choice_list_name": "crop_type_list",
@@ -783,7 +830,7 @@
             }
           }
         },
-        "_row_num": 51
+        "_row_num": 53
       },
       {
         "choice_list_name": "crop_type_list",
@@ -796,7 +843,7 @@
             }
           }
         },
-        "_row_num": 52
+        "_row_num": 54
       }
     ],
     "settings": [
@@ -833,113 +880,123 @@
     "model": [
       {
         "type": "select_one",
-        "name": "district",
+        "name": "consent",
         "_row_num": 2
       },
       {
         "type": "select_one",
-        "name": "ward",
+        "name": "district",
         "_row_num": 3
       },
       {
         "type": "select_one",
-        "name": "village",
+        "name": "ward",
         "_row_num": 4
       },
       {
         "type": "select_one",
-        "name": "subvillage",
+        "name": "village",
         "_row_num": 5
+      },
+      {
+        "type": "select_one",
+        "name": "subvillage",
+        "_row_num": 6
       },
       {
         "type": "text",
         "name": "firm_name",
-        "_row_num": 6
-      },
-      {
-        "type": "select_one_integer",
-        "name": "sector_type",
         "_row_num": 7
       },
       {
         "type": "select_one_integer",
-        "name": "subsector_type",
+        "name": "sector_type",
         "_row_num": 8
       },
       {
         "type": "select_one_integer",
-        "name": "crop_type",
+        "name": "subsector_type",
         "_row_num": 9
+      },
+      {
+        "type": "select_one_integer",
+        "name": "crop_type",
+        "_row_num": 10
       },
       {
         "type": "integer",
         "name": "business_age",
-        "_row_num": 10
+        "_row_num": 11
+      },
+      {
+        "type": "text",
+        "name": "business_owner_name",
+        "_row_num": 12
       },
       {
         "type": "text",
         "name": "business_owner_age",
-        "_row_num": 11
+        "_row_num": 13
       },
       {
         "type": "select_one",
         "name": "gender",
-        "_row_num": 12
+        "_row_num": 14
       },
       {
         "type": "integer",
         "name": "firm_size",
-        "_row_num": 13
-      },
-      {
-        "type": "text",
-        "name": "phone_number",
-        "_row_num": 14
-      },
-      {
-        "type": "select_one",
-        "name": "phone_number_network",
         "_row_num": 15
       },
       {
         "type": "text",
-        "name": "secondary_phone_number",
+        "name": "phone_number",
         "_row_num": 16
       },
       {
         "type": "select_one",
-        "name": "secondary_phone_number_network",
+        "name": "phone_number_network",
         "_row_num": 17
       },
       {
         "type": "text",
-        "name": "enroller_id",
+        "name": "secondary_phone_number",
         "_row_num": 18
+      },
+      {
+        "type": "select_one",
+        "name": "secondary_phone_number_network",
+        "_row_num": 19
+      },
+      {
+        "type": "text",
+        "name": "enroller_id",
+        "_row_num": 20
       },
       {
         "type": "text",
         "name": "verifier_id",
-        "_row_num": 19
-      },
-      {
-        "type": "select_one_integer",
-        "name": "has_been_verified_by_agent",
-        "_row_num": 20
-      },
-      {
-        "type": "select_one",
-        "name": "authorization_veo",
         "_row_num": 21
       },
       {
         "type": "select_one_integer",
-        "name": "has_been_authorized_by_veo",
+        "name": "has_been_verified_by_agent",
         "_row_num": 22
+      },
+      {
+        "type": "select_one",
+        "name": "authorization_veo",
+        "_row_num": 23
+      },
+      {
+        "type": "select_one_integer",
+        "name": "has_been_authorized_by_veo",
+        "_row_num": 24
       },
       {
         "type": "text",
         "name": "authorizer_id",
-        "_row_num": 23
+        "_row_num": 25
       }
     ],
     "prompt_types": [
@@ -1201,6 +1258,28 @@
           "_row_num": 16
         }
       ],
+      "yes_no": [
+        {
+          "choice_list_name": "yes_no",
+          "data_value": "yes",
+          "display": {
+            "title": {
+              "text": "Yes"
+            }
+          },
+          "_row_num": 18
+        },
+        {
+          "choice_list_name": "yes_no",
+          "data_value": "no",
+          "display": {
+            "title": {
+              "text": "No"
+            }
+          },
+          "_row_num": 19
+        }
+      ],
       "network_list": [
         {
           "choice_list_name": "network_list",
@@ -1210,7 +1289,7 @@
               "text": "Airtel"
             }
           },
-          "_row_num": 19
+          "_row_num": 21
         },
         {
           "choice_list_name": "network_list",
@@ -1220,7 +1299,7 @@
               "text": "Vodacom"
             }
           },
-          "_row_num": 20
+          "_row_num": 22
         },
         {
           "choice_list_name": "network_list",
@@ -1230,7 +1309,7 @@
               "text": "Tigo"
             }
           },
-          "_row_num": 21
+          "_row_num": 23
         },
         {
           "choice_list_name": "network_list",
@@ -1240,7 +1319,7 @@
               "text": "Halotel"
             }
           },
-          "_row_num": 22
+          "_row_num": 24
         }
       ],
       "crop_type_list": [
@@ -1255,7 +1334,7 @@
               }
             }
           },
-          "_row_num": 25
+          "_row_num": 27
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1268,7 +1347,7 @@
               }
             }
           },
-          "_row_num": 26
+          "_row_num": 28
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1281,7 +1360,7 @@
               }
             }
           },
-          "_row_num": 27
+          "_row_num": 29
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1294,7 +1373,7 @@
               }
             }
           },
-          "_row_num": 28
+          "_row_num": 30
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1307,7 +1386,7 @@
               }
             }
           },
-          "_row_num": 29
+          "_row_num": 31
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1320,7 +1399,7 @@
               }
             }
           },
-          "_row_num": 30
+          "_row_num": 32
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1333,7 +1412,7 @@
               }
             }
           },
-          "_row_num": 31
+          "_row_num": 33
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1346,7 +1425,7 @@
               }
             }
           },
-          "_row_num": 32
+          "_row_num": 34
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1359,7 +1438,7 @@
               }
             }
           },
-          "_row_num": 33
+          "_row_num": 35
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1372,7 +1451,7 @@
               }
             }
           },
-          "_row_num": 34
+          "_row_num": 36
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1385,7 +1464,7 @@
               }
             }
           },
-          "_row_num": 35
+          "_row_num": 37
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1398,7 +1477,7 @@
               }
             }
           },
-          "_row_num": 36
+          "_row_num": 38
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1411,7 +1490,7 @@
               }
             }
           },
-          "_row_num": 37
+          "_row_num": 39
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1424,7 +1503,7 @@
               }
             }
           },
-          "_row_num": 38
+          "_row_num": 40
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1437,7 +1516,7 @@
               }
             }
           },
-          "_row_num": 39
+          "_row_num": 41
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1450,7 +1529,7 @@
               }
             }
           },
-          "_row_num": 40
+          "_row_num": 42
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1463,7 +1542,7 @@
               }
             }
           },
-          "_row_num": 41
+          "_row_num": 43
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1476,7 +1555,7 @@
               }
             }
           },
-          "_row_num": 42
+          "_row_num": 44
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1489,7 +1568,7 @@
               }
             }
           },
-          "_row_num": 43
+          "_row_num": 45
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1502,7 +1581,7 @@
               }
             }
           },
-          "_row_num": 44
+          "_row_num": 46
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1515,7 +1594,7 @@
               }
             }
           },
-          "_row_num": 45
+          "_row_num": 47
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1528,7 +1607,7 @@
               }
             }
           },
-          "_row_num": 46
+          "_row_num": 48
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1541,7 +1620,7 @@
               }
             }
           },
-          "_row_num": 47
+          "_row_num": 49
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1554,7 +1633,7 @@
               }
             }
           },
-          "_row_num": 48
+          "_row_num": 50
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1567,7 +1646,7 @@
               }
             }
           },
-          "_row_num": 49
+          "_row_num": 51
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1580,7 +1659,7 @@
               }
             }
           },
-          "_row_num": 50
+          "_row_num": 52
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1593,7 +1672,7 @@
               }
             }
           },
-          "_row_num": 51
+          "_row_num": 53
         },
         {
           "choice_list_name": "crop_type_list",
@@ -1606,7 +1685,7 @@
               }
             }
           },
-          "_row_num": 52
+          "_row_num": 54
         }
       ]
     },
@@ -1647,10 +1726,9 @@
     },
     "calculates": {},
     "model": {
-      "district": {
-        "prompt_type_name": "select_one_group_by",
+      "consent": {
         "type": "string",
-        "valuesList": "district_group_by",
+        "valuesList": "yes_no",
         "_defn": [
           {
             "_row_num": 2,
@@ -1661,13 +1739,29 @@
             "section_name": "model"
           }
         ],
+        "elementKey": "consent"
+      },
+      "district": {
+        "prompt_type_name": "select_one_group_by",
+        "type": "string",
+        "valuesList": "district_group_by",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
         "elementKey": "district"
       },
       "ward": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "model"
           }
         ],
@@ -1679,11 +1773,11 @@
         "valuesList": "villages_group_by",
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "survey"
           },
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "model"
           }
         ],
@@ -1693,7 +1787,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 5,
+            "_row_num": 6,
             "section_name": "model"
           }
         ],
@@ -1701,21 +1795,6 @@
       },
       "firm_name": {
         "type": "string",
-        "_defn": [
-          {
-            "_row_num": 4,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 6,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "firm_name"
-      },
-      "sector_type": {
-        "type": "integer",
-        "valuesList": "sector_type_list",
         "_defn": [
           {
             "_row_num": 5,
@@ -1726,11 +1805,11 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "sector_type"
+        "elementKey": "firm_name"
       },
-      "subsector_type": {
+      "sector_type": {
         "type": "integer",
-        "valuesList": "subsector_type_list",
+        "valuesList": "sector_type_list",
         "_defn": [
           {
             "_row_num": 6,
@@ -1741,6 +1820,21 @@
             "section_name": "model"
           }
         ],
+        "elementKey": "sector_type"
+      },
+      "subsector_type": {
+        "type": "integer",
+        "valuesList": "subsector_type_list",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
         "elementKey": "subsector_type"
       },
       "crop_type": {
@@ -1748,11 +1842,11 @@
         "valuesList": "crop_type_list",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 9,
             "section_name": "survey"
           },
           {
-            "_row_num": 9,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -1762,21 +1856,35 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
         "elementKey": "business_age"
       },
+      "business_owner_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "business_owner_name"
+      },
       "business_owner_age": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 12,
             "section_name": "survey"
           },
           {
-            "_row_num": 11,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -1787,34 +1895,6 @@
         "valuesList": "male_female",
         "_defn": [
           {
-            "_row_num": 11,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 12,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "gender"
-      },
-      "firm_size": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 12,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 13,
-            "section_name": "model"
-          }
-        ],
-        "elementKey": "firm_size"
-      },
-      "phone_number": {
-        "type": "string",
-        "_defn": [
-          {
             "_row_num": 13,
             "section_name": "survey"
           },
@@ -1823,11 +1903,10 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "phone_number"
+        "elementKey": "gender"
       },
-      "phone_number_network": {
-        "type": "string",
-        "valuesList": "network_list",
+      "firm_size": {
+        "type": "integer",
         "_defn": [
           {
             "_row_num": 14,
@@ -1838,9 +1917,9 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "phone_number_network"
+        "elementKey": "firm_size"
       },
-      "secondary_phone_number": {
+      "phone_number": {
         "type": "string",
         "_defn": [
           {
@@ -1852,9 +1931,9 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "secondary_phone_number"
+        "elementKey": "phone_number"
       },
-      "secondary_phone_number_network": {
+      "phone_number_network": {
         "type": "string",
         "valuesList": "network_list",
         "_defn": [
@@ -1867,13 +1946,42 @@
             "section_name": "model"
           }
         ],
+        "elementKey": "phone_number_network"
+      },
+      "secondary_phone_number": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "secondary_phone_number"
+      },
+      "secondary_phone_number_network": {
+        "type": "string",
+        "valuesList": "network_list",
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
         "elementKey": "secondary_phone_number_network"
       },
       "enroller_id": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -1883,7 +1991,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 19,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -1893,7 +2001,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -1903,7 +2011,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -1913,7 +2021,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -1923,7 +2031,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -1941,6 +2049,25 @@
         "reachable_sections": {},
         "prompts": [
           {
+            "type": "select_one",
+            "values_list": "yes_no",
+            "name": "consent",
+            "display": {
+              "prompt": {
+                "text": {
+                  "default": "Do you consent to participate?",
+                  "sw": "Do you consent to participate?"
+                }
+              }
+            },
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 0
+          },
+          {
             "type": "select_one_group_by",
             "values_list": "district_group_by",
             "name": "district",
@@ -1952,12 +2079,12 @@
                 }
               }
             },
-            "_row_num": 2,
-            "__rowNum__": 1,
+            "_row_num": 3,
+            "__rowNum__": 2,
             "_token_type": "prompt",
             "_type": "select_one_group_by",
-            "_branch_label_enclosing_screen": "survey/_screen2",
-            "promptIdx": 0
+            "_branch_label_enclosing_screen": "survey/_screen3",
+            "promptIdx": 1
           },
           {
             "type": "select_one_group_by",
@@ -1971,12 +2098,12 @@
                 }
               }
             },
-            "_row_num": 3,
-            "__rowNum__": 2,
+            "_row_num": 4,
+            "__rowNum__": 3,
             "_token_type": "prompt",
             "_type": "select_one_group_by",
-            "_branch_label_enclosing_screen": "survey/_screen3",
-            "promptIdx": 1
+            "_branch_label_enclosing_screen": "survey/_screen4",
+            "promptIdx": 2
           },
           {
             "type": "text",
@@ -1989,12 +2116,12 @@
                 }
               }
             },
-            "_row_num": 4,
-            "__rowNum__": 3,
+            "_row_num": 5,
+            "__rowNum__": 4,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen4",
-            "promptIdx": 2
+            "_branch_label_enclosing_screen": "survey/_screen5",
+            "promptIdx": 3
           },
           {
             "type": "select_one_integer",
@@ -2008,12 +2135,12 @@
                 }
               }
             },
-            "_row_num": 5,
-            "__rowNum__": 4,
+            "_row_num": 6,
+            "__rowNum__": 5,
             "_token_type": "prompt",
             "_type": "select_one_integer",
-            "_branch_label_enclosing_screen": "survey/_screen5",
-            "promptIdx": 3
+            "_branch_label_enclosing_screen": "survey/_screen6",
+            "promptIdx": 4
           },
           {
             "type": "select_one_integer",
@@ -2028,12 +2155,12 @@
               }
             },
             "choice_filter": "choice_item.sector_number == data('sector_type')",
-            "_row_num": 6,
-            "__rowNum__": 5,
+            "_row_num": 7,
+            "__rowNum__": 6,
             "_token_type": "prompt",
             "_type": "select_one_integer",
-            "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 4
+            "_branch_label_enclosing_screen": "survey/_screen7",
+            "promptIdx": 5
           },
           {
             "type": "select_one_integer",
@@ -2047,12 +2174,30 @@
                 }
               }
             },
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 9,
+            "__rowNum__": 8,
             "_token_type": "prompt",
             "_type": "select_one_integer",
-            "_branch_label_enclosing_screen": "survey/_screen8",
-            "promptIdx": 5
+            "_branch_label_enclosing_screen": "survey/_screen9",
+            "promptIdx": 6
+          },
+          {
+            "type": "text",
+            "name": "business_owner_name",
+            "display": {
+              "prompt": {
+                "text": {
+                  "default": "What is the business owners name?",
+                  "sw": "What is the business owners name?"
+                }
+              }
+            },
+            "_row_num": 11,
+            "__rowNum__": 10,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen11",
+            "promptIdx": 7
           },
           {
             "type": "text",
@@ -2065,12 +2210,12 @@
                 }
               }
             },
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 12,
+            "__rowNum__": 11,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen10",
-            "promptIdx": 6
+            "_branch_label_enclosing_screen": "survey/_screen12",
+            "promptIdx": 8
           },
           {
             "type": "select_one",
@@ -2084,12 +2229,12 @@
                 }
               }
             },
-            "_row_num": 11,
-            "__rowNum__": 10,
+            "_row_num": 13,
+            "__rowNum__": 12,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen11",
-            "promptIdx": 7
+            "_branch_label_enclosing_screen": "survey/_screen13",
+            "promptIdx": 9
           },
           {
             "type": "integer",
@@ -2102,12 +2247,12 @@
                 }
               }
             },
-            "_row_num": 12,
-            "__rowNum__": 11,
+            "_row_num": 14,
+            "__rowNum__": 13,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen12",
-            "promptIdx": 8
+            "_branch_label_enclosing_screen": "survey/_screen14",
+            "promptIdx": 10
           },
           {
             "type": "text",
@@ -2117,43 +2262,6 @@
                 "text": {
                   "default": "Enter the phone number for the business.",
                   "sw": "Andika namba ya simu  ya biashara"
-                }
-              }
-            },
-            "_row_num": 13,
-            "__rowNum__": 12,
-            "_token_type": "prompt",
-            "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen13",
-            "promptIdx": 9
-          },
-          {
-            "type": "select_one",
-            "values_list": "network_list",
-            "name": "phone_number_network",
-            "display": {
-              "prompt": {
-                "text": {
-                  "default": "Enter the network for the phone number.",
-                  "sw": "Enter the network for the phone number."
-                }
-              }
-            },
-            "_row_num": 14,
-            "__rowNum__": 13,
-            "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen14",
-            "promptIdx": 10
-          },
-          {
-            "type": "text",
-            "name": "secondary_phone_number",
-            "display": {
-              "prompt": {
-                "text": {
-                  "default": "Enter the secondary phone number.",
-                  "sw": "Andika namba ya pili ya simu ya biashara"
                 }
               }
             },
@@ -2167,12 +2275,12 @@
           {
             "type": "select_one",
             "values_list": "network_list",
-            "name": "secondary_phone_number_network",
+            "name": "phone_number_network",
             "display": {
               "prompt": {
                 "text": {
-                  "default": "Enter the network for the secondary phone number.",
-                  "sw": "Andika mtandao wa simu wa namba ya pili ya biashara"
+                  "default": "Enter the network for the phone number.",
+                  "sw": "Enter the network for the phone number."
                 }
               }
             },
@@ -2184,12 +2292,49 @@
             "promptIdx": 12
           },
           {
+            "type": "text",
+            "name": "secondary_phone_number",
+            "display": {
+              "prompt": {
+                "text": {
+                  "default": "Enter the secondary phone number.",
+                  "sw": "Andika namba ya pili ya simu ya biashara"
+                }
+              }
+            },
+            "_row_num": 17,
+            "__rowNum__": 16,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 13
+          },
+          {
+            "type": "select_one",
+            "values_list": "network_list",
+            "name": "secondary_phone_number_network",
+            "display": {
+              "prompt": {
+                "text": {
+                  "default": "Enter the network for the secondary phone number.",
+                  "sw": "Andika mtandao wa simu wa namba ya pili ya biashara"
+                }
+              }
+            },
+            "_row_num": 18,
+            "__rowNum__": 17,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen18",
+            "promptIdx": 14
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 17,
-            "_branch_label_enclosing_screen": "survey/_screen17",
-            "promptIdx": 13
+            "_row_num": 19,
+            "_branch_label_enclosing_screen": "survey/_screen19",
+            "promptIdx": 15
           }
         ],
         "validation_tag_map": {
@@ -2227,38 +2372,38 @@
             "operationIdx": 4
           },
           {
-            "clause": "if",
-            "condition": "(data('sector_type') === 1 || data('sector_type') === 2)",
             "_row_num": 7,
-            "__rowNum__": 6,
-            "_token_type": "goto_label",
-            "_branch_label": "_then7",
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 5
           },
           {
-            "clause": "end if",
+            "clause": "if",
+            "condition": "(data('sector_type') === 1 || data('sector_type') === 2 || data('sector_type') === 5)",
+            "_row_num": 8,
+            "__rowNum__": 7,
             "_token_type": "goto_label",
-            "_branch_label": "_else9",
-            "_row_num": 9,
+            "_branch_label": "_then8",
             "operationIdx": 6
           },
           {
-            "_row_num": 8,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else10",
+            "_row_num": 10,
             "operationIdx": 7
+          },
+          {
+            "_row_num": 9,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 8
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif9",
-            "_row_num": 9,
-            "operationIdx": 8
-          },
-          {
+            "_branch_label": "_endif10",
             "_row_num": 10,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 9
           },
           {
@@ -2298,25 +2443,37 @@
             "operationIdx": 15
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 17,
-            "operationIdx": 16
-          },
-          {
             "_row_num": 17,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 16
+          },
+          {
+            "_row_num": 18,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 17
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 19,
+            "operationIdx": 18
+          },
+          {
+            "_row_num": 19,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 17
+            "operationIdx": 19
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 17,
-            "operationIdx": 18
+            "_row_num": 19,
+            "operationIdx": 20
           }
         ],
         "branch_label_map": {
@@ -2325,19 +2482,21 @@
           "_screen4": 2,
           "_screen5": 3,
           "_screen6": 4,
-          "_then7": 7,
-          "_screen8": 7,
-          "_else9": 9,
-          "_endif9": 9,
-          "_screen10": 9,
+          "_screen7": 5,
+          "_then8": 8,
+          "_screen9": 8,
+          "_else10": 10,
+          "_endif10": 10,
           "_screen11": 10,
           "_screen12": 11,
           "_screen13": 12,
           "_screen14": 13,
           "_screen15": 14,
           "_screen16": 15,
-          "_contents": 17,
-          "_screen17": 17
+          "_screen17": 16,
+          "_screen18": 17,
+          "_contents": 19,
+          "_screen19": 19
         }
       },
       "initial": {
@@ -2519,10 +2678,9 @@
       }
     },
     "dataTableModel": {
-      "district": {
-        "prompt_type_name": "select_one_group_by",
+      "consent": {
         "type": "string",
-        "valuesList": "district_group_by",
+        "valuesList": "yes_no",
         "_defn": [
           {
             "_row_num": 2,
@@ -2530,6 +2688,25 @@
           },
           {
             "_row_num": 2,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "consent",
+        "elementName": "consent",
+        "elementSet": "data",
+        "elementPath": "consent"
+      },
+      "district": {
+        "prompt_type_name": "select_one_group_by",
+        "type": "string",
+        "valuesList": "district_group_by",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 3,
             "section_name": "model"
           }
         ],
@@ -2542,7 +2719,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "model"
           }
         ],
@@ -2557,11 +2734,11 @@
         "valuesList": "villages_group_by",
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "survey"
           },
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "model"
           }
         ],
@@ -2574,7 +2751,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 5,
+            "_row_num": 6,
             "section_name": "model"
           }
         ],
@@ -2587,11 +2764,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "survey"
           },
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "section_name": "model"
           }
         ],
@@ -2605,11 +2782,11 @@
         "valuesList": "sector_type_list",
         "_defn": [
           {
-            "_row_num": 5,
+            "_row_num": 6,
             "section_name": "survey"
           },
           {
-            "_row_num": 7,
+            "_row_num": 8,
             "section_name": "model"
           }
         ],
@@ -2623,11 +2800,11 @@
         "valuesList": "subsector_type_list",
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "section_name": "survey"
           },
           {
-            "_row_num": 8,
+            "_row_num": 9,
             "section_name": "model"
           }
         ],
@@ -2641,11 +2818,11 @@
         "valuesList": "crop_type_list",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 9,
             "section_name": "survey"
           },
           {
-            "_row_num": 9,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -2658,7 +2835,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -2667,15 +2844,32 @@
         "elementSet": "data",
         "elementPath": "business_age"
       },
+      "business_owner_name": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "business_owner_name",
+        "elementName": "business_owner_name",
+        "elementSet": "data",
+        "elementPath": "business_owner_name"
+      },
       "business_owner_age": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 12,
             "section_name": "survey"
           },
           {
-            "_row_num": 11,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -2689,11 +2883,11 @@
         "valuesList": "male_female",
         "_defn": [
           {
-            "_row_num": 11,
+            "_row_num": 13,
             "section_name": "survey"
           },
           {
-            "_row_num": 12,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -2706,11 +2900,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 14,
             "section_name": "survey"
           },
           {
-            "_row_num": 13,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -2723,11 +2917,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 15,
             "section_name": "survey"
           },
           {
-            "_row_num": 14,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -2741,11 +2935,11 @@
         "valuesList": "network_list",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 16,
             "section_name": "survey"
           },
           {
-            "_row_num": 15,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -2758,11 +2952,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 17,
             "section_name": "survey"
           },
           {
-            "_row_num": 16,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -2776,11 +2970,11 @@
         "valuesList": "network_list",
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 18,
             "section_name": "survey"
           },
           {
-            "_row_num": 17,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -2793,7 +2987,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -2806,7 +3000,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 19,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -2819,7 +3013,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -2832,7 +3026,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -2845,7 +3039,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -2858,7 +3052,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
