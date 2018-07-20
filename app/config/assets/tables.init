@@ -1,3 +1,2 @@
-table_keys=business, geo_unit
-business.filename=config/assets/csv/business.csv
+table_keys=geo_unit
 geo_unit.filename=config/assets/csv/geo_unit.csv
