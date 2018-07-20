@@ -34,7 +34,7 @@
         "_row_num": 4
       },
       {
-        "type": "select_one",
+        "type": "select_one_integer",
         "values_list": "sector_type_list",
         "name": "sector_type",
         "display": {
@@ -45,14 +45,36 @@
         "_row_num": 5
       },
       {
-        "type": "integer",
-        "name": "business_age",
+        "type": "select_one_integer",
+        "values_list": "subsector_type_list",
+        "name": "subsector_type",
         "display": {
           "prompt": {
-            "text": "How old is this business?"
+            "text": "Choose the subsector of the business"
           }
         },
+        "choice_filter": "choice_item.sector_number == data('sector_type')",
         "_row_num": 6
+      },
+      {
+        "clause": "if",
+        "condition": "(data('sector_type') === 1 || data('sector_type') === 2)",
+        "_row_num": 7
+      },
+      {
+        "type": "select_one_integer",
+        "values_list": "crop_type_list",
+        "name": "crop_type",
+        "display": {
+          "prompt": {
+            "text": "Do you specialize in a specifc crop?"
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "clause": "end if",
+        "_row_num": 9
       },
       {
         "type": "text",
@@ -62,7 +84,7 @@
             "text": "What is the age of the business owner?"
           }
         },
-        "_row_num": 7
+        "_row_num": 10
       },
       {
         "type": "select_one",
@@ -73,7 +95,7 @@
             "text": "What is the gender of the business owner?"
           }
         },
-        "_row_num": 8
+        "_row_num": 11
       },
       {
         "type": "integer",
@@ -83,7 +105,7 @@
             "text": "What is the size of this firm?"
           }
         },
-        "_row_num": 9
+        "_row_num": 12
       },
       {
         "type": "text",
@@ -93,7 +115,7 @@
             "text": "Enter the phone number for the business."
           }
         },
-        "_row_num": 10
+        "_row_num": 13
       },
       {
         "type": "select_one",
@@ -104,7 +126,7 @@
             "text": "Enter the network for the phone number."
           }
         },
-        "_row_num": 11
+        "_row_num": 14
       },
       {
         "type": "text",
@@ -114,7 +136,7 @@
             "text": "Enter the secondary phone number."
           }
         },
-        "_row_num": 12
+        "_row_num": 15
       },
       {
         "type": "select_one",
@@ -125,38 +147,10 @@
             "text": "Enter the network for the secondary phone number."
           }
         },
-        "_row_num": 13
+        "_row_num": 16
       }
     ],
     "queries": [
-      {
-        "query_name": "villages_csv",
-        "query_type": "csv",
-        "uri": "\"village.csv\"",
-        "callback": "_.chain(context).pluck('village_name').uniq().map(function(village){\nreturn {data_value: village, display: {title: {text: village} } };\n}).value()",
-        "_row_num": 2
-      },
-      {
-        "query_name": "subvillages_csv",
-        "query_type": "csv",
-        "uri": "\"village.csv\"",
-        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
-        "_row_num": 3
-      },
-      {
-        "query_name": "veos_csv",
-        "query_type": "csv",
-        "uri": "\"village.csv\"",
-        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
-        "_row_num": 4
-      },
-      {
-        "query_name": "district_csv",
-        "query_type": "csv",
-        "uri": "\"village.csv\"",
-        "callback": "_.chain(context).pluck('village_name').uniq().map(function(village){\nreturn {data_value: village, display: {title: {text: village} } };\n}).value()",
-        "_row_num": 5
-      },
       {
         "query_name": "district_group_by",
         "query_type": "linked_table",
@@ -168,7 +162,7 @@
         "newRowInitialElementKeyToValueMap": "{}",
         "openRowInitialElementKeyToValueMap": "{}",
         "columnValue": "district",
-        "_row_num": 6
+        "_row_num": 2
       },
       {
         "query_name": "villages_group_by",
@@ -181,86 +175,117 @@
         "newRowInitialElementKeyToValueMap": "{}",
         "openRowInitialElementKeyToValueMap": "{}",
         "columnValue": "village",
-        "_row_num": 7
+        "_row_num": 3
+      },
+      {
+        "query_name": "subsector_type_list",
+        "query_type": "csv",
+        "uri": "\"subsector.csv\"",
+        "callback": "_.map(context, function(subsector){\nsubsector.data_value = subsector.subsector_number\nsubsector.display = {title: {text:subsector.subsector_txt } };\nreturn subsector;\n})",
+        "_row_num": 6
       }
     ],
     "choices": [
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "trading",
+        "data_value": 1,
         "display": {
           "title": {
-            "text": "Trading and Wholesale"
+            "text": {
+              "default": "Trading/Sales",
+              "sw": "Wafanyabiashara wa Jumla"
+            }
           }
         },
         "_row_num": 2
       },
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "merchant",
+        "data_value": 2,
         "display": {
           "title": {
-            "text": "Merchant/Retail"
+            "text": {
+              "default": "Merchant/Retail",
+              "sw": "Wafanyabiashara wa Rejareja"
+            }
           }
         },
         "_row_num": 3
       },
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "transport",
+        "data_value": 3,
         "display": {
           "title": {
-            "text": "Transport"
+            "text": {
+              "default": "Transport",
+              "sw": "Usafirishaji"
+            }
           }
         },
         "_row_num": 4
       },
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "hiring",
+        "data_value": 4,
         "display": {
           "title": {
-            "text": "Hiring and Labor"
+            "text": {
+              "default": "Hiring and Labor",
+              "sw": "Kukodi au Kibarua"
+            }
           }
         },
         "_row_num": 5
       },
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "agri",
+        "data_value": 5,
         "display": {
           "title": {
-            "text": "Agri Processing"
+            "text": {
+              "default": "Agricultural Processing",
+              "sw": "Kuongezea thamani bidhaa za kilimo"
+            }
           }
         },
         "_row_num": 6
       },
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "repairs",
+        "data_value": 6,
         "display": {
           "title": {
-            "text": "Repairs"
+            "text": {
+              "default": "Repairs/technicians",
+              "sw": "Fundi"
+            }
           }
         },
         "_row_num": 7
       },
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "Non-agri",
+        "data_value": 7,
         "display": {
           "title": {
-            "text": "Non-Agri Services"
+            "text": {
+              "default": "Non-agricultural Services",
+              "sw": "Sekta isiyo ya kilimo"
+            }
           }
         },
         "_row_num": 8
       },
       {
         "choice_list_name": "sector_type_list",
-        "data_value": "financial",
+        "data_value": 8,
         "display": {
           "title": {
-            "text": "Financial Services"
+            "text": {
+              "default": "Financial Services",
+              "sw": "Sekta ya Kifedha"
+            }
           }
         },
         "_row_num": 9
@@ -273,7 +298,7 @@
             "text": "False"
           }
         },
-        "_row_num": 12
+        "_row_num": 11
       },
       {
         "choice_list_name": "true_false_unsure",
@@ -283,7 +308,7 @@
             "text": "True"
           }
         },
-        "_row_num": 13
+        "_row_num": 12
       },
       {
         "choice_list_name": "true_false_unsure",
@@ -293,7 +318,7 @@
             "text": "Unsure"
           }
         },
-        "_row_num": 14
+        "_row_num": 13
       },
       {
         "choice_list_name": "male_female",
@@ -303,7 +328,7 @@
             "text": "Female"
           }
         },
-        "_row_num": 16
+        "_row_num": 15
       },
       {
         "choice_list_name": "male_female",
@@ -313,7 +338,7 @@
             "text": "Male"
           }
         },
-        "_row_num": 17
+        "_row_num": 16
       },
       {
         "choice_list_name": "network_list",
@@ -323,7 +348,7 @@
             "text": "Airtel"
           }
         },
-        "_row_num": 20
+        "_row_num": 19
       },
       {
         "choice_list_name": "network_list",
@@ -333,7 +358,7 @@
             "text": "Vodacom"
           }
         },
-        "_row_num": 21
+        "_row_num": 20
       },
       {
         "choice_list_name": "network_list",
@@ -343,7 +368,371 @@
             "text": "Tigo"
           }
         },
-        "_row_num": 22
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 1,
+        "display": {
+          "title": {
+            "text": {
+              "default": "maize",
+              "sw": "mahindi"
+            }
+          }
+        },
+        "_row_num": 25
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 2,
+        "display": {
+          "title": {
+            "text": {
+              "default": "beans",
+              "sw": "maharage"
+            }
+          }
+        },
+        "_row_num": 26
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 3,
+        "display": {
+          "title": {
+            "text": {
+              "default": "field peas",
+              "sw": "mikunde"
+            }
+          }
+        },
+        "_row_num": 27
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 4,
+        "display": {
+          "title": {
+            "text": {
+              "default": "cow peas",
+              "sw": "njegere"
+            }
+          }
+        },
+        "_row_num": 28
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 5,
+        "display": {
+          "title": {
+            "text": {
+              "default": "green gram",
+              "sw": "choroko"
+            }
+          }
+        },
+        "_row_num": 29
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 6,
+        "display": {
+          "title": {
+            "text": {
+              "default": "groundnuts",
+              "sw": "karanga"
+            }
+          }
+        },
+        "_row_num": 30
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 7,
+        "display": {
+          "title": {
+            "text": {
+              "default": "sunflower",
+              "sw": "alizeti"
+            }
+          }
+        },
+        "_row_num": 31
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 8,
+        "display": {
+          "title": {
+            "text": {
+              "default": "sesame",
+              "sw": "ufuta"
+            }
+          }
+        },
+        "_row_num": 32
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 9,
+        "display": {
+          "title": {
+            "text": {
+              "default": "grapes",
+              "sw": "zabibu"
+            }
+          }
+        },
+        "_row_num": 33
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 10,
+        "display": {
+          "title": {
+            "text": {
+              "default": "greens",
+              "sw": "mboga za majani"
+            }
+          }
+        },
+        "_row_num": 34
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 11,
+        "display": {
+          "title": {
+            "text": {
+              "default": "fruits",
+              "sw": "matunda"
+            }
+          }
+        },
+        "_row_num": 35
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 12,
+        "display": {
+          "title": {
+            "text": {
+              "default": "vegetables",
+              "sw": "viungo"
+            }
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 13,
+        "display": {
+          "title": {
+            "text": {
+              "default": "cereals/legumes",
+              "sw": "nafaka"
+            }
+          }
+        },
+        "_row_num": 37
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 14,
+        "display": {
+          "title": {
+            "text": {
+              "default": "cash crops",
+              "sw": "mazao ya biashara"
+            }
+          }
+        },
+        "_row_num": 38
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 15,
+        "display": {
+          "title": {
+            "text": {
+              "default": "banana",
+              "sw": "ndizi"
+            }
+          }
+        },
+        "_row_num": 39
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 16,
+        "display": {
+          "title": {
+            "text": {
+              "default": "sugarcane",
+              "sw": "miwa"
+            }
+          }
+        },
+        "_row_num": 40
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 17,
+        "display": {
+          "title": {
+            "text": {
+              "default": "Other crop",
+              "sw": "mazao nyingine"
+            }
+          }
+        },
+        "_row_num": 41
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 18,
+        "display": {
+          "title": {
+            "text": {
+              "default": "cow",
+              "sw": "Ngo'mbe"
+            }
+          }
+        },
+        "_row_num": 42
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 19,
+        "display": {
+          "title": {
+            "text": {
+              "default": "donkey",
+              "sw": "Punda"
+            }
+          }
+        },
+        "_row_num": 43
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 20,
+        "display": {
+          "title": {
+            "text": {
+              "default": "goat",
+              "sw": "mbuzi"
+            }
+          }
+        },
+        "_row_num": 44
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 21,
+        "display": {
+          "title": {
+            "text": {
+              "default": "sheep",
+              "sw": "kondoo"
+            }
+          }
+        },
+        "_row_num": 45
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 22,
+        "display": {
+          "title": {
+            "text": {
+              "default": "pig",
+              "sw": "nguruwe"
+            }
+          }
+        },
+        "_row_num": 46
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 23,
+        "display": {
+          "title": {
+            "text": {
+              "default": "fowl",
+              "sw": "Ndege (Kuku/Bata)"
+            }
+          }
+        },
+        "_row_num": 47
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 24,
+        "display": {
+          "title": {
+            "text": {
+              "default": "rabbits",
+              "sw": "sungura"
+            }
+          }
+        },
+        "_row_num": 48
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 25,
+        "display": {
+          "title": {
+            "text": {
+              "default": "milk",
+              "sw": "maziwa"
+            }
+          }
+        },
+        "_row_num": 49
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 26,
+        "display": {
+          "title": {
+            "text": {
+              "default": "eggs",
+              "sw": "mayai"
+            }
+          }
+        },
+        "_row_num": 50
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 27,
+        "display": {
+          "title": {
+            "text": {
+              "default": "butchered meat",
+              "sw": "Nyama iliyochinjwa"
+            }
+          }
+        },
+        "_row_num": 51
+      },
+      {
+        "choice_list_name": "crop_type_list",
+        "data_value": 28,
+        "display": {
+          "title": {
+            "text": {
+              "default": "Other livestock",
+              "sw": "mifugo nyingine"
+            }
+          }
+        },
+        "_row_num": 52
       }
     ],
     "settings": [
@@ -404,79 +793,89 @@
         "_row_num": 6
       },
       {
-        "type": "select_one",
+        "type": "select_one_integer",
         "name": "sector_type",
         "_row_num": 7
       },
       {
+        "type": "select_one_integer",
+        "name": "subsector_type",
+        "_row_num": 8
+      },
+      {
+        "type": "select_one_integer",
+        "name": "crop_type",
+        "_row_num": 9
+      },
+      {
         "type": "integer",
         "name": "business_age",
-        "_row_num": 8
+        "_row_num": 10
       },
       {
         "type": "text",
         "name": "business_owner_age",
-        "_row_num": 9
+        "_row_num": 11
       },
       {
         "type": "select_one",
         "name": "gender",
-        "_row_num": 10
+        "_row_num": 12
       },
       {
         "type": "integer",
         "name": "firm_size",
-        "_row_num": 11
-      },
-      {
-        "type": "text",
-        "name": "phone_number",
-        "_row_num": 12
-      },
-      {
-        "type": "select_one",
-        "name": "phone_number_network",
         "_row_num": 13
       },
       {
         "type": "text",
-        "name": "secondary_phone_number",
+        "name": "phone_number",
         "_row_num": 14
       },
       {
         "type": "select_one",
-        "name": "secondary_phone_number_network",
+        "name": "phone_number_network",
         "_row_num": 15
       },
       {
         "type": "text",
-        "name": "enroller_id",
+        "name": "secondary_phone_number",
         "_row_num": 16
+      },
+      {
+        "type": "select_one",
+        "name": "secondary_phone_number_network",
+        "_row_num": 17
+      },
+      {
+        "type": "text",
+        "name": "enroller_id",
+        "_row_num": 18
       },
       {
         "type": "text",
         "name": "verifier_id",
-        "_row_num": 17
-      },
-      {
-        "type": "select_one_integer",
-        "name": "has_been_verified_by_agent",
-        "_row_num": 18
-      },
-      {
-        "type": "select_one",
-        "name": "authorization_veo",
         "_row_num": 19
       },
       {
         "type": "select_one_integer",
-        "name": "has_been_authorized_by_veo",
+        "name": "has_been_verified_by_agent",
         "_row_num": 20
+      },
+      {
+        "type": "select_one",
+        "name": "authorization_veo",
+        "_row_num": 21
+      },
+      {
+        "type": "select_one_integer",
+        "name": "has_been_authorized_by_veo",
+        "_row_num": 22
       },
       {
         "type": "text",
         "name": "authorizer_id",
-        "_row_num": 21
+        "_row_num": 23
       }
     ],
     "prompt_types": [
@@ -566,80 +965,104 @@
       "sector_type_list": [
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "trading",
+          "data_value": 1,
           "display": {
             "title": {
-              "text": "Trading and Wholesale"
+              "text": {
+                "default": "Trading/Sales",
+                "sw": "Wafanyabiashara wa Jumla"
+              }
             }
           },
           "_row_num": 2
         },
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "merchant",
+          "data_value": 2,
           "display": {
             "title": {
-              "text": "Merchant/Retail"
+              "text": {
+                "default": "Merchant/Retail",
+                "sw": "Wafanyabiashara wa Rejareja"
+              }
             }
           },
           "_row_num": 3
         },
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "transport",
+          "data_value": 3,
           "display": {
             "title": {
-              "text": "Transport"
+              "text": {
+                "default": "Transport",
+                "sw": "Usafirishaji"
+              }
             }
           },
           "_row_num": 4
         },
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "hiring",
+          "data_value": 4,
           "display": {
             "title": {
-              "text": "Hiring and Labor"
+              "text": {
+                "default": "Hiring and Labor",
+                "sw": "Kukodi au Kibarua"
+              }
             }
           },
           "_row_num": 5
         },
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "agri",
+          "data_value": 5,
           "display": {
             "title": {
-              "text": "Agri Processing"
+              "text": {
+                "default": "Agricultural Processing",
+                "sw": "Kuongezea thamani bidhaa za kilimo"
+              }
             }
           },
           "_row_num": 6
         },
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "repairs",
+          "data_value": 6,
           "display": {
             "title": {
-              "text": "Repairs"
+              "text": {
+                "default": "Repairs/technicians",
+                "sw": "Fundi"
+              }
             }
           },
           "_row_num": 7
         },
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "Non-agri",
+          "data_value": 7,
           "display": {
             "title": {
-              "text": "Non-Agri Services"
+              "text": {
+                "default": "Non-agricultural Services",
+                "sw": "Sekta isiyo ya kilimo"
+              }
             }
           },
           "_row_num": 8
         },
         {
           "choice_list_name": "sector_type_list",
-          "data_value": "financial",
+          "data_value": 8,
           "display": {
             "title": {
-              "text": "Financial Services"
+              "text": {
+                "default": "Financial Services",
+                "sw": "Sekta ya Kifedha"
+              }
             }
           },
           "_row_num": 9
@@ -654,7 +1077,7 @@
               "text": "False"
             }
           },
-          "_row_num": 12
+          "_row_num": 11
         },
         {
           "choice_list_name": "true_false_unsure",
@@ -664,7 +1087,7 @@
               "text": "True"
             }
           },
-          "_row_num": 13
+          "_row_num": 12
         },
         {
           "choice_list_name": "true_false_unsure",
@@ -674,7 +1097,7 @@
               "text": "Unsure"
             }
           },
-          "_row_num": 14
+          "_row_num": 13
         }
       ],
       "male_female": [
@@ -686,7 +1109,7 @@
               "text": "Female"
             }
           },
-          "_row_num": 16
+          "_row_num": 15
         },
         {
           "choice_list_name": "male_female",
@@ -696,7 +1119,7 @@
               "text": "Male"
             }
           },
-          "_row_num": 17
+          "_row_num": 16
         }
       ],
       "network_list": [
@@ -708,7 +1131,7 @@
               "text": "Airtel"
             }
           },
-          "_row_num": 20
+          "_row_num": 19
         },
         {
           "choice_list_name": "network_list",
@@ -718,7 +1141,7 @@
               "text": "Vodacom"
             }
           },
-          "_row_num": 21
+          "_row_num": 20
         },
         {
           "choice_list_name": "network_list",
@@ -728,39 +1151,377 @@
               "text": "Tigo"
             }
           },
-          "_row_num": 22
+          "_row_num": 21
+        }
+      ],
+      "crop_type_list": [
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 1,
+          "display": {
+            "title": {
+              "text": {
+                "default": "maize",
+                "sw": "mahindi"
+              }
+            }
+          },
+          "_row_num": 25
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 2,
+          "display": {
+            "title": {
+              "text": {
+                "default": "beans",
+                "sw": "maharage"
+              }
+            }
+          },
+          "_row_num": 26
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 3,
+          "display": {
+            "title": {
+              "text": {
+                "default": "field peas",
+                "sw": "mikunde"
+              }
+            }
+          },
+          "_row_num": 27
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 4,
+          "display": {
+            "title": {
+              "text": {
+                "default": "cow peas",
+                "sw": "njegere"
+              }
+            }
+          },
+          "_row_num": 28
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 5,
+          "display": {
+            "title": {
+              "text": {
+                "default": "green gram",
+                "sw": "choroko"
+              }
+            }
+          },
+          "_row_num": 29
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 6,
+          "display": {
+            "title": {
+              "text": {
+                "default": "groundnuts",
+                "sw": "karanga"
+              }
+            }
+          },
+          "_row_num": 30
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 7,
+          "display": {
+            "title": {
+              "text": {
+                "default": "sunflower",
+                "sw": "alizeti"
+              }
+            }
+          },
+          "_row_num": 31
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 8,
+          "display": {
+            "title": {
+              "text": {
+                "default": "sesame",
+                "sw": "ufuta"
+              }
+            }
+          },
+          "_row_num": 32
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 9,
+          "display": {
+            "title": {
+              "text": {
+                "default": "grapes",
+                "sw": "zabibu"
+              }
+            }
+          },
+          "_row_num": 33
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 10,
+          "display": {
+            "title": {
+              "text": {
+                "default": "greens",
+                "sw": "mboga za majani"
+              }
+            }
+          },
+          "_row_num": 34
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 11,
+          "display": {
+            "title": {
+              "text": {
+                "default": "fruits",
+                "sw": "matunda"
+              }
+            }
+          },
+          "_row_num": 35
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 12,
+          "display": {
+            "title": {
+              "text": {
+                "default": "vegetables",
+                "sw": "viungo"
+              }
+            }
+          },
+          "_row_num": 36
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 13,
+          "display": {
+            "title": {
+              "text": {
+                "default": "cereals/legumes",
+                "sw": "nafaka"
+              }
+            }
+          },
+          "_row_num": 37
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 14,
+          "display": {
+            "title": {
+              "text": {
+                "default": "cash crops",
+                "sw": "mazao ya biashara"
+              }
+            }
+          },
+          "_row_num": 38
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 15,
+          "display": {
+            "title": {
+              "text": {
+                "default": "banana",
+                "sw": "ndizi"
+              }
+            }
+          },
+          "_row_num": 39
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 16,
+          "display": {
+            "title": {
+              "text": {
+                "default": "sugarcane",
+                "sw": "miwa"
+              }
+            }
+          },
+          "_row_num": 40
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 17,
+          "display": {
+            "title": {
+              "text": {
+                "default": "Other crop",
+                "sw": "mazao nyingine"
+              }
+            }
+          },
+          "_row_num": 41
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 18,
+          "display": {
+            "title": {
+              "text": {
+                "default": "cow",
+                "sw": "Ngo'mbe"
+              }
+            }
+          },
+          "_row_num": 42
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 19,
+          "display": {
+            "title": {
+              "text": {
+                "default": "donkey",
+                "sw": "Punda"
+              }
+            }
+          },
+          "_row_num": 43
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 20,
+          "display": {
+            "title": {
+              "text": {
+                "default": "goat",
+                "sw": "mbuzi"
+              }
+            }
+          },
+          "_row_num": 44
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 21,
+          "display": {
+            "title": {
+              "text": {
+                "default": "sheep",
+                "sw": "kondoo"
+              }
+            }
+          },
+          "_row_num": 45
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 22,
+          "display": {
+            "title": {
+              "text": {
+                "default": "pig",
+                "sw": "nguruwe"
+              }
+            }
+          },
+          "_row_num": 46
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 23,
+          "display": {
+            "title": {
+              "text": {
+                "default": "fowl",
+                "sw": "Ndege (Kuku/Bata)"
+              }
+            }
+          },
+          "_row_num": 47
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 24,
+          "display": {
+            "title": {
+              "text": {
+                "default": "rabbits",
+                "sw": "sungura"
+              }
+            }
+          },
+          "_row_num": 48
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 25,
+          "display": {
+            "title": {
+              "text": {
+                "default": "milk",
+                "sw": "maziwa"
+              }
+            }
+          },
+          "_row_num": 49
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 26,
+          "display": {
+            "title": {
+              "text": {
+                "default": "eggs",
+                "sw": "mayai"
+              }
+            }
+          },
+          "_row_num": 50
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 27,
+          "display": {
+            "title": {
+              "text": {
+                "default": "butchered meat",
+                "sw": "Nyama iliyochinjwa"
+              }
+            }
+          },
+          "_row_num": 51
+        },
+        {
+          "choice_list_name": "crop_type_list",
+          "data_value": 28,
+          "display": {
+            "title": {
+              "text": {
+                "default": "Other livestock",
+                "sw": "mifugo nyingine"
+              }
+            }
+          },
+          "_row_num": 52
         }
       ]
     },
     "queries": {
-      "villages_csv": {
-        "query_name": "villages_csv",
-        "query_type": "csv",
-        "uri": "\"village.csv\"",
-        "callback": "_.chain(context).pluck('village_name').uniq().map(function(village){\nreturn {data_value: village, display: {title: {text: village} } };\n}).value()",
-        "_row_num": 2
-      },
-      "subvillages_csv": {
-        "query_name": "subvillages_csv",
-        "query_type": "csv",
-        "uri": "\"village.csv\"",
-        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
-        "_row_num": 3
-      },
-      "veos_csv": {
-        "query_name": "veos_csv",
-        "query_type": "csv",
-        "uri": "\"village.csv\"",
-        "callback": "_.map(context, function(place){\nreturn { village: place.village_name, data_value: place.subvillage_name, display: {title: {text: place.subvillage_name} } };\n})",
-        "_row_num": 4
-      },
-      "district_csv": {
-        "query_name": "district_csv",
-        "query_type": "csv",
-        "uri": "\"village.csv\"",
-        "callback": "_.chain(context).pluck('village_name').uniq().map(function(village){\nreturn {data_value: village, display: {title: {text: village} } };\n}).value()",
-        "_row_num": 5
-      },
       "district_group_by": {
         "query_name": "district_group_by",
         "query_type": "linked_table",
@@ -772,7 +1533,7 @@
         "newRowInitialElementKeyToValueMap": "{}",
         "openRowInitialElementKeyToValueMap": "{}",
         "columnValue": "district",
-        "_row_num": 6
+        "_row_num": 2
       },
       "villages_group_by": {
         "query_name": "villages_group_by",
@@ -785,7 +1546,14 @@
         "newRowInitialElementKeyToValueMap": "{}",
         "openRowInitialElementKeyToValueMap": "{}",
         "columnValue": "village",
-        "_row_num": 7
+        "_row_num": 3
+      },
+      "subsector_type_list": {
+        "query_name": "subsector_type_list",
+        "query_type": "csv",
+        "uri": "\"subsector.csv\"",
+        "callback": "_.map(context, function(subsector){\nsubsector.data_value = subsector.subsector_number\nsubsector.display = {title: {text:subsector.subsector_txt } };\nreturn subsector;\n})",
+        "_row_num": 6
       }
     },
     "calculates": {},
@@ -857,7 +1625,7 @@
         "elementKey": "firm_name"
       },
       "sector_type": {
-        "type": "string",
+        "type": "integer",
         "valuesList": "sector_type_list",
         "_defn": [
           {
@@ -871,8 +1639,9 @@
         ],
         "elementKey": "sector_type"
       },
-      "business_age": {
+      "subsector_type": {
         "type": "integer",
+        "valuesList": "subsector_type_list",
         "_defn": [
           {
             "_row_num": 6,
@@ -883,17 +1652,42 @@
             "section_name": "model"
           }
         ],
+        "elementKey": "subsector_type"
+      },
+      "crop_type": {
+        "type": "integer",
+        "valuesList": "crop_type_list",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "crop_type"
+      },
+      "business_age": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
         "elementKey": "business_age"
       },
       "business_owner_age": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 7,
+            "_row_num": 10,
             "section_name": "survey"
           },
           {
-            "_row_num": 9,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -904,11 +1698,11 @@
         "valuesList": "male_female",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 11,
             "section_name": "survey"
           },
           {
-            "_row_num": 10,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -918,11 +1712,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 9,
+            "_row_num": 12,
             "section_name": "survey"
           },
           {
-            "_row_num": 11,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -932,11 +1726,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 13,
             "section_name": "survey"
           },
           {
-            "_row_num": 12,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -947,11 +1741,11 @@
         "valuesList": "network_list",
         "_defn": [
           {
-            "_row_num": 11,
+            "_row_num": 14,
             "section_name": "survey"
           },
           {
-            "_row_num": 13,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -961,11 +1755,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 15,
             "section_name": "survey"
           },
           {
-            "_row_num": 14,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -976,11 +1770,11 @@
         "valuesList": "network_list",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 16,
             "section_name": "survey"
           },
           {
-            "_row_num": 15,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -990,7 +1784,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -1000,7 +1794,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 17,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -1010,7 +1804,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -1020,7 +1814,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 19,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -1030,7 +1824,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -1040,7 +1834,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -1105,7 +1899,7 @@
             "promptIdx": 2
           },
           {
-            "type": "select_one",
+            "type": "select_one_integer",
             "values_list": "sector_type_list",
             "name": "sector_type",
             "display": {
@@ -1116,24 +1910,42 @@
             "_row_num": 5,
             "__rowNum__": 4,
             "_token_type": "prompt",
-            "_type": "select_one",
+            "_type": "select_one_integer",
             "_branch_label_enclosing_screen": "survey/_screen5",
             "promptIdx": 3
           },
           {
-            "type": "integer",
-            "name": "business_age",
+            "type": "select_one_integer",
+            "values_list": "subsector_type_list",
+            "name": "subsector_type",
             "display": {
               "prompt": {
-                "text": "How old is this business?"
+                "text": "Choose the subsector of the business"
               }
             },
+            "choice_filter": "choice_item.sector_number == data('sector_type')",
             "_row_num": 6,
             "__rowNum__": 5,
             "_token_type": "prompt",
-            "_type": "integer",
+            "_type": "select_one_integer",
             "_branch_label_enclosing_screen": "survey/_screen6",
             "promptIdx": 4
+          },
+          {
+            "type": "select_one_integer",
+            "values_list": "crop_type_list",
+            "name": "crop_type",
+            "display": {
+              "prompt": {
+                "text": "Do you specialize in a specifc crop?"
+              }
+            },
+            "_row_num": 8,
+            "__rowNum__": 7,
+            "_token_type": "prompt",
+            "_type": "select_one_integer",
+            "_branch_label_enclosing_screen": "survey/_screen8",
+            "promptIdx": 5
           },
           {
             "type": "text",
@@ -1143,12 +1955,12 @@
                 "text": "What is the age of the business owner?"
               }
             },
-            "_row_num": 7,
-            "__rowNum__": 6,
+            "_row_num": 10,
+            "__rowNum__": 9,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen7",
-            "promptIdx": 5
+            "_branch_label_enclosing_screen": "survey/_screen10",
+            "promptIdx": 6
           },
           {
             "type": "select_one",
@@ -1159,12 +1971,12 @@
                 "text": "What is the gender of the business owner?"
               }
             },
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 11,
+            "__rowNum__": 10,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen8",
-            "promptIdx": 6
+            "_branch_label_enclosing_screen": "survey/_screen11",
+            "promptIdx": 7
           },
           {
             "type": "integer",
@@ -1174,12 +1986,12 @@
                 "text": "What is the size of this firm?"
               }
             },
-            "_row_num": 9,
-            "__rowNum__": 8,
+            "_row_num": 12,
+            "__rowNum__": 11,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen9",
-            "promptIdx": 7
+            "_branch_label_enclosing_screen": "survey/_screen12",
+            "promptIdx": 8
           },
           {
             "type": "text",
@@ -1189,12 +2001,12 @@
                 "text": "Enter the phone number for the business."
               }
             },
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 13,
+            "__rowNum__": 12,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen10",
-            "promptIdx": 8
+            "_branch_label_enclosing_screen": "survey/_screen13",
+            "promptIdx": 9
           },
           {
             "type": "select_one",
@@ -1205,12 +2017,12 @@
                 "text": "Enter the network for the phone number."
               }
             },
-            "_row_num": 11,
-            "__rowNum__": 10,
+            "_row_num": 14,
+            "__rowNum__": 13,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen11",
-            "promptIdx": 9
+            "_branch_label_enclosing_screen": "survey/_screen14",
+            "promptIdx": 10
           },
           {
             "type": "text",
@@ -1220,12 +2032,12 @@
                 "text": "Enter the secondary phone number."
               }
             },
-            "_row_num": 12,
-            "__rowNum__": 11,
+            "_row_num": 15,
+            "__rowNum__": 14,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen12",
-            "promptIdx": 10
+            "_branch_label_enclosing_screen": "survey/_screen15",
+            "promptIdx": 11
           },
           {
             "type": "select_one",
@@ -1236,20 +2048,20 @@
                 "text": "Enter the network for the secondary phone number."
               }
             },
-            "_row_num": 13,
-            "__rowNum__": 12,
+            "_row_num": 16,
+            "__rowNum__": 15,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen13",
-            "promptIdx": 11
+            "_branch_label_enclosing_screen": "survey/_screen16",
+            "promptIdx": 12
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 14,
-            "_branch_label_enclosing_screen": "survey/_screen14",
-            "promptIdx": 12
+            "_row_num": 17,
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 13
           }
         ],
         "validation_tag_map": {
@@ -1287,67 +2099,96 @@
             "operationIdx": 4
           },
           {
+            "clause": "if",
+            "condition": "(data('sector_type') === 1 || data('sector_type') === 2)",
             "_row_num": 7,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "__rowNum__": 6,
+            "_token_type": "goto_label",
+            "_branch_label": "_then7",
             "operationIdx": 5
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else9",
+            "_row_num": 9,
+            "operationIdx": 6
           },
           {
             "_row_num": 8,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 6
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 7
           },
           {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif9",
             "_row_num": 9,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 7
+            "operationIdx": 8
           },
           {
             "_row_num": 10,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 8
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 9
           },
           {
             "_row_num": 11,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 9
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 10
           },
           {
             "_row_num": 12,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 10
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 11
           },
           {
             "_row_num": 13,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 11
-          },
-          {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 14,
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 12
           },
           {
             "_row_num": 14,
             "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 13
+          },
+          {
+            "_row_num": 15,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 14
+          },
+          {
+            "_row_num": 16,
+            "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 15
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 17,
+            "operationIdx": 16
+          },
+          {
+            "_row_num": 17,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 13
+            "operationIdx": 17
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 14,
-            "operationIdx": 14
+            "_row_num": 17,
+            "operationIdx": 18
           }
         ],
         "branch_label_map": {
@@ -1356,15 +2197,19 @@
           "_screen4": 2,
           "_screen5": 3,
           "_screen6": 4,
-          "_screen7": 5,
-          "_screen8": 6,
-          "_screen9": 7,
-          "_screen10": 8,
-          "_screen11": 9,
-          "_screen12": 10,
-          "_screen13": 11,
-          "_contents": 13,
-          "_screen14": 13
+          "_then7": 7,
+          "_screen8": 7,
+          "_else9": 9,
+          "_endif9": 9,
+          "_screen10": 9,
+          "_screen11": 10,
+          "_screen12": 11,
+          "_screen13": 12,
+          "_screen14": 13,
+          "_screen15": 14,
+          "_screen16": 15,
+          "_contents": 17,
+          "_screen17": 17
         }
       },
       "initial": {
@@ -1628,7 +2473,7 @@
         "elementPath": "firm_name"
       },
       "sector_type": {
-        "type": "string",
+        "type": "integer",
         "valuesList": "sector_type_list",
         "_defn": [
           {
@@ -1645,8 +2490,9 @@
         "elementSet": "data",
         "elementPath": "sector_type"
       },
-      "business_age": {
+      "subsector_type": {
         "type": "integer",
+        "valuesList": "subsector_type_list",
         "_defn": [
           {
             "_row_num": 6,
@@ -1654,6 +2500,37 @@
           },
           {
             "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "subsector_type",
+        "elementName": "subsector_type",
+        "elementSet": "data",
+        "elementPath": "subsector_type"
+      },
+      "crop_type": {
+        "type": "integer",
+        "valuesList": "crop_type_list",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "crop_type",
+        "elementName": "crop_type",
+        "elementSet": "data",
+        "elementPath": "crop_type"
+      },
+      "business_age": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -1666,11 +2543,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 7,
+            "_row_num": 10,
             "section_name": "survey"
           },
           {
-            "_row_num": 9,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -1684,11 +2561,11 @@
         "valuesList": "male_female",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 11,
             "section_name": "survey"
           },
           {
-            "_row_num": 10,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -1701,11 +2578,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 9,
+            "_row_num": 12,
             "section_name": "survey"
           },
           {
-            "_row_num": 11,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -1718,11 +2595,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 13,
             "section_name": "survey"
           },
           {
-            "_row_num": 12,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -1736,11 +2613,11 @@
         "valuesList": "network_list",
         "_defn": [
           {
-            "_row_num": 11,
+            "_row_num": 14,
             "section_name": "survey"
           },
           {
-            "_row_num": 13,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -1753,11 +2630,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 15,
             "section_name": "survey"
           },
           {
-            "_row_num": 14,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -1771,11 +2648,11 @@
         "valuesList": "network_list",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 16,
             "section_name": "survey"
           },
           {
-            "_row_num": 15,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -1788,7 +2665,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -1801,7 +2678,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 17,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -1814,7 +2691,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -1827,7 +2704,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 19,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -1840,7 +2717,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -1853,7 +2730,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
