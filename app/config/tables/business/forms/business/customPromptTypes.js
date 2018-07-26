@@ -32,11 +32,14 @@ var select_unique = promptTypes.select.extend({
                     var displayElementName = query.columnValue;
                     database.get_linked_instances($.extend({}, newctxt, {
                         success: function (instanceList) {
-                            that.renderContext.choices = _.map(instanceList, function (instance) {
+                            that.renderContext.choices = _.chain(instanceList).uniq(function(instance) {
+                                    return instance.display_field;
+                                })
+                                .map(function (instance) {
                                 instance.display = {title: {text: instance.display_field}};
                                 instance.data_value = instance.display_field;
                                 return instance;
-                            });
+                            }).value();
                             newctxt.success();
                         }
                     }), dbTableName, selString, selArgs, displayElementName, ordBy);
