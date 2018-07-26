@@ -16,7 +16,7 @@ function cbSuccess(result) {
     util.showIdForDetail('#firm-size', 'firm_size', result, true);
     util.showIdForDetail('#phone-number', 'phone_number', result, true);
     util.showIdForDetail('#seondary-phone-number', 'secondary_phone_number', result, true);
-    util.showIdForDetail('#has-been-verified-by-agent', util.COL_AGENT_VERIFIED, result, true);
+    util.showIdForDetail('#has-been-verified-by-agent', util.COL_COORDINATOR_VERIFIED, result, true);
     util.showIdForDetail('#has-been-authorized-by-veo', util.COL_VEO_AUTHORIZED, result, true);
 }
 

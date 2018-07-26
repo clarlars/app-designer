@@ -4,8 +4,8 @@
 /* global $, odkCommon, odkData, odkTables, util, listViewLogic */
 'use strict';
 
-var listQuery = 'SELECT * FROM business WHERE (' + util.COL_AGENT_VERIFIED +' ISNULL OR ' +
-    util.COL_AGENT_VERIFIED + '=' + util.NEG_ONE + ') ';
+var listQuery = 'SELECT * FROM business WHERE (' + util.COL_COORDINATOR_VERIFIED +' ISNULL OR ' +
+    util.COL_COORDINATOR_VERIFIED + '=' + util.NEG_ONE + ') ';
 
 var searchParams = '(firm_name LIKE ? OR sector_type LIKE ?)';
 

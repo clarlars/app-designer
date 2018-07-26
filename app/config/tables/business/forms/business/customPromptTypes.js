@@ -6,7 +6,7 @@ window.is_finalized = function () {
     return ('COMPLETE' === database.getInstanceMetaDataValue('_savepoint_type'));
 };
 
-var select_group_by = promptTypes.select.extend({
+var select_unique = promptTypes.select.extend({
     configureRenderContext: function (ctxt) {
         var that = this;
         var newctxt = $.extend({}, ctxt, {
@@ -71,7 +71,7 @@ var select_group_by = promptTypes.select.extend({
         }
     }
 });
-select_one_group_by = select_group_by.extend({
+select_one_unique = select_unique.extend({
     renderContext: {
         "select_one": true
     },
@@ -140,6 +140,6 @@ select_one_group_by = select_group_by.extend({
     }
 });
 return {
-    "select_one_group_by": select_one_group_by
+    "select_one_unique": select_one_unique
 }
 });
