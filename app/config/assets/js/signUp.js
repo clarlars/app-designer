@@ -1,29 +1,7 @@
-function display() {
+/* global $, odkData, odkCommon, odkTables, util */
+/* exported display */
 
-    util.getVillages(finishDisplay, failCB);
-}
-
-function finishDisplay(data) {
-    var selectId = $('#village');
-    for (var i = 0; i < data.getCount(); i++) {
-        var vName = data.getData(i, util.VILLAGE);
-        var vOpt = $('<option>');
-        vOpt.val(vName);
-        vOpt.text(vName);
-
-        selectId.append(vOpt);
-        if (i === 0) {
-            vOpt.attr('selected', 'selected');
-        }
-    }
-
-    var addUserBtn = $('#add-user');
-    addUserBtn.on('click', createUser);
-}
-
-function failCB(error) {
-    console.log('Error while trying to get list of regions: ' + error);
-}
+'use strict';
 
 function createUser() {
 
@@ -34,7 +12,7 @@ function createUser() {
         var eKey = util.ELEMENT_KEY;
         var eName = util.ELEMENT_NAME;
         var eType = util.ELEMENT_TYPE;
-        var listCE = util.LIST_CHILD_ELEMENT_KEYS
+        var listCE = util.LIST_CHILD_ELEMENT_KEYS;
 
         var col1 = {};
         col1[eKey] = util.USER_ID;
@@ -87,16 +65,43 @@ function createUser() {
             alert(result.getCount() + ' user created');
 
         } else {
-            var errText = 'There should only be 1 user on this device!!'
+            var errText = 'There should only be 1 user on this device!!';
             alert(errText);
-            console.log(errTxt);
+            console.log(errText);
             throw errText;
         }
         addUserBtn.prop('disabled', true);
     }).catch(function (reason) {
-        errTxt = 'Error while creating user: ' + reason;
+        var errTxt = 'Error while creating user: ' + reason;
         alert(errTxt);
         console.log(errTxt);
         addUserBtn.prop('disabled', true);
     });
+}
+
+function finishDisplay(data) {
+    var selectId = $('#village');
+    for (var i = 0; i < data.getCount(); i++) {
+        var vName = data.getData(i, util.VILLAGE);
+        var vOpt = $('<option>');
+        vOpt.val(vName);
+        vOpt.text(vName);
+
+        selectId.append(vOpt);
+        if (i === 0) {
+            vOpt.attr('selected', 'selected');
+        }
+    }
+
+    var addUserBtn = $('#add-user');
+    addUserBtn.on('click', createUser);
+}
+
+function failCB(error) {
+    console.log('Error while trying to get list of regions: ' + error);
+}
+
+function display() {
+
+    util.getVillages(finishDisplay, failCB);
 }

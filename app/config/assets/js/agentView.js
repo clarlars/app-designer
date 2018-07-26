@@ -1,3 +1,8 @@
+/* global $, odkData, odkCommon, odkTables, util */
+/* exported display */
+
+'use strict';
+
 function display() {
     var body = $('#main');
     body.css('background-image', 'url(img/bw-business-bubble.jpg)');

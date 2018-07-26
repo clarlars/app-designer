@@ -1,3 +1,7 @@
+/* global $, odkData, odkCommon, odkTables, util */
+/* exported display */
+
+'use strict';
 
 var viewType;
 var pendingAuth;
@@ -7,45 +11,11 @@ var completed;
 var lovUserId;
 var REGION_ATTR = 'region';
 
-function display() {
-    viewType = util.getQueryParameter(util.VIEW_TYPE);
-    pendingAuth = util.getQueryParameter(util.PENDING_AUTHORIZATION);
-    pendingVer = util.getQueryParameter(util.PENDING_VERIFICATION);
-    actionToPerform = util.getQueryParameter(util.ACTION);
-    completed = util.getQueryParameter(util.COMPLETED);
-    lovUserId = util.getQueryParameter(util.USER_ID);
-
-    util.getVillagesByPendingAuth(loadVillages, failCB);
-}
-
-function failCB(error) {
-    console.log('failCB: error occurred while trying to get villages: ' + error);
-}
-
-function loadVillages(data) {
-    var btnDiv = $('#buttonsDiv');
-
-    for (var i = 0;  i < data.getCount(); i++) {
-        var vName = data.getData(i, util.VILLAGE);
-        var vCount = data.getData(i, 'count(*)');
-
-        var vBtn = $('<button>');
-        var vBadge = $('<span>');
-        vBadge.attr('class', 'button-badge badge');
-        vBadge.text(vCount);
-        vBtn.text(vName);
-        vBtn.attr('class', 'button');
-        vBtn.attr('region', vName);
-        vBtn.on('click', function (evt) {
-            determineButtonAction(evt);
-        });
-        vBtn.append(vBadge);
-        btnDiv.append(vBtn);
-    }
-
+function addBackground() {
     var body = $('#main');
     body.css('background-image', 'url(img/bw-business-bubble.jpg)');
 }
+
 
 function determineButtonAction(evt) {
 
@@ -85,4 +55,61 @@ function determineButtonAction(evt) {
     if (urlToUse !== '' && urlToUse !== null && urlToUse !== undefined) {
         odkTables.launchHTML(null, urlToUse);
     }
+}
+
+function loadVillages(data) {
+    var btnDiv = $('#buttonsDiv');
+
+    for (var i = 0;  i < data.getCount(); i++) {
+        var vName = data.getData(i, util.VILLAGE);
+        var vCount = data.getData(i, 'count(*)');
+
+        var vBtn = $('<button>');
+        var vBadge = $('<span>');
+        vBadge.attr('class', 'button-badge badge');
+        vBadge.text(vCount);
+        vBtn.text(vName);
+        vBtn.attr('class', 'button');
+        vBtn.attr('region', vName);
+        vBtn.on('click', function (evt) {
+            determineButtonAction(evt);
+        });
+        vBtn.append(vBadge);
+        btnDiv.append(vBtn);
+    }
+
+    addBackground();
+}
+
+function failCB(error) {
+    console.log('failCB: error occurred while trying to get villages: ' + error);
+}
+
+function display() {
+    viewType = util.getQueryParameter(util.VIEW_TYPE);
+    pendingAuth = util.getQueryParameter(util.PENDING_AUTHORIZATION);
+    pendingVer = util.getQueryParameter(util.PENDING_VERIFICATION);
+    actionToPerform = util.getQueryParameter(util.ACTION);
+    completed = util.getQueryParameter(util.COMPLETED);
+    lovUserId = util.getQueryParameter(util.USER_ID);
+
+    // Display villages pending auth
+    if (pendingAuth === util.TRUE) {
+        if (viewType === util.VIEW_TYPE_AGENT) {
+            // This will only work if an agent id is given!!
+            if (lovUserId !== null && lovUserId !== undefined) {
+                util.getVillagesByPendingAuthUserId(lovUserId, loadVillages, failCB);
+            } else {
+                addBackground();
+                alert('A user id must be given to display villages pending authorization for agent');
+            }
+        } else if (viewType === util.VIEW_TYPE_COORDINATOR) {
+            util.getVillagesByPendingAuth(loadVillages, failCB);
+        }
+    } else if (pendingVer === util.TRUE) {
+        if (viewType === util.VIEW_TYPE_COORDINATOR) {
+            util.getVillagesByPendingVer(loadVillages, failCB);
+        }
+    }
+
 }

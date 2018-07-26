@@ -1,7 +1,7 @@
 /**
  * The file for displaying the detail view of the refrigerator inventory table.
  */
-/* global $, odkData, odkCommon, odkTables, data, util */
+/* global $, odkData, odkCommon, odkTables, util */
 'use strict';
 
 function cbSuccess(result) {

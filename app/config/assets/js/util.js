@@ -16,7 +16,7 @@ util.PENDING_VERIFICATION = 'pendingVerification';
 util.ACTION = 'action';
 util.COMPLETED = 'completed';
 
-util.VIEW_TYPE_AGENT = 'agent'
+util.VIEW_TYPE_AGENT = 'agent';
 util.VIEW_TYPE_COORDINATOR = 'coordinator';
 
 util.ACTION_LIST = 'list';
@@ -27,7 +27,7 @@ util.COL_COORDINATOR_VERIFIED = 'has_been_verified_by_coordinator';
 util.COL_VEO_AUTHORIZED = 'has_been_authorized_by_veo';
 util.COL_ENROLLER_ID = 'enroller_id';
 util.COL_VERIFIER_ID = 'verifier_id';
-util.COL_AUTHORIZER_ID = 'authorizer_id'
+util.COL_AUTHORIZER_ID = 'authorizer_id';
 
 util.TRUE = 'true';
 util.FALSE = 'false';
@@ -50,11 +50,33 @@ util.ELEMENT_NAME = 'elementName';
 util.ELEMENT_TYPE = 'elementType';
 util.LIST_CHILD_ELEMENT_KEYS = 'listChildElementKeys';
 
+util.ADMIN_DEFAULT_GROUPS = ['ROLE_ADMINISTER_TABLES', 'ROLE_SITE_ACCESS_ADMIN'];
+
+util.getVillagesByPendingAuthUserId = function(enrollerId, successCB, failureCB) {
+
+    var queryStr = 'SELECT ' + util.VILLAGE + ', count(*) FROM business WHERE (' +
+        util.COL_VEO_AUTHORIZED +' ISNULL OR ' +
+        util.COL_VEO_AUTHORIZED + '= ?) AND ' + util.COL_ENROLLER_ID + ' = ? GROUP BY ' + util.VILLAGE;
+
+    var queryParam = [util.NEG_ONE, enrollerId];
+    odkData.arbitraryQuery('business', queryStr, queryParam, null, null, successCB, failureCB);
+};
+
 util.getVillagesByPendingAuth = function(successCB, failureCB) {
 
     var queryStr = 'SELECT ' + util.VILLAGE + ', count(*) FROM business WHERE ' +
         util.COL_VEO_AUTHORIZED +' ISNULL OR ' +
         util.COL_VEO_AUTHORIZED + '= ? GROUP BY ' + util.VILLAGE;
+
+    var queryParam = [util.NEG_ONE];
+    odkData.arbitraryQuery('business', queryStr, queryParam, null, null, successCB, failureCB);
+};
+
+util.getVillagesByPendingVer = function(successCB, failureCB) {
+
+    var queryStr = 'SELECT ' + util.VILLAGE + ', count(*) FROM business WHERE ' +
+        util.COL_COORDINATOR_VERIFIED +' ISNULL OR ' +
+        util.COL_COORDINATOR_VERIFIED + '= ? GROUP BY ' + util.VILLAGE;
 
     var queryParam = [util.NEG_ONE];
     odkData.arbitraryQuery('business', queryStr, queryParam, null, null, successCB, failureCB);

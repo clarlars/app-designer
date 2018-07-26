@@ -1,3 +1,8 @@
+/* global $, odkData, odkCommon, odkTables, util */
+/* exported display */
+
+'use strict';
+
 var VEO_AUTHORIZE_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
     '(' + util.COL_VEO_AUTHORIZED + ' ISNULL OR ' + util.COL_VEO_AUTHORIZED + ' = ?)';
 
@@ -5,17 +10,6 @@ var AGENT_VERIFY_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
     '(' + util.COL_COORDINATOR_VERIFIED + ' ISNULL OR ' + util.COL_COORDINATOR_VERIFIED+ ' = ?)';
 
 var baUserId;
-function display(action) {
-    var village = util.getQueryParameter(util.VILLAGE);
-    baUserId = util.getQueryParameter(util.USER_ID);
-
-    var url = AGENT_VERIFY_QUERY;
-    if (action === util.ACTION_AUTHORIZE) {
-        url = VEO_AUTHORIZE_QUERY;
-    }
-    odkData.arbitraryQuery('business',
-        url, [village, util.NEG_ONE], null, null, successCB, failureCB);
-}
 
 function successCB(result) {
     var tableWrapper = $('#list');
@@ -113,7 +107,6 @@ function successCB(result) {
                         colMap[util.COL_VEO_AUTHORIZED] = checkedValue;
                         colMap[util.COL_AUTHORIZER_ID] = baUserId;
                     } else {
-                        var colMap = {};
                         // TODO: Add these two in verification_date, verification_agent
                         colMap[util.COL_COORDINATOR_VERIFIED] = checkedValue;
                         colMap[util.COL_VERIFIER_ID] = baUserId;
@@ -140,4 +133,16 @@ function successCB(result) {
 
 function failureCB(error) {
     console.log('failureCB: error while retrieving business to verify: ' + error);
+}
+
+function display(action) {
+    var village = util.getQueryParameter(util.VILLAGE);
+    baUserId = util.getQueryParameter(util.USER_ID);
+
+    var url = AGENT_VERIFY_QUERY;
+    if (action === util.ACTION_AUTHORIZE) {
+        url = VEO_AUTHORIZE_QUERY;
+    }
+    odkData.arbitraryQuery('business',
+        url, [village, util.NEG_ONE], null, null, successCB, failureCB);
 }
