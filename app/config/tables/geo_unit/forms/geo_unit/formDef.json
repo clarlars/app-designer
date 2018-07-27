@@ -3,6 +3,17 @@
     "survey": [
       {
         "type": "text",
+        "name": "region",
+        "display": {
+          "prompt": {
+            "text": "Enter the name of the region"
+          }
+        },
+        "required": true,
+        "_row_num": 2
+      },
+      {
+        "type": "text",
         "name": "district",
         "display": {
           "prompt": {
@@ -10,7 +21,7 @@
           }
         },
         "required": true,
-        "_row_num": 2
+        "_row_num": 3
       },
       {
         "type": "text",
@@ -21,7 +32,7 @@
           }
         },
         "required": true,
-        "_row_num": 3
+        "_row_num": 4
       },
       {
         "type": "text",
@@ -32,7 +43,7 @@
           }
         },
         "required": true,
-        "_row_num": 4
+        "_row_num": 5
       },
       {
         "type": "text",
@@ -43,7 +54,7 @@
           }
         },
         "required": true,
-        "_row_num": 5
+        "_row_num": 6
       },
       {
         "type": "text",
@@ -54,7 +65,7 @@
           }
         },
         "required": true,
-        "_row_num": 6
+        "_row_num": 7
       }
     ],
     "choices": [
@@ -366,10 +377,20 @@
     "queries": {},
     "calculates": {},
     "model": {
-      "district": {
+      "region": {
         "_defn": [
           {
             "_row_num": 2,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "region"
+      },
+      "district": {
+        "_defn": [
+          {
+            "_row_num": 3,
             "section_name": "survey"
           }
         ],
@@ -379,7 +400,7 @@
       "ward": {
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "survey"
           }
         ],
@@ -389,7 +410,7 @@
       "village": {
         "_defn": [
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "survey"
           }
         ],
@@ -399,7 +420,7 @@
       "subvillage": {
         "_defn": [
           {
-            "_row_num": 5,
+            "_row_num": 6,
             "section_name": "survey"
           }
         ],
@@ -409,7 +430,7 @@
       "veo": {
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "section_name": "survey"
           }
         ],
@@ -429,10 +450,10 @@
         "prompts": [
           {
             "type": "text",
-            "name": "district",
+            "name": "region",
             "display": {
               "prompt": {
-                "text": "Enter the name of the district"
+                "text": "Enter the name of the region"
               }
             },
             "required": true,
@@ -445,10 +466,10 @@
           },
           {
             "type": "text",
-            "name": "ward",
+            "name": "district",
             "display": {
               "prompt": {
-                "text": "Enter the name of the ward"
+                "text": "Enter the name of the district"
               }
             },
             "required": true,
@@ -461,10 +482,10 @@
           },
           {
             "type": "text",
-            "name": "village",
+            "name": "ward",
             "display": {
               "prompt": {
-                "text": "Enter the name of the village"
+                "text": "Enter the name of the ward"
               }
             },
             "required": true,
@@ -477,10 +498,10 @@
           },
           {
             "type": "text",
-            "name": "subvillage",
+            "name": "village",
             "display": {
               "prompt": {
-                "text": "Enter the name of the subvillage"
+                "text": "Enter the name of the village"
               }
             },
             "required": true,
@@ -493,10 +514,10 @@
           },
           {
             "type": "text",
-            "name": "veo",
+            "name": "subvillage",
             "display": {
               "prompt": {
-                "text": "Enter the name of the veo"
+                "text": "Enter the name of the subvillage"
               }
             },
             "required": true,
@@ -508,12 +529,28 @@
             "promptIdx": 4
           },
           {
+            "type": "text",
+            "name": "veo",
+            "display": {
+              "prompt": {
+                "text": "Enter the name of the veo"
+              }
+            },
+            "required": true,
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen7",
+            "promptIdx": 5
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 7,
-            "_branch_label_enclosing_screen": "survey/_screen7",
-            "promptIdx": 5
+            "_row_num": 8,
+            "_branch_label_enclosing_screen": "survey/_screen8",
+            "promptIdx": 6
           }
         ],
         "validation_tag_map": {
@@ -522,7 +559,8 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ]
         },
         "operations": [
@@ -557,25 +595,31 @@
             "operationIdx": 4
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 7,
-            "operationIdx": 5
-          },
-          {
             "_row_num": 7,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 5
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 8,
+            "operationIdx": 6
+          },
+          {
+            "_row_num": 8,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 6
+            "operationIdx": 7
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 7,
-            "operationIdx": 7
+            "_row_num": 8,
+            "operationIdx": 8
           }
         ],
         "branch_label_map": {
@@ -584,8 +628,9 @@
           "_screen4": 2,
           "_screen5": 3,
           "_screen6": 4,
-          "_contents": 6,
-          "_screen7": 6
+          "_screen7": 5,
+          "_contents": 7,
+          "_screen8": 7
         }
       },
       "initial": {
@@ -767,10 +812,23 @@
       }
     },
     "dataTableModel": {
-      "district": {
+      "region": {
         "_defn": [
           {
             "_row_num": 2,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "region",
+        "elementName": "region",
+        "elementSet": "data",
+        "elementPath": "region"
+      },
+      "district": {
+        "_defn": [
+          {
+            "_row_num": 3,
             "section_name": "survey"
           }
         ],
@@ -783,7 +841,7 @@
       "ward": {
         "_defn": [
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "survey"
           }
         ],
@@ -796,7 +854,7 @@
       "village": {
         "_defn": [
           {
-            "_row_num": 4,
+            "_row_num": 5,
             "section_name": "survey"
           }
         ],
@@ -809,7 +867,7 @@
       "subvillage": {
         "_defn": [
           {
-            "_row_num": 5,
+            "_row_num": 6,
             "section_name": "survey"
           }
         ],
@@ -822,7 +880,7 @@
       "veo": {
         "_defn": [
           {
-            "_row_num": 6,
+            "_row_num": 7,
             "section_name": "survey"
           }
         ],
