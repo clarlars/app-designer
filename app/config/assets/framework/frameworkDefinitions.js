@@ -54,7 +54,7 @@ window.odkFrameworkDefinitions = {
       "string_token": "next_button_label",
       "text": {
         "default": "Next",
-        "sw": "Mbele/Endelea"
+        "sw": "Mbele"
       },
       "_row_num": 9
     },
