@@ -1,1 +1,1639 @@
-_id,_form_id,_locale,_savepoint_type,_savepoint_timestamp,_savepoint_creator,region,district,subvillage,veo,village,ward,_default_access,_group_modify,_group_privileged,_group_read_only,_row_etag,_row_owneruuid:849b4689-0220-4583-839d-f74156c10217,geo_unit,en_US,COMPLETE,2018-07-12T23:14:03.778000000,anonymous,region1,District1,Subvillage11,Veo1,Village1,Ward1,FULL,,,,,anonymousuuid:b79305fe-cb6d-4a2e-ab9a-df844db6b3f2,geo_unit,en_US,COMPLETE,2018-07-12T23:15:22.909000000,anonymous,region1,District2,Subvillage21,Veo2,Village2,Ward2,FULL,,,,,anonymousuuid:c06bef41-1e12-4afa-a27f-7ca14a0b1092,geo_unit,en_US,COMPLETE,2018-07-12T23:16:36.746000000,anonymous,region2,District3,Subvillage31,Veo3,Village3,Ward3,FULL,,,,,anonymousuuid:75bfa55b-01d2-4eff-b776-b2a1ce4eb095,geo_unit,en_US,COMPLETE,2018-07-12T23:27:22.055000000,anonymous,region2,District4,Subvillage41,Veo4,Village4,Ward4,FULL,,,,,anonymous
+region,district,ward,village
+Dodoma,Kondoa,Bumbuta,Bumbuta
+Dodoma,Kondoa,Bumbuta,Mahongo
+Dodoma,Kondoa,Bumbuta,Mauno
+Dodoma,Kondoa,Pahi,Pahi
+Dodoma,Kondoa,Pahi,Potea
+Dodoma,Kondoa,Pahi,Salare
+Dodoma,Kondoa,Pahi,Kiteo
+Dodoma,Kondoa,Busi,Busi
+Dodoma,Kondoa,Busi,Sambwa
+Dodoma,Kondoa,Busi,Keikei
+Dodoma,Kondoa,Busi,Idindiri
+Dodoma,Kondoa,Busi,Ihari
+Dodoma,Kondoa,Busi,Isusumya
+Dodoma,Kondoa,Haubi,Haubi
+Dodoma,Kondoa,Haubi,Ntomoko
+Dodoma,Kondoa,Haubi,Mafai
+Dodoma,Kondoa,Kalamba,Baura
+Dodoma,Kondoa,Kalamba,Kalamba Chini
+Dodoma,Kondoa,Kalamba,Hebi Chini
+Dodoma,Kondoa,Kalamba,Loo
+Dodoma,Kondoa,Kalamba,Hebi Juu
+Dodoma,Kondoa,Kalamba,Kalamba Juu
+Dodoma,Kondoa,Kwadelo,Kwadelo
+Dodoma,Kondoa,Kwadelo,Kirere Cha Ng'ombe
+Dodoma,Kondoa,Kwadelo,Makirinya
+Dodoma,Kondoa,Masange,Masange
+Dodoma,Kondoa,Masange,Kwayondu
+Dodoma,Kondoa,Kikilo,Kikilo Kati
+Dodoma,Kondoa,Kikilo,Kikilo Ororimo
+Dodoma,Kondoa,Kikilo,Kwahengwa
+Dodoma,Kondoa,Kikilo,Berabera
+Dodoma,Kondoa,Bereko,Puhi
+Dodoma,Kondoa,Bereko,Bereko
+Dodoma,Kondoa,Kisese,Mapinduzi
+Dodoma,Kondoa,Kisese,Kisese Sauna
+Dodoma,Kondoa,Kisese,Madisa
+Dodoma,Kondoa,Kisese,Kisese Dissa
+Dodoma,Kondoa,Kisese,Atta
+Dodoma,Kondoa,Kikore,Kikore
+Dodoma,Kondoa,Kikore,Madege
+Dodoma,Kondoa,Kikore,Hurui
+Dodoma,Kondoa,Kikore,Mitati
+Dodoma,Kondoa,Kikore,Mkurumuzi
+Dodoma,Kondoa,Serya,Mongoroma
+Dodoma,Kondoa,Serya,Chadimu
+Dodoma,Kondoa,Serya,Munguri
+Dodoma,Kondoa,Serya,Serya
+Dodoma,Kondoa,Kilimani,Kwantisi
+Dodoma,Kondoa,Kilimani,Bicha
+Dodoma,Kondoa,Kilimani,Kilimani
+Dodoma,Kondoa,Kilimani,Damai
+Dodoma,Kondoa,Chemchem,Kwapakacha
+Dodoma,Kondoa,Chemchem,Ubembeni
+Dodoma,Kondoa,Chemchem,Iboni
+Dodoma,Kondoa,Chemchem,Chemchem
+Dodoma,Kondoa,Hondomairo,Mwembeni
+Dodoma,Kondoa,Hondomairo,Hondomairo
+Dodoma,Kondoa,Hondomairo,Mtibyangwi
+Dodoma,Kondoa,Bolisa,Itiso
+Dodoma,Kondoa,Bolisa,Bolisa
+Dodoma,Kondoa,Bolisa,Poisa
+Dodoma,Kondoa,Kinyasi,Kinyasi Majengo
+Dodoma,Kondoa,Kinyasi,Kinyasi Kati
+Dodoma,Kondoa,Kinyasi,Ikengwa
+Dodoma,Kondoa,Kinyasi,Isongolo
+Dodoma,Kondoa,Salanka,Makafa
+Dodoma,Kondoa,Salanka,Lembo
+Dodoma,Kondoa,Salanka,Salanka
+Dodoma,Kondoa,Salanka,Masawi
+Dodoma,Kondoa,Salanka,Alagawa
+Dodoma,Kondoa,Itololo,Mangolo
+Dodoma,Kondoa,Itololo,Kandaga
+Dodoma,Kondoa,Itololo,Itololo
+Dodoma,Kondoa,Itololo,Mkekena
+Dodoma,Kondoa,Itololo,Machinjioni
+Dodoma,Kondoa,Itaswi,Itaswi
+Dodoma,Kondoa,Itaswi,Haire
+Dodoma,Kondoa,Itaswi,Kisaki
+Dodoma,Kondoa,Itaswi,Chubi
+Dodoma,Kondoa,Suruke,Mlua
+Dodoma,Kondoa,Suruke,Tungufu
+Dodoma,Kondoa,Kingale,Kingale
+Dodoma,Kondoa,Kingale,Tampori
+Dodoma,Kondoa,Kingale,Iyoli
+Dodoma,Kondoa,Kingale,Chemchem
+Dodoma,Kondoa,Kondoa Mjini,Mningani
+Dodoma,Kondoa,Kondoa Mjini,Kichangani
+Dodoma,Kondoa,Kondoa Mjini,Tura
+Dodoma,Kondoa,Kondoa Mjini,Mnarani
+Dodoma,Kondoa,Kolo,Kolo
+Dodoma,Kondoa,Kolo,Choka
+Dodoma,Kondoa,Kolo,Hachwi
+Dodoma,Kondoa,Changaa,Kwamafunchi
+Dodoma,Kondoa,Changaa,Changaa
+Dodoma,Kondoa,Changaa,Tumbelo
+Dodoma,Kondoa,Changaa,Chololo
+Dodoma,Kondoa,Thawi,Sakami
+Dodoma,Kondoa,Thawi,Thawi Madukani
+Dodoma,Kondoa,Thawi,Thawi Juu
+Dodoma,Kondoa,Mnenia,Mnenia
+Dodoma,Kondoa,Mnenia,Itundwi
+Dodoma,Kondoa,Mnenia,Filimo
+Dodoma,Kondoa,Mnenia,Bambare
+Dodoma,Kondoa,Soera,Soera
+Dodoma,Kondoa,Soera,Bukulu
+Dodoma,Kondoa,Soera,Humai
+Dodoma,Kondoa,Soera,Kwadinu
+Dodoma,Mpwapwa,Mazae,Mazae
+Dodoma,Mpwapwa,Mazae,Kisokwe
+Dodoma,Mpwapwa,Mazae,Idilo
+Dodoma,Mpwapwa,Ving'hawe,Ving'hawe
+Dodoma,Mpwapwa,Ving'hawe,Manghangu
+Dodoma,Mpwapwa,Ving'hawe,Isinghu
+Dodoma,Mpwapwa,Matomondo,Mbori
+Dodoma,Mpwapwa,Matomondo,Tambi
+Dodoma,Mpwapwa,Matomondo,Miembule
+Dodoma,Mpwapwa,Matomondo,Mwenzere
+Dodoma,Mpwapwa,Kimagai,Inzomvu
+Dodoma,Mpwapwa,Kimagai,Kimagai
+Dodoma,Mpwapwa,Kibakwe,Iyenge
+Dodoma,Mpwapwa,Kibakwe,Kibakwe
+Dodoma,Mpwapwa,Kibakwe,Chamtumile
+Dodoma,Mpwapwa,Lumuma,Lufusi
+Dodoma,Mpwapwa,Lumuma,Kitati
+Dodoma,Mpwapwa,Lumuma,Mafene
+Dodoma,Mpwapwa,Luhundwa,Ikuyu
+Dodoma,Mpwapwa,Luhundwa,Luhundwa
+Dodoma,Mpwapwa,Luhundwa,Kidenge
+Dodoma,Mpwapwa,Massa,Makose
+Dodoma,Mpwapwa,Massa,Chogola
+Dodoma,Mpwapwa,Massa,Winza
+Dodoma,Mpwapwa,Massa,Njia panda
+Dodoma,Mpwapwa,Ipera,Kinusi
+Dodoma,Mpwapwa,Ipera,Mang'aliza
+Dodoma,Mpwapwa,Ipera,Kikuyu
+Dodoma,Mpwapwa,Rudi,Chilendu
+Dodoma,Mpwapwa,Rudi,Singonhali
+Dodoma,Mpwapwa,Rudi,Mtamba
+Dodoma,Mpwapwa,Mlunduzi,Chinyika
+Dodoma,Mpwapwa,Mlunduzi,Chinyanghuku
+Dodoma,Mpwapwa,Mlunduzi,Wiyenzele
+Dodoma,Mpwapwa,Wotta,Mlunga
+Dodoma,Mpwapwa,Wotta,Mwanawotta
+Dodoma,Mpwapwa,Wotta,Lwihomelo
+Dodoma,Mpwapwa,Wotta,Wangi
+Dodoma,Mpwapwa,Wotta,Kidabaga
+Dodoma,Mpwapwa,Mima,Mima
+Dodoma,Mpwapwa,Mima,Sazima
+Dodoma,Mpwapwa,Mima,Igoji
+Dodoma,Mpwapwa,Mima,Chamanda
+Dodoma,Mpwapwa,Berege,Berege
+Dodoma,Mpwapwa,Berege,Mzase
+Dodoma,Mpwapwa,Berege,Mkanana
+Dodoma,Mpwapwa,Chunyu,Chunyu
+Dodoma,Mpwapwa,Chunyu,Msagali
+Dodoma,Mpwapwa,Mbuga,Kizi
+Dodoma,Mpwapwa,Mbuga,Mbuga
+Dodoma,Mpwapwa,Mbuga,Iguluwi
+Dodoma,Mpwapwa,Godegode,Godegode
+Dodoma,Mpwapwa,Godegode,Kisisi
+Dodoma,Mpwapwa,Godegode,Mgoma
+Dodoma,Mpwapwa,Godegode,Mzogole
+Dodoma,Mpwapwa,Mpwapwa Mjini,Ilolo
+Dodoma,Mpwapwa,Mpwapwa Mjini,Kiboriani
+Dodoma,Mpwapwa,Mpwapwa Mjini,Mpwapwa Mjini
+Dodoma,Mpwapwa,Mpwapwa Mjini,Igovu
+Dodoma,Mpwapwa,Mpwapwa Mjini,Mwanakianga
+Dodoma,Mpwapwa,Lupeta,Lupeta
+Dodoma,Mpwapwa,Lupeta,Bumila
+Dodoma,Mpwapwa,Lupeta,Makutupa
+Dodoma,Mpwapwa,Gulwe,Iyoma
+Dodoma,Mpwapwa,Gulwe,Gulwe
+Dodoma,Mpwapwa,Gulwe,Chiseyu
+Dodoma,Mpwapwa,Nghambi,Kiegea
+Dodoma,Mpwapwa,Nghambi,Nghambi
+Dodoma,Mpwapwa,Nghambi,Kazania
+Dodoma,Mpwapwa,Chitemo,Chibwegele
+Dodoma,Mpwapwa,Chitemo,Chitemo
+Dodoma,Mpwapwa,Iwondo,Igoji II
+Dodoma,Mpwapwa,Iwondo,Iwondo
+Dodoma,Mpwapwa,Kingiti,Lukole
+Dodoma,Mpwapwa,Kingiti,Kingiti
+Dodoma,Mpwapwa,Lufu,Lufu
+Dodoma,Mpwapwa,Lufu,Gomhungile
+Dodoma,Mpwapwa,Lufu,Mlimo
+Dodoma,Mpwapwa,Pwaga,Pwaga
+Dodoma,Mpwapwa,Pwaga,Idaho
+Dodoma,Mpwapwa,Pwaga,Minguwi
+Dodoma,Mpwapwa,Galigali,Matonya
+Dodoma,Mpwapwa,Galigali,Galigali
+Dodoma,Mpwapwa,Mtera,Kisima
+Dodoma,Mpwapwa,Mtera,Mtera
+Dodoma,Mpwapwa,Mtera,Kisimani
+Dodoma,Mpwapwa,Chipogoro,Chipogoro
+Dodoma,Mpwapwa,Chipogoro,Seluka
+Dodoma,Mpwapwa,Chipogoro,Chaludewa
+Dodoma,Mpwapwa,Malolo,Nzugilo
+Dodoma,Mpwapwa,Malolo,Malolo
+Dodoma,Mpwapwa,Malolo,Idodoma
+Dodoma,Kongwa,Kongwa,Kongwa
+Dodoma,Kongwa,Kongwa,Mnyakongo
+Dodoma,Kongwa,Kongwa,Mlanga
+Dodoma,Kongwa,Kongwa,Msunjilile
+Dodoma,Kongwa,Kongwa,Sejeli
+Dodoma,Kongwa,Kongwa,Mbande
+Dodoma,Kongwa,Kongwa,Vilundilo
+Dodoma,Kongwa,Kongwa,Manungu
+Dodoma,Kongwa,Hogoro,Nyerere
+Dodoma,Kongwa,Hogoro,Banyibanyi
+Dodoma,Kongwa,Hogoro,Hogoro
+Dodoma,Kongwa,Hogoro,Chamae
+Dodoma,Kongwa,Hogoro,Mkutani
+Dodoma,Kongwa,Zoissa,Pingalame
+Dodoma,Kongwa,Zoissa,Zoissa
+Dodoma,Kongwa,Zoissa,Kinangali
+Dodoma,Kongwa,Mkoka,Mkoka
+Dodoma,Kongwa,Mkoka,Mnuku
+Dodoma,Kongwa,Mkoka,Mvungurumo
+Dodoma,Kongwa,Njoge,Makutupa
+Dodoma,Kongwa,Njoge,Njoge
+Dodoma,Kongwa,Njoge,Hembahemba
+Dodoma,Kongwa,Mtanana,Chigwingwili
+Dodoma,Kongwa,Mtanana,Ndalibo
+Dodoma,Kongwa,Mtanana,Mtanana A
+Dodoma,Kongwa,Mtanana,Mtanana B
+Dodoma,Kongwa,Mtanana,Soiti
+Dodoma,Kongwa,Pandambili,Pandambili
+Dodoma,Kongwa,Mlali,Mlali Iyegu
+Dodoma,Kongwa,Mlali,Ihanda
+Dodoma,Kongwa,Mlali,Mlali Bondeni
+Dodoma,Kongwa,Iduo,Iduo
+Dodoma,Kongwa,Iduo,Chang'ombe
+Dodoma,Kongwa,Iduo,Masinyeti
+Dodoma,Kongwa,Iduo,Suguta
+Dodoma,Kongwa,Sagara,Sagara B
+Dodoma,Kongwa,Sagara,Msingisa
+Dodoma,Kongwa,Sagara,Laikala
+Dodoma,Kongwa,Sagara,Ijaka
+Dodoma,Kongwa,Sagara,Sagara A
+Dodoma,Kongwa,Kibaigwa,Kinangali
+Dodoma,Kongwa,Kibaigwa,Ndurugumi
+Dodoma,Kongwa,Kibaigwa,Kibaigwa
+Dodoma,Kongwa,Ugogoni,Chimotolo
+Dodoma,Kongwa,Ugogoni,Machenje
+Dodoma,Kongwa,Ugogoni,Mautya
+Dodoma,Kongwa,Ugogoni,Ibwaga
+Dodoma,Kongwa,Ugogoni,Nguji
+Dodoma,Kongwa,Ugogoni,Ugogoni
+Dodoma,Kongwa,Chamkoroma,Chamkoroma
+Dodoma,Kongwa,Chamkoroma,Mseta Bondeni
+Dodoma,Kongwa,Chamkoroma,Mseta
+Dodoma,Kongwa,Chamkoroma,Manghweta
+Dodoma,Kongwa,Chamkoroma,Tubugwe Kibaoni
+Dodoma,Kongwa,Chamkoroma,Tubugwe Juu
+Dodoma,Kongwa,Chamkoroma,Makole
+Dodoma,Kongwa,Makawa,Makawa
+Dodoma,Kongwa,Makawa,Muungano
+Dodoma,Kongwa,Makawa,Mageseni
+Dodoma,Kongwa,Makawa,Silale
+Dodoma,Kongwa,Chitego,Chitego
+Dodoma,Kongwa,Chitego,Leganga
+Dodoma,Kongwa,Chitego,Ngutoto
+Dodoma,Kongwa,Matongoro,Matongoro
+Dodoma,Kongwa,Matongoro,Mlanje
+Dodoma,Kongwa,Matongoro,Norini
+Dodoma,Kongwa,Ngomai,Chilanjilizi
+Dodoma,Kongwa,Ngomai,Ngomai
+Dodoma,Kongwa,Ngomai,Manyata
+Dodoma,Kongwa,Songambele,Songambele A
+Dodoma,Kongwa,Songambele,Songambele B
+Dodoma,Kongwa,Songambele,Muungano
+Dodoma,Kongwa,Songambele,Masena
+Dodoma,Kongwa,Songambele,Mtunguchole
+Dodoma,Kongwa,Chiwe,Moleti
+Dodoma,Kongwa,Chiwe,Chiwe
+Dodoma,Kongwa,Chiwe,Vihingo
+Dodoma,Kongwa,Chiwe,Lengaji
+Dodoma,Kongwa,Lenjulu,Lobilo
+Dodoma,Kongwa,Lenjulu,Lenjulu
+Dodoma,Kongwa,Lenjulu,Kiteto
+Dodoma,Kongwa,Lenjulu,Majawanga
+Dodoma,Kongwa,Nghumbi,Pembamoto
+Dodoma,Kongwa,Nghumbi,Nghumbi
+Dodoma,Kongwa,Nghumbi,Iyumbi
+Dodoma,Kongwa,Nghumbi,Mbagilwa
+Dodoma,Chamwino,Haneti,Haneti
+Dodoma,Chamwino,Haneti,Kwahemu
+Dodoma,Chamwino,Haneti,Chenene
+Dodoma,Chamwino,Haneti,Humekwa
+Dodoma,Chamwino,Segala,Segala
+Dodoma,Chamwino,Segala,Izava
+Dodoma,Chamwino,Segala,Kimeji
+Dodoma,Chamwino,Itiso,Itiso
+Dodoma,Chamwino,Itiso,Solowu
+Dodoma,Chamwino,Dabalo,Dabalo
+Dodoma,Chamwino,Dabalo,Manyemba
+Dodoma,Chamwino,Dabalo,Chiwondo
+Dodoma,Chamwino,Dabalo,Igamba
+Dodoma,Chamwino,Membe,Membe
+Dodoma,Chamwino,Membe,Mlimwa
+Dodoma,Chamwino,Msanga,Msanga
+Dodoma,Chamwino,Msanga,Kawawa
+Dodoma,Chamwino,Chilonwa,Mahamha
+Dodoma,Chamwino,Chilonwa,Nzali
+Dodoma,Chamwino,Buigiri,Chamwino Ikulu
+Dodoma,Chamwino,Buigiri,Buigiri
+Dodoma,Chamwino,Buigiri,Chinangali II
+Dodoma,Chamwino,Majeleko,Majeleko
+Dodoma,Chamwino,Majeleko,Chinangali I
+Dodoma,Chamwino,Manchali,Manchali B
+Dodoma,Chamwino,Manchali,Chalinze
+Dodoma,Chamwino,Manchali,Wilunze
+Dodoma,Chamwino,Manchali,Manchali A
+Dodoma,Chamwino,Ikowa,Ikowa
+Dodoma,Chamwino,Ikowa,Makoja
+Dodoma,Chamwino,Msamalo,Mgunda
+Dodoma,Chamwino,Msamalo,Mnase
+Dodoma,Chamwino,Msamalo,Mlebe
+Dodoma,Chamwino,Igandu,Igandu
+Dodoma,Chamwino,Igandu,Nghaheleze
+Dodoma,Chamwino,Igandu,Chinoje
+Dodoma,Chamwino,Muungano,Muungano
+Dodoma,Chamwino,Muungano,Mzula
+Dodoma,Chamwino,Muungano,Ilolo
+Dodoma,Chamwino,Mvumi Makulu ,Mvumi makulu
+Dodoma,Chamwino,Handali,Handali
+Dodoma,Chamwino,Handali,Chanhumba
+Dodoma,Chamwino,Mvumi Mission,Mvumi Mission
+Dodoma,Chamwino,Mvumi Mission,Ndebwe
+Dodoma,Chamwino,Idifu,Idifu
+Dodoma,Chamwino,Idifu,Miganga
+Dodoma,Chamwino,Makang'wa,Mkang'wa
+Dodoma,Chamwino,Makang'wa,Mlowabarabarani
+Dodoma,Chamwino,Makang'wa,Mloda
+Dodoma,Chamwino,Iringa Mvumi Zamani,Iringa Mvumi Zamani
+Dodoma,Chamwino,Iringa Mvumi Zamani,Iringa Mvumi
+Dodoma,Chamwino,Iringa Mvumi Zamani,Ikombolingo
+Dodoma,Chamwino,Iringa Mvumi Zamani,Chita
+Dodoma,Chamwino,Manzase,Manzase
+Dodoma,Chamwino,Manzase,Sasajila
+Dodoma,Chamwino,Manzase,Ilewelo
+Dodoma,Chamwino,Fufu,Fufu
+Dodoma,Chamwino,Fufu,Suli
+Dodoma,Chamwino,Mlowa Bwawani,Mlowa Bwawani
+Dodoma,Chamwino,Mlowa Bwawani,Wiliko
+Dodoma,Chamwino,Mpwayungu,Mpwayungu
+Dodoma,Chamwino,Mpwayungu,Nagulo
+Dodoma,Chamwino,Nghambaku,Nghambaku
+Dodoma,Chamwino,Nghambaku,Ndogowe
+Dodoma,Chamwino,Chinugulu,Chinugulu
+Dodoma,Chamwino,Manda,Manda
+Dodoma,Chamwino,Manda,Ilangali
+Dodoma,Chamwino,Huzi,Huzi
+Dodoma,Chamwino,Huzi,Chifukulo
+Dodoma,Chamwino,Loje,Loje
+Dodoma,Chamwino,Loje,Igunguli
+Dodoma,Chamwino,Chiboli,Nzasa
+Dodoma,Chamwino,Chiboli,Chiboli
+Dodoma,Chamwino,Nhinhi,Nhinhi
+Dodoma,Chamwino,Nhinhi,Nkwenda
+Dodoma,Chamwino,Zajilwa,Magungu
+Dodoma,Chamwino,Zajilwa,Gwandi
+Dodoma,Chamwino,Zajilwa,zajilwa
+Dodoma,Dodoma Urban,Viwandani,Marijani
+Dodoma,Dodoma Urban,Viwandani,Samora
+Dodoma,Dodoma Urban,Viwandani,Kinyali
+Dodoma,Dodoma Urban,Viwandani,Tofiki
+Dodoma,Dodoma Urban,Viwandani,Baruti
+Dodoma,Dodoma Urban,Uhuru,Uhuru
+Dodoma,Dodoma Urban,Uhuru,kati
+Dodoma,Dodoma Urban,Uhuru,Kipande
+Dodoma,Dodoma Urban,Uhuru,Mji mpya
+Dodoma,Dodoma Urban,Chamwino,Maili Mbili
+Dodoma,Dodoma Urban,Chamwino,Sokoine
+Dodoma,Dodoma Urban,Chamwino,Nduka
+Dodoma,Dodoma Urban,Chamwino,Mwaja
+Dodoma,Dodoma Urban,Kiwanja/ndege,Mlimwa
+Dodoma,Dodoma Urban,Kiwanja/ndege,Chuo cha mipango
+Dodoma,Dodoma Urban,Kiwanja/ndege,K'nja cha ndege
+Dodoma,Dodoma Urban,Kiwanja/ndege,Makongoro
+Dodoma,Dodoma Urban,Kiwanja/ndege,Osterbay
+Dodoma,Dodoma Urban,Makole,Chimuli
+Dodoma,Dodoma Urban,Makole,Chadulu B
+Dodoma,Dodoma Urban,Makole,Makole
+Dodoma,Dodoma Urban,Miyuji,Miyuji Proper
+Dodoma,Dodoma Urban,Miyuji,Mpamaa
+Dodoma,Dodoma Urban,Miyuji,Mathias
+Dodoma,Dodoma Urban,Miyuji,Msalato
+Dodoma,Dodoma Urban,Makutupora,Weyula
+Dodoma,Dodoma Urban,Makutupora,Mchemwa
+Dodoma,Dodoma Urban,Chihanga,Gawaye
+Dodoma,Dodoma Urban,Chihanga,Chihanga
+Dodoma,Dodoma Urban,Chihanga,Nzasa
+Dodoma,Dodoma Urban,Hombolo,Hombolo Makulu
+Dodoma,Dodoma Urban,Hombolo,Hombolo Bwawani
+Dodoma,Dodoma Urban,Hombolo,Mkoyo
+Dodoma,Dodoma Urban,Hombolo,Zepisa
+Dodoma,Dodoma Urban,Ipala,Ipala
+Dodoma,Dodoma Urban,Nzuguni,Nzuguni
+Dodoma,Dodoma Urban,Nzuguni,Kitelela
+Dodoma,Dodoma Urban,Nzuguni,Mahomanyika
+Dodoma,Dodoma Urban,Dodoma Makulu,Dodoma Makulu
+Dodoma,Dodoma Urban,Mtumba,Mtumba
+Dodoma,Dodoma Urban,Mtumba,Vikonje
+Dodoma,Dodoma Urban,Mtumba,Ihumwa
+Dodoma,Dodoma Urban,Kikombo,Kikombo
+Dodoma,Dodoma Urban,Kikombo,Chilolo
+Dodoma,Dodoma Urban,Ng'hong'honha,Ng'hong'honha
+Dodoma,Dodoma Urban,Ng'hong'honha,Mapinduzi
+Dodoma,Dodoma Urban,Mpunguzi,Matumbulu
+Dodoma,Dodoma Urban,Mpunguzi,Nkulabi
+Dodoma,Dodoma Urban,Tambukareli,Chadulu A
+Dodoma,Dodoma Urban,Tambukareli,Reli
+Dodoma,Dodoma Urban,Tambukareli,Salmin
+Dodoma,Dodoma Urban,Kilimani,Kilimani
+Dodoma,Dodoma Urban,Kilimani,Nyerere
+Dodoma,Dodoma Urban,Kilimani,Chinyoyo
+Dodoma,Dodoma Urban,Kilimani,Image
+Dodoma,Dodoma Urban,Kikuyu-Kusini,Maghorofani
+Dodoma,Dodoma Urban,Kikuyu-Kusini,Image1
+Dodoma,Dodoma Urban,Kikuyu-Kusini,Mkuyuni
+Dodoma,Dodoma Urban,Kikuyu-Kusini,Mkalama
+Dodoma,Dodoma Urban,Kikuyu-Kusini,Maweni
+Dodoma,Dodoma Urban,Kikuyu-Kaskazini,Kikuyu-Mission
+Dodoma,Dodoma Urban,Kikuyu-Kaskazini,Kikuyu
+Dodoma,Dodoma Urban,Kikuyu-Kaskazini,Zahanati
+Dodoma,Dodoma Urban,Kikuyu-Kaskazini,Kigamboni
+Dodoma,Dodoma Urban,Kikuyu-Kaskazini,Hazina-x
+Dodoma,Dodoma Urban,Mkonze,Mkonze
+Dodoma,Dodoma Urban,Mkonze,Michese
+Dodoma,Dodoma Urban,Mbabala,Mbabala A
+Dodoma,Dodoma Urban,Mbabala,Mbabala B
+Dodoma,Dodoma Urban,Zuzu,Zuzu
+Dodoma,Dodoma Urban,Zuzu,Chididimo
+Dodoma,Dodoma Urban,Hazina,Hazina
+Dodoma,Dodoma Urban,Hazina,Mlezi
+Dodoma,Dodoma Urban,Hazina,Kinyambwa
+Dodoma,Dodoma Urban,Hazina,Itega
+Dodoma,Dodoma Urban,Madukani,Sululu
+Dodoma,Dodoma Urban,Madukani,Mmasi
+Dodoma,Dodoma Urban,Madukani,Jamali
+Dodoma,Dodoma Urban,Madukani,Kamili
+Dodoma,Dodoma Urban,Majengo,Mnyampala
+Dodoma,Dodoma Urban,Majengo,Kitenge
+Dodoma,Dodoma Urban,Majengo,Mausi
+Dodoma,Dodoma Urban,Majengo,Fatina
+Dodoma,Dodoma Urban,Kizota,Sokoine
+Dodoma,Dodoma Urban,Kizota,Mkonongo
+Dodoma,Dodoma Urban,Kizota,Relini
+Dodoma,Dodoma Urban,Kizota,Bochela
+Dodoma,Dodoma Urban,Kizota,Salama
+Dodoma,Dodoma Urban,Kizota,Mtube
+Dodoma,Dodoma Urban,Kizota,Kisabuje
+Dodoma,Dodoma Urban,Kizota,Bwawani
+Dodoma,Dodoma Urban,Kizota,Mnyakongo
+Dodoma,Dodoma Urban,Nala,Chihoni
+Dodoma,Dodoma Urban,Nala,Nala
+Dodoma,Dodoma Urban,Mbalawala,Mbalawala
+Dodoma,Dodoma Urban,Mbalawala,Lugala
+Dodoma,Dodoma Urban,Ntyuka,Ntyuka
+Dodoma,Dodoma Urban,Chigongwe,Msembeta
+Dodoma,Dodoma Urban,Chigongwe,Chigongwe
+Dodoma,Dodoma Urban,Chigongwe,Nghambala
+Dodoma,Dodoma Urban,Chang'ombe,Hamvu
+Dodoma,Dodoma Urban,Chang'ombe,Mazengo
+Dodoma,Dodoma Urban,Chang'ombe,Chang'ombe juu
+Dodoma,Dodoma Urban,Chang'ombe,Chilewa
+Dodoma,Dodoma Urban,Iyumbu,Iyumbu
+Dodoma,Dodoma Urban,Chahwa,Mahoma Makulu
+Dodoma,Dodoma Urban,Chahwa,Chahwa
+Dodoma,Dodoma Urban,Mnadani,Karume
+Dodoma,Dodoma Urban,Mnadani,Mnadani
+Dodoma,Dodoma Urban,Mnadani,Mbwanga
+Dodoma,Dodoma Urban,Mnadani,Ndachi
+Dodoma,Dodoma Urban,Ipagala,Mlimwa West
+Dodoma,Dodoma Urban,Ipagala,Swaswa
+Dodoma,Dodoma Urban,Ipagala,Ilazo
+Dodoma,Dodoma Urban,Ipagala,Sulungai
+Dodoma,Dodoma Urban,Ipagala,Ipagala
+Dodoma,Bahi,Makanda,Makanda
+Dodoma,Bahi,Makanda,Makanda
+Dodoma,Bahi,Makanda,Chonde
+Dodoma,Bahi,Lamaiti,Bankolo
+Dodoma,Bahi,Lamaiti,Lamaiti
+Dodoma,Bahi,Lamaiti,Lukali
+Dodoma,Bahi,Babayu,Kongogo
+Dodoma,Bahi,Babayu,Babayu
+Dodoma,Bahi,Babayu,Asanje
+Dodoma,Bahi,Zanka,Zanka
+Dodoma,Bahi,Zanka,Mayamaya
+Dodoma,Bahi,Zanka,Mkondai
+Dodoma,Bahi,Msisi,Kisima cha Ndege
+Dodoma,Bahi,Msisi,Mchito
+Dodoma,Bahi,Msisi,Msisi
+Dodoma,Bahi,Msisi,Tinai
+Dodoma,Bahi,Mundemu,Nguji
+Dodoma,Bahi,Mundemu,Mundemu
+Dodoma,Bahi,Mundemu,Chilungulu
+Dodoma,Bahi,Bahi,Uhelela
+Dodoma,Bahi,Bahi,Bahi Sokoni
+Dodoma,Bahi,Bahi,Nagulo Bahi
+Dodoma,Bahi,Mpamantwa,Bahi Makulu
+Dodoma,Bahi,Mpamantwa,Mpamantwa
+Dodoma,Bahi,Mpamantwa,Mkakatika
+Dodoma,Bahi,Ibihwa,Mnkola
+Dodoma,Bahi,Ibihwa,Ibihwa
+Dodoma,Bahi,Ilindi,Mindola
+Dodoma,Bahi,Ilindi,Ilindi
+Dodoma,Bahi,Kigwe,Kigwe
+Dodoma,Bahi,Kigwe,Mpinga
+Dodoma,Bahi,Kigwe,Mzogole
+Dodoma,Bahi,Chikola,Chimendeli
+Dodoma,Bahi,Chikola,Nghulagano
+Dodoma,Bahi,Chikola,Chikola
+Dodoma,Bahi,Chipanga,Chipanga B
+Dodoma,Bahi,Chipanga,Chipanga A
+Dodoma,Bahi,Chipanga,Chiguluka
+Dodoma,Bahi,Chali,Chali Igongo
+Dodoma,Bahi,Chali,Chali Isanga
+Dodoma,Bahi,Chali,Chali Makulu
+Dodoma,Bahi,Chali,Chikopelo
+Dodoma,Bahi,Nondwa,Nondwa
+Dodoma,Bahi,Nondwa,Zejele
+Dodoma,Bahi,Nondwa,Magaga
+Dodoma,Bahi,Nondwa,Chifutuka
+Dodoma,Bahi,Mpalanga,Nholi
+Dodoma,Bahi,Mpalanga,Mpalanga
+Dodoma,Bahi,Mpalanga,Chidilo
+Dodoma,Bahi,Ibugule,Ibugule
+Dodoma,Bahi,Ibugule,Nkhome
+Dodoma,Bahi,Chibelela,Isangha
+Dodoma,Bahi,Chibelela,Chibelela
+Dodoma,Bahi,Mwitikira,Mwitikira
+Dodoma,Bahi,Mwitikira,Mphangwe
+Dodoma,Bahi,Mtitaa,Mtitaa
+Dodoma,Bahi,Mtitaa,Nhyinila
+Dodoma,Chemba,Makorongo,Maziwa
+Dodoma,Chemba,Makorongo,Makorongo
+Dodoma,Chemba,Makorongo,Babayu
+Dodoma,Chemba,Makorongo,Chase
+Dodoma,Chemba,Ovada,Takwa
+Dodoma,Chemba,Ovada,Kinyamsindo
+Dodoma,Chemba,Ovada,Mengu
+Dodoma,Chemba,Ovada,Ovada
+Dodoma,Chemba,Ovada,Baaba
+Dodoma,Chemba,Ovada,Jogolo
+Dodoma,Chemba,Ovada,Dinae
+Dodoma,Chemba,Msaada,Machiga
+Dodoma,Chemba,Msaada,Changamka
+Dodoma,Chemba,Msaada,Msaada
+Dodoma,Chemba,Msaada,Majengo Mapya
+Dodoma,Chemba,Msaada,Songambele
+Dodoma,Chemba,Kimaha,Wisuzaje
+Dodoma,Chemba,Kimaha,Mwaikisabe
+Dodoma,Chemba,Kimaha,Chukuruma
+Dodoma,Chemba,Kimaha,Mwailanje
+Dodoma,Chemba,Churuku,Jinjo
+Dodoma,Chemba,Churuku,Churuku
+Dodoma,Chemba,Churuku,Kinkima
+Dodoma,Chemba,Songoro,Madaha
+Dodoma,Chemba,Songoro,Chioli
+Dodoma,Chemba,Songoro,Songoro
+Dodoma,Chemba,Songoro,Hamai
+Dodoma,Chemba,Mondo,Mondo
+Dodoma,Chemba,Mondo,Pongai
+Dodoma,Chemba,Mondo,Waida
+Dodoma,Chemba,Dalai,Dalai
+Dodoma,Chemba,Dalai,Tandala
+Dodoma,Chemba,Dalai,Mtakuja
+Dodoma,Chemba,Dalai,Piho
+Dodoma,Chemba,Dalai,Kelema Maziwani (Simba)
+Dodoma,Chemba,Jangalo,Mlongia
+Dodoma,Chemba,Jangalo,Itolwa
+Dodoma,Chemba,Jangalo,Jangalo
+Dodoma,Chemba,Mrijo,Nkulari
+Dodoma,Chemba,Mrijo,Mrijo Chini
+Dodoma,Chemba,Mrijo,Mrijo Juu
+Dodoma,Chemba,Mrijo,Magasa
+Dodoma,Chemba,Mrijo,Isusumya
+Dodoma,Chemba,Chandama,Mapango
+Dodoma,Chemba,Chandama,Chandama
+Dodoma,Chemba,Chandama,Soya
+Dodoma,Chemba,Goima,Goima
+Dodoma,Chemba,Goima,Jenjeluse
+Dodoma,Chemba,Goima,Igunga
+Dodoma,Chemba,Goima,Mirambo
+Dodoma,Chemba,Goima,Makamaka
+Dodoma,Chemba,Chemba,Chemba
+Dodoma,Chemba,Chemba,Chambalo
+Dodoma,Chemba,Chemba,Ombiri
+Dodoma,Chemba,Chemba,Pangalua
+Dodoma,Chemba,Chemba,Kambi ya Nyasa
+Dodoma,Chemba,Chemba,Kidoka
+Dodoma,Chemba,Paranga,Isini
+Dodoma,Chemba,Paranga,Kelema Balai
+Dodoma,Chemba,Paranga,Sori
+Dodoma,Chemba,Paranga,Cheku
+Dodoma,Chemba,Paranga,Paranga
+Dodoma,Chemba,Paranga,Kelema Kuu
+Dodoma,Chemba,Gwandi,Gwandi
+Dodoma,Chemba,Gwandi,Rofati
+Dodoma,Chemba,Gwandi,Tumbakose
+Dodoma,Chemba,Gwandi,Hawelo
+Dodoma,Chemba,Gwandi,Humekwa
+Dodoma,Chemba,Farkwa,Bubutole
+Dodoma,Chemba,Farkwa,Mombose
+Dodoma,Chemba,Farkwa,Farkwa
+Dodoma,Chemba,Farkwa,Donsee
+Dodoma,Chemba,Farkwa,Bugenika
+Dodoma,Chemba,Farkwa,Gonga
+Dodoma,Chemba,Mpendo,Mpendo
+Dodoma,Chemba,Mpendo,Kubi
+Dodoma,Chemba,Mpendo,Hamia
+Dodoma,Chemba,Sanzawa,Sanzawa
+Dodoma,Chemba,Sanzawa,Gungi
+Dodoma,Chemba,Sanzawa,Motto
+Dodoma,Chemba,Sanzawa,Gumbu
+Dodoma,Chemba,Kwamtoro,Kwamtoro
+Dodoma,Chemba,Kwamtoro,Poro Banguma
+Dodoma,Chemba,Kwamtoro,Kurio
+Dodoma,Chemba,Kwamtoro,Msera
+Dodoma,Chemba,Kwamtoro,Ndoroboni
+Dodoma,Chemba,Lalta,Magambua
+Dodoma,Chemba,Lalta,Manantu
+Dodoma,Chemba,Lalta,Wairo
+Dodoma,Chemba,Lalta,Handa
+Dodoma,Chemba,Lalta,Lahoda
+Dodoma,Chemba,Lalta,Ilasee
+Dodoma,Chemba,Lalta,Kisande
+Dodoma,Kiteto District Council,Kibaya,Kibaya Kati
+Dodoma,Kiteto District Council,Kibaya,Boma
+Dodoma,Kiteto District Council,Kibaya,Mafichoni
+Dodoma,Kiteto District Council,Kibaya,Kanisani
+Dodoma,Kiteto District Council,Kibaya,Ngarenaro
+Dodoma,Kiteto District Council,Partimbo,Mbigiri
+Dodoma,Kiteto District Council,Partimbo,Kimana
+Dodoma,Kiteto District Council,Partimbo,Partimbo
+Dodoma,Kiteto District Council,Partimbo,Ilera
+Dodoma,Kiteto District Council,Njoro,Njoro
+Dodoma,Kiteto District Council,Njoro,Ndaleta
+Dodoma,Kiteto District Council,Njoro,Olpopong'i
+Dodoma,Kiteto District Council,Njoro,Mwanya
+Dodoma,Kiteto District Council,Olboloti,Mwitikila
+Dodoma,Kiteto District Council,Olboloti,Kiperesa
+Dodoma,Kiteto District Council,Olboloti,Chekanao
+Dodoma,Kiteto District Council,Olboloti,Olboloti
+Dodoma,Kiteto District Council,Makame,Makame
+Dodoma,Kiteto District Council,Makame,Rikiushioibor
+Dodoma,Kiteto District Council,Makame,Katikati
+Dodoma,Kiteto District Council,Ndedo,Ndedo
+Dodoma,Kiteto District Council,Ndedo,Ngabolo
+Dodoma,Kiteto District Council,Kijungu,Kijungu
+Dodoma,Kiteto District Council,Kijungu,Ngapapa
+Dodoma,Kiteto District Council,Kijungu,Lerug
+Dodoma,Kiteto District Council,Lengatei,Lengatei
+Dodoma,Kiteto District Council,Lengatei,Olkitikit
+Dodoma,Kiteto District Council,Lengatei,Lesoit
+Dodoma,Kiteto District Council,Lengatei,Engang'uengare
+Dodoma,Kiteto District Council,Sunya,Sunya
+Dodoma,Kiteto District Council,Sunya,Olgira
+Dodoma,Kiteto District Council,Sunya,Loltopes
+Dodoma,Kiteto District Council,Sunya,Asamato
+Dodoma,Kiteto District Council,Sunya,Mesera
+Dodoma,Kiteto District Council,Dongo,Dongo
+Dodoma,Kiteto District Council,Dongo,Engusero Sidani
+Dodoma,Kiteto District Council,Dongo,Laiseri
+Dodoma,Kiteto District Council,Songambele,Songambele
+Dodoma,Kiteto District Council,Songambele,Orkine
+Dodoma,Kiteto District Council,Dosidosi,Esukuta
+Dodoma,Kiteto District Council,Dosidosi,Dosidosi
+Dodoma,Kiteto District Council,Dosidosi,Nchinila
+Dodoma,Kiteto District Council,Engusero,Ndirigishi
+Dodoma,Kiteto District Council,Engusero,Ngipa
+Dodoma,Kiteto District Council,Engusero,Engusero
+Dodoma,Kiteto District Council,Engusero,Nasetani
+Dodoma,Kiteto District Council,Matui,Matui (?)
+Dodoma,Kiteto District Council,Matui,Azimio
+Dodoma,Kiteto District Council,Matui,Soweto
+Dodoma,Kiteto District Council,Bwagamoyo,Bwagamoyo
+Dodoma,Kiteto District Council,Bwagamoyo,Kaloleni
+Dodoma,Kiteto District Council,Loolera,Amei
+Dodoma,Kiteto District Council,Loolera,Loolera
+Dodoma,Kiteto District Council,Loolera,Lembapuri
+Dodoma,Kiteto District Council,Magungu,Emarty
+Dodoma,Kiteto District Council,Magungu,Nhati
+Dodoma,Kiteto District Council,Magungu,Magungu
+Dodoma,Kiteto District Council,Chapakazi,Chapakazi
+Dodoma,Kiteto District Council,Chapakazi,Osteti
+Dodoma,Kiteto District Council,Chapakazi,Engusero Engine
+Dodoma,Kiteto District Council,Namelock,Laalala
+Dodoma,Kiteto District Council,Namelock,Njiapanda
+Dodoma,Kiteto District Council,Namelock,Namelock
+Manyara,Babati District Council,Magara Ward,Moya-Mayoka
+Manyara,Babati District Council,Magara Ward,Moya
+Manyara,Babati District Council,Magara Ward,Manyara
+Manyara,Babati District Council,Magara Ward,Magara
+Manyara,Babati District Council,Magara Ward,Maweni
+Manyara,Babati District Council,Nkaiti Ward,Vilima vitatu
+Manyara,Babati District Council,Nkaiti Ward,Minjingu
+Manyara,Babati District Council,Nkaiti Ward,Kakoi
+Manyara,Babati District Council,Nkaiti Ward,Olasiti
+Manyara,Babati District Council,Mwada Ward,Kisangaji
+Manyara,Babati District Council,Mwada Ward,Mwada
+Manyara,Babati District Council,Mwada Ward,Sangaiwe
+Manyara,Babati District Council,Mwada Ward,Ngoley
+Manyara,Babati District Council,Mwada Ward,Shaurimoyo
+Manyara,Babati District Council,Mamire Ward,Mamire
+Manyara,Babati District Council,Mamire Ward,Endagile
+Manyara,Babati District Council,Mamire Ward,Mwikansti
+Manyara,Babati District Council,Gallapo Ward,Ayamango
+Manyara,Babati District Council,Gallapo Ward,Gedamar
+Manyara,Babati District Council,Gallapo Ward,Gallapo
+Manyara,Babati District Council,Gallapo Ward,Hallu
+Manyara,Babati District Council,Gallapo Ward,Endanoga
+Manyara,Babati District Council,Qash Ward,Tsamasi
+Manyara,Babati District Council,Qash Ward,Majengo
+Manyara,Babati District Council,Qash Ward,Orngadida
+Manyara,Babati District Council,Qash Ward,Qash
+Manyara,Babati District Council,Qash Ward,Endadosh
+Manyara,Babati District Council,Qash Ward,Ng'wang'weri
+Manyara,Babati District Council,Ayasanda Ward,Endanachan
+Manyara,Babati District Council,Ayasanda Ward,Ayasanda
+Manyara,Babati District Council,Gidas Ward,Bubu
+Manyara,Babati District Council,Gidas Ward,Endamaghay
+Manyara,Babati District Council,Gidas Ward,Endadimet
+Manyara,Babati District Council,Gidas Ward,Gidas
+Manyara,Babati District Council,Duru Ward,Hoshan
+Manyara,Babati District Council,Duru Ward,Endagwe
+Manyara,Babati District Council,Duru Ward,Duru
+Manyara,Babati District Council,Duru Ward,Yarotonik
+Manyara,Babati District Council,Duru Ward,Gesbert
+Manyara,Babati District Council,Riroda Ward,Endaberg
+Manyara,Babati District Council,Riroda Ward,Hewasi
+Manyara,Babati District Council,Riroda Ward,Riroda
+Manyara,Babati District Council,Riroda Ward,Sangara
+Manyara,Babati District Council,Arri Ward,Dohom
+Manyara,Babati District Council,Arri Ward,Arri
+Manyara,Babati District Council,Arri Ward,Sharmo
+Manyara,Babati District Council,Arri Ward,Managha
+Manyara,Babati District Council,Arri Ward,Tsaayo
+Manyara,Babati District Council,Arri Ward,Endasago
+Manyara,Babati District Council,Dareda Ward,Seloto
+Manyara,Babati District Council,Dareda Ward,Bermi
+Manyara,Babati District Council,Dareda Ward,Dareda Kati
+Manyara,Babati District Council,Dareda Ward,Hayesam
+Manyara,Babati District Council,Dareda Ward,Gajal
+Manyara,Babati District Council,Dareda Ward,Loto
+Manyara,Babati District Council,Dabil Ward,Mandi
+Manyara,Babati District Council,Dabil Ward,Maganjwa
+Manyara,Babati District Council,Dabil Ward,Sabilo
+Manyara,Babati District Council,Dabil Ward,Gidewari
+Manyara,Babati District Council,Ufana Ward,Secheda
+Manyara,Babati District Council,Ufana Ward,Luxmanda
+Manyara,Babati District Council,Ufana Ward,Ufana
+Manyara,Babati District Council,Ufana Ward,Diffir
+Manyara,Babati District Council,Ufana Ward,Orbesh
+Manyara,Babati District Council,Bashnet Ward,Guse
+Manyara,Babati District Council,Bashnet Ward,Bashnet
+Manyara,Babati District Council,Bashnet Ward,Long
+Manyara,Babati District Council,Madunga Ward,Qameyu
+Manyara,Babati District Council,Madunga Ward,Endaw
+Manyara,Babati District Council,Madunga Ward,Madunga
+Manyara,Babati District Council,Madunga Ward,Utwari
+Manyara,Babati District Council,Madunga Ward,Merr
+Manyara,Babati District Council,Madunga Ward,Gidng'war
+Manyara,Babati District Council,Kiru Ward,Kirudick
+Manyara,Babati District Council,Kiru Ward,Kimara
+Manyara,Babati District Council,Kiru Ward,Kiru Ndogo
+Manyara,Babati District Council,Kiru Ward,Erri
+Manyara,Babati District Council,Kiru Ward,Kokomay
+Manyara,Babati District Council,Kiru Ward,Kirusix
+Manyara,Babati District Council,Magugu Ward,Sarame
+Manyara,Babati District Council,Magugu Ward,Mawemairo
+Manyara,Babati District Council,Magugu Ward,Matufa
+Manyara,Babati District Council,Magugu Ward,Masware
+Manyara,Babati District Council,Magugu Ward,Gichameda
+Manyara,Babati District Council,Magugu Ward,Mapea
+Manyara,Babati District Council,Magugu Ward,Magugu
+Manyara,Babati District Council,Baoy Ward,Boay
+Manyara,Babati District Council,Baoy Ward,Gijedaboshka
+Manyara,Babati District Council,Baoy Ward,Gidabaghar
+Manyara,Babati District Council,Nar Ward,Endamanang
+Manyara,Babati District Council,Nar Ward,Nar
+Manyara,Babati District Council,Nar Ward,Gabadaw
+Manyara,Babati District Council,Endakiso Ward,kwaraa
+Manyara,Babati District Council,Endakiso Ward,Endakiso
+Manyara,Babati District Council,Endakiso Ward,Gijedabung
+Manyara,Hanang District Council,Balangidalalu Ward,Balang'dalalu
+Manyara,Hanang District Council,Balangidalalu Ward,Mureru
+Manyara,Hanang District Council,Gehandu Ward,Ming'enyi
+Manyara,Hanang District Council,Gehandu Ward,Gehandu
+Manyara,Hanang District Council,Gehandu Ward,Ishponga
+Manyara,Hanang District Council,Gehandu Ward,Mirongori
+Manyara,Hanang District Council,Laghanga Ward,Gawidu
+Manyara,Hanang District Council,Laghanga Ward,Dajameda
+Manyara,Hanang District Council,Laghanga Ward,Laghanga
+Manyara,Hanang District Council,Getanuwas Ward,Gidika
+Manyara,Hanang District Council,Getanuwas Ward,Getanuwas
+Manyara,Hanang District Council,Getanuwas Ward,Wandela
+Manyara,Hanang District Council,Hirbadaw Ward,Mwanga
+Manyara,Hanang District Council,Hirbadaw Ward,Hirbadaw
+Manyara,Hanang District Council,Bassodesh Ward,Garawja
+Manyara,Hanang District Council,Bassodesh Ward,Bassodesh
+Manyara,Hanang District Council,Bassodesh Ward,Gaghata
+Manyara,Hanang District Council,Bassodesh Ward,Gijetamuhong
+Manyara,Hanang District Council,Bassotu Ward,Dang'aida
+Manyara,Hanang District Council,Bassotu Ward,Bassotu
+Manyara,Hanang District Council,Bassotu Ward,Mulbadaw
+Manyara,Hanang District Council,Bassotu Ward,Galangal
+Manyara,Hanang District Council,Gendabi Ward,Dawar
+Manyara,Hanang District Council,Gendabi Ward,Gendabi
+Manyara,Hanang District Council,Mogitu Ward,Mogitu
+Manyara,Hanang District Council,Mogitu Ward,Gabadaw
+Manyara,Hanang District Council,Mogitu Ward,Jorodom
+Manyara,Hanang District Council,Mogitu Ward,Dumbeta
+Manyara,Hanang District Council,Mogitu Ward,Gidagamowd
+Manyara,Hanang District Council,Gitting Ward,Barjomot
+Manyara,Hanang District Council,Gitting Ward,Gocho
+Manyara,Hanang District Council,Gitting Ward,Gitting
+Manyara,Hanang District Council,Masakta Ward,Lambo
+Manyara,Hanang District Council,Masakta Ward,Masakta
+Manyara,Hanang District Council,Masqaroda Ward,Getasam
+Manyara,Hanang District Council,Masqaroda Ward,Masqaroda
+Manyara,Hanang District Council,Masqaroda Ward,Ng'alda
+Manyara,Hanang District Council,Endasak Ward,Endasak
+Manyara,Hanang District Council,Endasak Ward,Endasak
+Manyara,Hanang District Council,Gidahababieg Ward,Gidahababieg
+Manyara,Hanang District Council,Gidahababieg Ward,Endasaboghechan
+Manyara,Hanang District Council,Measkron Ward,Getaghul
+Manyara,Hanang District Council,Measkron Ward,Mara
+Manyara,Hanang District Council,Measkron Ward,Measkron
+Manyara,Hanang District Council,Hidet Ward,Bassotughang
+Manyara,Hanang District Council,Hidet Ward,Hidet
+Manyara,Hanang District Council,Simbay Ward,Simbay
+Manyara,Hanang District Council,Simbay Ward,Gigagharbu
+Manyara,Hanang District Council,Sirop Ward,Matangarimo
+Manyara,Hanang District Council,Sirop Ward,Sirop
+Manyara,Hanang District Council,Gisambalang Ward,Gisambalang
+Manyara,Hanang District Council,Gisambalang Ward,Waranga
+Manyara,Hanang District Council,Gisambalang Ward,Waama
+Manyara,Hanang District Council,Nangwa Ward,Nangwa
+Manyara,Hanang District Council,Nangwa Ward,Wareta
+Manyara,Hanang District Council,Nangwa Ward,Bashang
+Manyara,Hanang District Council,Katesh Ward,Gijega
+Manyara,Hanang District Council,Katesh Ward,Hombap
+Manyara,Hanang District Council,Katesh Ward,Katesh stendi
+Manyara,Hanang District Council,Katesh Ward,Katesh
+Manyara,Hanang District Council,Katesh Ward,Katesh
+Manyara,Hanang District Council,Ganana Ward,Qedangonyi
+Manyara,Hanang District Council,Ganana Ward,Katesh 'A'
+Manyara,Hanang District Council,Ganana Ward,Ganana 'A'
+Manyara,Hanang District Council,Ganana Ward,Ganana 'C'
+Manyara,Hanang District Council,Ganana Ward,Ganana 'B'
+Manyara,Hanang District Council,Dirma Ward,Dirma
+Manyara,Hanang District Council,Dirma Ward,Qalosendo
+Manyara,Hanang District Council,Lalaji Ward,Murumba
+Manyara,Hanang District Council,Lalaji Ward,Lalaji
+Manyara,Hanang District Council,Lalaji Ward,Diroda
+Manyara,Hanang District Council,Endasiwold Ward,Garbapi
+Manyara,Hanang District Council,Endasiwold Ward,Endasiwold
+Manyara,Mbulu District Council,Daudi Ward,Gidamba
+Manyara,Mbulu District Council,Daudi Ward,Moringa
+Manyara,Mbulu District Council,Bargish Ward,Antsi
+Manyara,Mbulu District Council,Bargish Ward,Bargishuwa
+Manyara,Mbulu District Council,Bargish Ward,Laghandamur
+Manyara,Mbulu District Council,Gehandu Ward,Titiwi
+Manyara,Mbulu District Council,Gehandu Ward,Qatesh
+Manyara,Mbulu District Council,Gehandu Ward,Tsawa
+Manyara,Mbulu District Council,Gehandu Ward,Landa
+Manyara,Mbulu District Council,Kainam Ward,Tsaayo
+Manyara,Mbulu District Council,Kainam Ward,Hareabi
+Manyara,Mbulu District Council,Kainam Ward,Kainam
+Manyara,Mbulu District Council,Murray Ward,Mahheri
+Manyara,Mbulu District Council,Murray Ward,Murray
+Manyara,Mbulu District Council,Murray Ward,Kuta
+Manyara,Mbulu District Council,Murray Ward,Qwam
+Manyara,Mbulu District Council,Ayamaami Ward,Hayahaya
+Manyara,Mbulu District Council,Ayamaami Ward,Ayamahai
+Manyara,Mbulu District Council,Ayamaami Ward,Ayaingi
+Manyara,Mbulu District Council,Ayamaami Ward,Tangomamah
+Manyara,Mbulu District Council,Ayamaami Ward,Enderer
+Manyara,Mbulu District Council,Ayamaami Ward,Amafala
+Manyara,Mbulu District Council,Ayamaami Ward,Mishiqot
+Manyara,Mbulu District Council,Uhuru Ward,Ayakule
+Manyara,Mbulu District Council,Uhuru Ward,Datlaa
+Manyara,Mbulu District Council,Uhuru Ward,Ayaraat
+Manyara,Mbulu District Council,Uhuru Ward,Maringo
+Manyara,Mbulu District Council,Uhuru Ward,Buwa
+Manyara,Mbulu District Council,Uhuru Ward,Ayalabe
+Manyara,Mbulu District Council,Uhuru Ward,Uhuru
+Manyara,Mbulu District Council,Uhuru Ward,Harka
+Manyara,Mbulu District Council,Tlawi Ward,Guneneda
+Manyara,Mbulu District Council,Tlawi Ward,Jaranjar
+Manyara,Mbulu District Council,Tlawi Ward,Tlawi
+Manyara,Mbulu District Council,Tlawi Ward,Boboa
+Manyara,Mbulu District Council,Bashay Ward,Dirim
+Manyara,Mbulu District Council,Bashay Ward,Yaeda Kati
+Manyara,Mbulu District Council,Bashay Ward,Bashay
+Manyara,Mbulu District Council,Bashay Ward,Harsha
+Manyara,Mbulu District Council,Dongobesh Ward,Dongobesh
+Manyara,Mbulu District Council,Dongobesh Ward,Dongobesh Chini
+Manyara,Mbulu District Council,Dongobesh Ward,Qaloda
+Manyara,Mbulu District Council,Tumati Ward,Tumati
+Manyara,Mbulu District Council,Tumati Ward,Endoji
+Manyara,Mbulu District Council,Tumati Ward,Getesh
+Manyara,Mbulu District Council,Tumati Ward,Mongahay
+Manyara,Mbulu District Council,Maretadu Ward,Qamtananat
+Manyara,Mbulu District Council,Maretadu Ward,Endamasakt
+Manyara,Mbulu District Council,Maretadu Ward,Maheri
+Manyara,Mbulu District Council,Maretadu Ward,Maretadu Juu
+Manyara,Mbulu District Council,Maretadu Ward,Maretadu Chini
+Manyara,Mbulu District Council,Maretadu Ward,Garkawe
+Manyara,Mbulu District Council,Maghang Ward,Gidmadoy
+Manyara,Mbulu District Council,Maghang Ward,Barazani
+Manyara,Mbulu District Council,Maghang Ward,Maghang
+Manyara,Mbulu District Council,Maghang Ward,Maghang Juu
+Manyara,Mbulu District Council,Maghang Ward,Labay
+Manyara,Mbulu District Council,Maghang Ward,Bassodarer
+Manyara,Mbulu District Council,Haydom Ward,Basonyagwe
+Manyara,Mbulu District Council,Haydom Ward,Harar
+Manyara,Mbulu District Council,Haydom Ward,Ng'wandakw
+Manyara,Mbulu District Council,Haydom Ward,Haydom
+Manyara,Mbulu District Council,Haydom Ward,Endaharghadatik
+Manyara,Mbulu District Council,Haydom Ward,Gidarudagaw
+Manyara,Mbulu District Council,Yaeda Chini Ward,Mongo wa  Mono
+Manyara,Mbulu District Council,Yaeda Chini Ward,Yaeda Chini
+Manyara,Mbulu District Council,Masieda Ward,Masieda
+Manyara,Mbulu District Council,Masieda Ward,Endahagichan
+Manyara,Mbulu District Council,Masieda Ward,Endanyawish
+Manyara,Mbulu District Council,Masieda Ward,Gembakw
+Manyara,Mbulu District Council,Marang Ward,Aicho
+Manyara,Mbulu District Council,Marang Ward,Gwandumehi
+Manyara,Mbulu District Council,Marang Ward,Marang
+Manyara,Mbulu District Council,Gunyoda Ward,Gunyoda
+Manyara,Mbulu District Council,Gunyoda Ward,Gedamar
+Manyara,Mbulu District Council,Gunyoda Ward,Qaliyeda
+Manyara,Mbulu District Council,Gunyoda Ward,Silaloda
+Manyara,Mbulu District Council,Nahasey Ward,Banee
+Manyara,Mbulu District Council,Nahasey Ward,Hassama
+Manyara,Mbulu District Council,Nahasey Ward,Nahasey
+Manyara,Mbulu District Council,Nahasey Ward,Haysali
+Manyara,Mbulu District Council,Endamilay Ward,Endamilay
+Manyara,Mbulu District Council,Endamilay Ward,Endalat
+Manyara,Mbulu District Council,Endamilay Ward,Qaloda-ganuway
+Manyara,Mbulu District Council,Endamilay Ward,Qandach
+Manyara,Mbulu District Council,Endamilay Ward,Endanachan
+Manyara,Mbulu District Council,Endamilay Ward,Murkuchida
+Manyara,Mbulu District Council,Yaeda Ampa Ward,Mangisa
+Manyara,Mbulu District Council,Yaeda Ampa Ward,Yaeda Ampa
+Manyara,Mbulu District Council,Yaeda Ampa Ward,Arri
+Manyara,Mbulu District Council,Yaeda Ampa Ward,Hayseng
+Manyara,Mbulu District Council,Yaeda Ampa Ward,Laghangesh
+Manyara,Mbulu District Council,Masqaroda Ward,Harbanghet
+Manyara,Mbulu District Council,Masqaroda Ward,Masqaroda
+Manyara,Mbulu District Council,Masqaroda Ward,Garbabi
+Manyara,Mbulu District Council,Masqaroda Ward,Endadubu
+Manyara,Mbulu District Council,Nambisi Ward,Hayloto
+Manyara,Mbulu District Council,Nambisi Ward,Kwermusl
+Manyara,Mbulu District Council,Nambisi Ward,Amowa
+Manyara,Mbulu District Council,Dinamu Ward,Mamagi
+Manyara,Mbulu District Council,Dinamu Ward,Muslur
+Manyara,Mbulu District Council,Dinamu Ward,Genda
+Manyara,Mbulu District Council,Dinamu Ward,Diyomat
+Manyara,Mbulu District Council,Ayamohe Ward,Ayamohe
+Manyara,Mbulu District Council,Ayamohe Ward,Tango
+Manyara,Mbulu District Council,Ayamohe Ward,Qashani
+Manyara,Mbulu District Council,Ayamohe Ward,Anshay
+Manyara,Mbulu District Council,Ayamohe Ward,Islaa
+Manyara,Mbulu District Council,Sanu Baray Ward,Sanugawa
+Manyara,Mbulu District Council,Sanu Baray Ward,Sanu baray
+Manyara,Mbulu District Council,Sanu Baray Ward,Sanu kati
+Manyara,Mbulu District Council,Sanu Baray Ward,Ayapara
+Manyara,Mbulu District Council,Sanu Baray Ward,Sanugwangu
+Manyara,Mbulu District Council,Sanu Baray Ward,Hantee
+Manyara,Mbulu District Council,Imboru Ward,Madukani
+Manyara,Mbulu District Council,Imboru Ward,Ujenzi
+Manyara,Mbulu District Council,Imboru Ward,Tseay
+Manyara,Mbulu District Council,Imboru Ward,Sanu Gilala
+Manyara,Mbulu District Council,Imboru Ward,Marish
+Manyara,Mbulu District Council,Imboru Ward,Gidbuger
+Manyara,Mbulu District Council,Endagikot Ward,Qeshomon
+Manyara,Mbulu District Council,Endagikot Ward,Sanu.
+Manyara,Mbulu District Council,Endagikot Ward,Gawa
+Manyara,Mbulu District Council,Endagikot Ward,Khaday
+Manyara,Mbulu District Council,Endagikot Ward,Endamaks
+Manyara,Mbulu District Council,Endagikot Ward,Tango
+Manyara,Mbulu District Council,Geterer Ward,Geterer
+Manyara,Mbulu District Council,Geterer Ward,Getanyamba
+Manyara,Mbulu District Council,Geterer Ward,Endagaw
+Manyara,Mbulu District Council,Geterer Ward,Mewadan
+Manyara,Mbulu District Council,Hayderer Ward,Semoyandi
+Manyara,Mbulu District Council,Hayderer Ward,Hayderer
+Manyara,Mbulu District Council,Hayderer Ward,Singu
+Manyara,Mbulu District Council,Hayderer Ward,Gidbiyo
+Manyara,Mbulu District Council,Hayderer Ward,Dotina
+Manyara,Mbulu District Council,Eshkesh Ward,Domanga
+Manyara,Mbulu District Council,Eshkesh Ward,Eshkesh
+Manyara,Mbulu District Council,Eshkesh Ward,Endagulda
+Manyara,Mbulu District Council,Gidihim Ward,Guye
+Manyara,Mbulu District Council,Gidihim Ward,Dumanang
+Manyara,Mbulu District Council,Gidihim Ward,Ng'orat
+Manyara,Mbulu District Council,Gidihim Ward,Gidihim
+Manyara,Simanjiro District Council,Orkesumet Ward,Orkesmet
+Manyara,Simanjiro District Council,Orkesumet Ward,Orkesmet
+Manyara,Simanjiro District Council,Orkesumet Ward,Orkesmet
+Manyara,Simanjiro District Council,Naberera Ward,Okutu
+Manyara,Simanjiro District Council,Naberera Ward,Landanai
+Manyara,Simanjiro District Council,Naberera Ward,Naberera
+Manyara,Simanjiro District Council,Naberera Ward,Namalulu
+Manyara,Simanjiro District Council,Naberera Ward,Lorbene
+Manyara,Simanjiro District Council,Naberera Ward,Losokonoi
+Manyara,Simanjiro District Council,Loiborsiret Ward,Loiborsiret
+Manyara,Simanjiro District Council,Loiborsiret Ward,Narakauo
+Manyara,Simanjiro District Council,Loiborsiret Ward,Kimotorok
+Manyara,Simanjiro District Council,Emboreet Ward,Emboreeti
+Manyara,Simanjiro District Council,Emboreet Ward,Leborsoit A
+Manyara,Simanjiro District Council,Emboreet Ward,Nyorit
+Manyara,Simanjiro District Council,Terrat Ward,Loswaki
+Manyara,Simanjiro District Council,Terrat Ward,Terat
+Manyara,Simanjiro District Council,Terrat Ward,Engonongoi
+Manyara,Simanjiro District Council,Oljoro  No. 5 Ward,Losinyai
+Manyara,Simanjiro District Council,Oljoro  No. 5 Ward,Oljoro No. 5
+Manyara,Simanjiro District Council,Oljoro  No. 5 Ward,Olborkishu
+Manyara,Simanjiro District Council,Oljoro  No. 5 Ward,Lorkare
+Manyara,Simanjiro District Council,Oljoro  No. 5 Ward,Einot
+Manyara,Simanjiro District Council,Shambarai Ward,Kilombero
+Manyara,Simanjiro District Council,Shambarai Ward,Olbili
+Manyara,Simanjiro District Council,Shambarai Ward,Shambarai
+Manyara,Simanjiro District Council,Mrerani Ward,Songambele A
+Manyara,Simanjiro District Council,Mrerani Ward,Sokoni
+Manyara,Simanjiro District Council,Mrerani Ward,Songambele B
+Manyara,Simanjiro District Council,Mrerani Ward,Mrerani
+Manyara,Simanjiro District Council,Msitu wa Tembo Ward,Msitu wa tembo
+Manyara,Simanjiro District Council,Msitu wa Tembo Ward,Kiruani
+Manyara,Simanjiro District Council,Msitu wa Tembo Ward,Olchoronyori
+Manyara,Simanjiro District Council,Msitu wa Tembo Ward,Magadini
+Manyara,Simanjiro District Council,Ngorika Ward,Ngorika
+Manyara,Simanjiro District Council,Ngorika Ward,Nyumba ya Mungu
+Manyara,Simanjiro District Council,Ngorika Ward,Lemkuna
+Manyara,Simanjiro District Council,Liborsoit Ward,Loiborsoit B
+Manyara,Simanjiro District Council,Liborsoit Ward,Ngage
+Manyara,Simanjiro District Council,Ruvu Remiti Ward,Ruvu Remiti
+Manyara,Simanjiro District Council,Ruvu Remiti Ward,Gunge
+Manyara,Simanjiro District Council,Ruvu Remiti Ward,Lerumo
+Manyara,Simanjiro District Council,Kitwai Ward,Loondrekesi
+Manyara,Simanjiro District Council,Kitwai Ward,Kitwai B
+Manyara,Simanjiro District Council,Kitwai Ward,Kitwai A
+Manyara,Simanjiro District Council,Komolo Ward,Nadonjukin
+Manyara,Simanjiro District Council,Komolo Ward,Kitiangare
+Manyara,Simanjiro District Council,Komolo Ward,Komolo
+Manyara,Simanjiro District Council,Komolo Ward,Sukuro
+Manyara,Simanjiro District Council,Naisinyai Ward,Naisinyai
+Manyara,Simanjiro District Council,Naisinyai Ward,Kambi ya chokaa
+Manyara,Simanjiro District Council,Naisinyai Ward,Lengasiti
+Manyara,Simanjiro District Council,Naisinyai Ward,Losoito
+Manyara,Simanjiro District Council,Endiamtu Ward,Kazamoyo
+Manyara,Simanjiro District Council,Endiamtu Ward,Kilimahewa
+Manyara,Simanjiro District Council,Endiamtu Ward,Sekondari
+Manyara,Simanjiro District Council,Endiamtu Ward,Kairo
+Manyara,Simanjiro District Council,Endiamtu Ward,Zaire
+Manyara,Simanjiro District Council,Endonyongijape Ward,Lolmorijoi
+Manyara,Simanjiro District Council,Endonyongijape Ward,Langai
+Manyara,Simanjiro District Council,Endonyongijape Ward,Endonyongijape
+Manyara,Simanjiro District Council,Endonyongijape Ward,Irkuijit
+Manyara,Simanjiro District Council,Endonyongijape Ward,orkirungrung
+Manyara,Kiteto District Council,Kibaya Ward,Kibaya kati
+Manyara,Kiteto District Council,Kibaya Ward,Boma
+Manyara,Kiteto District Council,Kibaya Ward,Mafichoni
+Manyara,Kiteto District Council,Kibaya Ward,Kanisani
+Manyara,Kiteto District Council,Kibaya Ward,Ngarenaro
+Manyara,Kiteto District Council,Partimbo Ward,Mbigiri
+Manyara,Kiteto District Council,Partimbo Ward,Kimana
+Manyara,Kiteto District Council,Partimbo Ward,Partimbo
+Manyara,Kiteto District Council,Partimbo Ward,Ilera
+Manyara,Kiteto District Council,Njoro Ward,Njoro
+Manyara,Kiteto District Council,Njoro Ward,Ndaleta
+Manyara,Kiteto District Council,Njoro Ward,Olpopong'i
+Manyara,Kiteto District Council,Njoro Ward,Mwanya
+Manyara,Kiteto District Council,Olboloti Ward,Mwitikila
+Manyara,Kiteto District Council,Olboloti Ward,Kiperesa
+Manyara,Kiteto District Council,Olboloti Ward,Chekanao
+Manyara,Kiteto District Council,Olboloti Ward,Olboloti
+Manyara,Kiteto District Council,Makame Ward,Makame
+Manyara,Kiteto District Council,Makame Ward,Rikiushioibor
+Manyara,Kiteto District Council,Makame Ward,Katikati
+Manyara,Kiteto District Council,Ndedo Ward,Ndedo
+Manyara,Kiteto District Council,Ndedo Ward,Ngabolo
+Manyara,Kiteto District Council,Kijungu Ward,Kijungu
+Manyara,Kiteto District Council,Kijungu Ward,Ngapapa
+Manyara,Kiteto District Council,Kijungu Ward,Lerug
+Manyara,Kiteto District Council,Lengatei Ward,Lengatei
+Manyara,Kiteto District Council,Lengatei Ward,Olkitikit
+Manyara,Kiteto District Council,Lengatei Ward,Lesoit
+Manyara,Kiteto District Council,Lengatei Ward,Engang'uengare
+Manyara,Kiteto District Council,Sunya Ward,Sunya
+Manyara,Kiteto District Council,Sunya Ward,Olgira
+Manyara,Kiteto District Council,Sunya Ward,Loltopes
+Manyara,Kiteto District Council,Sunya Ward,Asamato
+Manyara,Kiteto District Council,Sunya Ward,Mesera
+Manyara,Kiteto District Council,Dongo Ward,Dongo
+Manyara,Kiteto District Council,Dongo Ward,Engusero Sidani
+Manyara,Kiteto District Council,Dongo Ward,Laiseri
+Manyara,Kiteto District Council,Songambele Ward,Songambele
+Manyara,Kiteto District Council,Songambele Ward,Orkine
+Manyara,Kiteto District Council,Dosidosi Ward,Esukuta
+Manyara,Kiteto District Council,Dosidosi Ward,Dosidosi
+Manyara,Kiteto District Council,Dosidosi Ward,Nchinila
+Manyara,Kiteto District Council,Engusero Ward,Ndirigishi
+Manyara,Kiteto District Council,Engusero Ward,Ngipa
+Manyara,Kiteto District Council,Engusero Ward,Engusero
+Manyara,Kiteto District Council,Engusero Ward,Nasetani
+Manyara,Kiteto District Council,Matui Ward,Matui
+Manyara,Kiteto District Council,Matui Ward,Azimio
+Manyara,Kiteto District Council,Matui Ward,Soweto
+Manyara,Kiteto District Council,Bwagamoyo Ward,Bwagamoyo
+Manyara,Kiteto District Council,Bwagamoyo Ward,Kaloleni
+Manyara,Kiteto District Council,Loolera Ward,Amei
+Manyara,Kiteto District Council,Loolera Ward,Loolera
+Manyara,Kiteto District Council,Loolera Ward,Lembapuri
+Manyara,Kiteto District Council,Magungu Ward,Emarty
+Manyara,Kiteto District Council,Magungu Ward,Nhati
+Manyara,Kiteto District Council,Magungu Ward,Magungu
+Manyara,Kiteto District Council,Chapakazi Ward,Chapakazi
+Manyara,Kiteto District Council,Chapakazi Ward,Osteti
+Manyara,Kiteto District Council,Chapakazi Ward,Engusero Engine
+Manyara,Kiteto District Council,Namelock Ward,Laalala
+Manyara,Kiteto District Council,Namelock Ward,Njiapanda
+Manyara,Kiteto District Council,Namelock Ward,Namelock
+Manyara,Babati Town Council,Babati Ward,Hangoni
+Manyara,Babati Town Council,Babati Ward,Majengo
+Manyara,Babati Town Council,Babati Ward,Babati Mjini
+Manyara,Babati Town Council,Babati Ward,Kwere
+Manyara,Babati Town Council,Babati Ward,Maisaka B
+Manyara,Babati Town Council,Babati Ward,Mrara
+Manyara,Babati Town Council,Babati Ward,Waang'waray
+Manyara,Babati Town Council,Mutuka Ward,Chemchem
+Manyara,Babati Town Council,Mutuka Ward,Mutuka
+Manyara,Babati Town Council,Nangara Ward,Halla
+Manyara,Babati Town Council,Nangara Ward,Mkuyuni B
+Manyara,Babati Town Council,Nangara Ward,Mkuyuni A
+Manyara,Babati Town Council,Nangara Ward,Arri
+Manyara,Babati Town Council,Nangara Ward,Maweni
+Manyara,Babati Town Council,Nangara Ward,Balowa
+Manyara,Babati Town Council,Nangara Ward,Ziwani
+Manyara,Babati Town Council,Nangara Ward,Nangara Kati
+Manyara,Babati Town Council,Singe Ward,Gendi Kuu
+Manyara,Babati Town Council,Singe Ward,Gendi Barazani
+Manyara,Babati Town Council,Singe Ward,Nyawari
+Manyara,Babati Town Council,Singe Ward,Majengo Mapya
+Manyara,Babati Town Council,Singe Ward,Managhat
+Manyara,Babati Town Council,Bonga Ward,Haraa
+Manyara,Babati Town Council,Bonga Ward,Himiti
+Manyara,Babati Town Council,Bonga Ward,Dawar
+Manyara,Babati Town Council,Bonga Ward,Bonga mjini
+Manyara,Babati Town Council,Bonga Ward,Waangboo
+Manyara,Babati Town Council,Bonga Ward,Kandaka
+Manyara,Babati Town Council,Bonga Ward,Ayabadinay
+Manyara,Babati Town Council,Bagara Ward,Nakwa
+Manyara,Babati Town Council,Bagara Ward,Komoto
+Manyara,Babati Town Council,Bagara Ward,Negamsi
+Manyara,Babati Town Council,Bagara Ward,Nyanguu
+Manyara,Babati Town Council,Bagara Ward,Mjimpya
+Manyara,Babati Town Council,Bagara Ward,Oysterbay
+Manyara,Babati Town Council,Bagara Ward,Ngarenaro
+Manyara,Babati Town Council,Bagara Ward,Bagara ziwani
+Manyara,Babati Town Council,Bagara Ward,Miomboni
+Manyara,Babati Town Council,Sigino Ward,Singu
+Manyara,Babati Town Council,Sigino Ward,Imbilili
+Manyara,Babati Town Council,Sigino Ward,Daghailoy
+Manyara,Babati Town Council,Sigino Ward,Sigino
+Manyara,Babati Town Council,Maisaka Ward,Malangi
+Manyara,Babati Town Council,Maisaka Ward,Kiongozi
+Manyara,Babati Town Council,Maisaka Ward,Sawe
+Manyara,Babati Town Council,Maisaka Ward,Maisaka kati
+Manyara,Babati Town Council,Maisaka Ward,Maisaka A
+Manyara,Babati Town Council,Maisaka Ward,Mruki
+Singida,Iramba District,Urughu Ward,Urughu
+Singida,Iramba District,Urughu Ward,Masimba
+Singida,Iramba District,Urughu Ward,Mlandala
+Singida,Iramba District,Mtekente Ward,Kisonga
+Singida,Iramba District,Mtekente Ward,Lusanga
+Singida,Iramba District,Mtekente Ward,Msansao
+Singida,Iramba District,Mtekente Ward,Ujungu
+Singida,Iramba District,Mtoa Ward,Masagi
+Singida,Iramba District,Mtoa Ward,Tyeme
+Singida,Iramba District,Mtoa Ward,Mgela
+Singida,Iramba District,Mtoa Ward,Mtoa
+Singida,Iramba District,Mtoa Ward,Msai
+Singida,Iramba District,Mgongo Ward,Kizonzo
+Singida,Iramba District,Mgongo Ward,Mseko
+Singida,Iramba District,Mgongo Ward,Mgongo
+Singida,Iramba District,Shelui Ward,Kibigiri
+Singida,Iramba District,Shelui Ward,Nselembwe
+Singida,Iramba District,Shelui Ward,Wembere
+Singida,Iramba District,Ntwike Ward,Mingela
+Singida,Iramba District,Ntwike Ward,Shelui II
+Singida,Iramba District,Ntwike Ward,Ntwike
+Singida,Iramba District,Ntwike Ward,Nkonkilangi
+Singida,Iramba District,Ntwike Ward,Nsunsu
+Singida,Iramba District,Tulya Ward,Migilango
+Singida,Iramba District,Tulya Ward,Tulya
+Singida,Iramba District,Tulya Ward,Doromoni
+Singida,Iramba District,Kidaru Ward,Luono
+Singida,Iramba District,Kidaru Ward,Tyegelo
+Singida,Iramba District,Kidaru Ward,Kidaru
+Singida,Iramba District,Kidaru Ward,Ndurumo
+Singida,Iramba District,Kisiriri Ward,Kisiriri
+Singida,Iramba District,Kisiriri Ward,Kisana
+Singida,Iramba District,Kisiriri Ward,Kinalilya
+Singida,Iramba District,Kisiriri Ward,Kisimba
+Singida,Iramba District,Kiomboi Ward,Meli
+Singida,Iramba District,Kiomboi Ward,Tutu
+Singida,Iramba District,Kiomboi Ward,Shati
+Singida,Iramba District,Kiomboi Ward,Ruruma
+Singida,Iramba District,Kiomboi Ward,Mampanta
+Singida,Iramba District,Kiomboi Ward,Kinambeu
+Singida,Iramba District,Kiomboi Ward,Old Kiomboi
+Singida,Iramba District,Kiomboi Ward,New Kiomboi
+Singida,Iramba District,Kinampanda Ward,Kisharita
+Singida,Iramba District,Kinampanda Ward,Galangala
+Singida,Iramba District,Kinampanda Ward,Uwanza
+Singida,Iramba District,Kinampanda Ward,Kyalosangi
+Singida,Iramba District,Kinampanda Ward,Maluga
+Singida,Iramba District,Kinampanda Ward,Nganguli
+Singida,Iramba District,Ulemo Ward,Misigiri
+Singida,Iramba District,Ulemo Ward,Ulemo
+Singida,Iramba District,Ulemo Ward,Kitukutu
+Singida,Iramba District,Ulemo Ward,Simbalungwala
+Singida,Iramba District,Ulemo Ward,Mukulu
+Singida,Iramba District,Kyengege Ward,Kyengege
+Singida,Iramba District,Kyengege Ward,Makunda
+Singida,Iramba District,Kyengege Ward,Mugundu
+Singida,Iramba District,Ndago Ward,Zinzilingi
+Singida,Iramba District,Ndago Ward,Songambele
+Singida,Iramba District,Ndago Ward,Nguvumali
+Singida,Iramba District,Mbelekese Ward,Misuna
+Singida,Iramba District,Mbelekese Ward,Kikonge
+Singida,Iramba District,Mbelekese Ward,Mbelekese
+Singida,Iramba District,Mbelekese Ward,Ussure
+Singida,Iramba District,Kaselya Ward,Mgungia
+Singida,Iramba District,Kaselya Ward,Kaselya
+Singida,Iramba District,Kaselya Ward,Nsonga
+Singida,Iramba District,Ndulungu Ward,Ndulungu
+Singida,Iramba District,Ndulungu Ward,Mwanduigembe
+Singida,Singida Rural District,Mudida Ward,Kibaoni
+Singida,Singida Rural District,Mudida Ward,Mudida
+Singida,Singida Rural District,Mudida Ward,Migugu
+Singida,Singida Rural District,Mudida Ward,Mpipiti
+Singida,Singida Rural District,Makuro Ward,Makuro
+Singida,Singida Rural District,Makuro Ward,Ghalunyangu
+Singida,Singida Rural District,Makuro Ward,Matumbo
+Singida,Singida Rural District,Makuro Ward,Mkenge
+Singida,Singida Rural District,Makuro Ward,Ng'ong'oa Mpoku
+Singida,Singida Rural District,Makuro Ward,Mikuyu
+Singida,Singida Rural District,Makuro Ward,Mwalala
+Singida,Singida Rural District,Ikhanoda Ward,Msimihi
+Singida,Singida Rural District,Ikhanoda Ward,Ikhanoda
+Singida,Singida Rural District,Ikhanoda Ward,Mjughuda
+Singida,Singida Rural District,Mwasauya Ward,Ngamu
+Singida,Singida Rural District,Mwasauya Ward,Mdilu
+Singida,Singida Rural District,Mwasauya Ward,Mwasauya
+Singida,Singida Rural District,Msange Ward,Msange
+Singida,Singida Rural District,Msange Ward,Sefunga
+Singida,Singida Rural District,Msange Ward,Endesh
+Singida,Singida Rural District,Msange Ward,Mangida
+Singida,Singida Rural District,Maghojoa ward,Mipilo
+Singida,Singida Rural District,Maghojoa ward,Maghojoa
+Singida,Singida Rural District,Maghojoa ward,Ghata
+Singida,Singida Rural District,Maghojoa ward,Mwachambia
+Singida,Singida Rural District,Itaja Ward,Itaja
+Singida,Singida Rural District,Itaja Ward,kinyamwenda
+Singida,Singida Rural District,Itaja Ward,Sagara
+Singida,Singida Rural District,Ngimu Ward,Pohama
+Singida,Singida Rural District,Ngimu Ward,Ngimu
+Singida,Singida Rural District,Ngimu Ward,Mwighanji
+Singida,Singida Rural District,Ngimu Ward,Lamba
+Singida,Singida Rural District,Mughunga Ward,Nduamughanga
+Singida,Singida Rural District,Mughunga Ward,Mughunga
+Singida,Singida Rural District,Mughunga Ward,Unyampanda
+Singida,Singida Rural District,Mgori Ward,Sughana
+Singida,Singida Rural District,Mgori Ward,Mgori
+Singida,Singida Rural District,Mgori Ward,Munkhola
+Singida,Singida Rural District,Mughamo Ward,Songa
+Singida,Singida Rural District,Mughamo Ward,Msikii
+Singida,Singida Rural District,Mughamo Ward,Mughamo
+Singida,Singida Rural District,Kinyagigi Ward,Kinyagigi
+Singida,Singida Rural District,Kinyagigi Ward,Kihunadi
+Singida,Singida Rural District,Kinyagigi Ward,Mwanyonye
+Singida,Singida Rural District,Kinyagigi Ward,Mitula
+Singida,Singida Rural District,Merya Ward,Mvae
+Singida,Singida Rural District,Merya Ward,Merya
+Singida,Singida Rural District,Merya Ward,Kinyamwambo
+Singida,Singida Rural District,Merya Ward,Mwarufyu
+Singida,Singida Rural District,Kinyeto Ward,Kinyeto
+Singida,Singida Rural District,Kinyeto Ward,Minyaa
+Singida,Singida Rural District,Kinyeto Ward,Ntunduu
+Singida,Singida Rural District,Ntonge Ward,Igauri
+Singida,Singida Rural District,Ntonge Ward,Ntonge
+Singida,Singida Rural District,Ntonge Ward,Ifombou
+Singida,Singida Rural District,Ntonge Ward,Mkimbii
+Singida,Singida Rural District,Ilongero Ward,Sekotoure
+Singida,Singida Rural District,Ilongero Ward,Mwahango
+Singida,Singida Rural District,Ilongero Ward,Madamigha
+Singida,Singida Rural District,Ilongero Ward,Ilongero
+Singida,Singida Rural District,Mrama Ward,Mwakiti
+Singida,Singida Rural District,Mrama Ward,Itamka
+Singida,Singida Rural District,Mrama Ward,Mrama
+Singida,Singida Rural District,Mrama Ward,Makhandi
+Singida,Singida Rural District,Mrama Ward,Idd Simba
+Singida,Singida Rural District,Kijota Ward,Kijota
+Singida,Singida Rural District,Kijota Ward,Nduu
+Singida,Singida Rural District,Kijota Ward,Mitonto
+Singida,Singida Rural District,Kijota Ward,Ikiwu
+Singida,Singida Rural District,Mtinko Ward,Mpambaa
+Singida,Singida Rural District,Mtinko Ward,Malolo
+Singida,Singida Rural District,Mtinko Ward,Mtinko
+Singida,Singida Rural District,Mtinko Ward,Minyenye
+Singida,Singida Rural District,Mtinko Ward,Ndugwira
+Singida,Singida Rural District,Mtinko Ward,Mughanga
+Singida,Singida Rural District,Ughandi Ward,Senene Mfuru
+Singida,Singida Rural District,Ughandi Ward,Laghanida
+Singida,Singida Rural District,Ughandi Ward,Ughandi A
+Singida,Singida Rural District,Ughandi Ward,Ughandi B
+Singida,Singida Rural District,Ughandi Ward,Misinko
+Singida,Singida Rural District,Msisi Ward,Ntondo
+Singida,Singida Rural District,Msisi Ward,Nkwae
+Singida,Singida Rural District,Msisi Ward,Msisi
+Singida,Singida Rural District,Msisi Ward,Mnung'una
+Singida,Manyoni District,Manyoni Ward,Majengo
+Singida,Manyoni District,Manyoni Ward,Manyoni
+Singida,Manyoni District,Manyoni Ward,Mwanzi
+Singida,Manyoni District,Manyoni Ward,Kipondoda
+Singida,Manyoni District,Solya Ward,Solya
+Singida,Manyoni District,Solya Ward,Kilimatinde
+Singida,Manyoni District,Makuru Ward,Londoni
+Singida,Manyoni District,Makuru Ward,Msemembo
+Singida,Manyoni District,Makuru Ward,Hika
+Singida,Manyoni District,Chikuyu Ward,Chilejeho
+Singida,Manyoni District,Chikuyu Ward,Mtiwe
+Singida,Manyoni District,Chikuyu Ward,Chikuyu
+Singida,Manyoni District,Chikuyu Ward,Mwiboo
+Singida,Manyoni District,Makanda Ward,Magasai
+Singida,Manyoni District,Makanda Ward,Makanda
+Singida,Manyoni District,Makanda Ward,Kitalalo
+Singida,Manyoni District,Kintinku Ward,Udimaa
+Singida,Manyoni District,Kintinku Ward,Lusilile
+Singida,Manyoni District,Kintinku Ward,Kintinku
+Singida,Manyoni District,Mvumi Ward,Maweni
+Singida,Manyoni District,Mvumi Ward,Mvumi
+Singida,Manyoni District,Mvumi Ward,Ngaiti
+Singida,Manyoni District,Majiri Ward,Mpandagani
+Singida,Manyoni District,Majiri Ward,Kinangali
+Singida,Manyoni District,Majiri Ward,Majiri
+Singida,Manyoni District,Majiri Ward,Mahaka
+Singida,Manyoni District,Sasajila Ward,Chibumagwa
+Singida,Manyoni District,Sasajila Ward,Sasajila
+Singida,Manyoni District,Sasajila Ward,Makasuku
+Singida,Manyoni District,Idodyandole Ward,Kashangu
+Singida,Manyoni District,Idodyandole Ward,Jeje
+Singida,Manyoni District,Idodyandole Ward,Idodyandole
+Singida,Manyoni District,Idodyandole Ward,Ipanga Masasi
+Singida,Manyoni District,Idodyandole Ward,Mbugani
+Singida,Manyoni District,Chikola Ward,Chikola
+Singida,Manyoni District,Chikola Ward,Winamila
+Singida,Manyoni District,Chikola Ward,Chidamsulu
+Singida,Manyoni District,Chikola Ward,Itetema
+Singida,Manyoni District,Chikola Ward,Kasanii
+Singida,Manyoni District,Heka Ward,Heka Azimio
+Singida,Manyoni District,Heka Ward,Chikombo
+Singida,Manyoni District,Nkonko Ward,Mpola
+Singida,Manyoni District,Nkonko Ward,Ntumbi
+Singida,Manyoni District,Nkonko Ward,Nkonko
+Singida,Manyoni District,Sanza Ward,Ikasi
+Singida,Manyoni District,Sanza Ward,Chicheho
+Singida,Manyoni District,Sanza Ward,Sanza
+Singida,Manyoni District,Sanza Ward,Ntope
+Singida,Manyoni District,Isseke Ward,Isseke
+Singida,Manyoni District,Isseke Ward,Igwamadete
+Singida,Manyoni District,Isseke Ward,Mpapa
+Singida,Manyoni District,Isseke Ward,Simbanguru
+Singida,Manyoni District,Isseke Ward,Mangoli
+Singida,Manyoni District,Rungwa Ward,Rungwa
+Singida,Manyoni District,Mgandu Ward,Kayui
+Singida,Manyoni District,Mgandu Ward,Itagata
+Singida,Manyoni District,Mgandu Ward,Lulanga
+Singida,Manyoni District,Itigi Ward,Itigi Mjini
+Singida,Manyoni District,Ipande Ward,Ipande
+Singida,Manyoni District,Ipande Ward,Muhanga
+Singida,Manyoni District,Ipande Ward,Damwelu
+Singida,Manyoni District,Sanjaranda Ward,Gurundu
+Singida,Manyoni District,Sanjaranda Ward,Sanjaranda
+Singida,Manyoni District,Sanjaranda Ward,Kitopeni
+Singida,Manyoni District,Aghondi Ward,Kamenyanga
+Singida,Manyoni District,Aghondi Ward,Aghondi
+Singida,Manyoni District,Aghondi Ward,Mabondeni
+Singida,Manyoni District,Aghondi Ward,Njirii
+Singida,Manyoni District,Mkwese Ward,Mkwese
+Singida,Manyoni District,Mkwese Ward,Mitoo
+Singida,Manyoni District,Mkwese Ward,Kinyika
+Singida,Manyoni District,Muhalala Ward,Mdunundu
+Singida,Manyoni District,Muhalala Ward,Muhalala
+Singida,Manyoni District,Muhalala Ward,Kapiti
+Singida,Manyoni District,Saranda Ward,Sukamahela
+Singida,Manyoni District,Saranda Ward,Saranda
+Singida,Manyoni District,Saranda Ward,Ilaloo
+Singida,Manyoni District,Makutopora Ward,Mbwasa
+Singida,Manyoni District,Makutopora Ward,Makutopora
+Singida,Manyoni District,Makutopora Ward,Dabia
+Singida,Manyoni District,Sasilo Ward,Chisingisa
+Singida,Manyoni District,Sasilo Ward,Imalampaka
+Singida,Manyoni District,Sasilo Ward,Sasilo
+Singida,Manyoni District,Sasilo Ward,Mwitikila
+Singida,Manyoni District,Mwamagembe Ward,Mwamagembe
+Singida,Manyoni District,Mwamagembe Ward,Kintanula
+Singida,Manyoni District,Mitundu Ward,Mitundu
+Singida,Manyoni District,Mitundu Ward,Makale
+Singida,Manyoni District,Mitundu Ward,Ipalalyu
+Singida,Manyoni District,Kitaraka Ward,Kitaraka
+Singida,Manyoni District,Kitaraka Ward,Doroto
+Singida,Manyoni District,Kitaraka Ward,Kazikazi
+Singida,Manyoni District,Itigi Majengo Ward,Zinginali
+Singida,Manyoni District,Itigi Majengo Ward,Itigi Majengo
+Singida,Manyoni District,Itigi Majengo Ward,Songambele
+Singida,Manyoni District,Itigi Majengo Ward,Tambukareli
+Singida,Singida Urban District,Mtipa Ward,Manga
+Singida,Singida Urban District,Mtipa Ward,Mtipa
+Singida,Singida Urban District,Mughanga Ward,Mji wa Zamani
+Singida,Singida Urban District,Mughanga Ward,Bomani
+Singida,Singida Urban District,Mitunduruni  Ward,Mangua Mitogho
+Singida,Singida Urban District,Mitunduruni  Ward,Unyankindi
+Singida,Singida Urban District,Mitunduruni  Ward,NHC
+Singida,Singida Urban District,Mitunduruni  Ward,Mitunduruni
+Singida,Singida Urban District,Mitunduruni  Ward,Msufini
+Singida,Singida Urban District,Mitunduruni  Ward,Kasembe
+Singida,Singida Urban District,Mitunduruni  Ward,Bima
+Singida,Singida Urban District,Majengo Ward,Mwenge
+Singida,Singida Urban District,Majengo Ward,Ng'ongoajibu
+Singida,Singida Urban District,Majengo Ward,Ukombozi
+Singida,Singida Urban District,Majengo Ward,Jitulize
+Singida,Singida Urban District,Majengo Ward,Majengo
+Singida,Singida Urban District,Majengo Ward,Stendi
+Singida,Singida Urban District,Unyambwa Ward,Kisasida
+Singida,Singida Urban District,Unyambwa Ward,Unyambwa
+Singida,Singida Urban District,Mungumaji Ward,Mungumaji
+Singida,Singida Urban District,Unyamikumbi Ward,Unyamikumbi A
+Singida,Singida Urban District,Unyamikumbi Ward,Ughaugha A
+Singida,Singida Urban District,Unyamikumbi Ward,Ughaugha B
+Singida,Singida Urban District,Unyamikumbi Ward,Unyamikumbi B
+Singida,Singida Urban District,Unyamikumbi Ward,Kisaki
+Singida,Singida Urban District,Mtamaa Ward,Mtamaa B
+Singida,Singida Urban District,Mtamaa Ward,Mtamaa A
+Singida,Singida Urban District,Kindai Ward,Bohari
+Singida,Singida Urban District,Kindai Ward,Kindai
+Singida,Singida Urban District,Kindai Ward,Dodoma Road
+Singida,Singida Urban District,Kindai Ward,Kilambida
+Singida,Singida Urban District,Kindai Ward,Kibaoni
+Singida,Singida Urban District,Kindai Ward,Mahembe
+Singida,Singida Urban District,Kindai Ward,Singida Munangi
+Singida,Singida Urban District,Ipembe Ward,Zimamoto
+Singida,Singida Urban District,Ipembe Ward,Soko
+Singida,Singida Urban District,Ipembe Ward,Ipembe
+Singida,Singida Urban District,Utemini Ward,Utemini
+Singida,Singida Urban District,Utemini Ward,Station
+Singida,Singida Urban District,Utemini Ward,Sabasaba
+Singida,Singida Urban District,Mwankoko Ward,Mwankoko A
+Singida,Singida Urban District,Mwankoko Ward,Mwankoko B
+Singida,Singida Urban District,Mwankoko Ward,Unyianga
+Singida,Singida Urban District,Mandewa Ward,Mandewa
+Singida,Singida Urban District,Mandewa Ward,Mangwanjuki
+Singida,Singida Urban District,Minga Ward,Munung'una
+Singida,Singida Urban District,Minga Ward,Arusha Road
+Singida,Singida Urban District,Minga Ward,Itungukia
+Singida,Singida Urban District,Minga Ward,Minga
+Singida,Singida Urban District,Misuna Ward,Karakana
+Singida,Singida Urban District,Misuna Ward,Kimpungua
+Singida,Singida Urban District,Misuna Ward,Misuna
+Singida,Singida Urban District,Misuna Ward,Sokoine
+Singida,Singida Urban District,Misuna Ward,Salmin
+Singida,Singida Urban District,Uhamaka Ward,Ititi
+Singida,Singida Urban District,Uhamaka Ward,Uhamaka
+Singida,Ikungi District,Puma Ward,
+Singida,Ikungi District,Puma Ward,Puma
+Singida,Ikungi District,Puma Ward,Isalanda
+Singida,Ikungi District,Puma Ward,Wibia
+Singida,Ikungi District,Puma Ward,Nkuninkana
+Singida,Ikungi District,Kituntu Ward,Utaho 'A'
+Singida,Ikungi District,Kituntu Ward,Kituntu
+Singida,Ikungi District,Kituntu Ward,Musambu
+Singida,Ikungi District,Kituntu Ward,Matyuku
+Singida,Ikungi District,Kituntu Ward,Utaho B
+Singida,Ikungi District,Mungaa Ward,Kinku
+Singida,Ikungi District,Mungaa Ward,Mungaa
+Singida,Ikungi District,Mungaa Ward,Kimbwi
+Singida,Ikungi District,Mungaa Ward,Minyinga
+Singida,Ikungi District,Mungaa Ward,Unyaghumpi
+Singida,Ikungi District,Mungaa Ward,Makiungu
+Singida,Ikungi District,Siuyu Ward,Siuyu
+Singida,Ikungi District,Siuyu Ward,Unyankhanya
+Singida,Ikungi District,Siuyu Ward,Makotea
+Singida,Ikungi District,Kikio Ward,Munane
+Singida,Ikungi District,Kikio Ward,Nkundi
+Singida,Ikungi District,Kikio Ward,Mkunguakihendo
+Singida,Ikungi District,Lighwa Ward,Mwisi
+Singida,Ikungi District,Lighwa Ward,Ujaire
+Singida,Ikungi District,Lighwa Ward,Lighwa
+Singida,Ikungi District,Misughaa Ward,Misughaa
+Singida,Ikungi District,Misughaa Ward,Msule
+Singida,Ikungi District,Misughaa Ward,Sakaa
+Singida,Ikungi District,Ntuntu Ward,Mampando
+Singida,Ikungi District,Ntuntu Ward,Ntuntu
+Singida,Ikungi District,Ntuntu Ward,Ntewa A
+Singida,Ikungi District,Ntuntu Ward,Ntewa B
+Singida,Ikungi District,Ntuntu Ward,Taru
+Singida,Ikungi District,Dung'unyi Ward,Munkinya
+Singida,Ikungi District,Dung'unyi Ward,Damankia
+Singida,Ikungi District,Dung'unyi Ward,Samaka
+Singida,Ikungi District,Dung'unyi Ward,Dung'unyi
+Singida,Ikungi District,Dung'unyi Ward,Kipumbuiko
+Singida,Ikungi District,Mang'onyi Ward,Mwau
+Singida,Ikungi District,Mang'onyi Ward,Mang'onyi
+Singida,Ikungi District,Mang'onyi Ward,Sambaru
+Singida,Ikungi District,Mang'onyi Ward,Tupendane
+Singida,Ikungi District,Mang'onyi Ward,Mlumbi
+Singida,Ikungi District,Mkiwa Ward,Mkiwa
+Singida,Ikungi District,Mkiwa Ward,Choda
+Singida,Ikungi District,Issuna Ward,Nkuhi
+Singida,Ikungi District,Issuna Ward,Issuna B
+Singida,Ikungi District,Issuna Ward,Issuna A
+Singida,Ikungi District,Issuna Ward,Ng'ongosoro
+Singida,Ikungi District,Issuna Ward,Tumaini
+Singida,Ikungi District,Unyahati Ward,Muungano
+Singida,Ikungi District,Unyahati Ward,Mahambe
+Singida,Ikungi District,Unyahati Ward,Matare
+Singida,Ikungi District,Unyahati Ward,Ulyampiti
+Singida,Ikungi District,Unyahati Ward,Kinyamwandyo
+Singida,Ikungi District,Ikungi Ward,Ighuka
+Singida,Ikungi District,Ikungi Ward,Ikungi
+Singida,Ikungi District,Ikungi Ward,Mbwanjiki
+Singida,Ikungi District,Ikungi Ward,Matongo
+Singida,Ikungi District,Iglansoni Ward,Mnyange
+Singida,Ikungi District,Iglansoni Ward,Iglansoni
+Singida,Ikungi District,Iseke Ward,Nkhoiree
+Singida,Ikungi District,Iseke Ward,Iseke
+Singida,Ikungi District,Iseke Ward,Unyangwe
+Singida,Ikungi District,Ihanja Ward,Ihanja
+Singida,Ikungi District,Ihanja Ward,Chungu
+Singida,Ikungi District,Ihanja Ward,Nduru
+Singida,Ikungi District,Minyughe Ward,Misake
+Singida,Ikungi District,Minyughe Ward,Mtavira
+Singida,Ikungi District,Minyughe Ward,Minyughe
+Singida,Ikungi District,Minyughe Ward,Mayaha
+Singida,Ikungi District,Muhintiri Ward,Mpetu
+Singida,Ikungi District,Muhintiri Ward,Muhintiri
+Singida,Ikungi District,Muhintiri Ward,Kinyampembee
+Singida,Ikungi District,Iyumbu Ward,Makungu
+Singida,Ikungi District,Iyumbu Ward,Iyumbu
+Singida,Ikungi District,Iyumbu Ward,Mkenene
+Singida,Ikungi District,Mgungira Ward,Ufana
+Singida,Ikungi District,Mgungira Ward,Mwankaraja
+Singida,Ikungi District,Mgungira Ward,Mgungira
+Singida,Ikungi District,Mwaru Ward,Kaugeri
+Singida,Ikungi District,Mwaru Ward,Mpungizi
+Singida,Ikungi District,Mwaru Ward,Mwaru
+Singida,Ikungi District,Mwaru Ward,Mlandala
+Singida,Ikungi District,Mwaru Ward,Mdughuyu
+Singida,Ikungi District,Ighombwe Ward,Jeruman
+Singida,Ikungi District,Ighombwe Ward,Ighombwe
+Singida,Ikungi District,Ighombwe Ward,Msosa
+Singida,Ikungi District,Ighombwe Ward,Makhonda
+Singida,Ikungi District,Mtunduru Ward,Kintandaa
+Singida,Ikungi District,Mtunduru Ward,Kipunda
+Singida,Ikungi District,Mtunduru Ward,Mtunduru
+Singida,Ikungi District,Mtunduru Ward,Masweya
+Singida,Ikungi District,Sepuka Ward,Msungua
+Singida,Ikungi District,Sepuka Ward,Mnang'ana
+Singida,Ikungi District,Sepuka Ward,Musimi
+Singida,Ikungi District,Irisya Ward,Irisya
+Singida,Ikungi District,Irisya Ward,Mwasutianga
+Singida,Ikungi District,Irisya Ward,Munyu
+Singida,Mkalama District,Mpambala Ward,Nyahaa
+Singida,Mkalama District,Mpambala Ward,Mpambala
+Singida,Mkalama District,Mpambala Ward,Mkiko
+Singida,Mkalama District,Mpambala Ward,Lugongo
+Singida,Mkalama District,Mwangeza Ward,Endasiku
+Singida,Mkalama District,Mwangeza Ward,Ikolo
+Singida,Mkalama District,Mwangeza Ward,Munguli
+Singida,Mkalama District,Mwangeza Ward,Dominic
+Singida,Mkalama District,Mwangeza Ward,Mwangeza
+Singida,Mkalama District,Mwanga Ward,Marera
+Singida,Mkalama District,Mwanga Ward,Kidarafa
+Singida,Mkalama District,Mwanga Ward,Msiu
+Singida,Mkalama District,Mwanga Ward,Mwanga
+Singida,Mkalama District,Mwanga Ward,Nkalakala
+Singida,Mkalama District,Mwanga Ward,Malaja
+Singida,Mkalama District,Nkinto Ward,Nkinto
+Singida,Mkalama District,Nkinto Ward,Mntamba
+Singida,Mkalama District,Nkinto Ward,Kinyambuli
+Singida,Mkalama District,Nkinto Ward,Mazangili
+Singida,Mkalama District,Ibaga Ward,Ilongo
+Singida,Mkalama District,Ibaga Ward,Mkalama
+Singida,Mkalama District,Ibaga Ward,Igonia
+Singida,Mkalama District,Ibaga Ward,Igengu
+Singida,Mkalama District,Ibaga Ward,Ibaga
+Singida,Mkalama District,Gumanga Ward,Kisuluiga
+Singida,Mkalama District,Gumanga Ward,Gumanga
+Singida,Mkalama District,Gumanga Ward,Mgimba
+Singida,Mkalama District,Gumanga Ward,Kinankamba
+Singida,Mkalama District,Gumanga Ward,Ikungu
+Singida,Mkalama District,Msingi Ward,Msingi
+Singida,Mkalama District,Msingi Ward,Ishinsi
+Singida,Mkalama District,Msingi Ward,Ndalla
+Singida,Mkalama District,Nduguti Ward,Mwando
+Singida,Mkalama District,Nduguti Ward,Nduguti
+Singida,Mkalama District,Nduguti Ward,Mng'anda
+Singida,Mkalama District,Ilunda Ward,Nkungi
+Singida,Mkalama District,Ilunda Ward,Singa
+Singida,Mkalama District,Ilunda Ward,Kinampundu
+Singida,Mkalama District,Ilunda Ward,Ilunda
+Singida,Mkalama District,Ilunda Ward,Iambi
+Singida,Mkalama District,Kinyangiri Ward,Lyelembo
+Singida,Mkalama District,Kinyangiri Ward,Yulansoni
+Singida,Mkalama District,Kinyangiri Ward,Kinyangiri
+Singida,Mkalama District,Kinyangiri Ward,Ishenga
+Singida,Mkalama District,Iguguno Ward,Milade
+Singida,Mkalama District,Iguguno Ward,Tumuli
+Singida,Mkalama District,Iguguno Ward,Kitumbili
+Singida,Mkalama District,Iguguno Ward,Senene
+Singida,Mkalama District,Iguguno Ward,Lukomo
+Singida,Mkalama District,Iguguno Ward,Iguguno
+Singida,Mkalama District,Miganga Ward,Kinandili
+Singida,Mkalama District,Miganga Ward,Miganga
+Singida,Mkalama District,Miganga Ward,Ipuli
+Singida,Mkalama District,Miganga Ward,Ngolombyo
+Singida,Mkalama District,Matongo Ward,Matongo
+Singida,Mkalama District,Matongo Ward,Isene
+Singida,Mkalama District,Matongo Ward,Mnung'una
+Singida,Mkalama District,Kikhonda Ward,Kikhonda
+Singida,Mkalama District,Kikhonda Ward,Kenke
