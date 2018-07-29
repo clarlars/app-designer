@@ -20,32 +20,33 @@ merchant_retail,agricultural_inputs,Agricultural inputs,Pembejeo za kilimo
 merchant_retail,household_goods,Household goods,Bidhaa za nyumbani
 merchant_retail,construction_hardware_store,Construction/hardware store,Bidhaa za construction na zana
 merchant_retail,mobile_phone_shop,Mobile phone shop,Duka la simu
-merchant_retail,clothingfabric,Clothing/Fabric,Nguo
+merchant_retail,clothing_fabric,Clothing/Fabric,Nguo
 merchant_retail,electronics,Electronics,Bidhaa za electronics
 merchant_retail,furniture,Furniture,Samani/Fanicha
 merchant_retail,office_supplies,Office Supplies,Bidhaa ma afisini
 transport,car,Car,Gari
 transport,truck,Truck,Malori
 transport,motorbike,Motorbike,Pikipiki/bodaboda
-transport,tuk-tuk,Tuk-tuk,Bajaj
+transport,tuk_tuk,Tuk-tuk,Bajaj
 transport,bicycle,Bicycle,Baiskeli/guta
-transport,handpushcart,Hand/pushcart,Mkokoteni
+transport,hand_pushcart,Hand/pushcart,Mkokoteni
 transport,porter,Porter,Mbeba mizigo/Mchukuzi
 transport,bus_driver_or_manager,Bus driver or manager,Dereva wa basi/daladala au mkurugenzi wa basi
 transport,taxi_driver,Taxi driver,Dereva taksi
 transport,transportation_cooperative,Transportation Cooperative,Kikundi ya Usafirishaji
-hiring_and_labor,agricultural_labor_crew_,Agricultural labor crew ,Vibarua wa kilimo 
+hiring_and_labor,agricultural_labor_crew,Agricultural labor crew ,Vibarua wa kilimo 
 hiring_and_labor,labor_crew_manager,Labor crew manager,Mwenyekiti ya kibarua/vibarua 
 hiring_and_labor,rental_of_draft_animals_for_plowing,Rental of draft animals for plowing,Kukodi wanyamakazi wa kulima 
 hiring_and_labor,tractor_rental,Tractor rental,Trekita ya kukodi
-hiring_and_labor,storage_rental,Storage rental,Store
+hiring_and_labor,storage_rental,Storage rental,Stoo ya kukodi
 agricultural_processing,milling,Milling,Kusaga 
-agricultural_processing,packaging,Packaging,Kifungashio/kufungasha
+agricultural_processing,packaged_foods,Packaged Foods,Vifungashio vya chakula
 agricultural_processing,brewery,Brewery,Kusindika
 agricultural_processing,wine,Wine,Kutengeneza mvinyo
 agricultural_processing,threshing,Threshing,Kuchambua/Kutenganisha 
 agricultural_processing,honey,Honey,Asali
 agricultural_processing,cooking_oil,Cooking oil,Mafuta ya kupikia
+agricultural_processing,milk_products,Milk products,Bidhaa za Maziwa
 repairs_technicians,mechanic_car_repair,Mechanic / car repair,Makanika/fundi gari/magari
 repairs_technicians,motorbike_repair,Motorbike repair,Fundi pikipiki
 repairs_technicians,bicycle_repair,Bicycle repair,Fundi baiskeli
@@ -54,7 +55,7 @@ repairs_technicians,welder,Welder,Fundi mchando/mwashi
 repairs_technicians,sale_or_maintenance_of_water_pumps,Sale or maintenance of water pumps,Uuzaji na matengenezo ya mabomba ya maji
 repairs_technicians,electrician,Electrician,Fundi umeme
 repairs_technicians,carpentry,Carpentry,Seremala
-repairs_technicians,tailorclothes,Tailor/Clothes,Fundi Cherehani
+repairs_technicians,tailor_clothes,Tailor/Clothes,Fundi Cherehani
 repairs_technicians,plumber,Plumber,Plumber/Fundi Bomba
 repairs_technicians,construction_work,Construction work,Fundi Ujenzi
 repairs_technicians,cell_phones,Cell phones,Fundi Simu 
@@ -64,15 +65,16 @@ non_agricultural_services,petrol_sale,Petrol sale,Kituo cha mafuta
 non_agricultural_services,pharmacy,Pharmacy,Duka la madawa
 non_agricultural_services,health_clinic,Health clinic,Kituo cha afya/dispensari
 non_agricultural_services,photocopy_and_stationary,Photocopy and stationary,Photocopy and Stationary
-non_agricultural_services,internetcomputer_caf_,Internet/computer caf_,Interneti
-non_agricultural_services,hotelguest_house,Hotel/Guest House,Hoteli/Guest House
-financial_services,restaurant,Restaurant,Mgahawa/Restorenti
+non_agricultural_services,internet_computer_cafe,Internet/computer cafe,Interneti
+non_agricultural_services,hotel_guest_house,Hotel/Guest House,Hoteli/Guest House
+non_agricultural_services,restaurant,Restaurant,Mgahawa/Restorenti
+non_agricultural_services,barber_shop,Barber Shop,Kinyonzi au Saluni
 financial_services,microfinance,Microfinance,Taasisi ya Microfinance
 financial_services,bank,Bank,Benki
 financial_services,sacco,SACCO,SACCO
 financial_services,vicoba,Vicoba,Vicoba
 financial_services,other_lending_institution,Other lending institution,Taasisi za mkopo zilizo rasmi
 financial_services,farmer_cooperative,Farmer cooperative,Ushirika wa wakulima
-financial_services,mobile-money_agent,Mobile-Money Agent,Wakala
+financial_services,mobile_money_agent,Mobile-Money Agent,Wakala
 financial_services,insurance,Insurance,Huduma za bima 
 financial_services,informal_credit_supply_moneylending,Informal credit supply / moneylending,Taasisi za kifedha zisizolasimi 
