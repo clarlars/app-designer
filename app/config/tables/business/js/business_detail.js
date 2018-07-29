@@ -13,7 +13,7 @@ function cbSuccess(result) {
     util.showIdForDetail('#district', 'district', result, false);
     util.showIdForDetail('#village', 'village', result, false);
     util.showIdForDetail('#gender', 'gender', result, true);
-    util.showIdForDetail('#business-age', 'business_age', result, true);
+    util.showIdForDetail('#year-business-started', 'year_business_started', result, true);
     util.showIdForDetail('#business-owner-age', 'business_owner_age', result, true);
     util.showIdForDetail('#firm-size', 'firm_size', result, true);
     util.showIdForDetail('#phone-number', 'phone_number', result, true);

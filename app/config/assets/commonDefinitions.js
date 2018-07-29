@@ -127,10 +127,10 @@ window.odkCommonDefinitions = {
       },
       "_row_num": 19
     },
-    "business_age": {
-      "string_token": "business_age",
+    "year_business_started": {
+      "string_token": "year_business_started",
       "text": {
-        "default": "Business Age"
+        "default": "Year Business Started"
       },
       "_row_num": 20
     },
