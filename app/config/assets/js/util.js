@@ -28,6 +28,8 @@ util.COL_VEO_AUTHORIZED = 'has_been_authorized_by_veo';
 util.COL_ENROLLER_ID = 'enroller_id';
 util.COL_VERIFIER_ID = 'verifier_id';
 util.COL_AUTHORIZER_ID = 'authorizer_id';
+util.COL_AUTHORIZATION_DATE = 'authorization_date';
+util.COL_VERIFICATION_DATE = 'verification_date';
 
 util.TRUE = 'true';
 util.FALSE = 'false';

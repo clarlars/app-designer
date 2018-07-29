@@ -106,10 +106,13 @@ function successCB(result) {
                         // TODO: Add these two in authorization_date, authorization_veo
                         colMap[util.COL_VEO_AUTHORIZED] = checkedValue;
                         colMap[util.COL_AUTHORIZER_ID] = baUserId;
+                        colMap[util.COL_AUTHORIZATION_DATE] = odkCommon.toOdkTimeStampFromDate(new Date());
+
                     } else {
                         // TODO: Add these two in verification_date, verification_agent
                         colMap[util.COL_COORDINATOR_VERIFIED] = checkedValue;
                         colMap[util.COL_VERIFIER_ID] = baUserId;
+                        colMap[util.COL_VERIFICATION_DATE] = odkCommon.toOdkTimeStampFromDate(new Date());
                     }
                     odkData.updateRow('business', colMap, rowId, resolve, reject);
 
