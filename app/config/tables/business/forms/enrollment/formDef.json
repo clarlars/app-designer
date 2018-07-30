@@ -1344,7 +1344,7 @@
         "_row_num": 24
       },
       {
-        "type": "select_one",
+        "type": "text",
         "name": "authorization_veo",
         "_row_num": 25
       },

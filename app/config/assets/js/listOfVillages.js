@@ -39,6 +39,10 @@ function determineButtonAction(evt) {
         queryParamToAppend += '&' + util.VIEW_TYPE + '=' + viewType;
     }
 
+    if (lovUserId !== null && lovUserId !== undefined) {
+        queryParamToAppend += '&' + util.USER_ID + '=' + lovUserId;
+    }
+
     if (actionToPerform === util.ACTION_LIST) {
         urlToUse = listURL + queryParamToAppend;
 
@@ -46,10 +50,6 @@ function determineButtonAction(evt) {
         urlToUse = businessAuthorizeURL + queryParamToAppend;
     } else if (actionToPerform === util.ACTION_VERIFY) {
         urlToUse = businessVerifyURL + queryParamToAppend;
-    }
-
-    if (lovUserId !== null && lovUserId !== undefined) {
-        queryParamToAppend += '&' + util.USER_ID + '=' + lovUserId;
     }
 
     if (urlToUse !== '' && urlToUse !== null && urlToUse !== undefined) {

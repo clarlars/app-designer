@@ -416,8 +416,7 @@
         "_row_num": 43
       },
       {
-        "type": "select_one_unique",
-        "values_list": "veos_list",
+        "type": "text",
         "name": "authorization_veo",
         "display": {
           "prompt": {
@@ -1382,7 +1381,7 @@
         "_row_num": 24
       },
       {
-        "type": "select_one",
+        "type": "text",
         "name": "authorization_veo",
         "_row_num": 25
       },
@@ -2601,9 +2600,7 @@
         "elementKey": "has_been_verified_by_coordinator"
       },
       "authorization_veo": {
-        "prompt_type_name": "select_one_unique",
         "type": "string",
-        "valuesList": "veos_list",
         "_defn": [
           {
             "_row_num": 44,
@@ -3218,8 +3215,7 @@
             "promptIdx": 25
           },
           {
-            "type": "select_one_unique",
-            "values_list": "veos_list",
+            "type": "text",
             "name": "authorization_veo",
             "display": {
               "prompt": {
@@ -3232,7 +3228,7 @@
             "_row_num": 44,
             "__rowNum__": 43,
             "_token_type": "prompt",
-            "_type": "select_one_unique",
+            "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen44",
             "promptIdx": 26
           },
@@ -4269,9 +4265,7 @@
         "elementPath": "has_been_verified_by_coordinator"
       },
       "authorization_veo": {
-        "prompt_type_name": "select_one_unique",
         "type": "string",
-        "valuesList": "veos_list",
         "_defn": [
           {
             "_row_num": 44,
