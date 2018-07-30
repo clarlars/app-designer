@@ -636,33 +636,33 @@
         "_row_num": 9
       },
       {
-        "choice_list_name": "true_false_unsure",
+        "choice_list_name": "valid_invalid_unsure",
         "data_value": 0,
         "display": {
           "title": {
             "text": {
-              "default": "False",
-              "sw": "Sio kweli"
+              "default": "Invalid",
+              "sw": "Sio halali"
             }
           }
         },
         "_row_num": 11
       },
       {
-        "choice_list_name": "true_false_unsure",
+        "choice_list_name": "valid_invalid_unsure",
         "data_value": 1,
         "display": {
           "title": {
             "text": {
-              "default": "True",
-              "sw": "Kweli"
+              "default": "Valid",
+              "sw": "Halali"
             }
           }
         },
         "_row_num": 12
       },
       {
-        "choice_list_name": "true_false_unsure",
+        "choice_list_name": "valid_invalid_unsure",
         "data_value": -1,
         "display": {
           "title": {
@@ -1340,7 +1340,7 @@
       },
       {
         "type": "select_one_integer",
-        "name": "has_been_verified_by_coordinator",
+        "name": "has_been_verified_by_coordinator_as",
         "_row_num": 24
       },
       {
@@ -1350,7 +1350,7 @@
       },
       {
         "type": "select_one_integer",
-        "name": "has_been_authorized_by_veo",
+        "name": "has_been_authorized_by_veo_as",
         "_row_num": 26
       },
       {
@@ -1633,35 +1633,35 @@
           "_row_num": 9
         }
       ],
-      "true_false_unsure": [
+      "valid_invalid_unsure": [
         {
-          "choice_list_name": "true_false_unsure",
+          "choice_list_name": "valid_invalid_unsure",
           "data_value": 0,
           "display": {
             "title": {
               "text": {
-                "default": "False",
-                "sw": "Sio kweli"
+                "default": "Invalid",
+                "sw": "Sio halali"
               }
             }
           },
           "_row_num": 11
         },
         {
-          "choice_list_name": "true_false_unsure",
+          "choice_list_name": "valid_invalid_unsure",
           "data_value": 1,
           "display": {
             "title": {
               "text": {
-                "default": "True",
-                "sw": "Kweli"
+                "default": "Valid",
+                "sw": "Halali"
               }
             }
           },
           "_row_num": 12
         },
         {
-          "choice_list_name": "true_false_unsure",
+          "choice_list_name": "valid_invalid_unsure",
           "data_value": -1,
           "display": {
             "title": {
@@ -2574,7 +2574,7 @@
         ],
         "elementKey": "verifier_id"
       },
-      "has_been_verified_by_coordinator": {
+      "has_been_verified_by_coordinator_as": {
         "type": "integer",
         "_defn": [
           {
@@ -2582,7 +2582,7 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "has_been_verified_by_coordinator"
+        "elementKey": "has_been_verified_by_coordinator_as"
       },
       "authorization_veo": {
         "type": "string",
@@ -2594,7 +2594,7 @@
         ],
         "elementKey": "authorization_veo"
       },
-      "has_been_authorized_by_veo": {
+      "has_been_authorized_by_veo_as": {
         "type": "integer",
         "_defn": [
           {
@@ -2602,7 +2602,7 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "has_been_authorized_by_veo"
+        "elementKey": "has_been_authorized_by_veo_as"
       },
       "authorizer_id": {
         "type": "string",
@@ -4100,7 +4100,7 @@
         "elementSet": "data",
         "elementPath": "verifier_id"
       },
-      "has_been_verified_by_coordinator": {
+      "has_been_verified_by_coordinator_as": {
         "type": "integer",
         "_defn": [
           {
@@ -4108,10 +4108,10 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "has_been_verified_by_coordinator",
-        "elementName": "has_been_verified_by_coordinator",
+        "elementKey": "has_been_verified_by_coordinator_as",
+        "elementName": "has_been_verified_by_coordinator_as",
         "elementSet": "data",
-        "elementPath": "has_been_verified_by_coordinator"
+        "elementPath": "has_been_verified_by_coordinator_as"
       },
       "authorization_veo": {
         "type": "string",
@@ -4126,7 +4126,7 @@
         "elementSet": "data",
         "elementPath": "authorization_veo"
       },
-      "has_been_authorized_by_veo": {
+      "has_been_authorized_by_veo_as": {
         "type": "integer",
         "_defn": [
           {
@@ -4134,10 +4134,10 @@
             "section_name": "model"
           }
         ],
-        "elementKey": "has_been_authorized_by_veo",
-        "elementName": "has_been_authorized_by_veo",
+        "elementKey": "has_been_authorized_by_veo_as",
+        "elementName": "has_been_authorized_by_veo_as",
         "elementSet": "data",
-        "elementPath": "has_been_authorized_by_veo"
+        "elementPath": "has_been_authorized_by_veo_as"
       },
       "authorizer_id": {
         "type": "string",

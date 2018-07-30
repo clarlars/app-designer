@@ -23,8 +23,8 @@ util.ACTION_LIST = 'list';
 util.ACTION_VERIFY = 'verify';
 util.ACTION_AUTHORIZE = 'authorize';
 
-util.COL_COORDINATOR_VERIFIED = 'has_been_verified_by_coordinator';
-util.COL_VEO_AUTHORIZED = 'has_been_authorized_by_veo';
+util.COL_COORDINATOR_VERIFIED = 'has_been_verified_by_coordinator_as';
+util.COL_VEO_AUTHORIZED = 'has_been_authorized_by_veo_as';
 util.COL_ENROLLER_ID = 'enroller_id';
 util.COL_VERIFIER_ID = 'verifier_id';
 util.COL_AUTHORIZER_ID = 'authorizer_id';
