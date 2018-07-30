@@ -8,6 +8,7 @@ function display() {
     body.css('background-image', 'url(img/bw-business-bubble.jpg)');
 
     var VILLAGE_URL = 'config/assets/listOfVillages.html';
+    var busListAgentUrl = 'config/tables/business/html/business_list_agent.html';
     var queryParamsToAppend = '';
 
     var userId = util.getQueryParameter(util.USER_ID);
@@ -26,5 +27,13 @@ function display() {
         queryParamsToAppend += '&' + util.VIEW_TYPE + '=' + util.VIEW_TYPE_AGENT;
         queryParamsToAppend += '&' + util.USER_ID + '=' + userId;
         odkTables.launchHTML(null, VILLAGE_URL + queryParamsToAppend);
+    });
+
+    var agtBusListButton = $('#agent_business-list-button');
+    agtBusListButton.on('click', function() {
+        if (userId !== null && userId !== undefined) {
+            queryParamsToAppend += '?' + util.COL_ENROLLER_ID + '=' + userId;
+            odkTables.launchHTML(null, busListAgentUrl + queryParamsToAppend);
+        }
     });
 }
