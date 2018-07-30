@@ -167,42 +167,48 @@
       {
         "string_token": "constraint_message",
         "text": {
-          "default": "Constraint violated."
+          "default": "Constraint violated.",
+          "sw": "Vikwazo vimekiukwa."
         },
         "_row_num": 2
       },
       {
         "string_token": "invalid_value_message",
         "text": {
-          "default": "Invalid value."
+          "default": "Invalid value.",
+          "sw": "Thamani isiyo halali."
         },
         "_row_num": 3
       },
       {
         "string_token": "required_message",
         "text": {
-          "default": "Required value not provided."
+          "default": "Required value not provided.",
+          "sw": "Thamani halali haijatolewa."
         },
         "_row_num": 4
       },
       {
         "string_token": "required_exception_message",
         "text": {
-          "default": "Exception while evaluating required() expression. See console log."
+          "default": "Exception while evaluating required() expression. See console log.",
+          "sw": "Tathimini isiyohitajika(). See console log."
         },
         "_row_num": 5
       },
       {
         "string_token": "constraint_exception_message",
         "text": {
-          "default": "Exception while evaluating constraint() expression. See console log."
+          "default": "Exception while evaluating constraint() expression. See console log.",
+          "sw": "Tathimini ya vikwazo isiyo halali(). See console log."
         },
         "_row_num": 6
       },
       {
         "string_token": "acknLabel",
         "text": {
-          "default": "Acknowledge"
+          "default": "Acknowledge",
+          "sw": "Udhibitisho"
         },
         "_row_num": 7
       },
@@ -225,21 +231,24 @@
       {
         "string_token": "continue_button_label",
         "text": {
-          "default": "Continue"
+          "default": "Continue",
+          "sw": "Endelea"
         },
         "_row_num": 10
       },
       {
         "string_token": "select_one_dropdown_label",
         "text": {
-          "default": "Choose Option"
+          "default": "Choose Option",
+          "sw": "Chagua"
         },
         "_row_num": 11
       },
       {
         "string_token": "requiredValueErr",
         "text": {
-          "default": "Required value was not provided."
+          "default": "Required value was not provided.",
+          "sw": "Thamani halali haijatolewa."
         },
         "_row_num": 12
       },
@@ -281,7 +290,8 @@
       {
         "string_token": "waiting_text",
         "text": {
-          "default": "Please wait…"
+          "default": "Please wait…",
+          "sw": "Tafadhali subiri...."
         },
         "_row_num": 18
       },
@@ -330,14 +340,16 @@
       {
         "string_token": "confirm_action_no_label",
         "text": {
-          "default": "NO"
+          "default": "NO",
+          "sw": "HAPANA"
         },
         "_row_num": 25
       },
       {
         "string_token": "confirm_action_yes_label",
         "text": {
-          "default": "YES"
+          "default": "YES",
+          "sw": "NDIYO"
         },
         "_row_num": 26
       },
@@ -358,21 +370,24 @@
       {
         "string_token": "finalize_survey_instance_detail",
         "text": {
-          "default": "<p>You are at the end of instance: </p><p>\"{{display_field}}\"</p><hr>"
+          "default": "<p>You are at the end of instance: </p><p>\"{{display_field}}\"</p><hr>",
+          "sw": "<p>Mwisho wa usahili mpya: </p><p>\"{{display_field}}\"</p><hr>"
         },
         "_row_num": 29
       },
       {
         "string_token": "finalize_survey_button_label",
         "text": {
-          "default": "Finalize"
+          "default": "Finalize",
+          "sw": "Kamilisha"
         },
         "_row_num": 30
       },
       {
         "string_token": "save_as_incomplete_survey_button_label",
         "text": {
-          "default": "Incomplete"
+          "default": "Incomplete",
+          "sw": "Isiyo kamilika"
         },
         "_row_num": 31
       },
@@ -400,7 +415,8 @@
       {
         "string_token": "opening_survey_instance_detail",
         "text": {
-          "default": "{{#if display_field}}\n        <p>You are at the start of instance: </p>\n        <p>\"{{display_field}}\"</p> \n  {{else}}\n        <p>You are at the start of a new instance.</p>\n  {{/if}}\n        <hr>\n        {{#if last_save_date}}\n            <p>Last saved:</p> \n            <p>{{last_save_date}}</p>\n        {{/if}}\n        <hr>"
+          "default": "{{#if display_field}}\n        <p>You are at the start of instance: </p>\n        <p>\"{{display_field}}\"</p> \n  {{else}}\n        <p>You are at the start of a new instance.</p>\n  {{/if}}\n        <hr>\n        {{#if last_save_date}}\n            <p>Last saved:</p> \n            <p>{{last_save_date}}</p>\n        {{/if}}\n        <hr>",
+          "sw": "{{#if display_field}}\n        <p>Mwanzo wa usahili mpya: </p>\n        <p>\"{{display_field}}\"</p> \n  {{else}}\n        <p>Mwanzo wa usahili mpya.</p>\n  {{/if}}\n        <hr>\n        {{#if last_save_date}}\n            <p>Last saved:</p> \n            <p>{{last_save_date}}</p>\n        {{/if}}\n        <hr>"
         },
         "_row_num": 36
       },
@@ -415,56 +431,64 @@
       {
         "string_token": "options_popup_language_heading",
         "text": {
-          "default": "Language"
+          "default": "Language",
+          "sw": "Lugha"
         },
         "_row_num": 38
       },
       {
         "string_token": "options_popup_contents_heading",
         "text": {
-          "default": "Contents"
+          "default": "Contents",
+          "sw": "Maudhui"
         },
         "_row_num": 39
       },
       {
         "string_token": "options_popup_ignore_changes_heading",
         "text": {
-          "default": "Ignore Changes + Exit"
+          "default": "Ignore Changes + Exit",
+          "sw": "Usiruhusu mabadiliko + kutoka"
         },
         "_row_num": 40
       },
       {
         "string_token": "options_popup_save_changes_heading",
         "text": {
-          "default": "Save Changes + Exit"
+          "default": "Save Changes + Exit",
+          "sw": "Hifadhi mabadiliko + kutoka"
         },
         "_row_num": 41
       },
       {
         "string_token": "options_popup_finalize_changes_heading",
         "text": {
-          "default": "Finalize Changes + Exit"
+          "default": "Finalize Changes + Exit",
+          "sw": "Mwisho + kutoka"
         },
         "_row_num": 42
       },
       {
         "string_token": "screen_popup_ok_button_label",
         "text": {
-          "default": "OK"
+          "default": "OK",
+          "sw": "Sawa"
         },
         "_row_num": 43
       },
       {
         "string_token": "select_with_other_other_label",
         "text": {
-          "default": "Other:"
+          "default": "Other:",
+          "sw": "Eleza"
         },
         "_row_num": 44
       },
       {
         "string_token": "select_deselect_label",
         "text": {
-          "default": "Deselect"
+          "default": "Deselect",
+          "sw": "Chagua"
         },
         "_row_num": 45
       },
@@ -486,7 +510,8 @@
       {
         "string_token": "instances_no_saved_instances_label",
         "text": {
-          "default": "No saved instances."
+          "default": "No saved instances.",
+          "sw": "Hakuna dodoso lililohifadhiwa."
         },
         "_row_num": 48
       },
@@ -500,7 +525,8 @@
       {
         "string_token": "instances_previously_created_instances_label",
         "text": {
-          "default": "<p>Previously created instances:</p>"
+          "default": "<p>Previously created instances:</p>",
+          "sw": "<p>Iliyofanyika hapo mwanzo:</p>"
         },
         "_row_num": 50
       },
@@ -522,7 +548,8 @@
       {
         "string_token": "savepoint_type_checkpoint_text_label",
         "text": {
-          "default": "Checkpoint"
+          "default": "Checkpoint",
+          "sw": "Angalia"
         },
         "_row_num": 53
       },
@@ -544,56 +571,64 @@
       {
         "string_token": "invalid_numeric_message",
         "text": {
-          "default": "Numeric value expected"
+          "default": "Numeric value expected",
+          "sw": "Thamani ya namba inayotarajiwa"
         },
         "_row_num": 56
       },
       {
         "string_token": "invalid_integer_message",
         "text": {
-          "default": "Integer value expected"
+          "default": "Integer value expected",
+          "sw": "ukubwa wa thamani inayotarajiwa"
         },
         "_row_num": 57
       },
       {
         "string_token": "confirm_exit_label",
         "text": {
-          "default": "Exit"
+          "default": "Exit",
+          "sw": "kutoka"
         },
         "_row_num": 58
       },
       {
         "string_token": "confirm_cancel_label",
         "text": {
-          "default": "Cancel"
+          "default": "Cancel",
+          "sw": "Batilisha"
         },
         "_row_num": 59
       },
       {
         "string_token": "confirm_message",
         "text": {
-          "default": "Are you sure you want to exit and lose all changes?"
+          "default": "Are you sure you want to exit and lose all changes?",
+          "sw": "Je unauhakika unataka kutoka na kufuta  mabadiliko yote uliyofanya?"
         },
         "_row_num": 60
       },
       {
         "string_token": "are_you_sure_you_want_to_delete_row",
         "text": {
-          "default": "Are you sure you want to delete row"
+          "default": "Are you sure you want to delete row",
+          "sw": "Una uhakika unataka kufuta mstari huu"
         },
         "_row_num": 61
       },
       {
         "string_token": "edit",
         "text": {
-          "default": "Edit"
+          "default": "Edit",
+          "sw": "Hariri"
         },
         "_row_num": 62
       },
       {
         "string_token": "delete",
         "text": {
-          "default": "Delete"
+          "default": "Delete",
+          "sw": "Futa"
         },
         "_row_num": 63
       }
@@ -602,35 +637,40 @@
       {
         "string_token": "are_you_sure_you_want_to_delete_row",
         "text": {
-          "default": "Are you sure you want to delete row"
+          "default": "Are you sure you want to delete row",
+          "sw": "Una uhakika unataka kufuta mstari huu"
         },
         "_row_num": 2
       },
       {
         "string_token": "edit",
         "text": {
-          "default": "Edit"
+          "default": "Edit",
+          "sw": "Hariri"
         },
         "_row_num": 3
       },
       {
         "string_token": "delete",
         "text": {
-          "default": "Delete"
+          "default": "Delete",
+          "sw": "Futa"
         },
         "_row_num": 4
       },
       {
         "string_token": "valid",
         "text": {
-          "default": "Valid"
+          "default": "Valid",
+          "sw": "Halali"
         },
         "_row_num": 5
       },
       {
         "string_token": "invalid",
         "text": {
-          "default": "Invalid"
+          "default": "Invalid",
+          "sw": "Sio halali"
         },
         "_row_num": 6
       },
@@ -645,189 +685,216 @@
       {
         "string_token": "veo_authorization",
         "text": {
-          "default": "VEO Authorization"
+          "default": "VEO Authorization",
+          "sw": "Uhakiki wa Mtendaji (VEO)"
         },
         "_row_num": 8
       },
       {
         "string_token": "submit",
         "text": {
-          "default": "Submit"
+          "default": "Submit",
+          "sw": "Wasilisha"
         },
         "_row_num": 9
       },
       {
         "string_token": "pending_verification",
         "text": {
-          "default": "Pending Verification"
+          "default": "Pending Verification",
+          "sw": "Bado Kudhibitishwa"
         },
         "_row_num": 10
       },
       {
         "string_token": "all",
         "text": {
-          "default": "All"
+          "default": "All",
+          "sw": "Zote"
         },
         "_row_num": 11
       },
       {
         "string_token": "search",
         "text": {
-          "default": "Search"
+          "default": "Search",
+          "sw": "Tafuta"
         },
         "_row_num": 12
       },
       {
         "string_token": "previous",
         "text": {
-          "default": "Prev"
+          "default": "Prev",
+          "sw": "Ya nyuma"
         },
         "_row_num": 13
       },
       {
         "string_token": "next",
         "text": {
-          "default": "Next"
+          "default": "Next",
+          "sw": "Mbele"
         },
         "_row_num": 14
       },
       {
         "string_token": "showing",
         "text": {
-          "default": "Showing"
+          "default": "Showing",
+          "sw": "Onesha"
         },
         "_row_num": 15
       },
       {
         "string_token": "name",
         "text": {
-          "default": "Name"
+          "default": "Name",
+          "sw": "Jina"
         },
         "_row_num": 16
       },
       {
         "string_token": "sector_type",
         "text": {
-          "default": "Sector Type"
+          "default": "Sector Type",
+          "sw": "Aina ya Sekta"
         },
         "_row_num": 17
       },
       {
         "string_token": "gender",
         "text": {
-          "default": "Gender"
+          "default": "Gender",
+          "sw": "Jinsia"
         },
         "_row_num": 18
       },
       {
         "string_token": "business_owner_age",
         "text": {
-          "default": "Business Owner Age"
+          "default": "Business Owner Age",
+          "sw": "Umri wa mmiliki wa biashara"
         },
         "_row_num": 19
       },
       {
         "string_token": "year_business_started",
         "text": {
-          "default": "Year Business Started"
+          "default": "Year Business Started",
+          "sw": "Biashara hii ilianza mwaka gani?"
         },
         "_row_num": 20
       },
       {
         "string_token": "firm_size",
         "text": {
-          "default": "Firm Size"
+          "default": "Firm Size",
+          "sw": "Biashara hii ina ukubwa gani (idadi ya waajiriwa, pasipo kujumuisha mmiliki wa biashara)?"
         },
         "_row_num": 21
       },
       {
         "string_token": "phone_number",
         "text": {
-          "default": "Phone Number"
+          "default": "Phone Number",
+          "sw": "Namba ya simu"
         },
         "_row_num": 22
       },
       {
         "string_token": "secondary_phone_number",
         "text": {
-          "default": "Secondary Phone Number"
+          "default": "Secondary Phone Number",
+          "sw": "Namba ya pili ya simu"
         },
         "_row_num": 23
       },
       {
         "string_token": "verified_by_agent",
         "text": {
-          "default": "Verified By Agent?"
+          "default": "Verified By Agent?",
+          "sw": "Imehakikiwa na wakala?"
         },
         "_row_num": 24
       },
       {
         "string_token": "authorized_by_veo",
         "text": {
-          "default": "Authorized By VEO?"
+          "default": "Authorized By VEO?",
+          "sw": "Imehakikiwa na mtendaji(VEO)?"
         },
         "_row_num": 25
       },
       {
         "string_token": "agent",
         "text": {
-          "default": "Agent"
+          "default": "Agent",
+          "sw": "Wakala"
         },
         "_row_num": 26
       },
       {
         "string_token": "veo",
         "text": {
-          "default": "VEO"
+          "default": "VEO",
+          "sw": "Mtendaji"
         },
         "_row_num": 27
       },
       {
         "string_token": "coordinator",
         "text": {
-          "default": "Coordinator"
+          "default": "Coordinator",
+          "sw": "Msimimizi"
         },
         "_row_num": 28
       },
       {
         "string_token": "view_businesses",
         "text": {
-          "default": "View Businesses"
+          "default": "View Businesses",
+          "sw": "Angalia Biashara"
         },
         "_row_num": 29
       },
       {
         "string_token": "consent_to_participate",
         "text": {
-          "default": "Do you consent to participate?"
+          "default": "Do you consent to participate?",
+          "sw": "Unakubali kushiriki?"
         },
         "_row_num": 31
       },
       {
         "string_token": "subsector_business",
         "text": {
-          "default": "Choose the subsector of the business"
+          "default": "Choose the subsector of the business",
+          "sw": "Chagua sehemu ya sekta ya biashara"
         },
         "_row_num": 32
       },
       {
         "string_token": "specialize_crop",
         "text": {
-          "default": "Do you specialize in a specifc crop?"
+          "default": "Do you specialize in a specifc crop?",
+          "sw": "Unajikita katika zao  moja au mifugo?"
         },
         "_row_num": 33
       },
       {
         "string_token": "business_owner_name",
         "text": {
-          "default": "What is the business owners name?"
+          "default": "What is the business owners name?",
+          "sw": "Jina la mmiliki wa biashara?"
         },
         "_row_num": 34
       },
       {
         "string_token": "network_phone",
         "text": {
-          "default": "Enter the network for the phone number."
+          "default": "Enter the network for the phone number.",
+          "sw": "Andika kampuni ya mtandao wa namba ya simu."
         },
         "_row_num": 35
       }
@@ -948,42 +1015,48 @@
         "constraint_message": {
           "string_token": "constraint_message",
           "text": {
-            "default": "Constraint violated."
+            "default": "Constraint violated.",
+            "sw": "Vikwazo vimekiukwa."
           },
           "_row_num": 2
         },
         "invalid_value_message": {
           "string_token": "invalid_value_message",
           "text": {
-            "default": "Invalid value."
+            "default": "Invalid value.",
+            "sw": "Thamani isiyo halali."
           },
           "_row_num": 3
         },
         "required_message": {
           "string_token": "required_message",
           "text": {
-            "default": "Required value not provided."
+            "default": "Required value not provided.",
+            "sw": "Thamani halali haijatolewa."
           },
           "_row_num": 4
         },
         "required_exception_message": {
           "string_token": "required_exception_message",
           "text": {
-            "default": "Exception while evaluating required() expression. See console log."
+            "default": "Exception while evaluating required() expression. See console log.",
+            "sw": "Tathimini isiyohitajika(). See console log."
           },
           "_row_num": 5
         },
         "constraint_exception_message": {
           "string_token": "constraint_exception_message",
           "text": {
-            "default": "Exception while evaluating constraint() expression. See console log."
+            "default": "Exception while evaluating constraint() expression. See console log.",
+            "sw": "Tathimini ya vikwazo isiyo halali(). See console log."
           },
           "_row_num": 6
         },
         "acknLabel": {
           "string_token": "acknLabel",
           "text": {
-            "default": "Acknowledge"
+            "default": "Acknowledge",
+            "sw": "Udhibitisho"
           },
           "_row_num": 7
         },
@@ -1006,21 +1079,24 @@
         "continue_button_label": {
           "string_token": "continue_button_label",
           "text": {
-            "default": "Continue"
+            "default": "Continue",
+            "sw": "Endelea"
           },
           "_row_num": 10
         },
         "select_one_dropdown_label": {
           "string_token": "select_one_dropdown_label",
           "text": {
-            "default": "Choose Option"
+            "default": "Choose Option",
+            "sw": "Chagua"
           },
           "_row_num": 11
         },
         "requiredValueErr": {
           "string_token": "requiredValueErr",
           "text": {
-            "default": "Required value was not provided."
+            "default": "Required value was not provided.",
+            "sw": "Thamani halali haijatolewa."
           },
           "_row_num": 12
         },
@@ -1062,7 +1138,8 @@
         "waiting_text": {
           "string_token": "waiting_text",
           "text": {
-            "default": "Please wait…"
+            "default": "Please wait…",
+            "sw": "Tafadhali subiri...."
           },
           "_row_num": 18
         },
@@ -1111,14 +1188,16 @@
         "confirm_action_no_label": {
           "string_token": "confirm_action_no_label",
           "text": {
-            "default": "NO"
+            "default": "NO",
+            "sw": "HAPANA"
           },
           "_row_num": 25
         },
         "confirm_action_yes_label": {
           "string_token": "confirm_action_yes_label",
           "text": {
-            "default": "YES"
+            "default": "YES",
+            "sw": "NDIYO"
           },
           "_row_num": 26
         },
@@ -1139,21 +1218,24 @@
         "finalize_survey_instance_detail": {
           "string_token": "finalize_survey_instance_detail",
           "text": {
-            "default": "<p>You are at the end of instance: </p><p>\"{{display_field}}\"</p><hr>"
+            "default": "<p>You are at the end of instance: </p><p>\"{{display_field}}\"</p><hr>",
+            "sw": "<p>Mwisho wa usahili mpya: </p><p>\"{{display_field}}\"</p><hr>"
           },
           "_row_num": 29
         },
         "finalize_survey_button_label": {
           "string_token": "finalize_survey_button_label",
           "text": {
-            "default": "Finalize"
+            "default": "Finalize",
+            "sw": "Kamilisha"
           },
           "_row_num": 30
         },
         "save_as_incomplete_survey_button_label": {
           "string_token": "save_as_incomplete_survey_button_label",
           "text": {
-            "default": "Incomplete"
+            "default": "Incomplete",
+            "sw": "Isiyo kamilika"
           },
           "_row_num": 31
         },
@@ -1181,7 +1263,8 @@
         "opening_survey_instance_detail": {
           "string_token": "opening_survey_instance_detail",
           "text": {
-            "default": "{{#if display_field}}\n        <p>You are at the start of instance: </p>\n        <p>\"{{display_field}}\"</p> \n  {{else}}\n        <p>You are at the start of a new instance.</p>\n  {{/if}}\n        <hr>\n        {{#if last_save_date}}\n            <p>Last saved:</p> \n            <p>{{last_save_date}}</p>\n        {{/if}}\n        <hr>"
+            "default": "{{#if display_field}}\n        <p>You are at the start of instance: </p>\n        <p>\"{{display_field}}\"</p> \n  {{else}}\n        <p>You are at the start of a new instance.</p>\n  {{/if}}\n        <hr>\n        {{#if last_save_date}}\n            <p>Last saved:</p> \n            <p>{{last_save_date}}</p>\n        {{/if}}\n        <hr>",
+            "sw": "{{#if display_field}}\n        <p>Mwanzo wa usahili mpya: </p>\n        <p>\"{{display_field}}\"</p> \n  {{else}}\n        <p>Mwanzo wa usahili mpya.</p>\n  {{/if}}\n        <hr>\n        {{#if last_save_date}}\n            <p>Last saved:</p> \n            <p>{{last_save_date}}</p>\n        {{/if}}\n        <hr>"
           },
           "_row_num": 36
         },
@@ -1196,56 +1279,64 @@
         "options_popup_language_heading": {
           "string_token": "options_popup_language_heading",
           "text": {
-            "default": "Language"
+            "default": "Language",
+            "sw": "Lugha"
           },
           "_row_num": 38
         },
         "options_popup_contents_heading": {
           "string_token": "options_popup_contents_heading",
           "text": {
-            "default": "Contents"
+            "default": "Contents",
+            "sw": "Maudhui"
           },
           "_row_num": 39
         },
         "options_popup_ignore_changes_heading": {
           "string_token": "options_popup_ignore_changes_heading",
           "text": {
-            "default": "Ignore Changes + Exit"
+            "default": "Ignore Changes + Exit",
+            "sw": "Usiruhusu mabadiliko + kutoka"
           },
           "_row_num": 40
         },
         "options_popup_save_changes_heading": {
           "string_token": "options_popup_save_changes_heading",
           "text": {
-            "default": "Save Changes + Exit"
+            "default": "Save Changes + Exit",
+            "sw": "Hifadhi mabadiliko + kutoka"
           },
           "_row_num": 41
         },
         "options_popup_finalize_changes_heading": {
           "string_token": "options_popup_finalize_changes_heading",
           "text": {
-            "default": "Finalize Changes + Exit"
+            "default": "Finalize Changes + Exit",
+            "sw": "Mwisho + kutoka"
           },
           "_row_num": 42
         },
         "screen_popup_ok_button_label": {
           "string_token": "screen_popup_ok_button_label",
           "text": {
-            "default": "OK"
+            "default": "OK",
+            "sw": "Sawa"
           },
           "_row_num": 43
         },
         "select_with_other_other_label": {
           "string_token": "select_with_other_other_label",
           "text": {
-            "default": "Other:"
+            "default": "Other:",
+            "sw": "Eleza"
           },
           "_row_num": 44
         },
         "select_deselect_label": {
           "string_token": "select_deselect_label",
           "text": {
-            "default": "Deselect"
+            "default": "Deselect",
+            "sw": "Chagua"
           },
           "_row_num": 45
         },
@@ -1267,7 +1358,8 @@
         "instances_no_saved_instances_label": {
           "string_token": "instances_no_saved_instances_label",
           "text": {
-            "default": "No saved instances."
+            "default": "No saved instances.",
+            "sw": "Hakuna dodoso lililohifadhiwa."
           },
           "_row_num": 48
         },
@@ -1281,7 +1373,8 @@
         "instances_previously_created_instances_label": {
           "string_token": "instances_previously_created_instances_label",
           "text": {
-            "default": "<p>Previously created instances:</p>"
+            "default": "<p>Previously created instances:</p>",
+            "sw": "<p>Iliyofanyika hapo mwanzo:</p>"
           },
           "_row_num": 50
         },
@@ -1303,7 +1396,8 @@
         "savepoint_type_checkpoint_text_label": {
           "string_token": "savepoint_type_checkpoint_text_label",
           "text": {
-            "default": "Checkpoint"
+            "default": "Checkpoint",
+            "sw": "Angalia"
           },
           "_row_num": 53
         },
@@ -1325,56 +1419,64 @@
         "invalid_numeric_message": {
           "string_token": "invalid_numeric_message",
           "text": {
-            "default": "Numeric value expected"
+            "default": "Numeric value expected",
+            "sw": "Thamani ya namba inayotarajiwa"
           },
           "_row_num": 56
         },
         "invalid_integer_message": {
           "string_token": "invalid_integer_message",
           "text": {
-            "default": "Integer value expected"
+            "default": "Integer value expected",
+            "sw": "ukubwa wa thamani inayotarajiwa"
           },
           "_row_num": 57
         },
         "confirm_exit_label": {
           "string_token": "confirm_exit_label",
           "text": {
-            "default": "Exit"
+            "default": "Exit",
+            "sw": "kutoka"
           },
           "_row_num": 58
         },
         "confirm_cancel_label": {
           "string_token": "confirm_cancel_label",
           "text": {
-            "default": "Cancel"
+            "default": "Cancel",
+            "sw": "Batilisha"
           },
           "_row_num": 59
         },
         "confirm_message": {
           "string_token": "confirm_message",
           "text": {
-            "default": "Are you sure you want to exit and lose all changes?"
+            "default": "Are you sure you want to exit and lose all changes?",
+            "sw": "Je unauhakika unataka kutoka na kufuta  mabadiliko yote uliyofanya?"
           },
           "_row_num": 60
         },
         "are_you_sure_you_want_to_delete_row": {
           "string_token": "are_you_sure_you_want_to_delete_row",
           "text": {
-            "default": "Are you sure you want to delete row"
+            "default": "Are you sure you want to delete row",
+            "sw": "Una uhakika unataka kufuta mstari huu"
           },
           "_row_num": 61
         },
         "edit": {
           "string_token": "edit",
           "text": {
-            "default": "Edit"
+            "default": "Edit",
+            "sw": "Hariri"
           },
           "_row_num": 62
         },
         "delete": {
           "string_token": "delete",
           "text": {
-            "default": "Delete"
+            "default": "Delete",
+            "sw": "Futa"
           },
           "_row_num": 63
         }
@@ -1385,35 +1487,40 @@
         "are_you_sure_you_want_to_delete_row": {
           "string_token": "are_you_sure_you_want_to_delete_row",
           "text": {
-            "default": "Are you sure you want to delete row"
+            "default": "Are you sure you want to delete row",
+            "sw": "Una uhakika unataka kufuta mstari huu"
           },
           "_row_num": 2
         },
         "edit": {
           "string_token": "edit",
           "text": {
-            "default": "Edit"
+            "default": "Edit",
+            "sw": "Hariri"
           },
           "_row_num": 3
         },
         "delete": {
           "string_token": "delete",
           "text": {
-            "default": "Delete"
+            "default": "Delete",
+            "sw": "Futa"
           },
           "_row_num": 4
         },
         "valid": {
           "string_token": "valid",
           "text": {
-            "default": "Valid"
+            "default": "Valid",
+            "sw": "Halali"
           },
           "_row_num": 5
         },
         "invalid": {
           "string_token": "invalid",
           "text": {
-            "default": "Invalid"
+            "default": "Invalid",
+            "sw": "Sio halali"
           },
           "_row_num": 6
         },
@@ -1428,189 +1535,216 @@
         "veo_authorization": {
           "string_token": "veo_authorization",
           "text": {
-            "default": "VEO Authorization"
+            "default": "VEO Authorization",
+            "sw": "Uhakiki wa Mtendaji (VEO)"
           },
           "_row_num": 8
         },
         "submit": {
           "string_token": "submit",
           "text": {
-            "default": "Submit"
+            "default": "Submit",
+            "sw": "Wasilisha"
           },
           "_row_num": 9
         },
         "pending_verification": {
           "string_token": "pending_verification",
           "text": {
-            "default": "Pending Verification"
+            "default": "Pending Verification",
+            "sw": "Bado Kudhibitishwa"
           },
           "_row_num": 10
         },
         "all": {
           "string_token": "all",
           "text": {
-            "default": "All"
+            "default": "All",
+            "sw": "Zote"
           },
           "_row_num": 11
         },
         "search": {
           "string_token": "search",
           "text": {
-            "default": "Search"
+            "default": "Search",
+            "sw": "Tafuta"
           },
           "_row_num": 12
         },
         "previous": {
           "string_token": "previous",
           "text": {
-            "default": "Prev"
+            "default": "Prev",
+            "sw": "Ya nyuma"
           },
           "_row_num": 13
         },
         "next": {
           "string_token": "next",
           "text": {
-            "default": "Next"
+            "default": "Next",
+            "sw": "Mbele"
           },
           "_row_num": 14
         },
         "showing": {
           "string_token": "showing",
           "text": {
-            "default": "Showing"
+            "default": "Showing",
+            "sw": "Onesha"
           },
           "_row_num": 15
         },
         "name": {
           "string_token": "name",
           "text": {
-            "default": "Name"
+            "default": "Name",
+            "sw": "Jina"
           },
           "_row_num": 16
         },
         "sector_type": {
           "string_token": "sector_type",
           "text": {
-            "default": "Sector Type"
+            "default": "Sector Type",
+            "sw": "Aina ya Sekta"
           },
           "_row_num": 17
         },
         "gender": {
           "string_token": "gender",
           "text": {
-            "default": "Gender"
+            "default": "Gender",
+            "sw": "Jinsia"
           },
           "_row_num": 18
         },
         "business_owner_age": {
           "string_token": "business_owner_age",
           "text": {
-            "default": "Business Owner Age"
+            "default": "Business Owner Age",
+            "sw": "Umri wa mmiliki wa biashara"
           },
           "_row_num": 19
         },
         "year_business_started": {
           "string_token": "year_business_started",
           "text": {
-            "default": "Year Business Started"
+            "default": "Year Business Started",
+            "sw": "Biashara hii ilianza mwaka gani?"
           },
           "_row_num": 20
         },
         "firm_size": {
           "string_token": "firm_size",
           "text": {
-            "default": "Firm Size"
+            "default": "Firm Size",
+            "sw": "Biashara hii ina ukubwa gani (idadi ya waajiriwa, pasipo kujumuisha mmiliki wa biashara)?"
           },
           "_row_num": 21
         },
         "phone_number": {
           "string_token": "phone_number",
           "text": {
-            "default": "Phone Number"
+            "default": "Phone Number",
+            "sw": "Namba ya simu"
           },
           "_row_num": 22
         },
         "secondary_phone_number": {
           "string_token": "secondary_phone_number",
           "text": {
-            "default": "Secondary Phone Number"
+            "default": "Secondary Phone Number",
+            "sw": "Namba ya pili ya simu"
           },
           "_row_num": 23
         },
         "verified_by_agent": {
           "string_token": "verified_by_agent",
           "text": {
-            "default": "Verified By Agent?"
+            "default": "Verified By Agent?",
+            "sw": "Imehakikiwa na wakala?"
           },
           "_row_num": 24
         },
         "authorized_by_veo": {
           "string_token": "authorized_by_veo",
           "text": {
-            "default": "Authorized By VEO?"
+            "default": "Authorized By VEO?",
+            "sw": "Imehakikiwa na mtendaji(VEO)?"
           },
           "_row_num": 25
         },
         "agent": {
           "string_token": "agent",
           "text": {
-            "default": "Agent"
+            "default": "Agent",
+            "sw": "Wakala"
           },
           "_row_num": 26
         },
         "veo": {
           "string_token": "veo",
           "text": {
-            "default": "VEO"
+            "default": "VEO",
+            "sw": "Mtendaji"
           },
           "_row_num": 27
         },
         "coordinator": {
           "string_token": "coordinator",
           "text": {
-            "default": "Coordinator"
+            "default": "Coordinator",
+            "sw": "Msimimizi"
           },
           "_row_num": 28
         },
         "view_businesses": {
           "string_token": "view_businesses",
           "text": {
-            "default": "View Businesses"
+            "default": "View Businesses",
+            "sw": "Angalia Biashara"
           },
           "_row_num": 29
         },
         "consent_to_participate": {
           "string_token": "consent_to_participate",
           "text": {
-            "default": "Do you consent to participate?"
+            "default": "Do you consent to participate?",
+            "sw": "Unakubali kushiriki?"
           },
           "_row_num": 31
         },
         "subsector_business": {
           "string_token": "subsector_business",
           "text": {
-            "default": "Choose the subsector of the business"
+            "default": "Choose the subsector of the business",
+            "sw": "Chagua sehemu ya sekta ya biashara"
           },
           "_row_num": 32
         },
         "specialize_crop": {
           "string_token": "specialize_crop",
           "text": {
-            "default": "Do you specialize in a specifc crop?"
+            "default": "Do you specialize in a specifc crop?",
+            "sw": "Unajikita katika zao  moja au mifugo?"
           },
           "_row_num": 33
         },
         "business_owner_name": {
           "string_token": "business_owner_name",
           "text": {
-            "default": "What is the business owners name?"
+            "default": "What is the business owners name?",
+            "sw": "Jina la mmiliki wa biashara?"
           },
           "_row_num": 34
         },
         "network_phone": {
           "string_token": "network_phone",
           "text": {
-            "default": "Enter the network for the phone number."
+            "default": "Enter the network for the phone number.",
+            "sw": "Andika kampuni ya mtandao wa namba ya simu."
           },
           "_row_num": 35
         }

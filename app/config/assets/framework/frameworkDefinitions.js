@@ -3,42 +3,48 @@ window.odkFrameworkDefinitions = {
     "constraint_message": {
       "string_token": "constraint_message",
       "text": {
-        "default": "Constraint violated."
+        "default": "Constraint violated.",
+        "sw": "Vikwazo vimekiukwa."
       },
       "_row_num": 2
     },
     "invalid_value_message": {
       "string_token": "invalid_value_message",
       "text": {
-        "default": "Invalid value."
+        "default": "Invalid value.",
+        "sw": "Thamani isiyo halali."
       },
       "_row_num": 3
     },
     "required_message": {
       "string_token": "required_message",
       "text": {
-        "default": "Required value not provided."
+        "default": "Required value not provided.",
+        "sw": "Thamani halali haijatolewa."
       },
       "_row_num": 4
     },
     "required_exception_message": {
       "string_token": "required_exception_message",
       "text": {
-        "default": "Exception while evaluating required() expression. See console log."
+        "default": "Exception while evaluating required() expression. See console log.",
+        "sw": "Tathimini isiyohitajika(). See console log."
       },
       "_row_num": 5
     },
     "constraint_exception_message": {
       "string_token": "constraint_exception_message",
       "text": {
-        "default": "Exception while evaluating constraint() expression. See console log."
+        "default": "Exception while evaluating constraint() expression. See console log.",
+        "sw": "Tathimini ya vikwazo isiyo halali(). See console log."
       },
       "_row_num": 6
     },
     "acknLabel": {
       "string_token": "acknLabel",
       "text": {
-        "default": "Acknowledge"
+        "default": "Acknowledge",
+        "sw": "Udhibitisho"
       },
       "_row_num": 7
     },
@@ -61,21 +67,24 @@ window.odkFrameworkDefinitions = {
     "continue_button_label": {
       "string_token": "continue_button_label",
       "text": {
-        "default": "Continue"
+        "default": "Continue",
+        "sw": "Endelea"
       },
       "_row_num": 10
     },
     "select_one_dropdown_label": {
       "string_token": "select_one_dropdown_label",
       "text": {
-        "default": "Choose Option"
+        "default": "Choose Option",
+        "sw": "Chagua"
       },
       "_row_num": 11
     },
     "requiredValueErr": {
       "string_token": "requiredValueErr",
       "text": {
-        "default": "Required value was not provided."
+        "default": "Required value was not provided.",
+        "sw": "Thamani halali haijatolewa."
       },
       "_row_num": 12
     },
@@ -117,7 +126,8 @@ window.odkFrameworkDefinitions = {
     "waiting_text": {
       "string_token": "waiting_text",
       "text": {
-        "default": "Please wait…"
+        "default": "Please wait…",
+        "sw": "Tafadhali subiri...."
       },
       "_row_num": 18
     },
@@ -166,14 +176,16 @@ window.odkFrameworkDefinitions = {
     "confirm_action_no_label": {
       "string_token": "confirm_action_no_label",
       "text": {
-        "default": "NO"
+        "default": "NO",
+        "sw": "HAPANA"
       },
       "_row_num": 25
     },
     "confirm_action_yes_label": {
       "string_token": "confirm_action_yes_label",
       "text": {
-        "default": "YES"
+        "default": "YES",
+        "sw": "NDIYO"
       },
       "_row_num": 26
     },
@@ -194,21 +206,24 @@ window.odkFrameworkDefinitions = {
     "finalize_survey_instance_detail": {
       "string_token": "finalize_survey_instance_detail",
       "text": {
-        "default": "<p>You are at the end of instance: </p><p>\"{{display_field}}\"</p><hr>"
+        "default": "<p>You are at the end of instance: </p><p>\"{{display_field}}\"</p><hr>",
+        "sw": "<p>Mwisho wa usahili mpya: </p><p>\"{{display_field}}\"</p><hr>"
       },
       "_row_num": 29
     },
     "finalize_survey_button_label": {
       "string_token": "finalize_survey_button_label",
       "text": {
-        "default": "Finalize"
+        "default": "Finalize",
+        "sw": "Kamilisha"
       },
       "_row_num": 30
     },
     "save_as_incomplete_survey_button_label": {
       "string_token": "save_as_incomplete_survey_button_label",
       "text": {
-        "default": "Incomplete"
+        "default": "Incomplete",
+        "sw": "Isiyo kamilika"
       },
       "_row_num": 31
     },
@@ -236,7 +251,8 @@ window.odkFrameworkDefinitions = {
     "opening_survey_instance_detail": {
       "string_token": "opening_survey_instance_detail",
       "text": {
-        "default": "{{#if display_field}}\n        <p>You are at the start of instance: </p>\n        <p>\"{{display_field}}\"</p> \n  {{else}}\n        <p>You are at the start of a new instance.</p>\n  {{/if}}\n        <hr>\n        {{#if last_save_date}}\n            <p>Last saved:</p> \n            <p>{{last_save_date}}</p>\n        {{/if}}\n        <hr>"
+        "default": "{{#if display_field}}\n        <p>You are at the start of instance: </p>\n        <p>\"{{display_field}}\"</p> \n  {{else}}\n        <p>You are at the start of a new instance.</p>\n  {{/if}}\n        <hr>\n        {{#if last_save_date}}\n            <p>Last saved:</p> \n            <p>{{last_save_date}}</p>\n        {{/if}}\n        <hr>",
+        "sw": "{{#if display_field}}\n        <p>Mwanzo wa usahili mpya: </p>\n        <p>\"{{display_field}}\"</p> \n  {{else}}\n        <p>Mwanzo wa usahili mpya.</p>\n  {{/if}}\n        <hr>\n        {{#if last_save_date}}\n            <p>Last saved:</p> \n            <p>{{last_save_date}}</p>\n        {{/if}}\n        <hr>"
       },
       "_row_num": 36
     },
@@ -251,56 +267,64 @@ window.odkFrameworkDefinitions = {
     "options_popup_language_heading": {
       "string_token": "options_popup_language_heading",
       "text": {
-        "default": "Language"
+        "default": "Language",
+        "sw": "Lugha"
       },
       "_row_num": 38
     },
     "options_popup_contents_heading": {
       "string_token": "options_popup_contents_heading",
       "text": {
-        "default": "Contents"
+        "default": "Contents",
+        "sw": "Maudhui"
       },
       "_row_num": 39
     },
     "options_popup_ignore_changes_heading": {
       "string_token": "options_popup_ignore_changes_heading",
       "text": {
-        "default": "Ignore Changes + Exit"
+        "default": "Ignore Changes + Exit",
+        "sw": "Usiruhusu mabadiliko + kutoka"
       },
       "_row_num": 40
     },
     "options_popup_save_changes_heading": {
       "string_token": "options_popup_save_changes_heading",
       "text": {
-        "default": "Save Changes + Exit"
+        "default": "Save Changes + Exit",
+        "sw": "Hifadhi mabadiliko + kutoka"
       },
       "_row_num": 41
     },
     "options_popup_finalize_changes_heading": {
       "string_token": "options_popup_finalize_changes_heading",
       "text": {
-        "default": "Finalize Changes + Exit"
+        "default": "Finalize Changes + Exit",
+        "sw": "Mwisho + kutoka"
       },
       "_row_num": 42
     },
     "screen_popup_ok_button_label": {
       "string_token": "screen_popup_ok_button_label",
       "text": {
-        "default": "OK"
+        "default": "OK",
+        "sw": "Sawa"
       },
       "_row_num": 43
     },
     "select_with_other_other_label": {
       "string_token": "select_with_other_other_label",
       "text": {
-        "default": "Other:"
+        "default": "Other:",
+        "sw": "Eleza"
       },
       "_row_num": 44
     },
     "select_deselect_label": {
       "string_token": "select_deselect_label",
       "text": {
-        "default": "Deselect"
+        "default": "Deselect",
+        "sw": "Chagua"
       },
       "_row_num": 45
     },
@@ -322,7 +346,8 @@ window.odkFrameworkDefinitions = {
     "instances_no_saved_instances_label": {
       "string_token": "instances_no_saved_instances_label",
       "text": {
-        "default": "No saved instances."
+        "default": "No saved instances.",
+        "sw": "Hakuna dodoso lililohifadhiwa."
       },
       "_row_num": 48
     },
@@ -336,7 +361,8 @@ window.odkFrameworkDefinitions = {
     "instances_previously_created_instances_label": {
       "string_token": "instances_previously_created_instances_label",
       "text": {
-        "default": "<p>Previously created instances:</p>"
+        "default": "<p>Previously created instances:</p>",
+        "sw": "<p>Iliyofanyika hapo mwanzo:</p>"
       },
       "_row_num": 50
     },
@@ -358,7 +384,8 @@ window.odkFrameworkDefinitions = {
     "savepoint_type_checkpoint_text_label": {
       "string_token": "savepoint_type_checkpoint_text_label",
       "text": {
-        "default": "Checkpoint"
+        "default": "Checkpoint",
+        "sw": "Angalia"
       },
       "_row_num": 53
     },
@@ -380,56 +407,64 @@ window.odkFrameworkDefinitions = {
     "invalid_numeric_message": {
       "string_token": "invalid_numeric_message",
       "text": {
-        "default": "Numeric value expected"
+        "default": "Numeric value expected",
+        "sw": "Thamani ya namba inayotarajiwa"
       },
       "_row_num": 56
     },
     "invalid_integer_message": {
       "string_token": "invalid_integer_message",
       "text": {
-        "default": "Integer value expected"
+        "default": "Integer value expected",
+        "sw": "ukubwa wa thamani inayotarajiwa"
       },
       "_row_num": 57
     },
     "confirm_exit_label": {
       "string_token": "confirm_exit_label",
       "text": {
-        "default": "Exit"
+        "default": "Exit",
+        "sw": "kutoka"
       },
       "_row_num": 58
     },
     "confirm_cancel_label": {
       "string_token": "confirm_cancel_label",
       "text": {
-        "default": "Cancel"
+        "default": "Cancel",
+        "sw": "Batilisha"
       },
       "_row_num": 59
     },
     "confirm_message": {
       "string_token": "confirm_message",
       "text": {
-        "default": "Are you sure you want to exit and lose all changes?"
+        "default": "Are you sure you want to exit and lose all changes?",
+        "sw": "Je unauhakika unataka kutoka na kufuta  mabadiliko yote uliyofanya?"
       },
       "_row_num": 60
     },
     "are_you_sure_you_want_to_delete_row": {
       "string_token": "are_you_sure_you_want_to_delete_row",
       "text": {
-        "default": "Are you sure you want to delete row"
+        "default": "Are you sure you want to delete row",
+        "sw": "Una uhakika unataka kufuta mstari huu"
       },
       "_row_num": 61
     },
     "edit": {
       "string_token": "edit",
       "text": {
-        "default": "Edit"
+        "default": "Edit",
+        "sw": "Hariri"
       },
       "_row_num": 62
     },
     "delete": {
       "string_token": "delete",
       "text": {
-        "default": "Delete"
+        "default": "Delete",
+        "sw": "Futa"
       },
       "_row_num": 63
     }

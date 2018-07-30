@@ -6,7 +6,10 @@
         "name": "region",
         "display": {
           "prompt": {
-            "text": "Enter the name of the region"
+            "text": {
+              "default": "Enter the name of the region",
+              "sw": "Mkoa"
+            }
           }
         },
         "required": true,
@@ -17,7 +20,10 @@
         "name": "district",
         "display": {
           "prompt": {
-            "text": "Enter the name of the district"
+            "text": {
+              "default": "Enter the name of the district",
+              "sw": "Wilaya"
+            }
           }
         },
         "required": true,
@@ -28,7 +34,10 @@
         "name": "ward",
         "display": {
           "prompt": {
-            "text": "Enter the name of the ward"
+            "text": {
+              "default": "Enter the name of the ward",
+              "sw": "Kata"
+            }
           }
         },
         "required": true,
@@ -39,7 +48,10 @@
         "name": "village",
         "display": {
           "prompt": {
-            "text": "Enter the name of the village"
+            "text": {
+              "default": "Enter the name of the village",
+              "sw": "Kijiji"
+            }
           }
         },
         "required": true,
@@ -50,7 +62,10 @@
         "name": "subvillage",
         "display": {
           "prompt": {
-            "text": "Enter the name of the subvillage"
+            "text": {
+              "default": "Enter the name of the subvillage",
+              "sw": "Kitongoji/Mtaa"
+            }
           }
         },
         "required": true,
@@ -61,93 +76,14 @@
         "name": "veo",
         "display": {
           "prompt": {
-            "text": "Enter the name of the veo"
+            "text": {
+              "default": "Enter the name of the veo",
+              "sw": "Andika jina la Mtendaji Mhakiki/Msimamizi (wa biashara)"
+            }
           }
         },
         "required": true,
         "_row_num": 7
-      }
-    ],
-    "choices": [
-      {
-        "choice_list_name": "sector_type_list",
-        "data_value": "service",
-        "display": {
-          "title": {
-            "text": "Service"
-          }
-        },
-        "_row_num": 2
-      },
-      {
-        "choice_list_name": "sector_type_list",
-        "data_value": "merchandise",
-        "display": {
-          "title": {
-            "text": "Merchandise"
-          }
-        },
-        "_row_num": 3
-      },
-      {
-        "choice_list_name": "sector_type_list",
-        "data_value": "manufacturing",
-        "display": {
-          "title": {
-            "text": "Manufacturing"
-          }
-        },
-        "_row_num": 4
-      },
-      {
-        "choice_list_name": "true_false_unsure",
-        "data_value": 0,
-        "display": {
-          "title": {
-            "text": "False"
-          }
-        },
-        "_row_num": 6
-      },
-      {
-        "choice_list_name": "true_false_unsure",
-        "data_value": 1,
-        "display": {
-          "title": {
-            "text": "True"
-          }
-        },
-        "_row_num": 7
-      },
-      {
-        "choice_list_name": "true_false_unsure",
-        "data_value": -1,
-        "display": {
-          "title": {
-            "text": "Unsure"
-          }
-        },
-        "_row_num": 8
-      },
-      {
-        "choice_list_name": "male_female",
-        "data_value": "f",
-        "display": {
-          "title": {
-            "text": "Female"
-          }
-        },
-        "_row_num": 10
-      },
-      {
-        "choice_list_name": "male_female",
-        "data_value": "m",
-        "display": {
-          "title": {
-            "text": "Male"
-          }
-        },
-        "_row_num": 11
       }
     ],
     "properties": [
@@ -196,7 +132,10 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Geo Unit"
+            "text": {
+              "default": "Geo Unit",
+              "sw": "sw:Geo Unit"
+            }
           }
         },
         "_row_num": 5
@@ -205,6 +144,30 @@
         "setting_name": "instance_name",
         "value": "subvillage",
         "_row_num": 6
+      },
+      {
+        "setting_name": "english",
+        "display": {
+          "locale": {
+            "text": {
+              "default": "English",
+              "sw": "Kiingereza"
+            }
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "setting_name": "sw",
+        "display": {
+          "locale": {
+            "text": {
+              "default": "Swahili",
+              "sw": "Kiswahili"
+            }
+          }
+        },
+        "_row_num": 8
       }
     ]
   },
@@ -244,7 +207,10 @@
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Geo Unit"
+            "text": {
+              "default": "Geo Unit",
+              "sw": "sw:Geo Unit"
+            }
           }
         },
         "_row_num": 5
@@ -254,10 +220,46 @@
         "value": "subvillage",
         "_row_num": 6
       },
+      "english": {
+        "setting_name": "english",
+        "display": {
+          "locale": {
+            "text": {
+              "default": "English",
+              "sw": "Kiingereza"
+            }
+          }
+        },
+        "_row_num": 7
+      },
+      "sw": {
+        "setting_name": "sw",
+        "display": {
+          "locale": {
+            "text": {
+              "default": "Swahili",
+              "sw": "Kiswahili"
+            }
+          }
+        },
+        "_row_num": 8
+      },
       "_locales": {
         "setting_name": "_locales",
         "_row_num": 5,
         "value": [
+          {
+            "display": {
+              "locale": {
+                "text": {
+                  "default": "Swahili",
+                  "sw": "Kiswahili"
+                }
+              }
+            },
+            "_row_num": 8,
+            "name": "sw"
+          },
           {
             "display": {
               "locale": {
@@ -271,106 +273,22 @@
       "_default_locale": {
         "setting_name": "_default_locale",
         "_row_num": 5,
-        "value": "default"
+        "value": "sw"
       },
       "initial": {
         "setting_name": "survey",
         "display": {
           "title": {
-            "text": "Geo Unit"
+            "text": {
+              "default": "Geo Unit",
+              "sw": "sw:Geo Unit"
+            }
           }
         },
         "_row_num": 5
       }
     },
-    "choices": {
-      "sector_type_list": [
-        {
-          "choice_list_name": "sector_type_list",
-          "data_value": "service",
-          "display": {
-            "title": {
-              "text": "Service"
-            }
-          },
-          "_row_num": 2
-        },
-        {
-          "choice_list_name": "sector_type_list",
-          "data_value": "merchandise",
-          "display": {
-            "title": {
-              "text": "Merchandise"
-            }
-          },
-          "_row_num": 3
-        },
-        {
-          "choice_list_name": "sector_type_list",
-          "data_value": "manufacturing",
-          "display": {
-            "title": {
-              "text": "Manufacturing"
-            }
-          },
-          "_row_num": 4
-        }
-      ],
-      "true_false_unsure": [
-        {
-          "choice_list_name": "true_false_unsure",
-          "data_value": 0,
-          "display": {
-            "title": {
-              "text": "False"
-            }
-          },
-          "_row_num": 6
-        },
-        {
-          "choice_list_name": "true_false_unsure",
-          "data_value": 1,
-          "display": {
-            "title": {
-              "text": "True"
-            }
-          },
-          "_row_num": 7
-        },
-        {
-          "choice_list_name": "true_false_unsure",
-          "data_value": -1,
-          "display": {
-            "title": {
-              "text": "Unsure"
-            }
-          },
-          "_row_num": 8
-        }
-      ],
-      "male_female": [
-        {
-          "choice_list_name": "male_female",
-          "data_value": "f",
-          "display": {
-            "title": {
-              "text": "Female"
-            }
-          },
-          "_row_num": 10
-        },
-        {
-          "choice_list_name": "male_female",
-          "data_value": "m",
-          "display": {
-            "title": {
-              "text": "Male"
-            }
-          },
-          "_row_num": 11
-        }
-      ]
-    },
+    "choices": {},
     "table_specific_definitions": {
       "_tokens": {}
     },
@@ -453,7 +371,10 @@
             "name": "region",
             "display": {
               "prompt": {
-                "text": "Enter the name of the region"
+                "text": {
+                  "default": "Enter the name of the region",
+                  "sw": "Mkoa"
+                }
               }
             },
             "required": true,
@@ -469,7 +390,10 @@
             "name": "district",
             "display": {
               "prompt": {
-                "text": "Enter the name of the district"
+                "text": {
+                  "default": "Enter the name of the district",
+                  "sw": "Wilaya"
+                }
               }
             },
             "required": true,
@@ -485,7 +409,10 @@
             "name": "ward",
             "display": {
               "prompt": {
-                "text": "Enter the name of the ward"
+                "text": {
+                  "default": "Enter the name of the ward",
+                  "sw": "Kata"
+                }
               }
             },
             "required": true,
@@ -501,7 +428,10 @@
             "name": "village",
             "display": {
               "prompt": {
-                "text": "Enter the name of the village"
+                "text": {
+                  "default": "Enter the name of the village",
+                  "sw": "Kijiji"
+                }
               }
             },
             "required": true,
@@ -517,7 +447,10 @@
             "name": "subvillage",
             "display": {
               "prompt": {
-                "text": "Enter the name of the subvillage"
+                "text": {
+                  "default": "Enter the name of the subvillage",
+                  "sw": "Kitongoji/Mtaa"
+                }
               }
             },
             "required": true,
@@ -533,7 +466,10 @@
             "name": "veo",
             "display": {
               "prompt": {
-                "text": "Enter the name of the veo"
+                "text": {
+                  "default": "Enter the name of the veo",
+                  "sw": "Andika jina la Mtendaji Mhakiki/Msimamizi (wa biashara)"
+                }
               }
             },
             "required": true,
@@ -662,7 +598,10 @@
             "promptIdx": 1,
             "display": {
               "title": {
-                "text": "Geo Unit"
+                "text": {
+                  "default": "Geo Unit",
+                  "sw": "sw:Geo Unit"
+                }
               }
             },
             "_branch_label_enclosing_screen": "survey/0"
@@ -1030,7 +969,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":\"Geo Unit\"}"
+        "_value": "{\"text\":{\"default\":\"Geo Unit\",\"sw\":\"sw:Geo Unit\"}}"
       },
       {
         "_partition": "Table",
