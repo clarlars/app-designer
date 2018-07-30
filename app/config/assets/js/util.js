@@ -41,6 +41,7 @@ util.NEG_ONE = -1;
 util.VILLAGE = 'village';
 
 util.BUSINESS_BTN_ACTION = 'button-action';
+util.BUTTON_VALUE = 'value';
 
 util.USER_TABLE = 'users';
 util.USER_ID = 'user_id';
@@ -53,6 +54,8 @@ util.ELEMENT_TYPE = 'elementType';
 util.LIST_CHILD_ELEMENT_KEYS = 'listChildElementKeys';
 
 util.ADMIN_DEFAULT_GROUPS = ['ROLE_ADMINISTER_TABLES', 'ROLE_SITE_ACCESS_ADMIN'];
+
+util.CLOSE_RESULT_CODE_SUCCESS = -1;
 
 util.getVillagesByPendingAuthUserId = function(enrollerId, successCB, failureCB) {
 

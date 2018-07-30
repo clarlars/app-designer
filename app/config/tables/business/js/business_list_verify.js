@@ -4,8 +4,8 @@
 /* global $, odkCommon, odkData, odkTables, util, listViewLogic */
 'use strict';
 
-var listQuery = 'SELECT * FROM business WHERE (' + util.COL_VEO_AUTHORIZED +' ISNULL OR ' +
-    util.COL_VEO_AUTHORIZED + '=' + util.NEG_ONE + ')';
+var listQuery = 'SELECT * FROM business WHERE (' + util.COL_COORDINATOR_VERIFIED +' ISNULL OR ' +
+    util.COL_COORDINATOR_VERIFIED + '=' + util.NEG_ONE + ') ';
 
 var searchParams = '(firm_name LIKE ? OR sector_type LIKE ?)';
 
@@ -30,6 +30,7 @@ function resumeFunc(state) {
         listViewLogic.setPrevAndNextButtons('#prevButton', '#nextButton');
         listViewLogic.setNavTextElements('#navTextLimit', '#navTextOffset', '#navTextCnt');
         listViewLogic.showEditButton(true, 'enrollment');
+        listViewLogic.setDetailViewPath('config/tables/business/html/business_detail_verify.html');
 
         var busTxt = 'Business';
         var sectorTypeTxt = 'Sector Type';

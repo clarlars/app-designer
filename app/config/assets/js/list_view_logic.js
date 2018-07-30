@@ -48,6 +48,8 @@ window.listViewLogic = {
     secondDetLabel: null,
     secondDetColId: null,
 
+    detailViewPath: null,
+
     setTableId: function(tableName) {
         if (tableName === null || tableName === undefined ||
             tableName.length === 0) {
@@ -195,6 +197,15 @@ window.listViewLogic = {
         that.navTextCnt = txtCnt;
     },
 
+    setDetailViewPath: function(detailViewPathToUse){
+        if (detailViewPathToUse === null || detailViewPathToUse === undefined) {
+            return;
+        }
+
+        var that = this;
+        that.detailViewPath = detailViewPathToUse;
+    },
+
     showEditAndDeleteButtons: function(showButtons, formIdToUse){
         if (showButtons === null || showButtons === undefined) {
             return;
@@ -209,14 +220,14 @@ window.listViewLogic = {
         }
     },
 
-    showEditButton: function(showEditButton, formIdToUse) {
-        if (showEditButton === null || showEditButton === undefined) {
+    showEditButton: function(showEdButton, formIdToUse) {
+        if (showEdButton === null || showEdButton === undefined) {
             return;
         }
 
         var that = this;
-        if (showEditButton === true) {
-            that.showEditButton = showEditButton;
+        if (showEdButton === true) {
+            that.displayEditButton = showEdButton;
             if (formIdToUse !== null || formIdToUse !== undefined) {
                 that.formId = formIdToUse;
             }
@@ -488,7 +499,7 @@ window.listViewLogic = {
                 // make sure we retrieved the rowId
                 if (rowId !== null && rowId !== undefined) {
                     // we'll pass null as the relative path to use the default file
-                    odkTables.openDetailView(null, that.tableId, rowId, null);
+                    odkTables.openDetailView(null, that.tableId, rowId, that.detailViewPath);
                     console.log('opened detail view');
                 }
             });
@@ -519,7 +530,7 @@ window.listViewLogic = {
             item.attr('class', 'item_space');
             item.text(that.createLabel(that.hdrLabel) + util.formatColIdForDisplay(that.hdrColId, i, resultSet, true));
 
-            if (that.showEditAndDelButtons !== true && that.showEditButton !== true)  {
+            if (that.showEditAndDelButtons !== true && that.displayEditButton !== true)  {
                 /* Creates arrow icon (Nothing to edit here) */
                 var chevron = $('<img>');
                 chevron.attr('src', odkCommon.getFileAsUrl('config/assets/img/white_arrow.png'));
@@ -567,7 +578,7 @@ window.listViewLogic = {
                 }
             }
 
-            if (that.showEditAndDelButtons === true || that.showEditButton === true) {
+            if (that.showEditAndDelButtons === true || that.displayEditButton === true) {
 
                 // Add edit button if _effective_access has 'w'
                 if (access.indexOf('w') !== -1) {

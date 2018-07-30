@@ -1115,58 +1115,6 @@
           }
         },
         "_row_num": 52
-      },
-      {
-        "choice_list_name": "subvillage_list",
-        "data_value": "Subvillage12",
-        "display": {
-          "title": {
-            "text": {
-              "default": "Subvillage12",
-              "sw": "sw:Subvillage12"
-            }
-          }
-        },
-        "_row_num": 56
-      },
-      {
-        "choice_list_name": "subvillage_list",
-        "data_value": "Subvillage11",
-        "display": {
-          "title": {
-            "text": {
-              "default": "Subvillage11",
-              "sw": "sw:Subvillage11"
-            }
-          }
-        },
-        "_row_num": 57
-      },
-      {
-        "choice_list_name": "subvillage_list",
-        "data_value": "Subvillage31",
-        "display": {
-          "title": {
-            "text": {
-              "default": "Subvillage31",
-              "sw": "sw:Subvillage31"
-            }
-          }
-        },
-        "_row_num": 58
-      },
-      {
-        "choice_list_name": "subvillage_list",
-        "data_value": "Subvillage41",
-        "display": {
-          "title": {
-            "text": {
-              "default": "Subvillage41",
-              "sw": "sw:Subvillage41"
-            }
-          }
-        },
-        "_row_num": 59
       }
     ],
     "settings": [
@@ -1249,7 +1197,7 @@
         "_row_num": 5
       },
       {
-        "type": "select_one",
+        "type": "text",
         "name": "subvillage",
         "_row_num": 6
       },
@@ -2122,60 +2070,6 @@
             }
           },
           "_row_num": 52
-        }
-      ],
-      "subvillage_list": [
-        {
-          "choice_list_name": "subvillage_list",
-          "data_value": "Subvillage12",
-          "display": {
-            "title": {
-              "text": {
-                "default": "Subvillage12",
-                "sw": "sw:Subvillage12"
-              }
-            }
-          },
-          "_row_num": 56
-        },
-        {
-          "choice_list_name": "subvillage_list",
-          "data_value": "Subvillage11",
-          "display": {
-            "title": {
-              "text": {
-                "default": "Subvillage11",
-                "sw": "sw:Subvillage11"
-              }
-            }
-          },
-          "_row_num": 57
-        },
-        {
-          "choice_list_name": "subvillage_list",
-          "data_value": "Subvillage31",
-          "display": {
-            "title": {
-              "text": {
-                "default": "Subvillage31",
-                "sw": "sw:Subvillage31"
-              }
-            }
-          },
-          "_row_num": 58
-        },
-        {
-          "choice_list_name": "subvillage_list",
-          "data_value": "Subvillage41",
-          "display": {
-            "title": {
-              "text": {
-                "default": "Subvillage41",
-                "sw": "sw:Subvillage41"
-              }
-            }
-          },
-          "_row_num": 59
         }
       ]
     },

@@ -21,10 +21,12 @@ function determineButtonAction(evt) {
 
     var listURL = 'config/assets/listVerAuthComAll.html';
     var businessAuthorizeURL = 'config/tables/business/html/business_authorize.html';
-    var businessVerifyURL = 'config/tables/business/html/business_verify.html';
+    var businessVerifyURL = 'config/tables/business/html/business_list_verify.html';
 
     var queryParamToAppend = '';
     var urlToUse = '';
+    var viewTypeQueryParamToAppend = '';
+    var userQueryParamToAppend = '';
 
     var clickedButton = $(evt.target);
     var closestButton = clickedButton.closest('.button');
@@ -36,19 +38,24 @@ function determineButtonAction(evt) {
     }
 
     if (viewType !== null && viewType !== undefined) {
-        queryParamToAppend += '&' + util.VIEW_TYPE + '=' + viewType;
+        viewTypeQueryParamToAppend = '&' + util.VIEW_TYPE + '=' + viewType;
     }
 
     if (lovUserId !== null && lovUserId !== undefined) {
-        queryParamToAppend += '&' + util.USER_ID + '=' + lovUserId;
+        userQueryParamToAppend = '&' + util.USER_ID + '=' + lovUserId;
     }
 
     if (actionToPerform === util.ACTION_LIST) {
+        queryParamToAppend += viewTypeQueryParamToAppend;
+        queryParamToAppend += userQueryParamToAppend;
         urlToUse = listURL + queryParamToAppend;
 
     } else if (actionToPerform === util.ACTION_AUTHORIZE) {
+        queryParamToAppend += viewTypeQueryParamToAppend;
+        queryParamToAppend += userQueryParamToAppend;
         urlToUse = businessAuthorizeURL + queryParamToAppend;
     } else if (actionToPerform === util.ACTION_VERIFY) {
+        // We don't want to restrict coordinator by util.USER_ID
         urlToUse = businessVerifyURL + queryParamToAppend;
     }
 

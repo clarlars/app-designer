@@ -61,8 +61,9 @@ function createUser() {
                 null, null, null, resolve, reject);
         });
     }).then(function (result) {
+        addUserBtn.prop('disabled', true);
         if (result.getCount() === 1) {
-            alert(result.getCount() + ' user created');
+            odkCommon.closeWindow(util.CLOSE_RESULT_CODE_SUCCESS);
 
         } else {
             var errText = 'There should only be 1 user on this device!!';
@@ -70,7 +71,7 @@ function createUser() {
             console.log(errText);
             throw errText;
         }
-        addUserBtn.prop('disabled', true);
+
     }).catch(function (reason) {
         var errTxt = 'Error while creating user: ' + reason;
         alert(errTxt);

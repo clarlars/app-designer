@@ -77,14 +77,13 @@
         "_row_num": 7
       },
       {
-        "type": "select_one",
-        "values_list": "subvillage_list",
+        "type": "text",
         "name": "subvillage",
         "display": {
           "prompt": {
             "text": {
-              "default": "Choose the subvillage",
-              "sw": "sw:Choose the subvillage"
+              "default": "Enter the subvillage",
+              "sw": "sw:Enter the subvillage"
             }
           }
         },
@@ -1080,58 +1079,6 @@
           }
         },
         "_row_num": 52
-      },
-      {
-        "choice_list_name": "subvillage_list",
-        "data_value": "Subvillage12",
-        "display": {
-          "title": {
-            "text": {
-              "default": "Subvillage12",
-              "sw": "sw:Subvillage12"
-            }
-          }
-        },
-        "_row_num": 56
-      },
-      {
-        "choice_list_name": "subvillage_list",
-        "data_value": "Subvillage11",
-        "display": {
-          "title": {
-            "text": {
-              "default": "Subvillage11",
-              "sw": "sw:Subvillage11"
-            }
-          }
-        },
-        "_row_num": 57
-      },
-      {
-        "choice_list_name": "subvillage_list",
-        "data_value": "Subvillage31",
-        "display": {
-          "title": {
-            "text": {
-              "default": "Subvillage31",
-              "sw": "sw:Subvillage31"
-            }
-          }
-        },
-        "_row_num": 58
-      },
-      {
-        "choice_list_name": "subvillage_list",
-        "data_value": "Subvillage41",
-        "display": {
-          "title": {
-            "text": {
-              "default": "Subvillage41",
-              "sw": "sw:Subvillage41"
-            }
-          }
-        },
-        "_row_num": 59
       }
     ],
     "properties": [
@@ -1286,7 +1233,7 @@
         "_row_num": 5
       },
       {
-        "type": "select_one",
+        "type": "text",
         "name": "subvillage",
         "_row_num": 6
       },
@@ -2109,60 +2056,6 @@
           },
           "_row_num": 52
         }
-      ],
-      "subvillage_list": [
-        {
-          "choice_list_name": "subvillage_list",
-          "data_value": "Subvillage12",
-          "display": {
-            "title": {
-              "text": {
-                "default": "Subvillage12",
-                "sw": "sw:Subvillage12"
-              }
-            }
-          },
-          "_row_num": 56
-        },
-        {
-          "choice_list_name": "subvillage_list",
-          "data_value": "Subvillage11",
-          "display": {
-            "title": {
-              "text": {
-                "default": "Subvillage11",
-                "sw": "sw:Subvillage11"
-              }
-            }
-          },
-          "_row_num": 57
-        },
-        {
-          "choice_list_name": "subvillage_list",
-          "data_value": "Subvillage31",
-          "display": {
-            "title": {
-              "text": {
-                "default": "Subvillage31",
-                "sw": "sw:Subvillage31"
-              }
-            }
-          },
-          "_row_num": 58
-        },
-        {
-          "choice_list_name": "subvillage_list",
-          "data_value": "Subvillage41",
-          "display": {
-            "title": {
-              "text": {
-                "default": "Subvillage41",
-                "sw": "sw:Subvillage41"
-              }
-            }
-          },
-          "_row_num": 59
-        }
       ]
     },
     "table_specific_definitions": {
@@ -2322,7 +2215,6 @@
       },
       "subvillage": {
         "type": "string",
-        "valuesList": "subvillage_list",
         "_defn": [
           {
             "_row_num": 8,
@@ -2830,21 +2722,20 @@
             "promptIdx": 4
           },
           {
-            "type": "select_one",
-            "values_list": "subvillage_list",
+            "type": "text",
             "name": "subvillage",
             "display": {
               "prompt": {
                 "text": {
-                  "default": "Choose the subvillage",
-                  "sw": "sw:Choose the subvillage"
+                  "default": "Enter the subvillage",
+                  "sw": "sw:Enter the subvillage"
                 }
               }
             },
             "_row_num": 8,
             "__rowNum__": 7,
             "_token_type": "prompt",
-            "_type": "select_one",
+            "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen8",
             "promptIdx": 5
           },
@@ -3923,7 +3814,6 @@
       },
       "subvillage": {
         "type": "string",
-        "valuesList": "subvillage_list",
         "_defn": [
           {
             "_row_num": 8,
@@ -4599,13 +4489,6 @@
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"trading_sales\",\"display\":{\"title\":{\"text\":{\"default\":\"Trading/Sales\",\"sw\":\"Wafanyabiashara wa Jumla\"}}},\"_row_num\":2},{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"merchant_retail\",\"display\":{\"title\":{\"text\":{\"default\":\"Merchant/Retail\",\"sw\":\"Wafanyabiashara wa Rejareja\"}}},\"_row_num\":3},{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"transport\",\"display\":{\"title\":{\"text\":{\"default\":\"Transport\",\"sw\":\"Usafirishaji\"}}},\"_row_num\":4},{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"hiring_and_labor\",\"display\":{\"title\":{\"text\":{\"default\":\"Hiring and Labor\",\"sw\":\"Kukodi au Kibarua\"}}},\"_row_num\":5},{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"agricultural_processing\",\"display\":{\"title\":{\"text\":{\"default\":\"Agricultural Processing\",\"sw\":\"Kuongezea thamani bidhaa za kilimo\"}}},\"_row_num\":6},{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"repairs_technicians\",\"display\":{\"title\":{\"text\":{\"default\":\"Repairs/technicians\",\"sw\":\"Fundi\"}}},\"_row_num\":7},{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"non_agricultural_services\",\"display\":{\"title\":{\"text\":{\"default\":\"Non-agricultural Services\",\"sw\":\"Sekta isiyo ya kilimo\"}}},\"_row_num\":8},{\"choice_list_name\":\"sector_type_list\",\"data_value\":\"financial_services\",\"display\":{\"title\":{\"text\":{\"default\":\"Financial Services\",\"sw\":\"Sekta ya Kifedha\"}}},\"_row_num\":9}]"
-      },
-      {
-        "_partition": "Column",
-        "_aspect": "subvillage",
-        "_key": "displayChoicesList",
-        "_type": "object",
-        "_value": "[{\"choice_list_name\":\"subvillage_list\",\"data_value\":\"Subvillage12\",\"display\":{\"title\":{\"text\":{\"default\":\"Subvillage12\",\"sw\":\"sw:Subvillage12\"}}},\"_row_num\":56},{\"choice_list_name\":\"subvillage_list\",\"data_value\":\"Subvillage11\",\"display\":{\"title\":{\"text\":{\"default\":\"Subvillage11\",\"sw\":\"sw:Subvillage11\"}}},\"_row_num\":57},{\"choice_list_name\":\"subvillage_list\",\"data_value\":\"Subvillage31\",\"display\":{\"title\":{\"text\":{\"default\":\"Subvillage31\",\"sw\":\"sw:Subvillage31\"}}},\"_row_num\":58},{\"choice_list_name\":\"subvillage_list\",\"data_value\":\"Subvillage41\",\"display\":{\"title\":{\"text\":{\"default\":\"Subvillage41\",\"sw\":\"sw:Subvillage41\"}}},\"_row_num\":59}]"
       },
       {
         "_partition": "FormType",
