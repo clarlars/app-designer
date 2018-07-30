@@ -10,7 +10,7 @@
           "prompt": {
             "text": {
               "default": "Do you consent to participate?",
-              "sw": "sw:Do you consent to participate?"
+              "sw": "Unakubali kushiriki?"
             }
           }
         },
@@ -53,7 +53,7 @@
           "prompt": {
             "text": {
               "default": "Choose the district.",
-              "sw": "sw:Choose the district."
+              "sw": "Chagua Wilaya"
             }
           }
         },
@@ -69,7 +69,7 @@
           "prompt": {
             "text": {
               "default": "Choose the ward.",
-              "sw": "sw:Choose the ward."
+              "sw": "Chagua Kata"
             }
           }
         },
@@ -157,7 +157,7 @@
           "prompt": {
             "text": {
               "default": "Choose the subsector of the business",
-              "sw": "sw:Choose the subsector of the business"
+              "sw": "Chagua sehemu ya sekta ya biashara"
             }
           }
         },
@@ -179,7 +179,7 @@
           "prompt": {
             "text": {
               "default": "Do you specialize in a specifc crop?",
-              "sw": "sw:Do you specialize in a specifc crop?"
+              "sw": "sw:Do you specialize in a specifc crop or livestock?"
             }
           },
           "constraint_message": {
@@ -243,7 +243,7 @@
           "prompt": {
             "text": {
               "default": "What is the business owners name?",
-              "sw": "sw:What is the business owners name?"
+              "sw": "Jina la mmiliki wa biashara?"
             }
           }
         },
@@ -370,7 +370,7 @@
           "prompt": {
             "text": {
               "default": "Enter the network for the phone number.",
-              "sw": "sw:Enter the network for the phone number."
+              "sw": "Andika kampuni ya mtandao wa namba ya simu"
             }
           }
         },
@@ -463,7 +463,10 @@
         "name": "decline_note",
         "display": {
           "prompt": {
-            "text": "Thank you for your time."
+            "text": {
+              "default": "Thank you for your time.",
+              "sw": "sw:Thank you for your time."
+            }
           }
         },
         "_row_num": 39
@@ -720,7 +723,7 @@
           "title": {
             "text": {
               "default": "Yes",
-              "sw": "sw:Yes"
+              "sw": "Ndiyo"
             }
           }
         },
@@ -733,7 +736,7 @@
           "title": {
             "text": {
               "default": "No",
-              "sw": "sw:No"
+              "sw": "Hapana"
             }
           }
         },
@@ -1671,7 +1674,7 @@
             "title": {
               "text": {
                 "default": "Yes",
-                "sw": "sw:Yes"
+                "sw": "Ndiyo"
               }
             }
           },
@@ -1684,7 +1687,7 @@
             "title": {
               "text": {
                 "default": "No",
-                "sw": "sw:No"
+                "sw": "Hapana"
               }
             }
           },
@@ -2605,7 +2608,7 @@
               "prompt": {
                 "text": {
                   "default": "Do you consent to participate?",
-                  "sw": "sw:Do you consent to participate?"
+                  "sw": "Unakubali kushiriki?"
                 }
               }
             },
@@ -2647,7 +2650,7 @@
               "prompt": {
                 "text": {
                   "default": "Choose the district.",
-                  "sw": "sw:Choose the district."
+                  "sw": "Chagua Wilaya"
                 }
               }
             },
@@ -2668,7 +2671,7 @@
               "prompt": {
                 "text": {
                   "default": "Choose the ward.",
-                  "sw": "sw:Choose the ward."
+                  "sw": "Chagua Kata"
                 }
               }
             },
@@ -2781,7 +2784,7 @@
               "prompt": {
                 "text": {
                   "default": "Choose the subsector of the business",
-                  "sw": "sw:Choose the subsector of the business"
+                  "sw": "Chagua sehemu ya sekta ya biashara"
                 }
               }
             },
@@ -2803,7 +2806,7 @@
               "prompt": {
                 "text": {
                   "default": "Do you specialize in a specifc crop?",
-                  "sw": "sw:Do you specialize in a specifc crop?"
+                  "sw": "sw:Do you specialize in a specifc crop or livestock?"
                 }
               },
               "constraint_message": {
@@ -2869,7 +2872,7 @@
               "prompt": {
                 "text": {
                   "default": "What is the business owners name?",
-                  "sw": "sw:What is the business owners name?"
+                  "sw": "Jina la mmiliki wa biashara?"
                 }
               }
             },
@@ -3014,7 +3017,7 @@
               "prompt": {
                 "text": {
                   "default": "Enter the network for the phone number.",
-                  "sw": "sw:Enter the network for the phone number."
+                  "sw": "Andika kampuni ya mtandao wa namba ya simu"
                 }
               }
             },
@@ -3102,7 +3105,10 @@
             "name": "decline_note",
             "display": {
               "prompt": {
-                "text": "Thank you for your time."
+                "text": {
+                  "default": "Thank you for your time.",
+                  "sw": "sw:Thank you for your time."
+                }
               }
             },
             "_row_num": 39,
