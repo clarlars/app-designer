@@ -39,11 +39,39 @@ function successCB(result) {
     verHdr.append(verHdrRow);
     verTable.append(verHdr);
 
+    function addPopoverContent(btn, res, idx) {
+        btn.attr('data-toggle', 'popover');
+        btn.attr('data-container', 'body');
+        btn.attr('data-placement', 'top');
+        var busOwner = res.getData(idx, 'business_owner_name');
+        var sectorType = res.getData(idx, 'sector_type');
+        var popOverContent = '';
+        var busOwnerLbl = odkCommon.localizeText(baLocale, "business_owner_name") + ': ';
+        var sectorTypeLbl = odkCommon.localizeText(baLocale, "sector_type") + ': ';
+        if (busOwner !== null && busOwner !== undefined) {
+            popOverContent += busOwnerLbl + busOwner;
+        }
+
+        if (sectorType !== null && sectorType !== undefined) {
+            if (popOverContent.length > 0) { popOverContent += ', '; }
+            popOverContent += sectorTypeLbl + sectorType;
+        }
+        btn.attr('data-content', popOverContent);
+    }
+
     for (var i = 0; i < result.getCount(); i++) {
         var rowId = result.getRowId(i);
         var busRow = $('<tr>');
         var busCol = $('<td>');
-        busCol.text(result.getData(i, 'firm_name'));
+        var busBtn = $('<button>')
+        busBtn.text(result.getData(i, 'firm_name'));
+        var bizNameBtn = 'bizBtn' + i;
+        busBtn.attr('name', bizNameBtn);
+        busBtn.attr('rowId', rowId);
+        busBtn.attr('class', 'btn btn-default');
+        // Add popover content
+        addPopoverContent(busBtn, result, i);
+        busCol.append(busBtn);
         var bizName = 'biz' + i;
         busCol.attr('name', bizName);
         busCol.attr('rowId', rowId);
@@ -79,6 +107,9 @@ function successCB(result) {
         verTable.append(busRow);
     }
     tableWrapper.append(verTable);
+
+    // Enable popovers!
+    $('[data-toggle="popover"]').popover();
 
     var submitBtn = $('#submitBtn');
     if (result.getCount() <= 0) {
