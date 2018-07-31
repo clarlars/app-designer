@@ -318,7 +318,7 @@
       },
       {
         "clause": "if",
-        "condition": "selected('has_secondary_phone_number', 'yes')",
+        "condition": "data('has_secondary_phone_number') === 'yes'",
         "_row_num": 32
       },
       {
@@ -3477,7 +3477,7 @@
               "__rowNum__": 35,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(19);\nif (selected('has_secondary_phone_number', 'yes')) {\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(19);\nif (data('has_secondary_phone_number') === 'yes') {\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 25
           },
           {
