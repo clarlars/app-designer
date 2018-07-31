@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- TBL_IV_REF Detailed View -->
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="../../../assets/css/detail.css" type="text/css" rel="stylesheet"/>
+    <link href="../../../assets/css/home-screen.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../assets/commonDefinitions.js"></script>
+    <script type="text/javascript" src="../../../../system/libs/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="../../../../system/js/odkCommon.js"></script>
+    <script type="text/javascript" src="../../../../system/js/odkData.js"></script>
+    <script type="text/javascript" src="../../../../system/tables/js/odkTables.js"></script>
+    <script type="text/javascript" src="../../../assets/js/util.js"></script>
+    <script type="text/javascript" src="../js/business_detail.js"></script>
+</head>
+<body>
+<div>
+    <h1><span id="bus-hdr">Business</span> <span id="tracking_id" class=""></span></h1>
+</div>
+
+<br>
+
+<div class="row">
+    <div>
+        <p><span class="detailHdr" id="hdr-firm-name">Name:</span> <span id="firm-name"></span></p>
+        <p><span class="detailHdr" id="hdr-sector-type">Sector Type:</span> <span id="sector-type"></span></p>
+        <p><span class="detailHdr" id="hdr-region">Region:</span> <span id="region"></span></p>
+        <p><span class="detailHdr" id="hdr-ward">Ward:</span> <span id="ward"></span></p>
+        <p><span class="detailHdr" id="hdr-district">District:</span> <span id="district"></span></p>
+        <p><span class="detailHdr" id="hdr-village">Village:</span> <span id="village"></span></p>
+        <p><span class="detailHdr" id="hdr-gender">Gender:</span> <span id="gender"></span></p>
+        <p><span class="detailHdr" id="hdr-business_owner_age">Business Owner Age:</span> <span id="business-owner-age"></span></p>
+        <p><span class="detailHdr" id="hdr-year-business-started">Year Business Started:</span> <span id="year-business-started"></span></p>
+        <p><span class="detailHdr" id="hdr-firm-size">Firm Size:</span> <span id="firm-size"></span></p>
+        <p><span class="detailHdr" id="hdr-phone-number">Phone Number:</span> <span id="phone-number"></span></p>
+        <p><span class="detailHdr" id="hdr-sec-ph-number">Secondary Phone Number:</span> <span id="secondary-phone-number"></span>
+        <p><span class="detailHdr" id="hdr-has-been-verified-by-coordinator">Verified by Coordinator?:</span> <span id="has-been-verified-by-coordinator"></span></p>
+        <p><span class="detailHdr" id="hdr-has-been-authorized-by-veo">Authorized by VEO?:</span> <span id="has-been-authorized-by-veo"></span>
+        </p>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        display();
+    });
+</script>
+</body>
+</html>
