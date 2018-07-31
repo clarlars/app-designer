@@ -11,12 +11,12 @@ var searchParams = '(firm_name LIKE ? OR sector_type LIKE ?)';
 function resumeFunc(state) {
     if (state === 'init') {
         // Translations
-        // var locale = odkCommon.getPreferredLocale();
-        // $('#showing').text(odkCommon.localizeText(locale, "showing"));
-        // $('#of').text(odkCommon.localizeText(locale, "of"));
-        // $('#prevButton').text(odkCommon.localizeText(locale, "previous"));
-        // $('#nextButton').text(odkCommon.localizeText(locale, "next"));
-        // $('#submit').val(odkCommon.localizeText(locale, "search"));
+        var locale = odkCommon.getPreferredLocale();
+        $('#showing').text(odkCommon.localizeText(locale, "showing"));
+        $('#of').text(odkCommon.localizeText(locale, "of"));
+        $('#prevButton').text(odkCommon.localizeText(locale, "previous"));
+        $('#nextButton').text(odkCommon.localizeText(locale, "next"));
+        $('#submit').val(odkCommon.localizeText(locale, "search"));
 
         // set the parameters for the list view
         listViewLogic.setTableId('business');
@@ -30,8 +30,8 @@ function resumeFunc(state) {
         listViewLogic.setNavTextElements('#navTextLimit', '#navTextOffset', '#navTextCnt');
         listViewLogic.showEditAndDeleteButtons(true, 'business');
 
-        var busTxt = 'Business';
-        var sectorTypeTxt = 'Sector Type';
+        var busTxt = odkCommon.localizeText(locale, "business");
+        var sectorTypeTxt = odkCommon.localizeText(locale, "sector_type");
 
         listViewLogic.setColIdsToDisplayInList(busTxt, 'firm_name',
             sectorTypeTxt, 'sector_type');

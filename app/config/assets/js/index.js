@@ -50,8 +50,12 @@ function checkDefaultGroupForOptions() {
 function display() {
     var signUpURL = 'config/assets/signUp.html';
     var body = $('#main');
-
     body.css('background-image', 'url(img/bw-business-bubble.jpg)');
+
+    var locale = odkCommon.getPreferredLocale();
+    $('#ekichabi-title').text(odkCommon.localizeText(locale, "welcome_to_ekichabi"));
+    $('#agent-button').text(odkCommon.localizeText(locale, "agent"));
+    $('#coordinator-button').text(odkCommon.localizeText(locale, "coordinator"));
 
     // Check if the user table has 1 user in it!!
     var queryTablePromise = new Promise(function (resolve, reject) {

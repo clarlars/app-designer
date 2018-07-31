@@ -7,6 +7,11 @@ function display() {
     var body = $('#main');
     body.css('background-image', 'url(img/bw-business-bubble.jpg)');
 
+    var locale = odkCommon.getPreferredLocale();
+    $('#agent-title').text(odkCommon.localizeText(locale, "coordinator_options"));
+    $('#firms-pending-verification-button').text(odkCommon.localizeText(locale, "pending_verification"));
+    $('#businesses-list-button').text(odkCommon.localizeText(locale, "view_businesses"));
+
     var VILLAGE_URL = 'config/assets/listOfVillages.html';
     var queryParamsToAppend = '';
 

@@ -103,6 +103,12 @@ function failCB(error) {
 }
 
 function display() {
+    var locale = odkCommon.getPreferredLocale();
+    $('#ekichabi-title').text(odkCommon.localizeText(locale, "sign_up_for_ekichabi"));
+    $('#lbl-user-name').text(odkCommon.localizeText(locale, "name"));
+    $('#lbl-phone-number').text(odkCommon.localizeText(locale, "phone_number"));
+    $('#lbl-village').text(odkCommon.localizeText(locale, "village"));
+    $('#add-user').text(odkCommon.localizeText(locale, "submit"));
 
     util.getVillages(finishDisplay, failCB);
 }

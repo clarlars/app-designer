@@ -10,6 +10,7 @@ var AGENT_VERIFY_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
     '(' + util.COL_COORDINATOR_VERIFIED + ' ISNULL OR ' + util.COL_COORDINATOR_VERIFIED+ ' = ?)';
 
 var baUserId;
+var baLocale;
 
 function successCB(result) {
     var tableWrapper = $('#list');
@@ -20,19 +21,19 @@ function successCB(result) {
     var verHdr = $('<thead>');
     var verHdrRow = $('<tr>');
     var verHdrBLabel = $('<td>');
-    verHdrBLabel.text('Business');
+    verHdrBLabel.text(odkCommon.localizeText(baLocale, "business"));
     verHdrRow.append(verHdrBLabel);
 
     var verHdrValidLabel = $('<td>');
-    verHdrValidLabel.text('Valid');
+    verHdrValidLabel.text(odkCommon.localizeText(baLocale, "valid"));
     verHdrRow.append(verHdrValidLabel);
 
     var verHdrInvalidLabel = $('<td>');
-    verHdrInvalidLabel.text('Invalid');
+    verHdrInvalidLabel.text(odkCommon.localizeText(baLocale, "invalid"));
     verHdrRow.append(verHdrInvalidLabel);
 
     var verHdrUnsureLabel = $('<td>');
-    verHdrUnsureLabel.text('Unsure');
+    verHdrUnsureLabel.text(odkCommon.localizeText(baLocale, "unsure"));
     verHdrRow.append(verHdrUnsureLabel);
 
     verHdr.append(verHdrRow);
@@ -139,6 +140,21 @@ function failureCB(error) {
 }
 
 function display(action) {
+
+    baLocale = odkCommon.getPreferredLocale();
+
+    var veoAuthHdr = $('#veo-authorization-hdr');
+    if (veoAuthHdr !== null && veoAuthHdr !== undefined) {
+        veoAuthHdr.text(odkCommon.localizeText(baLocale, "veo_authorization"));
+    }
+
+    var coordVerHdr = $('#coordinator-verification-hdr');
+    if (coordVerHdr !== null && coordVerHdr !== undefined) {
+        $('#coordinator-verification-hdr').text(odkCommon.localizeText(baLocale, "coordinator_verification"));
+    }
+
+    $('#submitBtn').text(odkCommon.localizeText(baLocale, "submit"));
+
     var village = util.getQueryParameter(util.VILLAGE);
     baUserId = util.getQueryParameter(util.USER_ID);
 

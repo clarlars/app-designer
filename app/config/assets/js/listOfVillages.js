@@ -93,6 +93,9 @@ function failCB(error) {
 }
 
 function display() {
+    var locale = odkCommon.getPreferredLocale();
+    $('#villages-title').text(odkCommon.localizeText(locale, "village"));
+
     viewType = util.getQueryParameter(util.VIEW_TYPE);
     pendingAuth = util.getQueryParameter(util.PENDING_AUTHORIZATION);
     pendingVer = util.getQueryParameter(util.PENDING_VERIFICATION);

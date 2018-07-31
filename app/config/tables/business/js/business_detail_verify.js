@@ -7,7 +7,6 @@
 var bdvUserId = '';
 var bdvRowId = '';
 function cbSuccess(result) {
-
     util.showIdForDetail('#firm-name', 'firm_name', result, false);
     util.showIdForDetail('#sector-type', 'sector_type', result, false);
     util.showIdForDetail('#region', 'region', result, false);
@@ -98,5 +97,26 @@ function cbFailure(error) {
 }
 
 function display() {
+    var locale = odkCommon.getPreferredLocale();
+    $('#bus-hdr').text(odkCommon.localizeText(locale, "business"));
+    $('#hdr-firm-name').text(odkCommon.localizeText(locale, "name") + ':');
+    $('#hdr-sector-type').text(odkCommon.localizeText(locale, "sector_type") + ':');
+    $('#hdr-region').text(odkCommon.localizeText(locale, "region") + ':');
+    $('#hdr-district').text(odkCommon.localizeText(locale, "district") + ':');
+    $('#hdr-ward').text(odkCommon.localizeText(locale, "ward") + ':');
+    $('#hdr-village').text(odkCommon.localizeText(locale, "village") + ':');
+    $('#hdr-gender').text(odkCommon.localizeText(locale, "gender") + ':');
+    $('#hdr-business_owner_age').text(odkCommon.localizeText(locale, "business_owner_age") + ':');
+    $('#hdr-year-business-started').text(odkCommon.localizeText(locale, "year_business_started") + ':');
+    $('#hdr-firm-size').text(odkCommon.localizeText(locale, "firm_size") + ':');
+    $('#hdr-phone-number').text(odkCommon.localizeText(locale, "phone_number") + ':');
+    $('#hdr-sec-ph-number').text(odkCommon.localizeText(locale, "secondary_phone_number") + ':');
+    $('#hdr-has-been-verified-by-coordinator').text(odkCommon.localizeText(locale, "verified_by_coordinator") + ':');
+    $('#hdr-has-been-authorized-by-veo').text(odkCommon.localizeText(locale, "authorized_by_veo") + ':');
+
+    $('#valid-button').text(odkCommon.localizeText(locale, "valid_business"));
+    $('#invalid-button').text(odkCommon.localizeText(locale, "invalid_business"));
+    $('#unsure-button').text(odkCommon.localizeText(locale, "unsure"));
+
     odkData.getViewData(cbSuccess, cbFailure);
 }

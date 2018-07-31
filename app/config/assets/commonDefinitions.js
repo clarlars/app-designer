@@ -263,6 +263,126 @@ window.odkCommonDefinitions = {
         "sw": "Andika kampuni ya mtandao wa namba ya simu."
       },
       "_row_num": 35
+    },
+    "agent_options": {
+      "string_token": "agent_options",
+      "text": {
+        "default": "Agent Options",
+        "sw": "sw:Agent Options"
+      },
+      "_row_num": 37
+    },
+    "registration": {
+      "string_token": "registration",
+      "text": {
+        "default": "Registration",
+        "sw": "sw:Registration"
+      },
+      "_row_num": 38
+    },
+    "pending_authorization": {
+      "string_token": "pending_authorization",
+      "text": {
+        "default": "Pending Authorization",
+        "sw": "sw:Pending Authorization"
+      },
+      "_row_num": 39
+    },
+    "coordinator_options": {
+      "string_token": "coordinator_options",
+      "text": {
+        "default": "Coordinator Options",
+        "sw": "sw:Coordinator Options"
+      },
+      "_row_num": 41
+    },
+    "welcome_to_ekichabi": {
+      "string_token": "welcome_to_ekichabi",
+      "text": {
+        "default": "Welcome to eKichabi",
+        "sw": "sw:Welcome to eKichabi"
+      },
+      "_row_num": 42
+    },
+    "village": {
+      "string_token": "village",
+      "text": {
+        "default": "Village",
+        "sw": "Kijiji"
+      },
+      "_row_num": 44
+    },
+    "sign_up_for_ekichabi": {
+      "string_token": "sign_up_for_ekichabi",
+      "text": {
+        "default": "Sign Up For eKichabi",
+        "sw": "sw:Sign Up For eKichabi"
+      },
+      "_row_num": 45
+    },
+    "business": {
+      "string_token": "business",
+      "text": {
+        "default": "Business",
+        "sw": "Biashara"
+      },
+      "_row_num": 47
+    },
+    "coordinator_verification": {
+      "string_token": "coordinator_verification",
+      "text": {
+        "default": "Coordinator Verification",
+        "sw": "sw:Coordinator Verification"
+      },
+      "_row_num": 48
+    },
+    "region": {
+      "string_token": "region",
+      "text": {
+        "default": "Region",
+        "sw": "Mkoa"
+      },
+      "_row_num": 50
+    },
+    "district": {
+      "string_token": "district",
+      "text": {
+        "default": "District",
+        "sw": "Wilaya"
+      },
+      "_row_num": 51
+    },
+    "ward": {
+      "string_token": "ward",
+      "text": {
+        "default": "Ward",
+        "sw": "Kata"
+      },
+      "_row_num": 52
+    },
+    "verified_by_coordinator": {
+      "string_token": "verified_by_coordinator",
+      "text": {
+        "default": "Verified by Coordinator?",
+        "sw": "sw:Verified by Coordinator?"
+      },
+      "_row_num": 54
+    },
+    "valid_business": {
+      "string_token": "valid_business",
+      "text": {
+        "default": "Valid Business",
+        "sw": "sw:Valid Business"
+      },
+      "_row_num": 56
+    },
+    "invalid_business": {
+      "string_token": "invalid_business",
+      "text": {
+        "default": "Invalid Business",
+        "sw": "sw:Invalid Business"
+      },
+      "_row_num": 57
     }
   },
   "_locales": {
@@ -272,16 +392,34 @@ window.odkCommonDefinitions = {
       {
         "display": {
           "locale": {
-            "text": "default"
+            "text": {
+              "english": "English",
+              "sw": "Kiingereza",
+              "default": "English"
+            }
           }
         },
-        "name": "default"
+        "_row_num": 7,
+        "name": "english"
+      },
+      {
+        "display": {
+          "locale": {
+            "text": {
+              "english": "Swahili",
+              "sw": "Kiswahili",
+              "default": "Swahili"
+            }
+          }
+        },
+        "_row_num": 8,
+        "name": "sw"
       }
     ]
   },
   "_default_locale": {
     "setting_name": "_default_locale",
     "_row_num": 5,
-    "value": "default"
+    "value": "english"
   }
 }

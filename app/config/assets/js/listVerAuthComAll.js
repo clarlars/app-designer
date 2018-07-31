@@ -8,6 +8,12 @@ function display() {
     var body = $('#main');
     body.css('background-image', 'url(img/bw-business-bubble.jpg)');
 
+    var locale = odkCommon.getPreferredLocale();
+    $('#view-biz-title').text(odkCommon.localizeText(locale, "view_businesses"));
+    $('#ver-button').text(odkCommon.localizeText(locale, "pending_verification"));
+    $('#auth-button').text(odkCommon.localizeText(locale, "pending_authorization"));
+    $('#all-button').text(odkCommon.localizeText(locale, "all"));
+
     var busListUrl = 'config/tables/business/html/business_list.html';
     var busListAuthUrl = 'config/tables/business/html/business_list_needs_auth.html';
     var busListVerUrl = 'config/tables/business/html/business_list_needs_ver.html';
