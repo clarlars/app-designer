@@ -251,8 +251,8 @@ window.odkCommonDefinitions = {
     "business_owner_name": {
       "string_token": "business_owner_name",
       "text": {
-        "default": "What is the business owners name?",
-        "sw": "Jina la mmiliki wa biashara?"
+        "default": "Business owner name",
+        "sw": "Jina la mmiliki wa biashara"
       },
       "_row_num": 34
     },

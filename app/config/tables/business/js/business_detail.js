@@ -11,6 +11,7 @@ function cbSuccess(result) {
     util.showIdForDetail('#district', 'district', result, false);
     util.showIdForDetail('#ward', 'ward', result, false);
     util.showIdForDetail('#village', 'village', result, false);
+    util.showIdForDetail('#business-owner-name', 'business_owner_name', result, true);
     util.showIdForDetail('#gender', 'gender', result, true);
     util.showIdForDetail('#year-business-started', 'year_business_started', result, true);
     util.showIdForDetail('#business-owner-age', 'business_owner_age', result, true);
@@ -35,8 +36,9 @@ function display() {
     $('#hdr-district').text(odkCommon.localizeText(locale, "district") + ':');
     $('#hdr-ward').text(odkCommon.localizeText(locale, "ward") + ':');
     $('#hdr-village').text(odkCommon.localizeText(locale, "village") + ':');
+    $('#hdr-business-owner-name').text(odkCommon.localizeText(locale, "business_owner_name") + ':');
     $('#hdr-gender').text(odkCommon.localizeText(locale, "gender") + ':');
-    $('#hdr-business_owner_age').text(odkCommon.localizeText(locale, "business_owner_age") + ':');
+    $('#hdr-business-owner-age').text(odkCommon.localizeText(locale, "business_owner_age") + ':');
     $('#hdr-year-business-started').text(odkCommon.localizeText(locale, "year_business_started") + ':');
     $('#hdr-firm-size').text(odkCommon.localizeText(locale, "firm_size") + ':');
     $('#hdr-phone-number').text(odkCommon.localizeText(locale, "phone_number") + ':');
