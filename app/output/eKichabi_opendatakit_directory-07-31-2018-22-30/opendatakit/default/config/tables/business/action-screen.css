@@ -1,0 +1,15 @@
+body {
+    font-size: 2em;
+}
+
+input[type="radio"]{
+    transform: scale(2);
+}
+
+td {
+    padding: 5%;
+}
+
+.popover {
+    color: black;
+}
