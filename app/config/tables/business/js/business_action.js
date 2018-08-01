@@ -4,10 +4,11 @@
 'use strict';
 
 var VEO_AUTHORIZE_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
-    '(' + util.COL_VEO_AUTHORIZED + ' ISNULL OR ' + util.COL_VEO_AUTHORIZED + ' = ?)';
+    '(' + util.COL_VEO_AUTHORIZED + ' ISNULL OR ' + util.COL_VEO_AUTHORIZED + ' = ?) AND ' +
+    util.COL_ENROLLER_ID + ' = ?';
 
-var AGENT_VERIFY_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
-    '(' + util.COL_COORDINATOR_VERIFIED + ' ISNULL OR ' + util.COL_COORDINATOR_VERIFIED+ ' = ?)';
+var COORDINATOR_VERIFY_QUERY = 'SELECT * FROM business WHERE village = ? AND ' +
+    '(' + util.COL_COORDINATOR_VERIFIED + ' ISNULL OR ' + util.COL_COORDINATOR_VERIFIED + ' = ?)';
 
 var baUserId;
 var baLocale;
@@ -63,7 +64,7 @@ function successCB(result) {
         var rowId = result.getRowId(i);
         var busRow = $('<tr>');
         var busCol = $('<td>');
-        var busBtn = $('<button>')
+        var busBtn = $('<button>');
         busBtn.text(result.getData(i, 'firm_name'));
         var bizNameBtn = 'bizBtn' + i;
         busBtn.attr('name', bizNameBtn);
@@ -135,13 +136,12 @@ function successCB(result) {
                 promisesArray.push(new Promise(function (resolve, reject) {
                     var colMap = {};
                     if (btnAction === util.ACTION_AUTHORIZE) {
-                        // TODO: Add these two in authorization_date, authorization_veo
+                        // TODO: Add in authorization_veo
                         colMap[util.COL_VEO_AUTHORIZED] = checkedValue;
                         colMap[util.COL_AUTHORIZER_ID] = baUserId;
                         colMap[util.COL_AUTHORIZATION_DATE] = odkCommon.toOdkTimeStampFromDate(new Date());
 
                     } else {
-                        // TODO: Add these two in verification_date, verification_agent
                         colMap[util.COL_COORDINATOR_VERIFIED] = checkedValue;
                         colMap[util.COL_VERIFIER_ID] = baUserId;
                         colMap[util.COL_VERIFICATION_DATE] = odkCommon.toOdkTimeStampFromDate(new Date());
@@ -189,10 +189,19 @@ function display(action) {
     var village = util.getQueryParameter(util.VILLAGE);
     baUserId = util.getQueryParameter(util.USER_ID);
 
-    var url = AGENT_VERIFY_QUERY;
+    var query = '';
+    var bindArgs = [];
     if (action === util.ACTION_AUTHORIZE) {
-        url = VEO_AUTHORIZE_QUERY;
+        query = VEO_AUTHORIZE_QUERY;
+        bindArgs = [village, util.NEG_ONE, baUserId];
+    } else if (action === util.ACTION_VERIFY) {
+        query = COORDINATOR_VERIFY_QUERY;
+        bindArgs = [village, util.NEG_ONE];
     }
-    odkData.arbitraryQuery('business',
-        url, [village, util.NEG_ONE], null, null, successCB, failureCB);
+
+    if (query !== '') {
+        odkData.arbitraryQuery('business',
+            query, bindArgs, null, null, successCB, failureCB);
+    }
+
 }
