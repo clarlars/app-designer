@@ -43,7 +43,9 @@ util.VILLAGE = 'village';
 util.BUSINESS_BTN_ACTION = 'button-action';
 util.BUTTON_VALUE = 'value';
 
+util.LOCAL_USER_TABLE = 'ekichabi_user';
 util.USER_TABLE = 'users';
+
 util.USER_ID = 'user_id';
 util.PHONE_NUMBER = 'phone_number';
 util.NAME = 'name';

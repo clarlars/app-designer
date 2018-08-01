@@ -59,7 +59,7 @@ function display() {
 
     // Check if the user table has 1 user in it!!
     var queryTablePromise = new Promise(function (resolve, reject) {
-        odkData.simpleQueryLocalOnlyTables(util.USER_TABLE, null, null, null, null, null,
+        odkData.simpleQueryLocalOnlyTables(util.LOCAL_USER_TABLE, null, null, null, null, null,
             null, null, null, resolve, reject);
     });
 

@@ -3,9 +3,26 @@
 
 'use strict';
 
+var signUpUserParams = {};
+
+function getInsertIntoLocalTablePromise() {
+    return new Promise(function (resolve, reject) {
+        odkData.insertLocalOnlyRow(util.LOCAL_USER_TABLE, signUpUserParams, resolve, reject);
+    });
+}
+
+function getUserTableCreateRowPromise() {
+    return new Promise(function (resolve, reject) {
+        odkData.addRow(util.USER_TABLE, signUpUserParams, util.genUUID(), resolve, reject);
+
+    });
+}
+
 function createUser() {
 
+    // Disable button after it has been clicked
     var addUserBtn = $('#add-user');
+    addUserBtn.prop('disabled', true);
 
     var createUserTablePromise = new Promise(function(resolve, reject) {
         var colTypeMap = [];
@@ -42,26 +59,56 @@ function createUser() {
         col4[listCE] = '[]';
         colTypeMap.push(col4);
 
-        odkData.createLocalOnlyTableWithColumns(util.USER_TABLE, colTypeMap, resolve, reject);
+        odkData.createLocalOnlyTableWithColumns(util.LOCAL_USER_TABLE, colTypeMap, resolve, reject);
     });
 
-    createUserTablePromise.then(function(result) {
-        return new Promise(function (resolve, reject) {
-            var colMap = {};
-            colMap[util.USER_ID] = util.genUUID();
-            colMap[util.VILLAGE] = $('#village').val();
-            colMap[util.PHONE_NUMBER] = $('#phone-number').val();
-            colMap[util.NAME] = $('#user-name').val();
+    signUpUserParams[util.USER_ID] = util.genUUID();
+    signUpUserParams[util.VILLAGE] = $('#village').val();
+    signUpUserParams[util.PHONE_NUMBER] =  $('#phone-number').val();
+    signUpUserParams[util.NAME] = $('#user-name').val();
 
-            odkData.insertLocalOnlyRow(util.USER_TABLE, colMap, resolve, reject);
+    createUserTablePromise.then(function(result){
+        // Check if that user already exists in the user table
+        // Assuming village and phone number should be unique enough as name is just used for display
+        // use existing uuid if they do
+        return new Promise(function(resolve, reject) {
+            var whereCls = util.VILLAGE + ' = ? AND ' + util.PHONE_NUMBER + ' = ?';
+            odkData.query(util.USER_TABLE, whereCls, [signUpUserParams[util.VILLAGE], signUpUserParams[util.PHONE_NUMBER]],
+                null, null, null, null, null, null, null, resolve, reject);
         });
+    }).then(function(result){
+        if (result.getCount() === 1) {
+            // User found on server - only need to update local table
+            signUpUserParams[util.USER_ID] = result.getData(0, util.USER_ID);
+            return getInsertIntoLocalTablePromise();
+
+        } else if (result.getCount() > 1 ) {
+            var errText = 'More than 1 user with these credentials on the server!! ' +
+                'Please resolve before continuing!';
+            alert(errText);
+            console.log(errText);
+            throw errText;
+        } else {
+            // NO user found on server
+            // Need to add user data to the server
+            return getUserTableCreateRowPromise().then(function(result){
+                if (result.getCount() === 1) {
+                    return getInsertIntoLocalTablePromise();
+                } else {
+                    var couldNotUpdateUserError = 'Could not update user table with this users info. P' +
+                        'lease resolve before continuing';
+                    alert(couldNotUpdateUserError);
+                    console.log(couldNotUpdateUserError);
+                    throw couldNotUpdateUserError;
+                }
+            });
+        }
     }).then(function(result) {
         return new Promise(function (resolve, reject) {
-            odkData.simpleQueryLocalOnlyTables(util.USER_TABLE, null, null, null, null, null,
+            odkData.simpleQueryLocalOnlyTables(util.LOCAL_USER_TABLE, null, null, null, null, null,
                 null, null, null, resolve, reject);
         });
     }).then(function (result) {
-        addUserBtn.prop('disabled', true);
         if (result.getCount() === 1) {
             odkCommon.closeWindow(util.CLOSE_RESULT_CODE_SUCCESS);
 

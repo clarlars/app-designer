@@ -26,7 +26,7 @@ function cbSuccess(result) {
     bdvRowId = result.getRowId(0);
 
     var userIdPromise = new Promise(function (resolve, reject) {
-            odkData.simpleQueryLocalOnlyTables(util.USER_TABLE, null, null, null, null, null,
+            odkData.simpleQueryLocalOnlyTables(util.LOCAL_USER_TABLE, null, null, null, null, null,
                 null, null, null, resolve, reject);
         });
 
