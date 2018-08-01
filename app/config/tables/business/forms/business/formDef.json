@@ -397,7 +397,7 @@
           "prompt": {
             "text": {
               "default": "Enter the id of the coordinator who verified the business.",
-              "sw": "sw:Enter the id of the coordinator who verified the business."
+              "sw": "Andika namba ya utambulisho ya msimamizi ambaye ameithibitisha biashara hii."
             }
           }
         },
@@ -3134,7 +3134,7 @@
               "prompt": {
                 "text": {
                   "default": "Enter the id of the coordinator who verified the business.",
-                  "sw": "sw:Enter the id of the coordinator who verified the business."
+                  "sw": "Andika namba ya utambulisho ya msimamizi ambaye ameithibitisha biashara hii."
                 }
               }
             },

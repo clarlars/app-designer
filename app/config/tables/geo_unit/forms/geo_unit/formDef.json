@@ -134,7 +134,7 @@
           "title": {
             "text": {
               "default": "Geo Unit",
-              "sw": "sw:Geo Unit"
+              "sw": "Geo Unit"
             }
           }
         },
@@ -209,7 +209,7 @@
           "title": {
             "text": {
               "default": "Geo Unit",
-              "sw": "sw:Geo Unit"
+              "sw": "Geo Unit"
             }
           }
         },
@@ -281,7 +281,7 @@
           "title": {
             "text": {
               "default": "Geo Unit",
-              "sw": "sw:Geo Unit"
+              "sw": "Geo Unit"
             }
           }
         },
@@ -600,7 +600,7 @@
               "title": {
                 "text": {
                   "default": "Geo Unit",
-                  "sw": "sw:Geo Unit"
+                  "sw": "Geo Unit"
                 }
               }
             },
@@ -969,7 +969,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":{\"default\":\"Geo Unit\",\"sw\":\"sw:Geo Unit\"}}"
+        "_value": "{\"text\":{\"default\":\"Geo Unit\",\"sw\":\"Geo Unit\"}}"
       },
       {
         "_partition": "Table",

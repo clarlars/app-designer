@@ -198,8 +198,8 @@
           },
           "constraint_message": {
             "text": {
-              "default": "Only 3 or fewer crops can be selected",
-              "sw": "sw:Only 3 or fewer crops can be selected"
+              "default": "Only 3 or fewer crops can be selected. If none, select \"not applicable\"",
+              "sw": "Chagua kati ya mazao 1 mpaka mazao 3 tu. Kama hamna, chagua \"Hakuna\""
             }
           }
         },
@@ -358,13 +358,13 @@
           "prompt": {
             "text": {
               "default": "Enter the phone number for the business.",
-              "sw": "Andika namba ya simu  ya biashara"
+              "sw": "Andika namba ya simu ya biashara"
             }
           },
           "constraint_message": {
             "text": {
               "default": "Phone number must begin with 0, be 10 digits, and match previously entered phone number.",
-              "sw": "sw:Phone number must begin with 0 and be 10 digits."
+              "sw": "sw:Phone number must begin with 0, be 10 digits, and match previously entered phone number."
             }
           }
         },
@@ -1169,7 +1169,7 @@
           "title": {
             "text": {
               "default": "Enrollment",
-              "sw": "sw:Enrollment"
+              "sw": "Uandikishaji"
             }
           }
         },
@@ -1425,7 +1425,7 @@
           "title": {
             "text": {
               "default": "Enrollment",
-              "sw": "sw:Enrollment"
+              "sw": "Uandikishaji"
             }
           }
         },
@@ -1497,7 +1497,7 @@
           "title": {
             "text": {
               "default": "Enrollment",
-              "sw": "sw:Enrollment"
+              "sw": "Uandikishaji"
             }
           }
         },
@@ -2874,8 +2874,8 @@
               },
               "constraint_message": {
                 "text": {
-                  "default": "Only 3 or fewer crops can be selected",
-                  "sw": "sw:Only 3 or fewer crops can be selected"
+                  "default": "Only 3 or fewer crops can be selected. If none, select \"not applicable\"",
+                  "sw": "Chagua kati ya mazao 1 mpaka mazao 3 tu. Kama hamna, chagua \"Hakuna\""
                 }
               }
             },
@@ -3049,13 +3049,13 @@
               "prompt": {
                 "text": {
                   "default": "Enter the phone number for the business.",
-                  "sw": "Andika namba ya simu  ya biashara"
+                  "sw": "Andika namba ya simu ya biashara"
                 }
               },
               "constraint_message": {
                 "text": {
                   "default": "Phone number must begin with 0, be 10 digits, and match previously entered phone number.",
-                  "sw": "sw:Phone number must begin with 0 and be 10 digits."
+                  "sw": "sw:Phone number must begin with 0, be 10 digits, and match previously entered phone number."
                 }
               }
             },
@@ -3526,7 +3526,7 @@
               "title": {
                 "text": {
                   "default": "Enrollment",
-                  "sw": "sw:Enrollment"
+                  "sw": "Uandikishaji"
                 }
               }
             },

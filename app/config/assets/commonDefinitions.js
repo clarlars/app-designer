@@ -212,7 +212,7 @@ window.odkCommonDefinitions = {
       "string_token": "coordinator",
       "text": {
         "default": "Coordinator",
-        "sw": "Msimimizi"
+        "sw": "Msimamizi"
       },
       "_row_num": 28
     },
@@ -268,7 +268,7 @@ window.odkCommonDefinitions = {
       "string_token": "agent_options",
       "text": {
         "default": "Agent Options",
-        "sw": "sw:Agent Options"
+        "sw": "Chaguo la Wakala"
       },
       "_row_num": 37
     },
@@ -276,7 +276,7 @@ window.odkCommonDefinitions = {
       "string_token": "registration",
       "text": {
         "default": "Registration",
-        "sw": "sw:Registration"
+        "sw": "Uandikishaji"
       },
       "_row_num": 38
     },
@@ -284,7 +284,7 @@ window.odkCommonDefinitions = {
       "string_token": "pending_authorization",
       "text": {
         "default": "Pending Authorization",
-        "sw": "sw:Pending Authorization"
+        "sw": "Bado kuhakikiwa"
       },
       "_row_num": 39
     },
@@ -292,7 +292,7 @@ window.odkCommonDefinitions = {
       "string_token": "coordinator_options",
       "text": {
         "default": "Coordinator Options",
-        "sw": "sw:Coordinator Options"
+        "sw": "Chaguo la Msimamizi"
       },
       "_row_num": 41
     },
@@ -300,7 +300,7 @@ window.odkCommonDefinitions = {
       "string_token": "welcome_to_ekichabi",
       "text": {
         "default": "Welcome to eKichabi",
-        "sw": "sw:Welcome to eKichabi"
+        "sw": "Karibu eKichabi"
       },
       "_row_num": 42
     },
@@ -316,7 +316,7 @@ window.odkCommonDefinitions = {
       "string_token": "sign_up_for_ekichabi",
       "text": {
         "default": "Sign Up For eKichabi",
-        "sw": "sw:Sign Up For eKichabi"
+        "sw": "Uandikishaji ya eKichabi"
       },
       "_row_num": 45
     },
@@ -332,7 +332,7 @@ window.odkCommonDefinitions = {
       "string_token": "coordinator_verification",
       "text": {
         "default": "Coordinator Verification",
-        "sw": "sw:Coordinator Verification"
+        "sw": "Kudhibitishwa ya Msimamizi"
       },
       "_row_num": 48
     },
@@ -364,7 +364,7 @@ window.odkCommonDefinitions = {
       "string_token": "verified_by_coordinator",
       "text": {
         "default": "Verified by Coordinator?",
-        "sw": "sw:Verified by Coordinator?"
+        "sw": "Msimamizi amedhibitisha biashara?"
       },
       "_row_num": 54
     },
@@ -372,7 +372,7 @@ window.odkCommonDefinitions = {
       "string_token": "valid_business",
       "text": {
         "default": "Valid Business",
-        "sw": "sw:Valid Business"
+        "sw": "Biashara iliyothibitishwa"
       },
       "_row_num": 56
     },
@@ -380,7 +380,7 @@ window.odkCommonDefinitions = {
       "string_token": "invalid_business",
       "text": {
         "default": "Invalid Business",
-        "sw": "sw:Invalid Business"
+        "sw": "Biashara hailiyothibitishwa"
       },
       "_row_num": 57
     }
