@@ -7,7 +7,9 @@ var indexUserId = '';
 
 function initAgentButton() {
     var agentButton = $('#agent-button');
+    agentButton.removeAttr('style');
     agentButton.prop('disabled', false);
+    $('#login-text').text('')
     agentButton.on('click', function() {
         odkTables.launchHTML(null, 'config/assets/agentView.html?' + util.USER_ID + '=' + indexUserId);
     });
@@ -17,6 +19,7 @@ function initCoordinatorButton() {
     var coordinatorButton = $('#coordinator-button');
     coordinatorButton.removeAttr('style');
     coordinatorButton.prop('disabled', false);
+    $('#login-text').text('')
     coordinatorButton.on('click', function() {
         odkTables.launchHTML(null, 'config/assets/coordinatorView.html?' + util.USER_ID + '=' + indexUserId);
     });
@@ -27,63 +30,93 @@ function initButtons() {
     initCoordinatorButton();
 }
 
-function checkDefaultGroupForOptions() {
-    // show Coordinator button if user default group is admin
-    var getDefaultGroupPromise = new Promise(function(resolve, reject) {
-        odkData.getDefaultGroup(resolve, reject);
-    });
+function isUserAdmin(user) {
+    for (var i = 0; i < user.roles.length; i) {
+        if (util.ADMIN_DEFAULT_GROUPS.indexOf(user.roles[i]) > -1) {
+            return true;
+        }
+    }
 
-    getDefaultGroupPromise.then(function(result) {
-        var defGrp = result.getDefaultGroup();
-        if (defGrp !== null && defGrp !== undefined && (util.ADMIN_DEFAULT_GROUPS.indexOf(defGrp) > -1)) {
-            initButtons();
+    return false;
+}
+
+function initAdminPicker(users) {
+    var adminId = $('#admin_user_id');
+    adminId.removeAttr('style');
+    adminId.prop('disabled', false);
+
+    var first = false;
+    for (var idx = 0; idx < users.length; idx++) {
+        if (isUserAdmin(users[idx]) ===  true) {
+            var uOpt = $('<option>');
+            var uName = users[idx].full_name;
+            var uId = users[idx].user_id;
+            uOpt.val(uId);
+            uOpt.text(uName);
+            adminId.append(uOpt);
+
+            if (first === false) {
+                first = true;
+                uOpt.attr('selected', 'selected')
+            }
+        }
+    }
+
+    adminId.on('click', function () {
+      indexUserId = adminId.val();
+    });
+}
+
+function checkDefaultGroupForOptions() {
+    // Get usersInfo to get userid
+    var getUsersInfoPromise = new Promise(function(resolve, reject) {
+        odkData.getUsers(resolve, reject);
+    })
+
+    getUsersInfoPromise.then(function(result) {
+        // TODO: Deal with this for admin
+        // Will need to present them with a list of users in a dropdown box
+        var users = []
+        users = result.getUsers();
+
+        if (users.length > 1) {
+            initAdminPicker(users);
         } else {
-            initAgentButton();
+            indexUserId = users[0].user_id;
+        }
+
+        return new Promise(function(resolve, reject) {
+            odkData.getDefaultGroup(resolve, reject);
+        });
+
+    }).then(function(result) {
+        var defGrp = result.getDefaultGroup();
+        if (defGrp !== null && defGrp !== undefined) {
+            var body = $('#main');
+            body.css('background-image', 'url(img/bw-business-bubble.jpg)');
+            if (util.ADMIN_DEFAULT_GROUPS.indexOf(defGrp) > -1)
+            {
+                initButtons();
+            } else {
+                initAgentButton();
+            }
+
+        } else {
+            $('#login-text').text('You must login to use eKichabi.')
+            // TODO: Show login button to launch sync
         }
 
     }).catch(function(error) {
-        console.log('Could not get default group for user: ' + error);
-        initAgentButton();
+        console.log('Could not get default group or userid for user: ' + error);
+        $('#login-text').text('Error getting default group or userid.  User must have a default group and valid userid to use eKichabi.')
     });
 }
 
 function display() {
-    var signUpURL = 'config/assets/signUp.html';
-    var body = $('#main');
-    body.css('background-image', 'url(img/bw-business-bubble.jpg)');
-
     var locale = odkCommon.getPreferredLocale();
     $('#ekichabi-title').text(odkCommon.localizeText(locale, "welcome_to_ekichabi"));
     $('#agent-button').text(odkCommon.localizeText(locale, "agent"));
     $('#coordinator-button').text(odkCommon.localizeText(locale, "coordinator"));
 
-    // Check if the user table has 1 user in it!!
-    var queryTablePromise = new Promise(function (resolve, reject) {
-        odkData.simpleQueryLocalOnlyTables(util.LOCAL_USER_TABLE, null, null, null, null, null,
-            null, null, null, resolve, reject);
-    });
-
-    queryTablePromise.then(function (result) {
-        if (result.getCount() > 1) {
-            var tooManyUsersError = 'More than one user exists on this device!!';
-            alert(tooManyUsersError);
-            console(tooManyUsersError);
-        } else if (result.getCount() < 1) {
-            var noUserError = 'No user exists on this device!!';
-            alert(noUserError);
-            console(noUserError);
-            odkTables.launchHTML(null, signUpURL);
-        } else {
-            var userName = $('#user-name');
-            userName.text(result.getData(0, util.NAME));
-            indexUserId = result.getData(0, util.USER_ID);
-            checkDefaultGroupForOptions();
-        }
-
-    }).catch(function (reason) {
-        var errTxt = 'Error while retrieving user: ' + reason;
-        // This may be the first time we are using this device - try to sign up
-        odkTables.launchHTML(null, signUpURL);
-        console.log(errTxt);
-    });
+    checkDefaultGroupForOptions();
 }
