@@ -45,7 +45,11 @@ h1 {
 }
 
 .descStyle {
-    padding-bottom: 10 px;
+    padding-bottom: 10px;
     font-size: 16px;
     color: #FFFFFF;
+}
+
+.select-color {
+    color: black;
 }

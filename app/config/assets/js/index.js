@@ -31,7 +31,7 @@ function initButtons() {
 }
 
 function isUserAdmin(user) {
-    for (var i = 0; i < user.roles.length; i) {
+    for (var i = 0; i < user.roles.length; i++) {
         if (util.ADMIN_DEFAULT_GROUPS.indexOf(user.roles[i]) > -1) {
             return true;
         }
@@ -41,8 +41,9 @@ function isUserAdmin(user) {
 }
 
 function initAdminPicker(users) {
+    var coorId = $('#coordinator_id');
+    coorId.removeAttr('style');
     var adminId = $('#admin_user_id');
-    adminId.removeAttr('style');
     adminId.prop('disabled', false);
 
     var first = false;
@@ -57,12 +58,13 @@ function initAdminPicker(users) {
 
             if (first === false) {
                 first = true;
+                indexUserId = uId;
                 uOpt.attr('selected', 'selected')
             }
         }
     }
 
-    adminId.on('click', function () {
+    adminId.change(function () {
       indexUserId = adminId.val();
     });
 }
