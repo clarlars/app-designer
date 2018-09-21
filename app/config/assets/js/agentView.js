@@ -18,12 +18,28 @@ function display() {
     var queryParamsToAppend = '';
 
     var userId = util.getQueryParameter(util.USER_ID);
+    var defaultGroup = util.getQueryParameter(util.DEFAULT_GROUP);
 
     var regButton = $('#reg-button');
     regButton.on('click', function() {
-        var colMap = {};
-        colMap[util.COL_ENROLLER_ID] = userId;
-        odkTables.addRowWithSurvey(null, 'business', 'enrollment', null, colMap);
+
+        if (defaultGroup === null || defaultGroup === undefined) {
+            alert("You must have a valid default group to enroll a user");
+        } else {
+            var colMap = {};
+            colMap[util.COL_ENROLLER_ID] = userId;
+            colMap[util.COL_GROUP_MODIFY] = defaultGroup;
+            colMap[util.COL_REGION] = util.getRegionFromDefaultGroup(defaultGroup);
+            colMap[util.COL_DISTRICT] = util.getDistrictFromDefaultGroup(defaultGroup);
+            colMap[util.COL_WARD] = util.getWardFromDefaultGroup(defaultGroup);
+            colMap[util.COL_VILLAGE] = util.getVillageFromDefaultGroup(defaultGroup);
+
+            odkTables.addRowWithSurvey(null, 'business', 'enrollment', null, colMap);
+
+            // TODO: Have separate form that allows coordinator to choose the values
+            // Within the form - that could also set the metadata for the group by default?
+            // Otherwise need to have some sort of chooser - but would be better to concatenate automatically!
+        }
     });
 
     var firmsPendingAuthButton = $('#firms-pending-auth-button');

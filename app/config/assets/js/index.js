@@ -4,6 +4,7 @@
 'use strict';
 
 var indexUserId = '';
+var indexDefaultGroup = '';
 
 function initAgentButton() {
     var agentButton = $('#agent-button');
@@ -11,7 +12,8 @@ function initAgentButton() {
     agentButton.prop('disabled', false);
     $('#login-text').text('')
     agentButton.on('click', function() {
-        odkTables.launchHTML(null, 'config/assets/agentView.html?' + util.USER_ID + '=' + indexUserId);
+        odkTables.launchHTML(null, 'config/assets/agentView.html?' + util.USER_ID + '=' + indexUserId + '&' +
+            util.DEFAULT_GROUP + '=' + indexDefaultGroup);
     });
 }
 
@@ -69,6 +71,9 @@ function initAdminPicker(users) {
     });
 }
 
+
+
+
 function checkDefaultGroupForOptions() {
     // Get usersInfo to get userid
     var getUsersInfoPromise = new Promise(function(resolve, reject) {
@@ -100,7 +105,12 @@ function checkDefaultGroupForOptions() {
             {
                 initButtons();
             } else {
-                initAgentButton();
+                if (util.checkValidAgentDefaultGroup(defGrp)) {
+                    indexDefaultGroup = defGrp;
+                    initAgentButton();
+                } else {
+                    $('#login-text').text('Invalid agent default group.')
+                }
             }
 
         } else {
