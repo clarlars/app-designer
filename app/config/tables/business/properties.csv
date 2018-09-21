@@ -13,3 +13,5 @@ SurveyUtil,default,SurveyUtil.formId,string,business
 Table,default,defaultViewType,string,SPREADSHEET
 Table,default,detailViewFileName,string,config/tables/business/html/business_detail.html
 Table,default,displayName,object,"{""text"":{""default"":""Business Survey"",""sw"":""Dodoso la biashara""}}"
+Table,security,defaultAccessOnCreation,string,HIDDEN
+Table,security,unverifiedUserCanCreate,boolean,false

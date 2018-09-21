@@ -36,9 +36,8 @@ function display() {
 
             odkTables.addRowWithSurvey(null, 'business', 'enrollment', null, colMap);
 
-            // TODO: Have separate form that allows coordinator to choose the values
-            // Within the form - that could also set the metadata for the group by default?
-            // Otherwise need to have some sort of chooser - but would be better to concatenate automatically!
+            // TODO: Should the coordinator have an agent view?  Coordinators already see all data
+            // Do they need to enroll?
         }
     });
 
@@ -54,8 +53,7 @@ function display() {
     var agtBusListButton = $('#agent_business-list-button');
     agtBusListButton.on('click', function() {
         if (userId !== null && userId !== undefined) {
-            queryParamsToAppend += '?' + util.COL_ENROLLER_ID + '=' + userId;
-            odkTables.launchHTML(null, busListAgentUrl + queryParamsToAppend);
+            odkTables.launchHTML(null, busListAgentUrl);
         }
     });
 }

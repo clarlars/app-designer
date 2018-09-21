@@ -30,8 +30,7 @@
       },
       {
         "comments": "required",
-        "type": "select_one_unique",
-        "values_list": "region_group_by",
+        "type": "text",
         "name": "region",
         "display": {
           "prompt": {
@@ -46,8 +45,7 @@
       },
       {
         "comments": "required",
-        "type": "select_one_unique",
-        "values_list": "district_group_by",
+        "type": "text",
         "name": "district",
         "display": {
           "prompt": {
@@ -62,8 +60,7 @@
       },
       {
         "comments": "required",
-        "type": "select_one_unique",
-        "values_list": "ward_group_by",
+        "type": "text",
         "name": "ward",
         "display": {
           "prompt": {
@@ -78,8 +75,7 @@
       },
       {
         "comments": "required",
-        "type": "select_one_unique",
-        "values_list": "villages_group_by",
+        "type": "text",
         "name": "village",
         "display": {
           "prompt": {
@@ -1212,17 +1208,17 @@
         "_row_num": 2
       },
       {
-        "type": "select_one_unique",
+        "type": "text",
         "name": "district",
         "_row_num": 3
       },
       {
-        "type": "select_one_unique",
+        "type": "text",
         "name": "ward",
         "_row_num": 4
       },
       {
-        "type": "select_one_unique",
+        "type": "text",
         "name": "village",
         "_row_num": 5
       },
@@ -1355,6 +1351,11 @@
         "type": "text",
         "name": "primary_phone_number",
         "_row_num": 31
+      },
+      {
+        "type": "text",
+        "name": "region",
+        "_row_num": 32
       },
       {
         "type": "integer",
@@ -2207,11 +2208,7 @@
         "elementKey": "consent"
       },
       "district": {
-        "prompt_type_name": "select_one_unique",
         "type": "string",
-        "valuesList": "district_group_by",
-        "_row_num": 2,
-        "__rowNum__": 1,
         "_defn": [
           {
             "_row_num": 6,
@@ -2225,11 +2222,7 @@
         "elementKey": "district"
       },
       "ward": {
-        "prompt_type_name": "select_one_unique",
         "type": "string",
-        "valuesList": "ward_group_by",
-        "_row_num": 2,
-        "__rowNum__": 1,
         "_defn": [
           {
             "_row_num": 7,
@@ -2243,11 +2236,7 @@
         "elementKey": "ward"
       },
       "village": {
-        "prompt_type_name": "select_one_unique",
         "type": "string",
-        "valuesList": "villages_group_by",
-        "_row_num": 2,
-        "__rowNum__": 1,
         "_defn": [
           {
             "_row_num": 8,
@@ -2606,6 +2595,20 @@
         ],
         "elementKey": "primary_phone_number"
       },
+      "region": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "region"
+      },
       "year_business_started": {
         "type": "integer",
         "_defn": [
@@ -2619,18 +2622,6 @@
           }
         ],
         "elementKey": "year_business_started"
-      },
-      "region": {
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "survey"
-          }
-        ],
-        "prompt_type_name": "select_one_unique",
-        "type": "string",
-        "valuesList": "region_group_by",
-        "elementKey": "region"
       }
     },
     "section_names": [
@@ -2666,8 +2657,7 @@
           },
           {
             "comments": "required",
-            "type": "select_one_unique",
-            "values_list": "region_group_by",
+            "type": "text",
             "name": "region",
             "display": {
               "prompt": {
@@ -2681,14 +2671,13 @@
             "_row_num": 5,
             "__rowNum__": 4,
             "_token_type": "prompt",
-            "_type": "select_one_unique",
+            "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen5",
             "promptIdx": 1
           },
           {
             "comments": "required",
-            "type": "select_one_unique",
-            "values_list": "district_group_by",
+            "type": "text",
             "name": "district",
             "display": {
               "prompt": {
@@ -2702,14 +2691,13 @@
             "_row_num": 6,
             "__rowNum__": 5,
             "_token_type": "prompt",
-            "_type": "select_one_unique",
+            "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen6",
             "promptIdx": 2
           },
           {
             "comments": "required",
-            "type": "select_one_unique",
-            "values_list": "ward_group_by",
+            "type": "text",
             "name": "ward",
             "display": {
               "prompt": {
@@ -2723,14 +2711,13 @@
             "_row_num": 7,
             "__rowNum__": 6,
             "_token_type": "prompt",
-            "_type": "select_one_unique",
+            "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen7",
             "promptIdx": 3
           },
           {
             "comments": "required",
-            "type": "select_one_unique",
-            "values_list": "villages_group_by",
+            "type": "text",
             "name": "village",
             "display": {
               "prompt": {
@@ -2744,7 +2731,7 @@
             "_row_num": 8,
             "__rowNum__": 7,
             "_token_type": "prompt",
-            "_type": "select_one_unique",
+            "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen8",
             "promptIdx": 4
           },
@@ -3696,11 +3683,7 @@
         "elementPath": "consent"
       },
       "district": {
-        "prompt_type_name": "select_one_unique",
         "type": "string",
-        "valuesList": "district_group_by",
-        "_row_num": 2,
-        "__rowNum__": 1,
         "_defn": [
           {
             "_row_num": 6,
@@ -3717,11 +3700,7 @@
         "elementPath": "district"
       },
       "ward": {
-        "prompt_type_name": "select_one_unique",
         "type": "string",
-        "valuesList": "ward_group_by",
-        "_row_num": 2,
-        "__rowNum__": 1,
         "_defn": [
           {
             "_row_num": 7,
@@ -3738,11 +3717,7 @@
         "elementPath": "ward"
       },
       "village": {
-        "prompt_type_name": "select_one_unique",
         "type": "string",
-        "valuesList": "villages_group_by",
-        "_row_num": 2,
-        "__rowNum__": 1,
         "_defn": [
           {
             "_row_num": 8,
@@ -4189,6 +4164,23 @@
         "elementSet": "data",
         "elementPath": "primary_phone_number"
       },
+      "region": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "elementKey": "region",
+        "elementName": "region",
+        "elementSet": "data",
+        "elementPath": "region"
+      },
       "year_business_started": {
         "type": "integer",
         "_defn": [
@@ -4205,21 +4197,6 @@
         "elementName": "year_business_started",
         "elementSet": "data",
         "elementPath": "year_business_started"
-      },
-      "region": {
-        "_defn": [
-          {
-            "_row_num": 5,
-            "section_name": "survey"
-          }
-        ],
-        "prompt_type_name": "select_one_unique",
-        "type": "string",
-        "valuesList": "region_group_by",
-        "elementKey": "region",
-        "elementName": "region",
-        "elementSet": "data",
-        "elementPath": "region"
       },
       "crop_type_items": {
         "type": "string",

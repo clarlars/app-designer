@@ -5,6 +5,12 @@ from requests.auth import HTTPDigestAuth
 
 test_mode = False
 clear_mode = False
+REGION_PREFIX = '_R1_'
+DISTRICT_PREFIX = '_D2_'
+WARD_PREFIX = '_W3_'
+VILLAGE_PREFIX = '_V4_'
+
+
 if len(sys.argv) >= 2:
     if sys.argv[1] == 'test':
         test_mode = True
@@ -70,7 +76,9 @@ for region, district, ward, village in reg_dist_ward_vil.keys():
     ldap_out.write(out)
     out = 'dn: gidNumber=' + str(gid) + ',ou=' + ward + ',ou=' + district + ',ou=' + region + ',ou=default_prefix,ou=groups,dc=example,dc=org\n'
     ldap_out.write(out)
-    out = 'cn: default_prefix _r1_' + region + '_d2_' + district + '_w3_' + ward + '_v4_' + village + '\n'
+    out = 'cn: default_prefix ' + REGION_PREFIX + region + DISTRICT_PREFIX + district + WARD_PREFIX + ward + VILLAGE_PREFIX + village + '\n'
+    ldap_out.write(out)
+    out = 'description: ' + village + '\n'
     ldap_out.write(out)
     out = 'gidnumber: ' + str(gid) + '\n'
     ldap_out.write(out)

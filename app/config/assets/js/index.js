@@ -10,7 +10,7 @@ function initAgentButton() {
     var agentButton = $('#agent-button');
     agentButton.removeAttr('style');
     agentButton.prop('disabled', false);
-    $('#login-text').text('')
+    $('#login-text').text('');
     agentButton.on('click', function() {
         odkTables.launchHTML(null, 'config/assets/agentView.html?' + util.USER_ID + '=' + indexUserId + '&' +
             util.DEFAULT_GROUP + '=' + indexDefaultGroup);
@@ -21,15 +21,10 @@ function initCoordinatorButton() {
     var coordinatorButton = $('#coordinator-button');
     coordinatorButton.removeAttr('style');
     coordinatorButton.prop('disabled', false);
-    $('#login-text').text('')
+    $('#login-text').text('');
     coordinatorButton.on('click', function() {
         odkTables.launchHTML(null, 'config/assets/coordinatorView.html?' + util.USER_ID + '=' + indexUserId);
     });
-}
-
-function initButtons() {
-    initAgentButton();
-    initCoordinatorButton();
 }
 
 function isUserAdmin(user) {
@@ -78,12 +73,10 @@ function checkDefaultGroupForOptions() {
     // Get usersInfo to get userid
     var getUsersInfoPromise = new Promise(function(resolve, reject) {
         odkData.getUsers(resolve, reject);
-    })
+    });
 
     getUsersInfoPromise.then(function(result) {
-        // TODO: Deal with this for admin
-        // Will need to present them with a list of users in a dropdown box
-        var users = []
+        var users = [];
         users = result.getUsers();
 
         if (users.length > 1) {
@@ -103,7 +96,7 @@ function checkDefaultGroupForOptions() {
             body.css('background-image', 'url(img/bw-business-bubble.jpg)');
             if (util.ADMIN_DEFAULT_GROUPS.indexOf(defGrp) > -1)
             {
-                initButtons();
+                initCoordinatorButton();
             } else {
                 if (util.checkValidAgentDefaultGroup(defGrp)) {
                     indexDefaultGroup = defGrp;

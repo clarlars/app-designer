@@ -52,7 +52,7 @@ util.LOCAL_USER_TABLE = 'ekichabi_user';
 
 util.USER_ID = 'user_id';
 util.DEFAULT_GROUP = 'default_group';
-util.REGION_PREFIX = 'GROUP_R1';
+util.REGION_PREFIX = 'GROUP__R1_';
 util.DISTRICT_PREFIX = '_D2_';
 util.WARD_PREFIX = '_W3_';
 util.VILLAGE_PREFIX = '_V4_';
@@ -121,7 +121,7 @@ util.getAllQueryParameters = function() {
     for (var i = 0; i < keys.length; i++) {
         var keyStrIdx = keys[i].search('=');
         if (keyStrIdx <= 0) {
-            continue;
+
         } else {
             var parsedKey = keys[i].substring(0, keyStrIdx);
             uriParams[parsedKey] = decodeURIComponent(keys[i].substring(keyStrIdx+1, keys[i].length));
@@ -151,7 +151,7 @@ util.getQueryParameter = function(key) {
     for (var i = 0; i < keys.length; i++) {
         var keyStrIdx = keys[i].search('=');
         if (keyStrIdx <= 0) {
-            continue;
+
         } else {
             var parsedKey = keys[i].substring(0, keyStrIdx);
             if (parsedKey === key) {
@@ -273,7 +273,7 @@ util.showIdForDetail = function(idOfElement, colId, resultSet, applyFormat) {
 
         $(idOfElement).text(textToDisplay);
     }
-}
+};
 
 util.getGeoUnitFromDefaultGroup = function(defaultGroup, startPrefix, endPrefix) {
     if (util.checkValidAgentDefaultGroup(defaultGroup) === false) {
@@ -288,46 +288,44 @@ util.getGeoUnitFromDefaultGroup = function(defaultGroup, startPrefix, endPrefix)
         startIdx = defaultGroup.indexOf(startPrefix) + startPrefix.length;
         geo_unit = defaultGroup.substring(startIdx)
     } else {
-        var startIdx = defaultGroup.indexOf(util.REGION_PREFIX) + util.REGION_PREFIX.length;
-        var endIdx = defaultGroup.indexOf(util.DISTRICT_PREFIX);
+        var startIdx = defaultGroup.indexOf(startPrefix) + startPrefix.length;
+        var endIdx = defaultGroup.indexOf(endPrefix);
 
-        var region = defaultGroup.substring(startIdx, endIdx);
+        var geo_unit = defaultGroup.substring(startIdx, endIdx);
     }
 
     return geo_unit;
 
-}
+};
 
 util.getRegionFromDefaultGroup = function (defaultGroup) {
 
     return util.getGeoUnitFromDefaultGroup(defaultGroup, util.REGION_PREFIX, util.DISTRICT_PREFIX);
-}
+};
 
 util.getDistrictFromDefaultGroup = function(defaultGroup){
     return util.getGeoUnitFromDefaultGroup(defaultGroup, util.DISTRICT_PREFIX , util.WARD_PREFIX);
 
-}
+};
 util.getWardFromDefaultGroup = function (defaultGroup) {
     return util.getGeoUnitFromDefaultGroup(defaultGroup, util.WARD_PREFIX , util.VILLAGE_PREFIX);
-}
+};
 util.getVillageFromDefaultGroup = function (defaultGroup) {
     return util.getGeoUnitFromDefaultGroup(defaultGroup, util.VILLAGE_PREFIX , null);
-}
+};
 
 util.checkValidAgentDefaultGroup = function(defaultGroup) {
-    // TODO: More elegant way of doing this
     // Make sure that the default group follows the naming convention
     // GROUP_R1_<region>_D2_<district>_W3_<ward>_V4_<village
     var regIdx = defaultGroup.indexOf(util.REGION_PREFIX);
     var distIdx = defaultGroup.indexOf(util.DISTRICT_PREFIX, regIdx);
     var wardIdx = defaultGroup.indexOf(util.WARD_PREFIX, distIdx);
-    var vilIdx = defaultGroup.index(util.VILLAGE_PREFIX, wardIdx);
+    var vilIdx = defaultGroup.indexOf(util.VILLAGE_PREFIX, wardIdx);
 
-    if (regIdx > -1 || distIdx > -1 || wardId > -1 || vilIdx > 1) {
+    if (regIdx > -1 || distIdx > -1 || wardIdx > -1 || vilIdx > 1) {
         return true;
     }
 
     return false;
-}
 };
 
