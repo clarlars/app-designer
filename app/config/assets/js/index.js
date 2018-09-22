@@ -23,51 +23,9 @@ function initCoordinatorButton() {
     coordinatorButton.prop('disabled', false);
     $('#login-text').text('');
     coordinatorButton.on('click', function() {
-        odkTables.launchHTML(null, 'config/assets/coordinatorView.html?' + util.USER_ID + '=' + indexUserId);
+        odkTables.launchHTML(null, 'config/assets/coordinatorView.html');
     });
 }
-
-function isUserAdmin(user) {
-    for (var i = 0; i < user.roles.length; i++) {
-        if (util.ADMIN_DEFAULT_GROUPS.indexOf(user.roles[i]) > -1) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-function initAdminPicker(users) {
-    var coorId = $('#coordinator_id');
-    coorId.removeAttr('style');
-    var adminId = $('#admin_user_id');
-    adminId.prop('disabled', false);
-
-    var first = false;
-    for (var idx = 0; idx < users.length; idx++) {
-        if (isUserAdmin(users[idx]) ===  true) {
-            var uOpt = $('<option>');
-            var uName = users[idx].full_name;
-            var uId = users[idx].user_id;
-            uOpt.val(uId);
-            uOpt.text(uName);
-            adminId.append(uOpt);
-
-            if (first === false) {
-                first = true;
-                indexUserId = uId;
-                uOpt.attr('selected', 'selected')
-            }
-        }
-    }
-
-    adminId.change(function () {
-      indexUserId = adminId.val();
-    });
-}
-
-
-
 
 function checkDefaultGroupForOptions() {
     // Get usersInfo to get userid
@@ -79,9 +37,7 @@ function checkDefaultGroupForOptions() {
         var users = [];
         users = result.getUsers();
 
-        if (users.length > 1) {
-            initAdminPicker(users);
-        } else {
+        if (users.length == 1) {
             indexUserId = users[0].user_id;
         }
 

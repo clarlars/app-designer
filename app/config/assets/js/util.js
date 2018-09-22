@@ -329,3 +329,14 @@ util.checkValidAgentDefaultGroup = function(defaultGroup) {
     return false;
 };
 
+
+util.isUserAdmin = function(user) {
+    for (var i = 0; i < user.roles.length; i++) {
+        if (util.ADMIN_DEFAULT_GROUPS.indexOf(user.roles[i]) > -1) {
+            return true;
+        }
+    }
+
+    return false;
+}
+

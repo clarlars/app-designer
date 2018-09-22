@@ -3,6 +3,8 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="../../../assets/libs/ratchet-2.0.2/css/ratchet.css" type="text/css" rel="stylesheet"/>
+    <link href="../../../assets/libs/ratchet-2.0.2/css/ratchet-theme-android.css" type="text/css" rel="stylesheet"/>
     <link href="../../../assets/css/detail.css" type="text/css" rel="stylesheet"/>
     <link href="../../../assets/css/home-screen.css" type="text/css" rel="stylesheet" />
     <link href="../../../assets/css/buttons.css" type="text/css" rel="stylesheet"/>
@@ -40,6 +42,14 @@
         <p><span class="detailHdr" id="hdr-has-been-authorized-by-veo">Authorized by VEO?:</span> <span id="has-been-authorized-by-veo"></span>
         </p>
     </div>
+
+    <div id="coordinator_id" class="form-group">
+        <form>
+            <label for="admin_user_id" class="label-display" id="lbl-village">Admins</label>
+            <select class="select-color form-control" id="admin_user_id" list="admins"></select>
+        </form>
+    </div>
+
     <div id="buttonsDiv" class="buttonsDivStyle">
         <button class="button" id="valid-button">Valid Business</button>
         <button class="button" id="invalid-button">Invalid Business</button>

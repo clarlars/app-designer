@@ -15,8 +15,6 @@ function display() {
     var VILLAGE_URL = 'config/assets/listOfVillages.html';
     var queryParamsToAppend = '';
 
-    var userId = util.getQueryParameter(util.USER_ID);
-
     var busListButton = $('#businesses-list-button');
     busListButton.on('click', function() {
         var listURL = 'config/assets/listVerAuthComAll.html';
@@ -30,7 +28,6 @@ function display() {
         queryParamsToAppend = '?' + util.ACTION + '=' + util.ACTION_VERIFY;
         queryParamsToAppend += '&' + util.PENDING_VERIFICATION + '=' + util.TRUE;
         queryParamsToAppend += '&' + util.VIEW_TYPE + '=' + util.VIEW_TYPE_COORDINATOR;
-        queryParamsToAppend += '&' + util.USER_ID + '=' + userId;
         odkTables.launchHTML(null, VILLAGE_URL + queryParamsToAppend);
     });
 }

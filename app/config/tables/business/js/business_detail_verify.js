@@ -6,6 +6,34 @@
 
 var bdvUserId = '';
 var bdvRowId = '';
+
+
+function initAdminPicker(users) {
+    var adminId = $('#admin_user_id');
+
+    var first = false;
+    for (var idx = 0; idx < users.length; idx++) {
+        if (util.isUserAdmin(users[idx]) ===  true) {
+            var uOpt = $('<option>');
+            var uName = users[idx].full_name;
+            var uId = users[idx].user_id;
+            uOpt.val(uId);
+            uOpt.text(uName);
+            adminId.append(uOpt);
+
+            if (first === false) {
+                first = true;
+                bdvUserId = uId;
+                uOpt.attr('selected', 'selected')
+            }
+        }
+    }
+
+    adminId.change(function () {
+        bdvUserId = adminId.val();
+    });
+}
+
 function cbSuccess(result) {
     util.showIdForDetail('#firm-name', 'firm_name', result, false);
     util.showIdForDetail('#sector-type', 'sector_type', result, false);
@@ -26,16 +54,15 @@ function cbSuccess(result) {
     bdvRowId = result.getRowId(0);
 
     var userIdPromise = new Promise(function (resolve, reject) {
-            odkData.simpleQueryLocalOnlyTables(util.LOCAL_USER_TABLE, null, null, null, null, null,
-                null, null, null, resolve, reject);
-        });
+        odkData.getUsers(resolve, reject);
+    });
 
     userIdPromise.then(function (result) {
-        if (result.getCount() === 1) {
-            bdvUserId = result.getData(0, util.USER_ID);
-
+        var users = result.getUsers();
+        if (users.length > 0) {
+            initAdminPicker(users);
         } else {
-            var errText = 'There should only be 1 user on this device!!';
+            var errText = 'No user info returned!!';
             console.log(errText);
             throw errText;
         }
