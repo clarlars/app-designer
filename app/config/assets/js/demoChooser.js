@@ -27,6 +27,10 @@ function display() {
         currentTab = 4;
         updateForTab(currentTab);
     });
+    $('#mcTab').on('click', function() {
+        currentTab = 5;
+        updateForTab(currentTab);
+    });
 
     $('#launch-button').on(
             'click',
@@ -45,6 +49,8 @@ function display() {
                         null);
                 } else if (currentTab === 4) {
                     odkTables.launchHTML(null, 'config/assets/jgiIndex.html');
+                } else if (currentTab === 5) {
+                    odkTables.launchHTML(null, 'config/assets/consult.html');
                 } else {
                     console.log('trouble, unrecognized tab');
                 }
@@ -91,6 +97,13 @@ function updateForTab(tab) {
         descriptionDiv.text('Follow a troop of chimps through the jungle.');
         descriptionDiv.attr('class','description-text-black');
         tabItem = $('#jgiTab');
+    } else if (tab === 5) {
+        // scan
+        fileUri = odkCommon.getFileAsUrl(
+            'config/assets/img/chimp.png');
+        descriptionDiv.text('Medical Consultation');
+        descriptionDiv.attr('class','description-text-black');
+        tabItem = $('#mcTab');
     } else {
         console.log('unrecognized tab index: ' + tab);
     }
