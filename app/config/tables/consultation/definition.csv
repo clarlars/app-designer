@@ -1,0 +1,15 @@
+_element_key,_element_name,_element_type,_list_child_element_keys
+SpO2,SpO2,integer,[]
+b_t,b_t,integer,[]
+blood_pressure,blood_pressure,integer,[]
+date,date,date,[]
+doc_name,doc_name,string,[]
+heart_rate,heart_rate,integer,[]
+height,height,integer,[]
+location,location,string,[]
+patient_age,patient_age,integer,[]
+patient_name,patient_name,string,[]
+resp_rate,resp_rate,integer,[]
+vaccinations,vaccinations,array,"[""vaccinations_items""]"
+vaccinations_items,items,string,[]
+weight,weight,integer,[]

@@ -1,0 +1,6 @@
+_partition,_aspect,_key,_type,_value
+Column,vaccinations,displayChoicesList,object,"[{""choice_list_name"":""Vaccinations"",""data_value"":""MMR"",""display"":{""title"":{""text"":""MMR""}},""_row_num"":2},{""choice_list_name"":""Vaccinations"",""data_value"":""BCG"",""display"":{""title"":{""text"":""BCG""}},""_row_num"":3},{""choice_list_name"":""Vaccinations"",""data_value"":""Polio"",""display"":{""title"":{""text"":""Polio""}},""_row_num"":4},{""choice_list_name"":""Vaccinations"",""data_value"":""DPT"",""display"":{""title"":{""text"":""DPT""}},""_row_num"":5},{""choice_list_name"":""Vaccinations"",""data_value"":""Tetanus"",""display"":{""title"":{""text"":""Tetanus""}},""_row_num"":6}]"
+FormType,default,FormType.formType,string,SURVEY
+SurveyUtil,default,SurveyUtil.formId,string,consultation
+Table,default,defaultViewType,string,SPREADSHEET
+Table,default,displayName,object,"{""text"":""Consultation""}"

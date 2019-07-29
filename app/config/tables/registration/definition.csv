@@ -1,0 +1,12 @@
+_element_key,_element_name,_element_type,_list_child_element_keys
+address,address,string,[]
+client_id,client_id,string,[]
+date_of_birth,date_of_birth,date,[]
+father,father,string,[]
+first_name,first_name,string,[]
+last_name,last_name,string,[]
+middle_name,middle_name,string,[]
+mother,mother,string,[]
+sex,sex,string,[]
+state,state,string,[]
+telephone_num,telephone_num,integer,[]

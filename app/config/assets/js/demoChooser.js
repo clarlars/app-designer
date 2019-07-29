@@ -50,7 +50,7 @@ function display() {
                 } else if (currentTab === 4) {
                     odkTables.launchHTML(null, 'config/assets/jgiIndex.html');
                 } else if (currentTab === 5) {
-                    odkTables.launchHTML(null, 'config/assets/consult.html');
+                    odkTables.launchHTML(null, 'config/assets/register.html');
                 } else {
                     console.log('trouble, unrecognized tab');
                 }

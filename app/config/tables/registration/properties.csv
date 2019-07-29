@@ -1,0 +1,6 @@
+_partition,_aspect,_key,_type,_value
+Column,sex,displayChoicesList,object,"[{""choice_list_name"":""SexChoice"",""data_value"":""Male"",""display"":{""title"":{""text"":""Male""}},""_row_num"":2},{""choice_list_name"":""SexChoice"",""data_value"":""Female"",""display"":{""title"":{""text"":""Female""}},""_row_num"":3}]"
+FormType,default,FormType.formType,string,SURVEY
+SurveyUtil,default,SurveyUtil.formId,string,registration
+Table,default,defaultViewType,string,SPREADSHEET
+Table,default,displayName,object,"{""text"":""Registration""}"

@@ -533,11 +533,11 @@
         "_row_num": 88
       },
       {
-        "branch_label": "medical_consult",
+        "branch_label": "registration",
         "_row_num": 89
       },
       {
-        "url": "'?' +  odkSurvey.getHashString('medical_consult')",
+        "url": "'?' +  odkSurvey.getHashString('registration')",
         "type": "external_link",
         "display": {
           "prompt": {
@@ -549,6 +549,24 @@
       {
         "clause": "exit section",
         "_row_num": 91
+      },
+      {
+        "branch_label": "consultation",
+        "_row_num": 92
+      },
+      {
+        "url": "'?' +  odkSurvey.getHashString('consultation')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 93
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 94
       }
     ],
     "settings": [
@@ -901,13 +919,23 @@
       },
       {
         "choice_list_name": "test_forms",
-        "data_value": "medical_consult",
+        "data_value": "registration",
+        "display": {
+          "title": {
+            "text": "Registration"
+          }
+        },
+        "_row_num": 29
+      },
+      {
+        "choice_list_name": "test_forms",
+        "data_value": "consultation",
         "display": {
           "title": {
             "text": "Medical Consultation"
           }
         },
-        "_row_num": 29
+        "_row_num": 30
       }
     ],
     "framework_translations": [
@@ -1818,13 +1846,23 @@
         },
         {
           "choice_list_name": "test_forms",
-          "data_value": "medical_consult",
+          "data_value": "registration",
+          "display": {
+            "title": {
+              "text": "Registration"
+            }
+          },
+          "_row_num": 29
+        },
+        {
+          "choice_list_name": "test_forms",
+          "data_value": "consultation",
           "display": {
             "title": {
               "text": "Medical Consultation"
             }
           },
-          "_row_num": 29
+          "_row_num": 30
         }
       ]
     },
@@ -2912,7 +2950,7 @@
             "promptIdx": 28
           },
           {
-            "url": "'?' +  odkSurvey.getHashString('medical_consult')",
+            "url": "'?' +  odkSurvey.getHashString('registration')",
             "type": "external_link",
             "display": {
               "prompt": {
@@ -2927,12 +2965,27 @@
             "promptIdx": 29
           },
           {
+            "url": "'?' +  odkSurvey.getHashString('consultation')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 93,
+            "__rowNum__": 92,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen93",
+            "promptIdx": 30
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 92,
-            "_branch_label_enclosing_screen": "survey/_screen92",
-            "promptIdx": 30
+            "_row_num": 95,
+            "_branch_label_enclosing_screen": "survey/_screen95",
+            "promptIdx": 31
           }
         ],
         "validation_tag_map": {
@@ -3346,25 +3399,38 @@
             "operationIdx": 61
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 92,
+            "_row_num": 93,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 62
           },
           {
-            "_row_num": 92,
+            "clause": "exit section",
+            "_row_num": 94,
+            "__rowNum__": 93,
+            "_token_type": "exit_section",
+            "operationIdx": 63
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 95,
+            "operationIdx": 64
+          },
+          {
+            "_row_num": 95,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(31);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 63
+            "operationIdx": 65
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 92,
-            "operationIdx": 64
+            "_row_num": 95,
+            "operationIdx": 66
           }
         ],
         "branch_label_map": {
@@ -3427,10 +3493,12 @@
           "_screen84": 56,
           "partner6Month": 58,
           "_screen87": 58,
-          "medical_consult": 60,
+          "registration": 60,
           "_screen90": 60,
-          "_contents": 63,
-          "_screen92": 63
+          "consultation": 62,
+          "_screen93": 62,
+          "_contents": 65,
+          "_screen95": 65
         }
       }
     },
