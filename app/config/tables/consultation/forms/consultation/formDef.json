@@ -3,10 +3,10 @@
     "survey": [
       {
         "type": "note",
-        "name": "consul_init",
+        "name": "doctor_note",
         "display": {
           "prompt": {
-            "text": "You are about to enter a medical consultation. Please make sure you are prepared and with a doctor before proceeding."
+            "text": "You are about to begin the consultation with the patient. Please make sure that the patient is ready and has completed the triage."
           }
         },
         "_row_num": 2
@@ -17,10 +17,10 @@
       },
       {
         "type": "string",
-        "name": "patient_name",
+        "name": "findings",
         "display": {
           "prompt": {
-            "text": "Please enter the patient's name"
+            "text": "Findings:"
           }
         },
         "_row_num": 4
@@ -34,11 +34,11 @@
         "_row_num": 6
       },
       {
-        "type": "integer",
-        "name": "patient_age",
+        "type": "string",
+        "name": "diagnosis",
         "display": {
           "prompt": {
-            "text": "Please enter the patient's age"
+            "text": "Diagnosis:"
           }
         },
         "_row_num": 7
@@ -53,10 +53,10 @@
       },
       {
         "type": "string",
-        "name": "location",
+        "name": "treatment",
         "display": {
           "prompt": {
-            "text": "Please enter the current location"
+            "text": "Treatment:"
           }
         },
         "_row_num": 10
@@ -70,11 +70,11 @@
         "_row_num": 12
       },
       {
-        "type": "date",
-        "name": "date",
+        "type": "note",
+        "name": "note",
         "display": {
           "prompt": {
-            "text": "Please enter the date"
+            "text": "The consultation is now over."
           }
         },
         "_row_num": 13
@@ -82,221 +82,6 @@
       {
         "clause": "end screen",
         "_row_num": 14
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 15
-      },
-      {
-        "type": "string",
-        "name": "doc_name",
-        "display": {
-          "prompt": {
-            "text": "Please enter the doctor's name"
-          }
-        },
-        "_row_num": 16
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 17
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 18
-      },
-      {
-        "type": "integer",
-        "name": "height",
-        "display": {
-          "prompt": {
-            "text": "Please enter your height in centimeters (cm)"
-          }
-        },
-        "_row_num": 19
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 20
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 21
-      },
-      {
-        "type": "integer",
-        "name": "weight",
-        "display": {
-          "prompt": {
-            "text": "Please enter your weight in kilograms (kg)"
-          }
-        },
-        "_row_num": 22
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 23
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 24
-      },
-      {
-        "type": "integer",
-        "name": "blood_pressure",
-        "display": {
-          "prompt": {
-            "text": "Please enter your blood pressure"
-          }
-        },
-        "_row_num": 25
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 26
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 27
-      },
-      {
-        "type": "integer",
-        "name": "heart_rate",
-        "display": {
-          "prompt": {
-            "text": "Please enter your heart rate"
-          }
-        },
-        "_row_num": 28
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 29
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 30
-      },
-      {
-        "type": "integer",
-        "name": "resp_rate",
-        "display": {
-          "prompt": {
-            "text": "Please enter your respiratory rate"
-          }
-        },
-        "_row_num": 31
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 32
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 33
-      },
-      {
-        "type": "integer",
-        "name": "SpO2",
-        "display": {
-          "prompt": {
-            "text": "Please enter your SpO2"
-          }
-        },
-        "_row_num": 34
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 35
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 36
-      },
-      {
-        "type": "integer",
-        "name": "b_t",
-        "display": {
-          "prompt": {
-            "text": "Please enter your B.T."
-          }
-        },
-        "_row_num": 37
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 38
-      },
-      {
-        "clause": "begin screen",
-        "_row_num": 39
-      },
-      {
-        "type": "select_multiple",
-        "values_list": "Vaccinations",
-        "name": "vaccinations",
-        "display": {
-          "prompt": {
-            "text": "Please indicate which vaccinations you've had"
-          }
-        },
-        "_row_num": 40
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 41
-      }
-    ],
-    "choices": [
-      {
-        "choice_list_name": "Vaccinations",
-        "data_value": "MMR",
-        "display": {
-          "title": {
-            "text": "MMR"
-          }
-        },
-        "_row_num": 2
-      },
-      {
-        "choice_list_name": "Vaccinations",
-        "data_value": "BCG",
-        "display": {
-          "title": {
-            "text": "BCG"
-          }
-        },
-        "_row_num": 3
-      },
-      {
-        "choice_list_name": "Vaccinations",
-        "data_value": "Polio",
-        "display": {
-          "title": {
-            "text": "Polio"
-          }
-        },
-        "_row_num": 4
-      },
-      {
-        "choice_list_name": "Vaccinations",
-        "data_value": "DPT",
-        "display": {
-          "title": {
-            "text": "DPT"
-          }
-        },
-        "_row_num": 5
-      },
-      {
-        "choice_list_name": "Vaccinations",
-        "data_value": "Tetanus",
-        "display": {
-          "title": {
-            "text": "Tetanus"
-          }
-        },
-        "_row_num": 6
       }
     ],
     "settings": [
@@ -396,67 +181,14 @@
         "_row_num": 4
       }
     },
-    "choices": {
-      "Vaccinations": [
-        {
-          "choice_list_name": "Vaccinations",
-          "data_value": "MMR",
-          "display": {
-            "title": {
-              "text": "MMR"
-            }
-          },
-          "_row_num": 2
-        },
-        {
-          "choice_list_name": "Vaccinations",
-          "data_value": "BCG",
-          "display": {
-            "title": {
-              "text": "BCG"
-            }
-          },
-          "_row_num": 3
-        },
-        {
-          "choice_list_name": "Vaccinations",
-          "data_value": "Polio",
-          "display": {
-            "title": {
-              "text": "Polio"
-            }
-          },
-          "_row_num": 4
-        },
-        {
-          "choice_list_name": "Vaccinations",
-          "data_value": "DPT",
-          "display": {
-            "title": {
-              "text": "DPT"
-            }
-          },
-          "_row_num": 5
-        },
-        {
-          "choice_list_name": "Vaccinations",
-          "data_value": "Tetanus",
-          "display": {
-            "title": {
-              "text": "Tetanus"
-            }
-          },
-          "_row_num": 6
-        }
-      ]
-    },
+    "choices": {},
     "table_specific_definitions": {
       "_tokens": {}
     },
     "queries": {},
     "calculates": {},
     "model": {
-      "patient_name": {
+      "findings": {
         "_defn": [
           {
             "_row_num": 4,
@@ -464,19 +196,19 @@
           }
         ],
         "type": "string",
-        "elementKey": "patient_name"
+        "elementKey": "findings"
       },
-      "patient_age": {
+      "diagnosis": {
         "_defn": [
           {
             "_row_num": 7,
             "section_name": "survey"
           }
         ],
-        "type": "integer",
-        "elementKey": "patient_age"
+        "type": "string",
+        "elementKey": "diagnosis"
       },
-      "location": {
+      "treatment": {
         "_defn": [
           {
             "_row_num": 10,
@@ -484,113 +216,7 @@
           }
         ],
         "type": "string",
-        "elementKey": "location"
-      },
-      "date": {
-        "_defn": [
-          {
-            "_row_num": 13,
-            "section_name": "survey"
-          }
-        ],
-        "type": "string",
-        "elementType": "date",
-        "elementKey": "date"
-      },
-      "doc_name": {
-        "_defn": [
-          {
-            "_row_num": 16,
-            "section_name": "survey"
-          }
-        ],
-        "type": "string",
-        "elementKey": "doc_name"
-      },
-      "height": {
-        "_defn": [
-          {
-            "_row_num": 19,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "height"
-      },
-      "weight": {
-        "_defn": [
-          {
-            "_row_num": 22,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "weight"
-      },
-      "blood_pressure": {
-        "_defn": [
-          {
-            "_row_num": 25,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "blood_pressure"
-      },
-      "heart_rate": {
-        "_defn": [
-          {
-            "_row_num": 28,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "heart_rate"
-      },
-      "resp_rate": {
-        "_defn": [
-          {
-            "_row_num": 31,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "resp_rate"
-      },
-      "SpO2": {
-        "_defn": [
-          {
-            "_row_num": 34,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "SpO2"
-      },
-      "b_t": {
-        "_defn": [
-          {
-            "_row_num": 37,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "b_t"
-      },
-      "vaccinations": {
-        "_defn": [
-          {
-            "_row_num": 40,
-            "section_name": "survey"
-          }
-        ],
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "vaccinations_items"
-        },
-        "valuesList": "Vaccinations",
-        "elementKey": "vaccinations"
+        "elementKey": "treatment"
       }
     },
     "section_names": [
@@ -605,10 +231,10 @@
         "prompts": [
           {
             "type": "note",
-            "name": "consul_init",
+            "name": "doctor_note",
             "display": {
               "prompt": {
-                "text": "You are about to enter a medical consultation. Please make sure you are prepared and with a doctor before proceeding."
+                "text": "You are about to begin the consultation with the patient. Please make sure that the patient is ready and has completed the triage."
               }
             },
             "_row_num": 2,
@@ -620,10 +246,10 @@
           },
           {
             "type": "string",
-            "name": "patient_name",
+            "name": "findings",
             "display": {
               "prompt": {
-                "text": "Please enter the patient's name"
+                "text": "Findings:"
               }
             },
             "_row_num": 4,
@@ -634,26 +260,26 @@
             "promptIdx": 1
           },
           {
-            "type": "integer",
-            "name": "patient_age",
+            "type": "string",
+            "name": "diagnosis",
             "display": {
               "prompt": {
-                "text": "Please enter the patient's age"
+                "text": "Diagnosis:"
               }
             },
             "_row_num": 7,
             "__rowNum__": 6,
             "_token_type": "prompt",
-            "_type": "integer",
+            "_type": "string",
             "_branch_label_enclosing_screen": "survey/_screen6",
             "promptIdx": 2
           },
           {
             "type": "string",
-            "name": "location",
+            "name": "treatment",
             "display": {
               "prompt": {
-                "text": "Please enter the current location"
+                "text": "Treatment:"
               }
             },
             "_row_num": 10,
@@ -664,163 +290,27 @@
             "promptIdx": 3
           },
           {
-            "type": "date",
-            "name": "date",
+            "type": "note",
+            "name": "note",
             "display": {
               "prompt": {
-                "text": "Please enter the date"
+                "text": "The consultation is now over."
               }
             },
             "_row_num": 13,
             "__rowNum__": 12,
             "_token_type": "prompt",
-            "_type": "date",
+            "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen12",
             "promptIdx": 4
-          },
-          {
-            "type": "string",
-            "name": "doc_name",
-            "display": {
-              "prompt": {
-                "text": "Please enter the doctor's name"
-              }
-            },
-            "_row_num": 16,
-            "__rowNum__": 15,
-            "_token_type": "prompt",
-            "_type": "string",
-            "_branch_label_enclosing_screen": "survey/_screen15",
-            "promptIdx": 5
-          },
-          {
-            "type": "integer",
-            "name": "height",
-            "display": {
-              "prompt": {
-                "text": "Please enter your height in centimeters (cm)"
-              }
-            },
-            "_row_num": 19,
-            "__rowNum__": 18,
-            "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen18",
-            "promptIdx": 6
-          },
-          {
-            "type": "integer",
-            "name": "weight",
-            "display": {
-              "prompt": {
-                "text": "Please enter your weight in kilograms (kg)"
-              }
-            },
-            "_row_num": 22,
-            "__rowNum__": 21,
-            "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen21",
-            "promptIdx": 7
-          },
-          {
-            "type": "integer",
-            "name": "blood_pressure",
-            "display": {
-              "prompt": {
-                "text": "Please enter your blood pressure"
-              }
-            },
-            "_row_num": 25,
-            "__rowNum__": 24,
-            "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen24",
-            "promptIdx": 8
-          },
-          {
-            "type": "integer",
-            "name": "heart_rate",
-            "display": {
-              "prompt": {
-                "text": "Please enter your heart rate"
-              }
-            },
-            "_row_num": 28,
-            "__rowNum__": 27,
-            "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen27",
-            "promptIdx": 9
-          },
-          {
-            "type": "integer",
-            "name": "resp_rate",
-            "display": {
-              "prompt": {
-                "text": "Please enter your respiratory rate"
-              }
-            },
-            "_row_num": 31,
-            "__rowNum__": 30,
-            "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen30",
-            "promptIdx": 10
-          },
-          {
-            "type": "integer",
-            "name": "SpO2",
-            "display": {
-              "prompt": {
-                "text": "Please enter your SpO2"
-              }
-            },
-            "_row_num": 34,
-            "__rowNum__": 33,
-            "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen33",
-            "promptIdx": 11
-          },
-          {
-            "type": "integer",
-            "name": "b_t",
-            "display": {
-              "prompt": {
-                "text": "Please enter your B.T."
-              }
-            },
-            "_row_num": 37,
-            "__rowNum__": 36,
-            "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen36",
-            "promptIdx": 12
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "Vaccinations",
-            "name": "vaccinations",
-            "display": {
-              "prompt": {
-                "text": "Please indicate which vaccinations you've had"
-              }
-            },
-            "_row_num": 40,
-            "__rowNum__": 39,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen39",
-            "promptIdx": 13
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 42,
-            "_branch_label_enclosing_screen": "survey/_screen42",
-            "promptIdx": 14
+            "_row_num": 15,
+            "_branch_label_enclosing_screen": "survey/_screen15",
+            "promptIdx": 5
           }
         ],
         "validation_tag_map": {
@@ -890,151 +380,25 @@
             "operationIdx": 4
           },
           {
-            "clause": "begin screen",
+            "_token_type": "exit_section",
+            "clause": "exit section",
             "_row_num": 15,
-            "__rowNum__": 14,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 17,
-              "__rowNum__": 16,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 5
           },
           {
-            "clause": "begin screen",
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "_row_num": 15,
             "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 20,
-              "__rowNum__": 19,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 6
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 21,
-            "__rowNum__": 20,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 23,
-              "__rowNum__": 22,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 7
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 24,
-            "__rowNum__": 23,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 26,
-              "__rowNum__": 25,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 8
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 27,
-            "__rowNum__": 26,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 29,
-              "__rowNum__": 28,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 9
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 30,
-            "__rowNum__": 29,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 32,
-              "__rowNum__": 31,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 10
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 33,
-            "__rowNum__": 32,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 35,
-              "__rowNum__": 34,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 11
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 36,
-            "__rowNum__": 35,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 38,
-              "__rowNum__": 37,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 12
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 39,
-            "__rowNum__": 38,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 41,
-              "__rowNum__": 40,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 13
-          },
-          {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 42,
-            "operationIdx": 14
-          },
-          {
-            "_row_num": 42,
-            "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 15
+            "operationIdx": 6
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 42,
-            "operationIdx": 16
+            "_row_num": 15,
+            "operationIdx": 7
           }
         ],
         "branch_label_map": {
@@ -1043,17 +407,8 @@
           "_screen6": 2,
           "_screen9": 3,
           "_screen12": 4,
-          "_screen15": 5,
-          "_screen18": 6,
-          "_screen21": 7,
-          "_screen24": 8,
-          "_screen27": 9,
-          "_screen30": 10,
-          "_screen33": 11,
-          "_screen36": 12,
-          "_screen39": 13,
-          "_contents": 15,
-          "_screen42": 15
+          "_contents": 6,
+          "_screen15": 6
         }
       },
       "initial": {
@@ -1235,7 +590,7 @@
       }
     },
     "dataTableModel": {
-      "patient_name": {
+      "findings": {
         "_defn": [
           {
             "_row_num": 4,
@@ -1243,25 +598,25 @@
           }
         ],
         "type": "string",
-        "elementKey": "patient_name",
-        "elementName": "patient_name",
+        "elementKey": "findings",
+        "elementName": "findings",
         "elementSet": "data",
-        "elementPath": "patient_name"
+        "elementPath": "findings"
       },
-      "patient_age": {
+      "diagnosis": {
         "_defn": [
           {
             "_row_num": 7,
             "section_name": "survey"
           }
         ],
-        "type": "integer",
-        "elementKey": "patient_age",
-        "elementName": "patient_age",
+        "type": "string",
+        "elementKey": "diagnosis",
+        "elementName": "diagnosis",
         "elementSet": "data",
-        "elementPath": "patient_age"
+        "elementPath": "diagnosis"
       },
-      "location": {
+      "treatment": {
         "_defn": [
           {
             "_row_num": 10,
@@ -1269,161 +624,10 @@
           }
         ],
         "type": "string",
-        "elementKey": "location",
-        "elementName": "location",
+        "elementKey": "treatment",
+        "elementName": "treatment",
         "elementSet": "data",
-        "elementPath": "location"
-      },
-      "date": {
-        "_defn": [
-          {
-            "_row_num": 13,
-            "section_name": "survey"
-          }
-        ],
-        "type": "string",
-        "elementType": "date",
-        "elementKey": "date",
-        "elementName": "date",
-        "elementSet": "data",
-        "elementPath": "date"
-      },
-      "doc_name": {
-        "_defn": [
-          {
-            "_row_num": 16,
-            "section_name": "survey"
-          }
-        ],
-        "type": "string",
-        "elementKey": "doc_name",
-        "elementName": "doc_name",
-        "elementSet": "data",
-        "elementPath": "doc_name"
-      },
-      "height": {
-        "_defn": [
-          {
-            "_row_num": 19,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "height",
-        "elementName": "height",
-        "elementSet": "data",
-        "elementPath": "height"
-      },
-      "weight": {
-        "_defn": [
-          {
-            "_row_num": 22,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "weight",
-        "elementName": "weight",
-        "elementSet": "data",
-        "elementPath": "weight"
-      },
-      "blood_pressure": {
-        "_defn": [
-          {
-            "_row_num": 25,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "blood_pressure",
-        "elementName": "blood_pressure",
-        "elementSet": "data",
-        "elementPath": "blood_pressure"
-      },
-      "heart_rate": {
-        "_defn": [
-          {
-            "_row_num": 28,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "heart_rate",
-        "elementName": "heart_rate",
-        "elementSet": "data",
-        "elementPath": "heart_rate"
-      },
-      "resp_rate": {
-        "_defn": [
-          {
-            "_row_num": 31,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "resp_rate",
-        "elementName": "resp_rate",
-        "elementSet": "data",
-        "elementPath": "resp_rate"
-      },
-      "SpO2": {
-        "_defn": [
-          {
-            "_row_num": 34,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "SpO2",
-        "elementName": "SpO2",
-        "elementSet": "data",
-        "elementPath": "SpO2"
-      },
-      "b_t": {
-        "_defn": [
-          {
-            "_row_num": 37,
-            "section_name": "survey"
-          }
-        ],
-        "type": "integer",
-        "elementKey": "b_t",
-        "elementName": "b_t",
-        "elementSet": "data",
-        "elementPath": "b_t"
-      },
-      "vaccinations": {
-        "_defn": [
-          {
-            "_row_num": 40,
-            "section_name": "survey"
-          }
-        ],
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "vaccinations_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "vaccinations.items",
-          "notUnitOfRetention": true
-        },
-        "valuesList": "Vaccinations",
-        "elementKey": "vaccinations",
-        "elementName": "vaccinations",
-        "elementSet": "data",
-        "elementPath": "vaccinations",
-        "listChildElementKeys": [
-          "vaccinations_items"
-        ]
-      },
-      "vaccinations_items": {
-        "type": "string",
-        "elementKey": "vaccinations_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "vaccinations.items",
-        "notUnitOfRetention": true
+        "elementPath": "treatment"
       },
       "_id": {
         "type": "string",
@@ -1539,13 +743,6 @@
       }
     },
     "properties": [
-      {
-        "_partition": "Column",
-        "_aspect": "vaccinations",
-        "_key": "displayChoicesList",
-        "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Vaccinations\",\"data_value\":\"MMR\",\"display\":{\"title\":{\"text\":\"MMR\"}},\"_row_num\":2},{\"choice_list_name\":\"Vaccinations\",\"data_value\":\"BCG\",\"display\":{\"title\":{\"text\":\"BCG\"}},\"_row_num\":3},{\"choice_list_name\":\"Vaccinations\",\"data_value\":\"Polio\",\"display\":{\"title\":{\"text\":\"Polio\"}},\"_row_num\":4},{\"choice_list_name\":\"Vaccinations\",\"data_value\":\"DPT\",\"display\":{\"title\":{\"text\":\"DPT\"}},\"_row_num\":5},{\"choice_list_name\":\"Vaccinations\",\"data_value\":\"Tetanus\",\"display\":{\"title\":{\"text\":\"Tetanus\"}},\"_row_num\":6}]"
-      },
       {
         "_partition": "FormType",
         "_aspect": "default",

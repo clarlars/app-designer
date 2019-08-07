@@ -15,11 +15,25 @@
 
         // Displays homescreen
         function display() {
-
             /*    Screen new client option that launches new client list view */
+            
+            var search = document.createElement("input");
+            search.type = "text";
+            search.setAttribute("id", "textbox1");
+
+            document.getElementById("wrapper").appendChild(search);
+
+            var submit = document.createElement("button");
+            submit.setAttribute("id", "button3");
+            submit.innerHTML = "Search by Patient ID";
+            submit.onclick = function() {
+                window.location.href = "serviceSelect.html";
+            }
+            document.getElementById("wrapper").appendChild(submit);
+
             var newClient = document.createElement("button");
             newClient.setAttribute("id", "button1");
-            newClient.innerHTML = "Register";
+            newClient.innerHTML = "Register Patient";
             var jMap = {};
             jMap['client_id'] = util.genUUID();
             newClient.onclick = function() {
@@ -33,32 +47,36 @@
 
             var login = document.createElement("button");
             login.setAttribute("id", "button2");
-            login.innerHTML = "Login";
+            login.innerHTML = "Search by Patient Name";
             login.onclick = function() {
-                window.location.href = "login.html";
+                odkTables.openTableToListView(null,
+                    'registration',
+                    null,
+                    null,
+                    'config/tables/registration/html/registration_list.html');
             }
+
             document.getElementById("wrapper").appendChild(login);
 
-            // // Follow up with existing client option that launches
-            // // 'mecdical_consult' table list view
-            // var followUp = document.createElement("button");
-            // followUp.setAttribute("id", "button2");
-            // followUp.innerHTML = "Follow Up with Existing Client";
-            // followUp.onclick = function() {
-            //     odkTables.openTableToListView(null,
-            //         'registeration',
-            //         null,
-            //         null,
-            //         'config/tables/registration/html/registration_list.html');
-            // }
-            // document.getElementById("wrapper").appendChild(followUp);
-        }
+            var horizontal = document.createElement("hr");
+            horizontal.setAttribute("id", "pagebreak");
+            horizontal.setAttribute("width", "300px");
+            document.getElementById("wrapper").appendChild(horizontal);
 
+            var update = document.createElement("button");
+            update.setAttribute("id", "button4");
+            update.innerHTML = "Other Tasks";
+            update.onclick = function() {
+                window.location.href = "taskSelect.html";
+            }
+            update.style.backgroundColor="lightblue";
+            document.getElementById("wrapper").appendChild(update);
+        }
     </script>
 </head>
 
 <body onload="display();">
-<h1>Registration</h1>
+<h1>Patient ID</h1>
 <div id="wrapper"></div>
 </body>
 </html>

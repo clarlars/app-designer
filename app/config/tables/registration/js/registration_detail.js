@@ -1,26 +1,38 @@
 /**
  * The file for displaying a detail view.
  */
-/* global $, control */
+/* global $, odkTables, odkData */
 'use strict';
 
-// Handle the case where we are debugging in chrome.
-if (JSON.parse(control.getPlatformInfo()).container === 'Chrome') {
-    console.log('Welcome to Tables debugging in Chrome!');
-    $.ajax({
-        url: control.getFileAsUrl('output/debug/registration_data.json'),
-        async: false,  // do it first
-        success: function(dataObj) {
-            if (dataObj === undefined || dataObj === null) {
-                console.log('Could not load data json for table: registration');
-            }
-            window.data.setBackingObject(dataObj);
-        }
-    });
-}
- 
-function display() {
-    // Perform your modification of the HTML page here and call display() in
-    // the body of your .html file.
+var clientId;
+
+// Displays details about client and links to various forms
+function display(result) {
+
+    // Details - Client id, age, randomization arm
+    clientId = result.get('client_id');
+    document.getElementById('first_name').innerHTML = clientId;
+    document.getElementById('middle_name').innerHTML = result.get('triage');
+    document.getElementById('last_name').innerHTML = result.get('reasons');
+    document.getElementById('sex').innerHTML = result.get('preli_diag');
+    document.getElementById('date_of_birth').innerHTML = result.get('diag_plan');
+    document.getElementById('state').innerHTML = result.get('lab_res');
+    document.getElementById('telephone_num').innerHTML = result.get('diseases');
+    document.getElementById('father').innerHTML = result.get('con_diag');
+    document.getElementById('mother').innerHTML = result.get('treatment');
 }
 
+function cbSuccess(result) {
+    display(result);
+}
+
+function cbFailure(error) {
+    console.log('registration_detail: failed with error: ' + error);
+}
+
+// handles events from html page
+function setup() {
+    odkData.getViewData(cbSuccess, cbFailure);
+}
+
+$(document).ready(setup);

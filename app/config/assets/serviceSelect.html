@@ -21,11 +21,11 @@
             odontology.setAttribute("id", "button1");
             odontology.innerHTML = "Odontology";
             odontology.onclick = function() {
-                odkTables.openTableToListView(null,
-                    'medical_consult',
+                odkTables.addRowWithSurvey(null,
+                    'odontology',
+                    'odontology',
                     null,
-                    null,
-                    'config/tables/medical_consult/html/medical_consult_list.html');
+                    null);
             }
             document.getElementById("wrapper").appendChild(odontology);
 
@@ -33,24 +33,23 @@
             psych.setAttribute("id", "button2");
             psych.innerHTML = "Psychological Support";
             psych.onclick = function() {
-                odkTables.openTableToListView(null,
-                    'medical_consult',
+                odkTables.addRowWithSurvey(null,
+                    'psychological',
+                    'psychological',
                     null,
-                    null,
-                    'config/tables/medical_consult/html/medical_consult_list.html');
+                    null);
             }
             document.getElementById("wrapper").appendChild(psych);
 
             var supply = document.createElement("button");
             supply.setAttribute("id", "button3");
-            supply.innerHTML = "Medicine Supply";
+            supply.innerHTML = "Pharmacy";
             supply.onclick = function() {
-                odkTables.openTableToListView(null,
-                    'medical_consult',
+                odkTables.addRowWithSurvey(null,
+                    'supply',
+                    'supply',
                     null,
-                    null,
-                    'config/tables/medical_consult/html/medical_consult_list.html');
-
+                    null);
             }
             document.getElementById("wrapper").appendChild(supply);
 
@@ -58,13 +57,17 @@
             consul.setAttribute("id", "button4");
             consul.innerHTML = "Medical Consultation";
             consul.onclick = function() {
-                odkTables.addRowWithSurvey(null,
-                    'consultation',
-                    'consultation',
-                    null,
-                    null);
+                window.location.href = "consultation.html";
             }
             document.getElementById("wrapper").appendChild(consul);
+
+            var lab = document.createElement("button");
+            lab.setAttribute("id", "button4");
+            lab.innerHTML = "Laboratory";
+            lab.onclick = function() {
+                window.location.href = "laboratory.html";
+            }
+            document.getElementById("wrapper").appendChild(lab);
         }
     </script>
 </head>
