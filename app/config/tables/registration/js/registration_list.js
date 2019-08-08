@@ -23,10 +23,11 @@ function cbSRSuccess(searchData) {
     if(searchData.getCount() > 0) {
         // open filtered list view if client found
         var rowId = searchData.getRowId(0);
+        var firstName = searchData.getData(0, 'first_name');
         odkTables.openTableToListView(null,
             'registration',
-            '_id = ?',
-            [rowId],
+            'first_name = ?',
+            [firstName],
             'config/tables/registration/html/registration_list.html');
     } else {
         document.getElementById("search").value = "";
@@ -48,7 +49,6 @@ function getResults() {
 
 // displays list view of clients
 function render() {
-
     for (var i = 0; i < registration.getCount(); i++) {
 
         var clientId = registration.getData(i, 'client_id');
@@ -61,6 +61,7 @@ function render() {
             firstName !== '' &&
             lastName !== null &&
             lastName !== '') {
+
             /*    Creating the item space    */
             var item = document.createElement('li');
             item.setAttribute('class', 'item_space');
@@ -78,13 +79,13 @@ function render() {
             item.appendChild(chevron);
 
             // create sub-list in item space
-            //  Age information
+            // First name
             var tri = document.createElement('li');
             tri.setAttribute('class', 'detail');
             tri.innerHTML = 'First Name: ' + firstName;
             item.appendChild(tri);
 
-            // //  Randomization Arm
+            // Last name
             var dis = document.createElement('li');
             dis.setAttribute('class', 'detail');
             dis.innerHTML = 'Last Name: ' + lastName;

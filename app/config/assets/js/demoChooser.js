@@ -5,7 +5,14 @@
 var currentTab = 0;
 
 function display() { 
-    updateForTab(currentTab);
+
+    odkTables.launchHTML(null, 'config/assets/register.html');
+
+
+
+    ////updateForTab(currentTab);
+
+
     // set up the click listeners.
     // $('#teaTimeTab').on('click', function() {
     //     currentTab = 0;
@@ -27,37 +34,38 @@ function display() {
     //     currentTab = 4;
     //     updateForTab(currentTab);
     // });
-    $('#mcTab').on('click', function() {
-        currentTab = 0;
-        updateForTab(currentTab);
-    });
+    
+    // $('#mcTab').on('click', function() {
+    //     currentTab = 0;
+    //     updateForTab(currentTab);
+    // });
 
-    $('#launch-button').on(
-            'click',
-            function() {
-                if (currentTab === 0) {
-                    odkTables.launchHTML(null, 'config/assets/register.html');
-                }
-                // if (currentTab === 0) {
-                //     odkTables.launchHTML(null, 'config/assets/teatime.html');
-                // } else if (currentTab === 1) {
-                //     odkTables.launchHTML(null, 'config/assets/hope.html');
-                // } else if (currentTab === 2) {
-                //     odkTables.launchHTML(null, 'config/assets/plotter.html');
-                // } else if (currentTab === 3) {
-                //     // Note we're relying on geotagger's list view to be set.
-                //     odkTables.openTable(null,
-                //         'geotagger',
-                //         null,
-                //         null);
-                // } else if (currentTab === 4) {
-                //     odkTables.launchHTML(null, 'config/assets/jgiIndex.html');
-                // } else if (currentTab === 5) {
-                //     odkTables.launchHTML(null, 'config/assets/register.html');
-                else {
-                    console.log('trouble, unrecognized tab');
-                }
-            });
+    // $('#launch-button').on(
+    //         'click',
+    //         function() {
+    //             if (currentTab === 0) {
+    //                 odkTables.launchHTML(null, 'config/assets/register.html');
+    //             }
+    //             // if (currentTab === 0) {
+    //             //     odkTables.launchHTML(null, 'config/assets/teatime.html');
+    //             // } else if (currentTab === 1) {
+    //             //     odkTables.launchHTML(null, 'config/assets/hope.html');
+    //             // } else if (currentTab === 2) {
+    //             //     odkTables.launchHTML(null, 'config/assets/plotter.html');
+    //             // } else if (currentTab === 3) {
+    //             //     // Note we're relying on geotagger's list view to be set.
+    //             //     odkTables.openTable(null,
+    //             //         'geotagger',
+    //             //         null,
+    //             //         null);
+    //             // } else if (currentTab === 4) {
+    //             //     odkTables.launchHTML(null, 'config/assets/jgiIndex.html');
+    //             // } else if (currentTab === 5) {
+    //             //     odkTables.launchHTML(null, 'config/assets/register.html');
+    //             else {
+    //                 console.log('trouble, unrecognized tab');
+    //             }
+    //         });
 }
 
 function updateForTab(tab) {

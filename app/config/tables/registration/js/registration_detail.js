@@ -9,17 +9,17 @@ var clientId;
 // Displays details about client and links to various forms
 function display(result) {
 
-    // Details - Client id, age, randomization arm
+    // Details - Client name, dob
     clientId = result.get('client_id');
     document.getElementById('first_name').innerHTML = clientId;
-    document.getElementById('middle_name').innerHTML = result.get('triage');
-    document.getElementById('last_name').innerHTML = result.get('reasons');
-    document.getElementById('sex').innerHTML = result.get('preli_diag');
-    document.getElementById('date_of_birth').innerHTML = result.get('diag_plan');
-    document.getElementById('state').innerHTML = result.get('lab_res');
-    document.getElementById('telephone_num').innerHTML = result.get('diseases');
-    document.getElementById('father').innerHTML = result.get('con_diag');
-    document.getElementById('mother').innerHTML = result.get('treatment');
+    document.getElementById('middle_name').innerHTML = result.get('middle_name');
+    document.getElementById('last_name').innerHTML = result.get('last_name');
+    document.getElementById('sex').innerHTML = result.get('sex');
+    document.getElementById('date_of_birth').innerHTML = result.get('date_of_birth');
+    document.getElementById('state').innerHTML = result.get('state');
+    document.getElementById('telephone_num').innerHTML = result.get('telephone_num');
+    document.getElementById('father').innerHTML = result.get('father');
+    document.getElementById('mother').innerHTML = result.get('mother');
 }
 
 function cbSuccess(result) {

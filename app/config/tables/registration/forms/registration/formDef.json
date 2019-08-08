@@ -6,7 +6,7 @@
         "name": "client_id",
         "display": {
           "prompt": {
-            "text": "The UUID of the client is:"
+            "text": "Please choose an ID for the patient:"
           },
           "hint": {
             "text": "Please write down this ID and don't lose it"
@@ -19,7 +19,7 @@
         "name": "first_name",
         "display": {
           "prompt": {
-            "text": "What is your first name?"
+            "text": "What is your patient's first name?"
           }
         },
         "_row_num": 4
@@ -33,7 +33,7 @@
         "name": "middle_name",
         "display": {
           "prompt": {
-            "text": "What is your middle name?"
+            "text": "What is your patient's middle name?"
           }
         },
         "_row_num": 6
@@ -51,7 +51,7 @@
         "name": "last_name",
         "display": {
           "prompt": {
-            "text": "What is your surname?"
+            "text": "What is your patient's surname?"
           }
         },
         "_row_num": 9
@@ -70,7 +70,7 @@
         "name": "sex",
         "display": {
           "prompt": {
-            "text": "What is your assigned birth sex?"
+            "text": "What is your patient's assigned birth sex?"
           }
         },
         "_row_num": 12
@@ -88,7 +88,7 @@
         "name": "date_of_birth",
         "display": {
           "prompt": {
-            "text": "When were you born?"
+            "text": "When was your patient born?"
           }
         },
         "_row_num": 15
@@ -106,7 +106,7 @@
         "name": "address",
         "display": {
           "prompt": {
-            "text": "Where do you live?"
+            "text": "Where does your patient live?"
           }
         },
         "_row_num": 18
@@ -124,7 +124,7 @@
         "name": "state",
         "display": {
           "prompt": {
-            "text": "What country do you live in?"
+            "text": "What country does your patient live in?"
           }
         },
         "_row_num": 21
@@ -142,7 +142,7 @@
         "name": "telephone_num",
         "display": {
           "prompt": {
-            "text": "What is your telephone number?"
+            "text": "What is your patient's telephone number?"
           },
           "hint": {
             "text": "Please enter without dashes. Ex. 1234567890"
@@ -163,7 +163,7 @@
         "name": "father",
         "display": {
           "prompt": {
-            "text": "What is your father's name?"
+            "text": "What is your patient's father's name?"
           }
         },
         "_row_num": 27
@@ -181,7 +181,7 @@
         "name": "mother",
         "display": {
           "prompt": {
-            "text": "What is your mother's name?"
+            "text": "What is your patient's mother's name?"
           }
         },
         "_row_num": 30
@@ -468,7 +468,7 @@
             "name": "client_id",
             "display": {
               "prompt": {
-                "text": "The UUID of the client is:"
+                "text": "Please choose an ID for the patient:"
               },
               "hint": {
                 "text": "Please write down this ID and don't lose it"
@@ -486,7 +486,7 @@
             "name": "first_name",
             "display": {
               "prompt": {
-                "text": "What is your first name?"
+                "text": "What is your patient's first name?"
               }
             },
             "_row_num": 4,
@@ -501,7 +501,7 @@
             "name": "middle_name",
             "display": {
               "prompt": {
-                "text": "What is your middle name?"
+                "text": "What is your patient's middle name?"
               }
             },
             "_row_num": 6,
@@ -516,7 +516,7 @@
             "name": "last_name",
             "display": {
               "prompt": {
-                "text": "What is your surname?"
+                "text": "What is your patient's surname?"
               }
             },
             "_row_num": 9,
@@ -532,7 +532,7 @@
             "name": "sex",
             "display": {
               "prompt": {
-                "text": "What is your assigned birth sex?"
+                "text": "What is your patient's assigned birth sex?"
               }
             },
             "_row_num": 12,
@@ -547,7 +547,7 @@
             "name": "date_of_birth",
             "display": {
               "prompt": {
-                "text": "When were you born?"
+                "text": "When was your patient born?"
               }
             },
             "_row_num": 15,
@@ -562,7 +562,7 @@
             "name": "address",
             "display": {
               "prompt": {
-                "text": "Where do you live?"
+                "text": "Where does your patient live?"
               }
             },
             "_row_num": 18,
@@ -577,7 +577,7 @@
             "name": "state",
             "display": {
               "prompt": {
-                "text": "What country do you live in?"
+                "text": "What country does your patient live in?"
               }
             },
             "_row_num": 21,
@@ -592,7 +592,7 @@
             "name": "telephone_num",
             "display": {
               "prompt": {
-                "text": "What is your telephone number?"
+                "text": "What is your patient's telephone number?"
               },
               "hint": {
                 "text": "Please enter without dashes. Ex. 1234567890"
@@ -610,7 +610,7 @@
             "name": "father",
             "display": {
               "prompt": {
-                "text": "What is your father's name?"
+                "text": "What is your patient's father's name?"
               }
             },
             "_row_num": 27,
@@ -625,7 +625,7 @@
             "name": "mother",
             "display": {
               "prompt": {
-                "text": "What is your mother's name?"
+                "text": "What is your patient's mother's name?"
               }
             },
             "_row_num": 30,

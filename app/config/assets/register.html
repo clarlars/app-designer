@@ -34,14 +34,12 @@
             var newClient = document.createElement("button");
             newClient.setAttribute("id", "button1");
             newClient.innerHTML = "Register Patient";
-            var jMap = {};
-            jMap['client_id'] = util.genUUID();
             newClient.onclick = function() {
                 odkTables.addRowWithSurvey(null,
                     'registration',
                     'registration',
                     null,
-                    jMap);
+                    null);
             }
             document.getElementById("wrapper").appendChild(newClient);
 
